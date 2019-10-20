@@ -7,8 +7,14 @@
 //
 
 import UIKit
+import SwiftyXMLParser
 
 class MainTableViewController: UITableViewController {
+    
+    let API = "https://www.studiwerk.de/export/speiseplan.xml"
+    let NOODLE_COUNTER = "CASA BLANCA"
+    let MAIN_DISH_MINIMAL_PRICE: Float = 1.15
+    var dataFromApi: Data?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,73 +24,135 @@ class MainTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        loadXML()
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    
+    func loadXML() {
+    if let mensaAPI = URL(string: API) {
+        let dispatchQueue = DispatchQueue(label: "menuThread", qos: .background)
+            dispatchQueue.async {
+                URLSession.shared.dataTask(with: mensaAPI, completionHandler: {(data, response, error) -> Void in
+                    if let error = error {
+                        print("error: \(error)")
+                    } else {
+                        if let response = response as? HTTPURLResponse {
+                            print("statusCode: \(response.statusCode)")
+                        }
+                        if let data = data, let xml = try? XML.parse(data) {
+                            self.processXML(with: xml)
+                        }
+                    }
+                }).resume()
+            }
+        } else {
+           fatalError("Provided invalid mensaAPI value")
+        }
     }
+    
+    func processXML(with data: XML.Accessor) {
+        var result: [String: Any] = [:]
+        var plans = [Any]()
+        for dates in data["artikel-liste", "artikel"].makeIterator() {
+            var dayPlan = [String: Any]()
+            var dayPlanCounters = [Any]()
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+            if let location = getLocation(xml: dates["content", "calendarday", "standort-liste"]) {
+                if let counterClosed = location["geschlossen"].text, counterClosed == "1" {
+                    continue
+                }
+                
+                dayPlan["date"] = Int(dates.attributes["date"]!)
+                dayPlan["counters"] = []
+                
+                let counters = location["theke-liste", "theke"]
+                for counter in counters {
+                    var counterPlan = [String: Any]()
+                    counterPlan["label"] = counter["label"].text!
+                    var counterMeals = [Any]()
+                    
+                    let meals = counter["mahlzeit-liste", "mahlzeit"].makeIterator()
+                    for meal in meals {
+                        let prices = meal["price"].makeIterator()
+                        var mealPrice: Float = 0
+                        for price in prices {
+                            if let priceId = price.attributes["id"], priceId == "price-1", let mealPriceString = price.attributes["data"] {
+                                mealPrice = Float(mealPriceString)!
+                            }
+                        }
+                        if counterPlan["label"] as! String == NOODLE_COUNTER || mealPrice >= MAIN_DISH_MINIMAL_PRICE {
+                            var mealResult = [String: Any]()
+                            mealResult["title"] = meal["titel"].text;
+                            mealResult["price"] = mealPrice;
+                            
+                            /*
+                             let data = meal.querySelector("hauptkomponente data");
+                             if (data) {
+                                 let image = data.getAttribute("bild-url");
+                                 if (image) {
+                                     mealResult.image = STUDIWERK_URL + image;
+                                 }
+                             }
+                             */
+                            
+                            counterMeals.append(mealResult)
+                        }
+                    }
+                    counterPlan["meals"] = counterMeals
+                       
+                    if counterMeals.count > 0 {
+                        dayPlanCounters.append(counterPlan)
+                    }
+                    dayPlan["counters"] = dayPlanCounters
+                }
+
+            }
+            
+            if (dayPlanCounters.count > 0) {
+                plans.append(dayPlan)
+            }
+            result["plan"] = plans
+        }
+        
+        /*
+         result.sort((dateResult1, dateResult2) => {
+             return dateResult1.date - dateResult2.date;
+         });
+         */
+        
+        guard let data = try? JSONSerialization.data(withJSONObject: result, options: []) else {
+            return
+        }
+
+        dataFromApi = data
+        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    
+    func getLocation(xml: XML.Accessor) -> XML.Accessor? {
+        for location in xml["standort"] {
+            if let locationValue = location.attributes["id"], locationValue == "standort-4" {
+                return location
+            }
+        }
+        return nil
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "detailSegue" {
+            if let indexPath = self.tableView.indexPathForSelectedRow, let dataFromApi = dataFromApi {
+               guard let mensaData = try? JSONDecoder().decode(Mensaplan.self, from: dataFromApi) else {
+                   print("Error: Couldn't decode data into Blog")
+                    return
+               }
+                let vc = segue.destination as! DetailTableViewController
+                vc.mensaPlanDay = mensaData.days[indexPath.row]
+            } else {
+                print("Oops, no row has been selected")
+            }
+           
+        }
     }
-    */
-
 }
