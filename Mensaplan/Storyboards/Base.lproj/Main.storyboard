@@ -42,12 +42,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Mensaplan" id="Zcz-Ka-wIq">
-                        <barButtonItem key="leftBarButtonItem" image="gear" catalog="system" style="plain" id="4fI-IP-u5Q">
+                        <barButtonItem key="leftBarButtonItem" image="Settings" style="done" id="4fI-IP-u5Q">
                             <connections>
                                 <segue destination="Tzj-3o-qrY" kind="presentation" identifier="settingsSegue" id="xtk-lR-F00"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="refresh" id="NRA-9W-cFe">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="refresh" id="NRA-9W-cFe">
                             <connections>
                                 <action selector="refreshAction:" destination="t2a-2R-URF" id="GeW-z4-5tx"/>
                             </connections>
@@ -174,7 +174,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Einstellungen" id="U0i-Rf-rX8">
-                        <barButtonItem key="rightBarButtonItem" title="Fertig" style="done" id="RF8-qC-EjA">
+                        <barButtonItem key="rightBarButtonItem" title="Schließen" style="done" id="RF8-qC-EjA">
                             <connections>
                                 <action selector="doneAction:" destination="iMO-rV-dQG" id="xMk-R8-FG6"/>
                             </connections>
@@ -283,6 +283,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gear" catalog="system" width="64" height="58"/>
+        <image name="Settings" width="25" height="25"/>
     </resources>
 </document>

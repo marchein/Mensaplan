@@ -54,10 +54,10 @@ class MainTableViewController: UITableViewController {
                     if let error = error {
                         print("error: \(error)")
                     } else {
-                        if let response = response as? HTTPURLResponse {
+                        if let response = response as? HTTPURLResponse, let data = data  {
                             print("statusCode: \(response.statusCode)")
-                        }
-                        if let data = data, let xml = try? XML.parse(data) {
+                            let xml = XML.parse(data)
+                            print("Successfully load xml")
                             self.processXML(with: xml)
                         }
                     }
@@ -150,12 +150,9 @@ class MainTableViewController: UITableViewController {
 
             }
             
-            //if (dayPlanCounters.count > 0) {
-                var locationResult: [String: Any] = [:]
-                locationResult["location"] = locations
-                plans.append(locationResult)
-                print(plans.count)
-           // }
+            var locationResult: [String: Any] = [:]
+            locationResult["location"] = locations
+            plans.append(locationResult)
             result["plan"] = plans
         }
         
@@ -171,6 +168,7 @@ class MainTableViewController: UITableViewController {
         }
         
         UserDefaults.standard.set(data, forKey: LocalKeys.jsonData)
+        print("Successfully load JSON")
         getJSON(data: data)
         
         let dateformatter = DateFormatter()
@@ -184,12 +182,11 @@ class MainTableViewController: UITableViewController {
             let mensaData = try JSONDecoder().decode(Mensaplan.self, from: data) 
             JSONData = mensaData
             DispatchQueue.main.async {
+                print("Successfully used JSON in UI")
                 self.tableView.reloadData()
             }
         } catch {
-            print("Error: Couldn't decode data into Mensaplan")
             print(error)
-            // prints "No value associated with key title (\"title\")."
         }
     }
     
@@ -197,17 +194,14 @@ class MainTableViewController: UITableViewController {
         if segue.identifier == "detailSegue" {
             if let indexPath = self.tableView.indexPathForSelectedRow, let mensaData = JSONData {
                 let selectedDay = mensaData.days[indexPath.row]
-                print(selectedDay)
                 let selectedLocation = UserDefaults.standard.string(forKey: LocalKeys.selectedMensa)!
                 for location in selectedDay.location {
-                    print(location)
                     if location.title == selectedLocation {
                         let vc = segue.destination as! DetailTableViewController
                         vc.mensaPlanDay = location.data
                         return
                     }
                 }
-
             } else {
                 print("Oops, no row has been selected")
             }
