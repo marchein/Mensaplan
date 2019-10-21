@@ -1,49 +1,43 @@
 //
-//  MainTableViewController+TableView.swift
+//  SettingsTableViewController+TableView.swift
 //  Mensaplan
 //
-//  Created by Marc Hein on 18.10.19.
+//  Created by Marc Hein on 21.10.19.
 //  Copyright © 2019 Marc Hein. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-extension MainTableViewController {
+extension SettingsTableViewController {
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-       return 1
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedCell = tableView.cellForRow(at: indexPath)
+        tableView.deselectRow(at: indexPath, animated: true)
+        if selectedCell == mensaNameCell {
+            isPickerHidden = !isPickerHidden
+            tableView.beginUpdates()
+            tableView.endUpdates()
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 && indexPath.row == 3 {
+            return isPickerHidden ? 0 : 165
+        }
+        return UITableView.automaticDimension
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        if let mensaData = JSONData {
-            return mensaData.days.count
-        }
-        return 0
-    }
-        
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "dayCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = "Label"
-        if let mensaData = JSONData {
-            let row = indexPath.row
-            cell.textLabel?.text = mensaData.days[row].location[0].getDate()
-        }
 
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        if let lastUpdate = UserDefaults.standard.string(forKey: LocalKeys.lastUpdate) {
-            return "Letzte Aktualisierung: \(lastUpdate) Uhr"
-        }
-        return nil
-    }
-    
+    */
 
     /*
     // Override to support conditional editing of the table view.

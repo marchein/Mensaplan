@@ -36,7 +36,15 @@ extension DetailTableViewController {
             let meal = day.counters[indexPath.section].meals[indexPath.row]
             //cell.mealImage.image = #imageLiteral(resourceName: "Meal")
             cell.mealTitleLabel.text = meal.title
-            cell.mealPriceLabel.text = "\(meal.price)"
+            let selectedPrice = UserDefaults.standard.string(forKey: LocalKeys.selectedPrice)
+            if selectedPrice == "student" {
+                cell.mealPriceLabel.text = meal.getFormattedPrice(price: meal.priceStudent)
+            } else if selectedPrice == "worker" {
+                cell.mealPriceLabel.text = meal.getFormattedPrice(price: meal.priceWorker)
+            } else if selectedPrice == "guest" {
+                cell.mealPriceLabel.text = meal.getFormattedPrice(price: meal.pricePublic)
+            }
+            
         }
 
         return cell

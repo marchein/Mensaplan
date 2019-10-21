@@ -19,6 +19,9 @@
 		5B458AEB235A3D7E0027CAE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B458AEA235A3D7E0027CAE1 /* Assets.xcassets */; };
 		5B458AEE235A3D7E0027CAE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B458AEC235A3D7E0027CAE1 /* LaunchScreen.storyboard */; };
 		5B458AF9235A3D7E0027CAE1 /* MensaplanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B458AF8235A3D7E0027CAE1 /* MensaplanUITests.swift */; };
+		5BEA0A31235DC0BA003E3616 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEA0A30235DC0BA003E3616 /* SettingsTableViewController.swift */; };
+		5BEA0A33235DC0D0003E3616 /* SettingsTableViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEA0A32235DC0D0003E3616 /* SettingsTableViewController+TableView.swift */; };
+		5BEA0A35235DCA55003E3616 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEA0A34235DCA55003E3616 /* Model.swift */; };
 		C21570277CD31A0300AEA94B /* Pods_Mensaplan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C6D0F32CDB59148AC7FBC1 /* Pods_Mensaplan.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +54,9 @@
 		5B458AF4235A3D7E0027CAE1 /* MensaplanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MensaplanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B458AF8235A3D7E0027CAE1 /* MensaplanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensaplanUITests.swift; sourceTree = "<group>"; };
 		5B458AFA235A3D7E0027CAE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BEA0A30235DC0BA003E3616 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		5BEA0A32235DC0D0003E3616 /* SettingsTableViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsTableViewController+TableView.swift"; sourceTree = "<group>"; };
+		5BEA0A34235DCA55003E3616 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		94C6D0F32CDB59148AC7FBC1 /* Pods_Mensaplan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mensaplan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8A79967504697D0B4F0CA20 /* Pods-Mensaplan-MensaplanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mensaplan-MensaplanUITests.debug.xcconfig"; path = "Target Support Files/Pods-Mensaplan-MensaplanUITests/Pods-Mensaplan-MensaplanUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		ECCA21AD57E22B3309E32480 /* Pods-Mensaplan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mensaplan.release.xcconfig"; path = "Target Support Files/Pods-Mensaplan/Pods-Mensaplan.release.xcconfig"; sourceTree = "<group>"; };
@@ -90,6 +96,7 @@
 			children = (
 				5B187032235A40CC00EF54DF /* Main */,
 				5B277276235D0B0100E3894B /* DetailView */,
+				5BEA0A2F235DC0A0003E3616 /* Settings */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -151,6 +158,7 @@
 				5B458AEA235A3D7E0027CAE1 /* Assets.xcassets */,
 				5B458AEF235A3D7E0027CAE1 /* Info.plist */,
 				5B277274235D033500E3894B /* Data.swift */,
+				5BEA0A34235DCA55003E3616 /* Model.swift */,
 			);
 			path = Mensaplan;
 			sourceTree = "<group>";
@@ -162,6 +170,15 @@
 				5B458AFA235A3D7E0027CAE1 /* Info.plist */,
 			);
 			path = MensaplanUITests;
+			sourceTree = "<group>";
+		};
+		5BEA0A2F235DC0A0003E3616 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				5BEA0A30235DC0BA003E3616 /* SettingsTableViewController.swift */,
+				5BEA0A32235DC0D0003E3616 /* SettingsTableViewController+TableView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		845D45492358EE53AC8ABB18 /* Pods */ = {
@@ -364,7 +381,10 @@
 				5B27727A235D0B2900E3894B /* DetailTableViewController+TableView.swift in Sources */,
 				5B18702F235A403E00EF54DF /* MainTableViewController.swift in Sources */,
 				5B27727C235D102A00E3894B /* MealTableViewCell.swift in Sources */,
+				5BEA0A33235DC0D0003E3616 /* SettingsTableViewController+TableView.swift in Sources */,
 				5B277278235D0B1900E3894B /* DetailTableViewController.swift in Sources */,
+				5BEA0A35235DCA55003E3616 /* Model.swift in Sources */,
+				5BEA0A31235DC0BA003E3616 /* SettingsTableViewController.swift in Sources */,
 				5B458AE2235A3D7D0027CAE1 /* AppDelegate.swift in Sources */,
 				5B187034235A40E200EF54DF /* MainTableViewController+TableView.swift in Sources */,
 				5B277275235D033500E3894B /* Data.swift in Sources */,

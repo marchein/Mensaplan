@@ -15,9 +15,7 @@ class DetailTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(mensaPlanDay)
-        
-        title = "\(mensaPlanDay?.date)"
+        title = mensaPlanDay?.getDate(showDay: false)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
