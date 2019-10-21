@@ -45,6 +45,8 @@ class MainTableViewController: UITableViewController {
             UserDefaults.standard.set(true, forKey: LocalKeys.isSetup)
             print("INITIAL SETUP DONE")
         }
+      
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     public func showDay(dayValue: DayValue) {

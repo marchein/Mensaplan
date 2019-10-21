@@ -18,7 +18,7 @@ class DetailTableViewController: UITableViewController {
             return
         }
         
-        title = mensaPlanDay.getDate(showDay: false)
+        title = getDayName(by: mensaPlanDay.getDateValue())
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

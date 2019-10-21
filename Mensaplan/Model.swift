@@ -27,3 +27,11 @@ enum DayValue {
     case TODAY
     case TOMORROW
 }
+
+struct MensaplanApp {
+    static let appStoreId = "1484281036"
+    static let mailAdress = "dev@marc-hein.de"
+    static let website = "https://marc-hein.de/"
+    static let versionString = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
+    static let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
+}

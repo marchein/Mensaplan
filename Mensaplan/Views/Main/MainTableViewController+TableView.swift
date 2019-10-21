@@ -31,7 +31,17 @@ extension MainTableViewController {
         cell.textLabel?.text = "Label"
         if let mensaData = JSONData {
             let row = indexPath.row
-            cell.textLabel?.text = mensaData.plan[row].day[0].getDate()
+            let dayData = mensaData.plan[row].day[0]
+            let dateOfCell = dayData.getDateValue()
+            let whenIsDateOfCell = whenIsDate(dateOfCell)
+            let mainLabel = getDayName(by: dateOfCell)
+            cell.textLabel?.text = dateSuffix(date: dateOfCell, string: mainLabel)
+            cell.detailTextLabel?.text = dayData.getDate(showDay: false)
+            if whenIsDateOfCell == DAY_VALUE.YESTERDAY {
+                cell.isUserInteractionEnabled = false
+                cell.textLabel?.isEnabled = false
+                cell.detailTextLabel?.isEnabled = false
+            }
         }
 
         return cell

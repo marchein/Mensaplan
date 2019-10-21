@@ -49,6 +49,12 @@ struct LocationDay: Decodable {
         return Calendar.current.isDateInTomorrow(date)
     }
     
+    func getDateValue() -> Date {
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyyMMdd"
+        return dateFormatterGet.date(from: "\(self.date)")!
+    }
+    
     func getDate(showDay: Bool = true) -> String? {
         let dateFormatterGet = DateFormatter()
         dateFormatterGet.dateFormat = "yyyyMMdd"
@@ -82,6 +88,12 @@ struct MensaplanDay: Decodable {
     enum CodingKeys : String, CodingKey {
         case date
         case counters
+    }
+    
+    func getDateValue() -> Date {
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyyMMdd"
+        return dateFormatterGet.date(from: "\(self.date)")!
     }
     
     func getDate(showDay: Bool = true) -> String? {
