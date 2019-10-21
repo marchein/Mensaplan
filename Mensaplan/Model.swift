@@ -16,3 +16,14 @@ struct LocalKeys {
     static let lastUpdate = "lastUpdate"
     static let jsonData = "jsonData"
 }
+
+struct Shortcuts {
+    static let showToday = "de.marc-hein.mensaplan.showToday"
+    static let showTomorrow = "de.marc-hein.mensaplan.showTomorrow"
+
+}
+
+enum DayValue {
+    case TODAY
+    case TOMORROW
+}

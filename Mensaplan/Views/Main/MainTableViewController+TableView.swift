@@ -19,7 +19,7 @@ extension MainTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if let mensaData = JSONData {
-            return mensaData.days.count
+            return mensaData.plan.count
         }
         return 0
     }
@@ -31,7 +31,7 @@ extension MainTableViewController {
         cell.textLabel?.text = "Label"
         if let mensaData = JSONData {
             let row = indexPath.row
-            cell.textLabel?.text = mensaData.days[row].location[0].getDate()
+            cell.textLabel?.text = mensaData.plan[row].day[0].getDate()
         }
 
         return cell
@@ -41,7 +41,7 @@ extension MainTableViewController {
         if let lastUpdate = UserDefaults.standard.string(forKey: LocalKeys.lastUpdate) {
             return "Letzte Aktualisierung: \(lastUpdate) Uhr"
         }
-        return nil
+        return "Keine Aktualisierung vorgenommen"
     }
     
 

@@ -15,6 +15,7 @@ class MainTableViewController: UITableViewController {
     let NOODLE_COUNTER = "CASA BLANCA"
     let MAIN_DISH_MINIMAL_PRICE: Double = 1.15
     var JSONData: Mensaplan?
+    var tempMensaData: MensaplanDay?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,36 @@ class MainTableViewController: UITableViewController {
         }
     }
     
+    public func showDay(dayValue: DayValue) {
+        guard let mensaData = JSONData else {
+            return
+        }
+        var dayIndex = -1
+        for days in mensaData.plan {
+            dayIndex += 1
+            if dayValue == DayValue.TODAY {
+                if days.day[0].isToday() {
+                    break
+                }
+            } else if dayValue == DayValue.TOMORROW {
+                if days.day[0].isTomorrow() {
+                    break
+                }
+            }
+        }
+        let selectedDay = mensaData.plan[dayIndex]
+        let selectedLocation = UserDefaults.standard.string(forKey: LocalKeys.selectedMensa)!
+        for location in selectedDay.day {
+            if location.title == selectedLocation {
+                tempMensaData = location.data
+                let navVC = self.parent as! UINavigationController
+                navVC.popToRootViewController(animated: true)
+                performSegue(withIdentifier: "manualDetailSegue", sender: self)
+                return
+            }
+        }
+   }
+
     func loadXML() {
     if let mensaAPI = URL(string: API) {
         let dispatchQueue = DispatchQueue(label: "menuThread", qos: .background)
@@ -193,9 +224,9 @@ class MainTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detailSegue" {
             if let indexPath = self.tableView.indexPathForSelectedRow, let mensaData = JSONData {
-                let selectedDay = mensaData.days[indexPath.row]
+                let selectedDay = mensaData.plan[indexPath.row]
                 let selectedLocation = UserDefaults.standard.string(forKey: LocalKeys.selectedMensa)!
-                for location in selectedDay.location {
+                for location in selectedDay.day {
                     if location.title == selectedLocation {
                         let vc = segue.destination as! DetailTableViewController
                         vc.mensaPlanDay = location.data
@@ -205,7 +236,9 @@ class MainTableViewController: UITableViewController {
             } else {
                 print("Oops, no row has been selected")
             }
-           
+        } else if segue.identifier == "manualDetailSegue" {
+            let vc = segue.destination as! DetailTableViewController
+            vc.mensaPlanDay = tempMensaData
         }
     }
     
