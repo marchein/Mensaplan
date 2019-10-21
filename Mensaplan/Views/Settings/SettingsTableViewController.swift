@@ -17,6 +17,11 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     @IBOutlet weak var mensaNameCell: UITableViewCell!
     @IBOutlet weak var mensaPickerCell: UITableViewCell!
     @IBOutlet weak var pricePicker: UISegmentedControl!
+    @IBOutlet weak var appVersionCell: UITableViewCell!
+    @IBOutlet weak var appSupportCell: UITableViewCell!
+    @IBOutlet weak var appStoreCell: UITableViewCell!
+    @IBOutlet weak var rateAppCell: UITableViewCell!
+    @IBOutlet weak var developerCell: UITableViewCell!
     
     var isPickerHidden = true
     var standorteValues = ["Mensa Tarforst", "Bistro A/B", "Mensa Petrisberg", "Mensa Schneidershof", "Mensa Irminenfreihof" ,"forU"]
@@ -50,7 +55,9 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
             let selectedMensaValueIndex = standorteKeys.firstIndex(of: selectedMensaValue)!
             selectedMensaName.text = standorteValues[selectedMensaValueIndex]
             mensaPicker.selectRow(selectedMensaValueIndex, inComponent: 0, animated: false)
+            appVersionCell.detailTextLabel?.text = MensaplanApp.versionString
         }
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -85,5 +92,12 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     @IBAction func doneAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
         performSegue(withIdentifier: "unwindToMain", sender: sender)
+    }
+    
+    func appStoreAction() {
+        let urlStr = "itms-apps://itunes.apple.com/app/id\(MensaplanApp.appStoreId)"
+        if let url = URL(string: urlStr), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
     }
 }

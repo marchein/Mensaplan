@@ -9,18 +9,18 @@
 import Foundation
 
 struct Mensaplan: Decodable {
-    let days: [Location]
+    let plan: [Location]
     
     enum CodingKeys : String, CodingKey {
-        case days = "plan"
+        case plan = "plan"
     }
 }
 
 struct Location: Decodable {
-    let location: [LocationDay]
+    let day: [LocationDay]
     
     enum CodingKeys : String, CodingKey {
-        case location
+        case day = "location"
     }
 }
 
@@ -33,6 +33,26 @@ struct LocationDay: Decodable {
         case date
         case data
         case title
+    }
+    
+    func isToday() -> Bool {
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyyMMdd"
+        let date = dateFormatterGet.date(from: "\(self.date)")!
+        return Calendar.current.isDateInToday(date)
+    }
+    
+    func isTomorrow() -> Bool {
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyyMMdd"
+        let date = dateFormatterGet.date(from: "\(self.date)")!
+        return Calendar.current.isDateInTomorrow(date)
+    }
+    
+    func getDateValue() -> Date {
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyyMMdd"
+        return dateFormatterGet.date(from: "\(self.date)")!
     }
     
     func getDate(showDay: Bool = true) -> String? {
@@ -70,6 +90,12 @@ struct MensaplanDay: Decodable {
         case counters
     }
     
+    func getDateValue() -> Date {
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyyMMdd"
+        return dateFormatterGet.date(from: "\(self.date)")!
+    }
+    
     func getDate(showDay: Bool = true) -> String? {
         let dateFormatterGet = DateFormatter()
         dateFormatterGet.dateFormat = "yyyyMMdd"
@@ -93,6 +119,20 @@ struct MensaplanDay: Decodable {
            print("There was an error decoding the string")
         }
         return nil
+    }
+    
+    func isToday() -> Bool {
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyyMMdd"
+        let date = dateFormatterGet.date(from: "\(self.date)")!
+        return Calendar.current.isDateInToday(date)
+    }
+
+    func isTomorrow() -> Bool {
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyyMMdd"
+        let date = dateFormatterGet.date(from: "\(self.date)")!
+        return Calendar.current.isDateInTomorrow(date)
     }
 }
 

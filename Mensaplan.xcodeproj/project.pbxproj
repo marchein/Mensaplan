@@ -19,9 +19,13 @@
 		5B458AEB235A3D7E0027CAE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B458AEA235A3D7E0027CAE1 /* Assets.xcassets */; };
 		5B458AEE235A3D7E0027CAE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B458AEC235A3D7E0027CAE1 /* LaunchScreen.storyboard */; };
 		5B458AF9235A3D7E0027CAE1 /* MensaplanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B458AF8235A3D7E0027CAE1 /* MensaplanUITests.swift */; };
+		5B5C8EBA235E59BD00C29E62 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5C8EB9235E59BD00C29E62 /* Utilities.swift */; };
+		5B5C8EBC235E5E7700C29E62 /* SettingsTableViewController+SendSupportMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5C8EBB235E5E7700C29E62 /* SettingsTableViewController+SendSupportMail.swift */; };
+		5B5C8EBE235E5EDF00C29E62 /* UIViewController+SafariActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5C8EBD235E5EDF00C29E62 /* UIViewController+SafariActions.swift */; };
 		5BEA0A31235DC0BA003E3616 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEA0A30235DC0BA003E3616 /* SettingsTableViewController.swift */; };
 		5BEA0A33235DC0D0003E3616 /* SettingsTableViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEA0A32235DC0D0003E3616 /* SettingsTableViewController+TableView.swift */; };
 		5BEA0A35235DCA55003E3616 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEA0A34235DCA55003E3616 /* Model.swift */; };
+		5BEA0A38235E09AE003E3616 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BEA0A37235E09AE003E3616 /* Intents.framework */; };
 		C21570277CD31A0300AEA94B /* Pods_Mensaplan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C6D0F32CDB59148AC7FBC1 /* Pods_Mensaplan.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,9 +58,14 @@
 		5B458AF4235A3D7E0027CAE1 /* MensaplanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MensaplanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B458AF8235A3D7E0027CAE1 /* MensaplanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensaplanUITests.swift; sourceTree = "<group>"; };
 		5B458AFA235A3D7E0027CAE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B5C8EB9235E59BD00C29E62 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		5B5C8EBB235E5E7700C29E62 /* SettingsTableViewController+SendSupportMail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsTableViewController+SendSupportMail.swift"; sourceTree = "<group>"; };
+		5B5C8EBD235E5EDF00C29E62 /* UIViewController+SafariActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SafariActions.swift"; sourceTree = "<group>"; };
 		5BEA0A30235DC0BA003E3616 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		5BEA0A32235DC0D0003E3616 /* SettingsTableViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsTableViewController+TableView.swift"; sourceTree = "<group>"; };
 		5BEA0A34235DCA55003E3616 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		5BEA0A36235E0990003E3616 /* Mensaplan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mensaplan.entitlements; sourceTree = "<group>"; };
+		5BEA0A37235E09AE003E3616 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
 		94C6D0F32CDB59148AC7FBC1 /* Pods_Mensaplan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mensaplan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8A79967504697D0B4F0CA20 /* Pods-Mensaplan-MensaplanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mensaplan-MensaplanUITests.debug.xcconfig"; path = "Target Support Files/Pods-Mensaplan-MensaplanUITests/Pods-Mensaplan-MensaplanUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		ECCA21AD57E22B3309E32480 /* Pods-Mensaplan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mensaplan.release.xcconfig"; path = "Target Support Files/Pods-Mensaplan/Pods-Mensaplan.release.xcconfig"; sourceTree = "<group>"; };
@@ -67,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BEA0A38235E09AE003E3616 /* Intents.framework in Frameworks */,
 				C21570277CD31A0300AEA94B /* Pods_Mensaplan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,6 +95,7 @@
 		3CC711BAEDFFBD9CFA2C533F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5BEA0A37235E09AE003E3616 /* Intents.framework */,
 				94C6D0F32CDB59148AC7FBC1 /* Pods_Mensaplan.framework */,
 				09CED77E670AD4B6AF74F34D /* Pods_Mensaplan_MensaplanUITests.framework */,
 			);
@@ -152,6 +163,7 @@
 		5B458AE0235A3D7D0027CAE1 /* Mensaplan */ = {
 			isa = PBXGroup;
 			children = (
+				5BEA0A36235E0990003E3616 /* Mensaplan.entitlements */,
 				5B187030235A40AC00EF54DF /* Views */,
 				5B187031235A40B700EF54DF /* Storyboards */,
 				5B458AE1235A3D7D0027CAE1 /* AppDelegate.swift */,
@@ -159,6 +171,8 @@
 				5B458AEF235A3D7E0027CAE1 /* Info.plist */,
 				5B277274235D033500E3894B /* Data.swift */,
 				5BEA0A34235DCA55003E3616 /* Model.swift */,
+				5B5C8EB9235E59BD00C29E62 /* Utilities.swift */,
+				5B5C8EBD235E5EDF00C29E62 /* UIViewController+SafariActions.swift */,
 			);
 			path = Mensaplan;
 			sourceTree = "<group>";
@@ -177,6 +191,7 @@
 			children = (
 				5BEA0A30235DC0BA003E3616 /* SettingsTableViewController.swift */,
 				5BEA0A32235DC0D0003E3616 /* SettingsTableViewController+TableView.swift */,
+				5B5C8EBB235E5E7700C29E62 /* SettingsTableViewController+SendSupportMail.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -380,8 +395,11 @@
 			files = (
 				5B27727A235D0B2900E3894B /* DetailTableViewController+TableView.swift in Sources */,
 				5B18702F235A403E00EF54DF /* MainTableViewController.swift in Sources */,
+				5B5C8EBA235E59BD00C29E62 /* Utilities.swift in Sources */,
 				5B27727C235D102A00E3894B /* MealTableViewCell.swift in Sources */,
 				5BEA0A33235DC0D0003E3616 /* SettingsTableViewController+TableView.swift in Sources */,
+				5B5C8EBC235E5E7700C29E62 /* SettingsTableViewController+SendSupportMail.swift in Sources */,
+				5B5C8EBE235E5EDF00C29E62 /* UIViewController+SafariActions.swift in Sources */,
 				5B277278235D0B1900E3894B /* DetailTableViewController.swift in Sources */,
 				5BEA0A35235DCA55003E3616 /* Model.swift in Sources */,
 				5BEA0A31235DC0BA003E3616 /* SettingsTableViewController.swift in Sources */,
@@ -548,6 +566,7 @@
 			baseConfigurationReference = 59532A6DF7B573FFF59EB462 /* Pods-Mensaplan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Mensaplan/Mensaplan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
@@ -569,6 +588,7 @@
 			baseConfigurationReference = ECCA21AD57E22B3309E32480 /* Pods-Mensaplan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Mensaplan/Mensaplan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
