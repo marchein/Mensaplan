@@ -8,12 +8,9 @@
 
 import UIKit
 import SwiftyXMLParser
+import Toast_Swift
 
 class MainTableViewController: UITableViewController {
-    
-    let API = "https://www.studiwerk.de/export/speiseplan.xml"
-    let NOODLE_COUNTER = "CASA BLANCA"
-    let MAIN_DISH_MINIMAL_PRICE: Double = 1.15
     var JSONData: Mensaplan?
     var tempMensaData: MensaplanDay?
 
@@ -26,29 +23,28 @@ class MainTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         setupApp()
-        if UserDefaults.standard.bool(forKey: LocalKeys.refreshOnStart) {
+        if MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.refreshOnStart) {
             loadXML()
+        }
+        self.refreshControl?.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
+    }
+    
+    func setupApp() {
+        let isSetup  = MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.isSetup)
+        if !isSetup {
+            MensaplanApp.sharedDefaults.set(true, forKey: LocalKeys.refreshOnStart)
+            MensaplanApp.sharedDefaults.set("standort-1", forKey: LocalKeys.selectedMensa)
+            MensaplanApp.sharedDefaults.set("student", forKey: LocalKeys.selectedPrice)
+            MensaplanApp.sharedDefaults.set(true, forKey: LocalKeys.isSetup)
+            print("INITIAL SETUP DONE")
         } else {
             print("load local copy")
-            if let localCopyOfData = UserDefaults.standard.data(forKey: LocalKeys.jsonData) {
+            if let localCopyOfData = MensaplanApp.sharedDefaults.data(forKey: LocalKeys.jsonData) {
                 getJSON(data: localCopyOfData)
             }
         }
     }
-    
-    func setupApp() {
-        let isSetup  = UserDefaults.standard.bool(forKey: LocalKeys.isSetup)
-        if !isSetup {
-            UserDefaults.standard.set(true, forKey: LocalKeys.refreshOnStart)
-            UserDefaults.standard.set("standort-1", forKey: LocalKeys.selectedMensa)
-            UserDefaults.standard.set("student", forKey: LocalKeys.selectedPrice)
-            UserDefaults.standard.set(true, forKey: LocalKeys.isSetup)
-            print("INITIAL SETUP DONE")
-        }
-      
-        navigationController?.navigationBar.prefersLargeTitles = true
-    }
-    
+
     public func showDay(dayValue: DayValue) {
         guard let mensaData = JSONData else {
             return
@@ -67,7 +63,7 @@ class MainTableViewController: UITableViewController {
             }
         }
         let selectedDay = mensaData.plan[dayIndex]
-        let selectedLocation = UserDefaults.standard.string(forKey: LocalKeys.selectedMensa)!
+        let selectedLocation = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa)!
         for location in selectedDay.day {
             if location.title == selectedLocation {
                 tempMensaData = location.data
@@ -80,11 +76,25 @@ class MainTableViewController: UITableViewController {
    }
 
     func loadXML() {
-    if let mensaAPI = URL(string: API) {
-        let dispatchQueue = DispatchQueue(label: "menuThread", qos: .background)
+        if let mensaAPI = URL(string: MensaplanApp.API) {
+        self.navigationController?.view.makeToastActivity(.center)
+        let dispatchQueue = DispatchQueue(label: "xmlThread", qos: .background)
             dispatchQueue.async {
                 URLSession.shared.dataTask(with: mensaAPI, completionHandler: {(data, response, error) -> Void in
                     if let error = error {
+                        print("try to load local copy")
+                        if let localCopyOfData = MensaplanApp.sharedDefaults.data(forKey: LocalKeys.jsonData) {
+                            self.getJSON(data: localCopyOfData)
+                            DispatchQueue.main.async {
+                                self.navigationController?.view.hideToastActivity()
+                                self.navigationController?.view.makeToast("Fehler beim Aktualisieren der Daten.\nVersuche es bitte später erneut.")
+                            }
+                        } else {
+                            DispatchQueue.main.async {
+                                self.navigationController?.view.hideToastActivity()
+                                self.navigationController?.view.makeToast("Fehler beim Laden der Daten.\nVersuche es bitte später erneut.")
+                            }
+                        }
                         print("error: \(error)")
                     } else {
                         if let response = response as? HTTPURLResponse, let data = data  {
@@ -147,22 +157,16 @@ class MainTableViewController: UITableViewController {
                                     }
                                 }
                             }
-                            if counterPlan["label"] as! String == NOODLE_COUNTER || mealPriceStudent >= MAIN_DISH_MINIMAL_PRICE {
+                            if counterPlan["label"] as! String == MensaplanApp.NOODLE_COUNTER || mealPriceStudent >= MensaplanApp.MAIN_DISH_MINIMAL_PRICE {
                                 var mealResult = [String: Any]()
                                 mealResult["title"] = meal["titel"].text;
                                 mealResult["priceStudent"] = mealPriceStudent;
                                 mealResult["priceWorker"] = mealPriceWorker;
                                 mealResult["pricePublic"] = mealPricePublic;
              
-                                /*
-                                 let data = meal.querySelector("hauptkomponente data");
-                                 if (data) {
-                                     let image = data.getAttribute("bild-url");
-                                     if (image) {
-                                         mealResult.image = STUDIWERK_URL + image;
-                                     }
-                                 }
-                                 */
+                                let mealMainPart = meal["hauptkomponente", "mahlzeitkomponenten-list", "mahlzeitkomponenten-item", "data"]
+                                let image = mealMainPart.attributes["bild-url"]
+                                mealResult["image"] = image != nil ? "\(MensaplanApp.STUDIWERK_URL)\(image!)" : nil
                                 
                                 counterMeals.append(mealResult)
                             }
@@ -200,14 +204,14 @@ class MainTableViewController: UITableViewController {
             return
         }
         
-        UserDefaults.standard.set(data, forKey: LocalKeys.jsonData)
+        MensaplanApp.sharedDefaults.set(data, forKey: LocalKeys.jsonData)
         print("Successfully load JSON")
         getJSON(data: data)
         
         let dateformatter = DateFormatter()
         dateformatter.dateFormat = "dd.MM.yyyy - HH:mm"
         let now = dateformatter.string(from: Date())
-        UserDefaults.standard.set(now, forKey: LocalKeys.lastUpdate)
+        MensaplanApp.sharedDefaults.set(now, forKey: LocalKeys.lastUpdate)
     }
     
     func getJSON(data: Data) {
@@ -216,6 +220,7 @@ class MainTableViewController: UITableViewController {
             JSONData = mensaData
             DispatchQueue.main.async {
                 print("Successfully used JSON in UI")
+                self.navigationController?.view.hideToastActivity()
                 self.tableView.reloadData()
             }
         } catch {
@@ -227,7 +232,7 @@ class MainTableViewController: UITableViewController {
         if segue.identifier == "detailSegue" {
             if let indexPath = self.tableView.indexPathForSelectedRow, let mensaData = JSONData {
                 let selectedDay = mensaData.plan[indexPath.row]
-                let selectedLocation = UserDefaults.standard.string(forKey: LocalKeys.selectedMensa)!
+                let selectedLocation = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa)!
                 for location in selectedDay.day {
                     if location.title == selectedLocation {
                         let vc = segue.destination as! DetailTableViewController
@@ -250,6 +255,14 @@ class MainTableViewController: UITableViewController {
     }
     
     @IBAction func unwindFromSegue(segue: UIStoryboardSegue) {
-        //refreshAction(self)
+        self.tableView.reloadData()
+    }
+    
+    @objc func refresh(sender: Any) {
+        // Updating your data here...
+        refreshAction(sender)
+
+        self.tableView.reloadData()
+        self.refreshControl?.endRefreshing()
     }
 }

@@ -7,77 +7,200 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A6157C6DE5C2EC4CF97E5D4B9A72294 /* Pods-Mensaplan-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C72CD51F86EE7BFAB30CF2A1AA8703A9 /* Pods-Mensaplan-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		37831711A9BFF260B36AE192457E457E /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659895D3DC77C57A4D1DDD52280402C /* Parser.swift */; };
-		38594AE7124D395F70EA9B526D8551F5 /* Pods-Mensaplan-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD6186DC237F9DC58FF3D9BFF4A542D /* Pods-Mensaplan-dummy.m */; };
-		3A50EE418ED904AD1CAA40A565396AA8 /* Pods-Mensaplan-MensaplanUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8190E426DA1773357D00C6CF1E460877 /* Pods-Mensaplan-MensaplanUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		694AB51A74C16FAA6BAD6FF8DF55C82D /* XML.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8FDCC6320DEA6125A34CA88F6BA3E7 /* XML.swift */; };
-		7785A01DC42BD346F015AD49AD3A29AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		9451E35B7EBA2AF73FF5B6A184358CE5 /* Accessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36A1823C65ACE5479845C5CA099DD19 /* Accessor.swift */; };
-		AC1CFBD999586025DFCF402A81409EFB /* SwiftyXMLParser-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B5F4EE402870DC0CC7D5172F4E0FE7 /* SwiftyXMLParser-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C45C45653436B5A7FE4A8D30EC5F20BF /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78414CB4604480D77454D7FAC864B080 /* Element.swift */; };
-		CEA1B8E13BFFA6E7E80D1C31B3A5EA07 /* SwiftyXMLParser-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 334503328179071A7DACCBCF1A05AA6B /* SwiftyXMLParser-dummy.m */; };
-		DA0ADB119CF4DFD064B89D3656E76027 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		F836B36BA64236F5FE6A97A123B9A836 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		FB33937B5356588A40530410B64425B7 /* Pods-Mensaplan-MensaplanUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B4A32B6F07C392A4F9F1964D6FA6B7 /* Pods-Mensaplan-MensaplanUITests-dummy.m */; };
-		FBE2CEBD95DBCF60367CE505238F00C4 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F06F2C27F16DD81A64A64033555577 /* Error.swift */; };
+		00C101BB5B71CA1B24DE64756F5B82D8 /* JGProgressHUDIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 55EA22DB4F2F17107BED05DF52F80C62 /* JGProgressHUDIndicatorView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		040AD92907B972B42FFD4B6174887B34 /* JGProgressHUDFadeZoomAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ACF0B59C645AE936CEFA72033EC834D /* JGProgressHUDFadeZoomAnimation.m */; };
+		083B5CFA58A3339BDF6D6DC3A0507DEA /* JGProgressHUDAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB614C595B8ECACF648483D6490FEA3 /* JGProgressHUDAnimation.m */; };
+		0DCCE84DF2E5C1E8ED3903A04E476D8D /* JGProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F26423AED567DBACD90A5BF6AB09573 /* JGProgressHUD.m */; };
+		18CF94C361B05399BC6E83328DFF96DF /* JGProgressHUDSuccessIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B139E128BB4ADF24CB7F11CC1D00BF /* JGProgressHUDSuccessIndicatorView.m */; };
+		2024EE5E265681137A9FEBC630E6E0F1 /* Toast-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EAEBDC8DA2BDFBD986DB6838E99C76BC /* Toast-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2834DA992389D0AFB77DAC86AC0CA540 /* JGProgressHUDShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = F436EB3946567B3289C6D10711B3C928 /* JGProgressHUDShadow.m */; };
+		33E9E0ED94A4081E696295F83DD2D9C7 /* JGProgressHUDErrorIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE14E47E27272C5C0F843C7BC9F210DC /* JGProgressHUDErrorIndicatorView.m */; };
+		37831711A9BFF260B36AE192457E457E /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ECA63DCF56BDC67D68E4BDC4087CC5 /* Parser.swift */; };
+		3EB1E8171A8E2E15A7B0AFF2095210F7 /* JGProgressHUDImageIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 505FCEEE0FBF71ACFFDB14BD469CCF89 /* JGProgressHUDImageIndicatorView.m */; };
+		4753716AE7A1AB22FB6BA61AA74D942F /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD2CF3D658FFFF044AAB41EE0A2EF1B /* Toast.swift */; };
+		4B5147E79EE68FD189494DD609B57F31 /* JGProgressHUDAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 99FC5FFF18C07E08EBEFE8B865151809 /* JGProgressHUDAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		515F81B04F69C306053F5C827D2A22D4 /* JGProgressHUDIndeterminateIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3355272D87462B50339F7A7B5CDEFC6B /* JGProgressHUDIndeterminateIndicatorView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5C78BE7864470C1E2BA20C5CBD81B9D7 /* JGProgressHUDIndeterminateIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C82A00C56D9FB0C2CCC52A021163A06 /* JGProgressHUDIndeterminateIndicatorView.m */; };
+		66D18944E57602765B6571B0BFC9630F /* JGProgressHUD-Defines.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FFA807D2DA4B30EC9EFE366D5DD9723 /* JGProgressHUD-Defines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		694AB51A74C16FAA6BAD6FF8DF55C82D /* XML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEDF774E6FD85AB47CA6DB72A27A446 /* XML.swift */; };
+		6B326644BB08AEDF697A82A0F1A66D68 /* Toast-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E72DE974D7B4E78CDB2E52586B5FCC2C /* Toast-Swift-dummy.m */; };
+		75E1C4BC3322756B9CA0B5F1F15A0DDD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B64BEB39CC506B65115EE95302D64 /* Foundation.framework */; };
+		784B9ED449B3D447C7D6A8DB82F6B5C1 /* JGProgressHUDFadeZoomAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = EDA5C542534A55C5B5EB658C9D21A139 /* JGProgressHUDFadeZoomAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EB7C63A79776D3A27BC2D66E57E422A /* Pods-Mensaplan-MensaplanUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8190E426DA1773357D00C6CF1E460877 /* Pods-Mensaplan-MensaplanUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		812150E28251B383E29ADE04BC481D44 /* JGProgressHUDRingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6430D8952C261213BC3921D086BCE4B /* JGProgressHUDRingIndicatorView.m */; };
+		8B3C6EEAC0991FA521F6D9F1BFF7B900 /* Pods-Mensaplan-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD6186DC237F9DC58FF3D9BFF4A542D /* Pods-Mensaplan-dummy.m */; };
+		8E2CB0ED9A07AE57055399DEDBC27B87 /* JGProgressHUDFadeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1274DADFA473668BD35E46849B256C /* JGProgressHUDFadeAnimation.m */; };
+		9451E35B7EBA2AF73FF5B6A184358CE5 /* Accessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A852AE3A18293F449491823572FA1A /* Accessor.swift */; };
+		95ACABC71585D657249CC92BA7731A8F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B64BEB39CC506B65115EE95302D64 /* Foundation.framework */; };
+		96C369664F04EBEAB41792B9250C6E96 /* JGProgressHUDErrorIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = A4A05015911E3074E57A835D25ED523E /* JGProgressHUDErrorIndicatorView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		99A1378F4758867783A9F5F8519CFAFC /* JGProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B68E449A3A1187C1BE8C2D7565E562E /* JGProgressHUD-dummy.m */; };
+		A0128FB8A04711277900964B8220F2D9 /* JGProgressHUDPieIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD45EFA8140B603E158987D75883B4F /* JGProgressHUDPieIndicatorView.m */; };
+		A169EB847E7F54D72747051F98CD8EEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B64BEB39CC506B65115EE95302D64 /* Foundation.framework */; };
+		A5B8DA90893EAE4E3C805B684A53182E /* JGProgressHUDIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = BD057D3650167C3BDCF15CB0F2C31B3D /* JGProgressHUDIndicatorView.m */; };
+		AC1CFBD999586025DFCF402A81409EFB /* SwiftyXMLParser-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 50A428265CDE605E19A7706E4089C91C /* SwiftyXMLParser-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ADA198C3D2C208F0D5BBBF072DFEC584 /* JGProgressHUD-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E082D7C3E7F7233A5FA526B2A219F570 /* JGProgressHUD-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B1BA64B306C3D2DBBE1D1C692B20733B /* Pods-Mensaplan-MensaplanUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B4A32B6F07C392A4F9F1964D6FA6B7 /* Pods-Mensaplan-MensaplanUITests-dummy.m */; };
+		B5B41EED9FF8EA0F9904C4C8DB2FA2C0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F545AB76C9016ECAD7D83A1129E704 /* UIKit.framework */; };
+		B6A512D641FFB7A5AAACA873632BA776 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCD5169B524477639A9A41855A47F99 /* QuartzCore.framework */; };
+		B7A833E9404805A74C6EE0AE97B63278 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B64BEB39CC506B65115EE95302D64 /* Foundation.framework */; };
+		BE98AD8BAF63F6688828ECDE0FC4325B /* JGProgressHUDImageIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = EBC6869131C8BA60942E87B2C9A1B4B6 /* JGProgressHUDImageIndicatorView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C06D290B9216533843023A0BF93F5927 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCD5169B524477639A9A41855A47F99 /* QuartzCore.framework */; };
+		C169504EDF56EBD6D3A797E3C2E2E473 /* JGProgressHUDPieIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = FBE3F60F5AAB42444357E896AB61EE84 /* JGProgressHUDPieIndicatorView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C45C45653436B5A7FE4A8D30EC5F20BF /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D635786525E7D4F5AA11D8AD0FD598 /* Element.swift */; };
+		CA343F72E2F6A79D393FC28F3035B14C /* JGProgressHUDRingIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 711DA2FC429824835F9FD0192AF68910 /* JGProgressHUDRingIndicatorView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CEA1B8E13BFFA6E7E80D1C31B3A5EA07 /* SwiftyXMLParser-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D62EA96A4A948F4D5AB650C0DDB1E5 /* SwiftyXMLParser-dummy.m */; };
+		D57EB484EEF7DDBFE73BB8FD3F2F6BDC /* JGProgressHUDSuccessIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 899F246FEAEF3963740DE9A7A44EC69F /* JGProgressHUDSuccessIndicatorView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DA0ADB119CF4DFD064B89D3656E76027 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B64BEB39CC506B65115EE95302D64 /* Foundation.framework */; };
+		E03028864251286D1193D9FAE2B15B0B /* Pods-Mensaplan-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C72CD51F86EE7BFAB30CF2A1AA8703A9 /* Pods-Mensaplan-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F5B406F0A6E0392B5F51A59D88C594DA /* JGProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = BD019EE8B39FA0D864582A35C1F9B246 /* JGProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FB7D6EA6C6016E2AFDA2F2A407DCF746 /* JGProgressHUDFadeAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 012EE2D208FBA1AF3BA3C67758249FCE /* JGProgressHUDFadeAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FBE2CEBD95DBCF60367CE505238F00C4 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E72242257767DCF4DBAD7F7ED3BBC6 /* Error.swift */; };
+		FC7A80288ED7128A94FD3D27F8FF73EE /* JGProgressHUDShadow.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DF76A28BA5A2CC9FA6699DB864828A2 /* JGProgressHUDShadow.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		16E98815E82677ABEE81A06CCC21AB1F /* PBXContainerItemProxy */ = {
+		68A63F37F7DF6FF135B437A985CC3F1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6F3964F174D0EBFB0D64F8DBC20E1429;
+			remoteInfo = JGProgressHUD;
+		};
+		98BACA79BFFDA25BB2BEB0DC30214622 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C96998A189BC645DB45F2AFFF9D802BD;
 			remoteInfo = SwiftyXMLParser;
 		};
-		5016E3D431445D7425BC2FF8B1E63B72 /* PBXContainerItemProxy */ = {
+		A145F241E3E0116A9899C1B6B4D8C2D9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C96998A189BC645DB45F2AFFF9D802BD;
 			remoteInfo = SwiftyXMLParser;
+		};
+		A7343554E3008B03B225E936E4D6702F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6F3964F174D0EBFB0D64F8DBC20E1429;
+			remoteInfo = JGProgressHUD;
+		};
+		BA4D731061F0974449C80CA617238BE4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B990BD87169C76A3ED3FE8A9258D91A3;
+			remoteInfo = "Toast-Swift";
+		};
+		D34A2EA10C291711DF14423790C90657 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B990BD87169C76A3ED3FE8A9258D91A3;
+			remoteInfo = "Toast-Swift";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00B5F4EE402870DC0CC7D5172F4E0FE7 /* SwiftyXMLParser-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyXMLParser-umbrella.h"; sourceTree = "<group>"; };
-		15529D07DE88B3C6ABDBDCDA572C2E63 /* SwiftyXMLParser.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyXMLParser.modulemap; sourceTree = "<group>"; };
+		012EE2D208FBA1AF3BA3C67758249FCE /* JGProgressHUDFadeAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JGProgressHUDFadeAnimation.h; path = JGProgressHUD/JGProgressHUD/include/JGProgressHUDFadeAnimation.h; sourceTree = "<group>"; };
+		027C13698337AB076E8FE39BEF44190B /* JGProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JGProgressHUD.xcconfig; sourceTree = "<group>"; };
+		0C82A00C56D9FB0C2CCC52A021163A06 /* JGProgressHUDIndeterminateIndicatorView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JGProgressHUDIndeterminateIndicatorView.m; path = JGProgressHUD/JGProgressHUD/JGProgressHUDIndeterminateIndicatorView.m; sourceTree = "<group>"; };
+		15A852AE3A18293F449491823572FA1A /* Accessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Accessor.swift; path = SwiftyXMLParser/Accessor.swift; sourceTree = "<group>"; };
+		1ACF0B59C645AE936CEFA72033EC834D /* JGProgressHUDFadeZoomAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JGProgressHUDFadeZoomAnimation.m; path = JGProgressHUD/JGProgressHUD/JGProgressHUDFadeZoomAnimation.m; sourceTree = "<group>"; };
 		1B8459E854E6B69C235776CAC879887A /* Pods-Mensaplan-MensaplanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Mensaplan-MensaplanUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		1C32B08DB2DFB6E8F32730A261006CFD /* SwiftyXMLParser-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyXMLParser-prefix.pch"; sourceTree = "<group>"; };
+		1F26423AED567DBACD90A5BF6AB09573 /* JGProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JGProgressHUD.m; path = JGProgressHUD/JGProgressHUD/JGProgressHUD.m; sourceTree = "<group>"; };
+		21D635786525E7D4F5AA11D8AD0FD598 /* Element.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Element.swift; path = SwiftyXMLParser/Element.swift; sourceTree = "<group>"; };
+		27C74CCA4B2AFD4F657A68DE70B04063 /* JGProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JGProgressHUD-prefix.pch"; sourceTree = "<group>"; };
 		27EE6F15CF0882DE3E51E121C958FA05 /* Pods-Mensaplan-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Mensaplan-Info.plist"; sourceTree = "<group>"; };
 		298602505537CA1FA34A3A9FFD65AFAD /* Pods-Mensaplan-MensaplanUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Mensaplan-MensaplanUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		2CD6186DC237F9DC58FF3D9BFF4A542D /* Pods-Mensaplan-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Mensaplan-dummy.m"; sourceTree = "<group>"; };
-		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		334503328179071A7DACCBCF1A05AA6B /* SwiftyXMLParser-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyXMLParser-dummy.m"; sourceTree = "<group>"; };
+		3355272D87462B50339F7A7B5CDEFC6B /* JGProgressHUDIndeterminateIndicatorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JGProgressHUDIndeterminateIndicatorView.h; path = JGProgressHUD/JGProgressHUD/include/JGProgressHUDIndeterminateIndicatorView.h; sourceTree = "<group>"; };
 		338EDE0039719CFE8C8D08D40DFB66AB /* Pods-Mensaplan-MensaplanUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Mensaplan-MensaplanUITests-Info.plist"; sourceTree = "<group>"; };
+		405F6C068E51F40C1542DD86FEE26A6E /* SwiftyXMLParser.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyXMLParser.xcconfig; sourceTree = "<group>"; };
 		41AFE552AE9AA148E5C02CAC1F0876A6 /* Pods-Mensaplan-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Mensaplan-frameworks.sh"; sourceTree = "<group>"; };
 		4232468C2A600E06589CDB95C9D2FF29 /* SwiftyXMLParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyXMLParser.framework; path = SwiftyXMLParser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5659895D3DC77C57A4D1DDD52280402C /* Parser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Parser.swift; path = SwiftyXMLParser/Parser.swift; sourceTree = "<group>"; };
-		57F06F2C27F16DD81A64A64033555577 /* Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Error.swift; path = SwiftyXMLParser/Error.swift; sourceTree = "<group>"; };
+		49F545AB76C9016ECAD7D83A1129E704 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		505FCEEE0FBF71ACFFDB14BD469CCF89 /* JGProgressHUDImageIndicatorView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JGProgressHUDImageIndicatorView.m; path = JGProgressHUD/JGProgressHUD/JGProgressHUDImageIndicatorView.m; sourceTree = "<group>"; };
+		50A428265CDE605E19A7706E4089C91C /* SwiftyXMLParser-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyXMLParser-umbrella.h"; sourceTree = "<group>"; };
+		55EA22DB4F2F17107BED05DF52F80C62 /* JGProgressHUDIndicatorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JGProgressHUDIndicatorView.h; path = JGProgressHUD/JGProgressHUD/include/JGProgressHUDIndicatorView.h; sourceTree = "<group>"; };
+		5B3FC4A86E71424982F0EABCF32EB0EE /* SwiftyXMLParser-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftyXMLParser-Info.plist"; sourceTree = "<group>"; };
 		651C9910AC4CC6803D8C83B40376B653 /* Pods-Mensaplan-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Mensaplan-acknowledgements.plist"; sourceTree = "<group>"; };
+		67CC881C2625EE974DAF5F3D6F7543AC /* SwiftyXMLParser.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyXMLParser.modulemap; sourceTree = "<group>"; };
+		6AEDF774E6FD85AB47CA6DB72A27A446 /* XML.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XML.swift; path = SwiftyXMLParser/XML.swift; sourceTree = "<group>"; };
+		6B68E449A3A1187C1BE8C2D7565E562E /* JGProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JGProgressHUD-dummy.m"; sourceTree = "<group>"; };
+		6DF76A28BA5A2CC9FA6699DB864828A2 /* JGProgressHUDShadow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JGProgressHUDShadow.h; path = JGProgressHUD/JGProgressHUD/include/JGProgressHUDShadow.h; sourceTree = "<group>"; };
+		6FFA807D2DA4B30EC9EFE366D5DD9723 /* JGProgressHUD-Defines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "JGProgressHUD-Defines.h"; path = "JGProgressHUD/JGProgressHUD/include/JGProgressHUD-Defines.h"; sourceTree = "<group>"; };
+		711DA2FC429824835F9FD0192AF68910 /* JGProgressHUDRingIndicatorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JGProgressHUDRingIndicatorView.h; path = JGProgressHUD/JGProgressHUD/include/JGProgressHUDRingIndicatorView.h; sourceTree = "<group>"; };
 		72E1424E005425A2C80839174B99FDB7 /* Pods-Mensaplan-MensaplanUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Mensaplan-MensaplanUITests.release.xcconfig"; sourceTree = "<group>"; };
+		73E72242257767DCF4DBAD7F7ED3BBC6 /* Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Error.swift; path = SwiftyXMLParser/Error.swift; sourceTree = "<group>"; };
 		75B4A32B6F07C392A4F9F1964D6FA6B7 /* Pods-Mensaplan-MensaplanUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Mensaplan-MensaplanUITests-dummy.m"; sourceTree = "<group>"; };
 		76E916250382C8A1C67DBDFC0B73F24F /* Pods-Mensaplan.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Mensaplan.modulemap"; sourceTree = "<group>"; };
-		78414CB4604480D77454D7FAC864B080 /* Element.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Element.swift; path = SwiftyXMLParser/Element.swift; sourceTree = "<group>"; };
+		7FBAFAA66E9C7401884F439AE8BC662C /* JGProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JGProgressHUD.framework; path = JGProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FD45EFA8140B603E158987D75883B4F /* JGProgressHUDPieIndicatorView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JGProgressHUDPieIndicatorView.m; path = JGProgressHUD/JGProgressHUD/JGProgressHUDPieIndicatorView.m; sourceTree = "<group>"; };
 		8190E426DA1773357D00C6CF1E460877 /* Pods-Mensaplan-MensaplanUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Mensaplan-MensaplanUITests-umbrella.h"; sourceTree = "<group>"; };
-		8EDA74E0C9547ADA61B6E7FBEDF7FF3A /* SwiftyXMLParser.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyXMLParser.xcconfig; sourceTree = "<group>"; };
+		8450CF8E6374DCF5F2D6AA52C05AFB81 /* JGProgressHUD-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "JGProgressHUD-Info.plist"; sourceTree = "<group>"; };
+		899F246FEAEF3963740DE9A7A44EC69F /* JGProgressHUDSuccessIndicatorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JGProgressHUDSuccessIndicatorView.h; path = JGProgressHUD/JGProgressHUD/include/JGProgressHUDSuccessIndicatorView.h; sourceTree = "<group>"; };
 		8F79264A6FB21D23B43CDE310EB7E00B /* Pods-Mensaplan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Mensaplan.debug.xcconfig"; sourceTree = "<group>"; };
+		91BC324EFD31B13EFBB59C365D31C10B /* Toast-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toast-Swift-prefix.pch"; sourceTree = "<group>"; };
 		9222B70C56D3A5A456777D4F3E581388 /* Pods_Mensaplan_MensaplanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Mensaplan_MensaplanUITests.framework; path = "Pods-Mensaplan-MensaplanUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92B4888D9EDD62458F46B45D725AD7BA /* Pods-Mensaplan-MensaplanUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Mensaplan-MensaplanUITests.modulemap"; sourceTree = "<group>"; };
+		950B64BEB39CC506B65115EE95302D64 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		969DD4ECF84E833C4B6D5E5173225AE9 /* Toast-Swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Toast-Swift-Info.plist"; sourceTree = "<group>"; };
+		99FC5FFF18C07E08EBEFE8B865151809 /* JGProgressHUDAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JGProgressHUDAnimation.h; path = JGProgressHUD/JGProgressHUD/include/JGProgressHUDAnimation.h; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9DA5B6F288677B68AF12F8CF5BD5A347 /* JGProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = JGProgressHUD.modulemap; sourceTree = "<group>"; };
+		A4A05015911E3074E57A835D25ED523E /* JGProgressHUDErrorIndicatorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JGProgressHUDErrorIndicatorView.h; path = JGProgressHUD/JGProgressHUD/include/JGProgressHUDErrorIndicatorView.h; sourceTree = "<group>"; };
+		B046890C6397F4FF822853E1042FEC12 /* SwiftyXMLParser-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyXMLParser-prefix.pch"; sourceTree = "<group>"; };
+		B3B139E128BB4ADF24CB7F11CC1D00BF /* JGProgressHUDSuccessIndicatorView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JGProgressHUDSuccessIndicatorView.m; path = JGProgressHUD/JGProgressHUD/JGProgressHUDSuccessIndicatorView.m; sourceTree = "<group>"; };
+		B6430D8952C261213BC3921D086BCE4B /* JGProgressHUDRingIndicatorView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JGProgressHUDRingIndicatorView.m; path = JGProgressHUD/JGProgressHUD/JGProgressHUDRingIndicatorView.m; sourceTree = "<group>"; };
+		BB1274DADFA473668BD35E46849B256C /* JGProgressHUDFadeAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JGProgressHUDFadeAnimation.m; path = JGProgressHUD/JGProgressHUD/JGProgressHUDFadeAnimation.m; sourceTree = "<group>"; };
+		BD019EE8B39FA0D864582A35C1F9B246 /* JGProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JGProgressHUD.h; path = JGProgressHUD/JGProgressHUD/include/JGProgressHUD.h; sourceTree = "<group>"; };
+		BD057D3650167C3BDCF15CB0F2C31B3D /* JGProgressHUDIndicatorView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JGProgressHUDIndicatorView.m; path = JGProgressHUD/JGProgressHUD/JGProgressHUDIndicatorView.m; sourceTree = "<group>"; };
+		C4772BCE72961F0BF736673DF5E1A26E /* Toast-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Toast-Swift.modulemap"; sourceTree = "<group>"; };
+		C5D62EA96A4A948F4D5AB650C0DDB1E5 /* SwiftyXMLParser-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyXMLParser-dummy.m"; sourceTree = "<group>"; };
 		C72CD51F86EE7BFAB30CF2A1AA8703A9 /* Pods-Mensaplan-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Mensaplan-umbrella.h"; sourceTree = "<group>"; };
+		CAB614C595B8ECACF648483D6490FEA3 /* JGProgressHUDAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JGProgressHUDAnimation.m; path = JGProgressHUD/JGProgressHUD/JGProgressHUDAnimation.m; sourceTree = "<group>"; };
+		CBCD5169B524477639A9A41855A47F99 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		CC5DF657D4FBEB3097D6245D814F76EE /* Pods-Mensaplan-MensaplanUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Mensaplan-MensaplanUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		CD8FDCC6320DEA6125A34CA88F6BA3E7 /* XML.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XML.swift; path = SwiftyXMLParser/XML.swift; sourceTree = "<group>"; };
 		CD95C164FD5A48C9E3A9AD51494C2B40 /* Pods_Mensaplan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Mensaplan.framework; path = "Pods-Mensaplan.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A1EE19D15783B8E62E3A56FCF184CE /* Pods-Mensaplan-MensaplanUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Mensaplan-MensaplanUITests-frameworks.sh"; sourceTree = "<group>"; };
+		D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Toast_Swift.framework; path = "Toast-Swift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D86E942FB9DAA4321A8F3A66234F0099 /* Pods-Mensaplan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Mensaplan.release.xcconfig"; sourceTree = "<group>"; };
+		D9ECA63DCF56BDC67D68E4BDC4087CC5 /* Parser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Parser.swift; path = SwiftyXMLParser/Parser.swift; sourceTree = "<group>"; };
 		DA03B28B36003732A2977EBF10E9E171 /* Pods-Mensaplan-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Mensaplan-acknowledgements.markdown"; sourceTree = "<group>"; };
-		DA7DBF9B5E572FA4C2CD133B485B963A /* SwiftyXMLParser-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftyXMLParser-Info.plist"; sourceTree = "<group>"; };
-		F36A1823C65ACE5479845C5CA099DD19 /* Accessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Accessor.swift; path = SwiftyXMLParser/Accessor.swift; sourceTree = "<group>"; };
+		E082D7C3E7F7233A5FA526B2A219F570 /* JGProgressHUD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JGProgressHUD-umbrella.h"; sourceTree = "<group>"; };
+		E72DE974D7B4E78CDB2E52586B5FCC2C /* Toast-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Toast-Swift-dummy.m"; sourceTree = "<group>"; };
+		EAEBDC8DA2BDFBD986DB6838E99C76BC /* Toast-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toast-Swift-umbrella.h"; sourceTree = "<group>"; };
+		EBC6869131C8BA60942E87B2C9A1B4B6 /* JGProgressHUDImageIndicatorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JGProgressHUDImageIndicatorView.h; path = JGProgressHUD/JGProgressHUD/include/JGProgressHUDImageIndicatorView.h; sourceTree = "<group>"; };
+		EDA5C542534A55C5B5EB658C9D21A139 /* JGProgressHUDFadeZoomAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JGProgressHUDFadeZoomAnimation.h; path = JGProgressHUD/JGProgressHUD/include/JGProgressHUDFadeZoomAnimation.h; sourceTree = "<group>"; };
+		EE14E47E27272C5C0F843C7BC9F210DC /* JGProgressHUDErrorIndicatorView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JGProgressHUDErrorIndicatorView.m; path = JGProgressHUD/JGProgressHUD/JGProgressHUDErrorIndicatorView.m; sourceTree = "<group>"; };
+		F436EB3946567B3289C6D10711B3C928 /* JGProgressHUDShadow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JGProgressHUDShadow.m; path = JGProgressHUD/JGProgressHUD/JGProgressHUDShadow.m; sourceTree = "<group>"; };
+		F58C4C703A0206B76CD0A893C280326C /* Toast-Swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Toast-Swift.xcconfig"; sourceTree = "<group>"; };
+		FBE3F60F5AAB42444357E896AB61EE84 /* JGProgressHUDPieIndicatorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JGProgressHUDPieIndicatorView.h; path = JGProgressHUD/JGProgressHUD/include/JGProgressHUDPieIndicatorView.h; sourceTree = "<group>"; };
+		FDD2CF3D658FFFF044AAB41EE0A2EF1B /* Toast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Toast.swift; path = Toast/Toast.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3E5AFF22D0ADA09309E18F2879F4ED60 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7A833E9404805A74C6EE0AE97B63278 /* Foundation.framework in Frameworks */,
+				B6A512D641FFB7A5AAACA873632BA776 /* QuartzCore.framework in Frameworks */,
+				B5B41EED9FF8EA0F9904C4C8DB2FA2C0 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C64121E323976C83E6560BC80062CC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A169EB847E7F54D72747051F98CD8EEA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5ECD4D736C0349ECFE17FBFB9EF711BD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -86,25 +209,82 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		792ADC8803A66472E8B85FCAEC6BFFDF /* Frameworks */ = {
+		6102CF7EA55F5A7D669F88BF0D1A701F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7785A01DC42BD346F015AD49AD3A29AC /* Foundation.framework in Frameworks */,
+				95ACABC71585D657249CC92BA7731A8F /* Foundation.framework in Frameworks */,
+				C06D290B9216533843023A0BF93F5927 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F4FA918EDD5E59125E76B85C38FF58D7 /* Frameworks */ = {
+		A2F77567CCBF4842639B267DFAD88D2C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F836B36BA64236F5FE6A97A123B9A836 /* Foundation.framework in Frameworks */,
+				75E1C4BC3322756B9CA0B5F1F15A0DDD /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03C5C200A0787E300053CFA8F53CA094 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C18BABFF9523A33465B5A91496FF0C3D /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0A73714EAC3B85E9D72EC5A26342723B /* JGProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				BD019EE8B39FA0D864582A35C1F9B246 /* JGProgressHUD.h */,
+				1F26423AED567DBACD90A5BF6AB09573 /* JGProgressHUD.m */,
+				6FFA807D2DA4B30EC9EFE366D5DD9723 /* JGProgressHUD-Defines.h */,
+				99FC5FFF18C07E08EBEFE8B865151809 /* JGProgressHUDAnimation.h */,
+				CAB614C595B8ECACF648483D6490FEA3 /* JGProgressHUDAnimation.m */,
+				A4A05015911E3074E57A835D25ED523E /* JGProgressHUDErrorIndicatorView.h */,
+				EE14E47E27272C5C0F843C7BC9F210DC /* JGProgressHUDErrorIndicatorView.m */,
+				012EE2D208FBA1AF3BA3C67758249FCE /* JGProgressHUDFadeAnimation.h */,
+				BB1274DADFA473668BD35E46849B256C /* JGProgressHUDFadeAnimation.m */,
+				EDA5C542534A55C5B5EB658C9D21A139 /* JGProgressHUDFadeZoomAnimation.h */,
+				1ACF0B59C645AE936CEFA72033EC834D /* JGProgressHUDFadeZoomAnimation.m */,
+				EBC6869131C8BA60942E87B2C9A1B4B6 /* JGProgressHUDImageIndicatorView.h */,
+				505FCEEE0FBF71ACFFDB14BD469CCF89 /* JGProgressHUDImageIndicatorView.m */,
+				3355272D87462B50339F7A7B5CDEFC6B /* JGProgressHUDIndeterminateIndicatorView.h */,
+				0C82A00C56D9FB0C2CCC52A021163A06 /* JGProgressHUDIndeterminateIndicatorView.m */,
+				55EA22DB4F2F17107BED05DF52F80C62 /* JGProgressHUDIndicatorView.h */,
+				BD057D3650167C3BDCF15CB0F2C31B3D /* JGProgressHUDIndicatorView.m */,
+				FBE3F60F5AAB42444357E896AB61EE84 /* JGProgressHUDPieIndicatorView.h */,
+				7FD45EFA8140B603E158987D75883B4F /* JGProgressHUDPieIndicatorView.m */,
+				711DA2FC429824835F9FD0192AF68910 /* JGProgressHUDRingIndicatorView.h */,
+				B6430D8952C261213BC3921D086BCE4B /* JGProgressHUDRingIndicatorView.m */,
+				6DF76A28BA5A2CC9FA6699DB864828A2 /* JGProgressHUDShadow.h */,
+				F436EB3946567B3289C6D10711B3C928 /* JGProgressHUDShadow.m */,
+				899F246FEAEF3963740DE9A7A44EC69F /* JGProgressHUDSuccessIndicatorView.h */,
+				B3B139E128BB4ADF24CB7F11CC1D00BF /* JGProgressHUDSuccessIndicatorView.m */,
+				7DE2E03343E79EC20E7C65BABD813B2B /* Support Files */,
+			);
+			name = JGProgressHUD;
+			path = JGProgressHUD;
+			sourceTree = "<group>";
+		};
+		1E51421399B08C635D79659877C96188 /* SwiftyXMLParser */ = {
+			isa = PBXGroup;
+			children = (
+				15A852AE3A18293F449491823572FA1A /* Accessor.swift */,
+				21D635786525E7D4F5AA11D8AD0FD598 /* Element.swift */,
+				73E72242257767DCF4DBAD7F7ED3BBC6 /* Error.swift */,
+				D9ECA63DCF56BDC67D68E4BDC4087CC5 /* Parser.swift */,
+				6AEDF774E6FD85AB47CA6DB72A27A446 /* XML.swift */,
+				8EEDEF37F93D1871623C29C55C74B41D /* Support Files */,
+			);
+			name = SwiftyXMLParser;
+			path = SwiftyXMLParser;
+			sourceTree = "<group>";
+		};
 		24F258AB0756B1D42AA5D41D501BAA5B /* Pods-Mensaplan */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,26 +302,42 @@
 			path = "Target Support Files/Pods-Mensaplan";
 			sourceTree = "<group>";
 		};
-		504318E926D7B6F4CC097836C37536F8 /* Pods */ = {
+		60D78A84B8C82E311111A89C01826574 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				530F6D7734F3DA62AC8CC1DD35397ED3 /* SwiftyXMLParser */,
+				C4772BCE72961F0BF736673DF5E1A26E /* Toast-Swift.modulemap */,
+				F58C4C703A0206B76CD0A893C280326C /* Toast-Swift.xcconfig */,
+				E72DE974D7B4E78CDB2E52586B5FCC2C /* Toast-Swift-dummy.m */,
+				969DD4ECF84E833C4B6D5E5173225AE9 /* Toast-Swift-Info.plist */,
+				91BC324EFD31B13EFBB59C365D31C10B /* Toast-Swift-prefix.pch */,
+				EAEBDC8DA2BDFBD986DB6838E99C76BC /* Toast-Swift-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Toast-Swift";
+			sourceTree = "<group>";
+		};
+		7756C47AE88900E8D57A2739C57F92E0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0A73714EAC3B85E9D72EC5A26342723B /* JGProgressHUD */,
+				1E51421399B08C635D79659877C96188 /* SwiftyXMLParser */,
+				C3B112D0A7B23F33696D1CD279FD26C5 /* Toast-Swift */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		530F6D7734F3DA62AC8CC1DD35397ED3 /* SwiftyXMLParser */ = {
+		7DE2E03343E79EC20E7C65BABD813B2B /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F36A1823C65ACE5479845C5CA099DD19 /* Accessor.swift */,
-				78414CB4604480D77454D7FAC864B080 /* Element.swift */,
-				57F06F2C27F16DD81A64A64033555577 /* Error.swift */,
-				5659895D3DC77C57A4D1DDD52280402C /* Parser.swift */,
-				CD8FDCC6320DEA6125A34CA88F6BA3E7 /* XML.swift */,
-				D547CCD5F9A99AEA75D0DF7DD006AE7A /* Support Files */,
+				9DA5B6F288677B68AF12F8CF5BD5A347 /* JGProgressHUD.modulemap */,
+				027C13698337AB076E8FE39BEF44190B /* JGProgressHUD.xcconfig */,
+				6B68E449A3A1187C1BE8C2D7565E562E /* JGProgressHUD-dummy.m */,
+				8450CF8E6374DCF5F2D6AA52C05AFB81 /* JGProgressHUD-Info.plist */,
+				27C74CCA4B2AFD4F657A68DE70B04063 /* JGProgressHUD-prefix.pch */,
+				E082D7C3E7F7233A5FA526B2A219F570 /* JGProgressHUD-umbrella.h */,
 			);
-			name = SwiftyXMLParser;
-			path = SwiftyXMLParser;
+			name = "Support Files";
+			path = "../Target Support Files/JGProgressHUD";
 			sourceTree = "<group>";
 		};
 		8A1300D064A40023C4EC4B37A6E7F7DA /* Targets Support Files */ = {
@@ -153,55 +349,61 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		90AD9C859DB5CE77567D644C817F2D99 /* Products */ = {
+		8EEDEF37F93D1871623C29C55C74B41D /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				CD95C164FD5A48C9E3A9AD51494C2B40 /* Pods_Mensaplan.framework */,
-				9222B70C56D3A5A456777D4F3E581388 /* Pods_Mensaplan_MensaplanUITests.framework */,
-				4232468C2A600E06589CDB95C9D2FF29 /* SwiftyXMLParser.framework */,
+				67CC881C2625EE974DAF5F3D6F7543AC /* SwiftyXMLParser.modulemap */,
+				405F6C068E51F40C1542DD86FEE26A6E /* SwiftyXMLParser.xcconfig */,
+				C5D62EA96A4A948F4D5AB650C0DDB1E5 /* SwiftyXMLParser-dummy.m */,
+				5B3FC4A86E71424982F0EABCF32EB0EE /* SwiftyXMLParser-Info.plist */,
+				B046890C6397F4FF822853E1042FEC12 /* SwiftyXMLParser-prefix.pch */,
+				50A428265CDE605E19A7706E4089C91C /* SwiftyXMLParser-umbrella.h */,
 			);
-			name = Products;
+			name = "Support Files";
+			path = "../Target Support Files/SwiftyXMLParser";
 			sourceTree = "<group>";
 		};
-		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+		C18BABFF9523A33465B5A91496FF0C3D /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+				950B64BEB39CC506B65115EE95302D64 /* Foundation.framework */,
+				CBCD5169B524477639A9A41855A47F99 /* QuartzCore.framework */,
+				49F545AB76C9016ECAD7D83A1129E704 /* UIKit.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		C3B112D0A7B23F33696D1CD279FD26C5 /* Toast-Swift */ = {
+			isa = PBXGroup;
+			children = (
+				FDD2CF3D658FFFF044AAB41EE0A2EF1B /* Toast.swift */,
+				60D78A84B8C82E311111A89C01826574 /* Support Files */,
+			);
+			name = "Toast-Swift";
+			path = "Toast-Swift";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				504318E926D7B6F4CC097836C37536F8 /* Pods */,
-				90AD9C859DB5CE77567D644C817F2D99 /* Products */,
+				03C5C200A0787E300053CFA8F53CA094 /* Frameworks */,
+				7756C47AE88900E8D57A2739C57F92E0 /* Pods */,
+				DA26E86529040442EDE085C57AE530E1 /* Products */,
 				8A1300D064A40023C4EC4B37A6E7F7DA /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+		DA26E86529040442EDE085C57AE530E1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+				7FBAFAA66E9C7401884F439AE8BC662C /* JGProgressHUD.framework */,
+				CD95C164FD5A48C9E3A9AD51494C2B40 /* Pods_Mensaplan.framework */,
+				9222B70C56D3A5A456777D4F3E581388 /* Pods_Mensaplan_MensaplanUITests.framework */,
+				4232468C2A600E06589CDB95C9D2FF29 /* SwiftyXMLParser.framework */,
+				D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast_Swift.framework */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D547CCD5F9A99AEA75D0DF7DD006AE7A /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				15529D07DE88B3C6ABDBDCDA572C2E63 /* SwiftyXMLParser.modulemap */,
-				8EDA74E0C9547ADA61B6E7FBEDF7FF3A /* SwiftyXMLParser.xcconfig */,
-				334503328179071A7DACCBCF1A05AA6B /* SwiftyXMLParser-dummy.m */,
-				DA7DBF9B5E572FA4C2CD133B485B963A /* SwiftyXMLParser-Info.plist */,
-				1C32B08DB2DFB6E8F32730A261006CFD /* SwiftyXMLParser-prefix.pch */,
-				00B5F4EE402870DC0CC7D5172F4E0FE7 /* SwiftyXMLParser-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/SwiftyXMLParser";
+			name = Products;
 			sourceTree = "<group>";
 		};
 		ECD79859DFA6AD994A366A952BFC6123 /* Pods-Mensaplan-MensaplanUITests */ = {
@@ -224,6 +426,35 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		4F8C6A149CC364C906105D5C918A0CD1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66D18944E57602765B6571B0BFC9630F /* JGProgressHUD-Defines.h in Headers */,
+				ADA198C3D2C208F0D5BBBF072DFEC584 /* JGProgressHUD-umbrella.h in Headers */,
+				F5B406F0A6E0392B5F51A59D88C594DA /* JGProgressHUD.h in Headers */,
+				4B5147E79EE68FD189494DD609B57F31 /* JGProgressHUDAnimation.h in Headers */,
+				96C369664F04EBEAB41792B9250C6E96 /* JGProgressHUDErrorIndicatorView.h in Headers */,
+				FB7D6EA6C6016E2AFDA2F2A407DCF746 /* JGProgressHUDFadeAnimation.h in Headers */,
+				784B9ED449B3D447C7D6A8DB82F6B5C1 /* JGProgressHUDFadeZoomAnimation.h in Headers */,
+				BE98AD8BAF63F6688828ECDE0FC4325B /* JGProgressHUDImageIndicatorView.h in Headers */,
+				515F81B04F69C306053F5C827D2A22D4 /* JGProgressHUDIndeterminateIndicatorView.h in Headers */,
+				00C101BB5B71CA1B24DE64756F5B82D8 /* JGProgressHUDIndicatorView.h in Headers */,
+				C169504EDF56EBD6D3A797E3C2E2E473 /* JGProgressHUDPieIndicatorView.h in Headers */,
+				CA343F72E2F6A79D393FC28F3035B14C /* JGProgressHUDRingIndicatorView.h in Headers */,
+				FC7A80288ED7128A94FD3D27F8FF73EE /* JGProgressHUDShadow.h in Headers */,
+				D57EB484EEF7DDBFE73BB8FD3F2F6BDC /* JGProgressHUDSuccessIndicatorView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		541A0721D8D26374CF7CF04B1473A45A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2024EE5E265681137A9FEBC630E6E0F1 /* Toast-Swift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7F3F31EFAF5C023640C3B60F1E0C35DF /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -232,19 +463,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AAE3515FA41F629858FABD87434F4BB0 /* Headers */ = {
+		BD7770710E5AD7DDF8E101B422F2CD83 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A6157C6DE5C2EC4CF97E5D4B9A72294 /* Pods-Mensaplan-umbrella.h in Headers */,
+				7EB7C63A79776D3A27BC2D66E57E422A /* Pods-Mensaplan-MensaplanUITests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B96C4DAF3B6CAD0B220E82E35A023D42 /* Headers */ = {
+		D4810DAA2E3D5CE5F4CD4D215EB195C4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A50EE418ED904AD1CAA40A565396AA8 /* Pods-Mensaplan-MensaplanUITests-umbrella.h in Headers */,
+				E03028864251286D1193D9FAE2B15B0B /* Pods-Mensaplan-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,40 +484,80 @@
 /* Begin PBXNativeTarget section */
 		67FA9D244A6B0C37B30B9F01677E4B99 /* Pods-Mensaplan-MensaplanUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BEE9DF781E92B3D1DC6FFA2CB5CDC49A /* Build configuration list for PBXNativeTarget "Pods-Mensaplan-MensaplanUITests" */;
+			buildConfigurationList = A3EA1895A7952B144E734075B2176612 /* Build configuration list for PBXNativeTarget "Pods-Mensaplan-MensaplanUITests" */;
 			buildPhases = (
-				B96C4DAF3B6CAD0B220E82E35A023D42 /* Headers */,
-				DE869D244BFDAAF887AEE1A34ADE82AE /* Sources */,
-				F4FA918EDD5E59125E76B85C38FF58D7 /* Frameworks */,
-				B911D2961544721847E8EF1C9AC52EFA /* Resources */,
+				BD7770710E5AD7DDF8E101B422F2CD83 /* Headers */,
+				E030F54B2D4135740ED1A5FE09772E33 /* Sources */,
+				A2F77567CCBF4842639B267DFAD88D2C /* Frameworks */,
+				5F255E279218112B11F68FCB705D3917 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				65205A3714E92204BABB78082B6FE23F /* PBXTargetDependency */,
+				8C74C726270FDF86021BC462BFE51B32 /* PBXTargetDependency */,
+				FA9A55464F56C04F55585F5EF24CDC23 /* PBXTargetDependency */,
+				2209C0E73A36050EA372C7F0C49C4099 /* PBXTargetDependency */,
 			);
 			name = "Pods-Mensaplan-MensaplanUITests";
 			productName = "Pods-Mensaplan-MensaplanUITests";
 			productReference = 9222B70C56D3A5A456777D4F3E581388 /* Pods_Mensaplan_MensaplanUITests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		77F08EE0C643C824DDB2686C6F394E86 /* Pods-Mensaplan */ = {
+		6F3964F174D0EBFB0D64F8DBC20E1429 /* JGProgressHUD */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 69CAE9987A1F16356088E1517D4F9E21 /* Build configuration list for PBXNativeTarget "Pods-Mensaplan" */;
+			buildConfigurationList = C053E87AE4FCCF4B415A6BADCFC7249B /* Build configuration list for PBXNativeTarget "JGProgressHUD" */;
 			buildPhases = (
-				AAE3515FA41F629858FABD87434F4BB0 /* Headers */,
-				D9E1EFCE47FEE783D7ED89F88A45A195 /* Sources */,
-				792ADC8803A66472E8B85FCAEC6BFFDF /* Frameworks */,
-				F40765E1D9B72F6FF29AA0C18CF43C34 /* Resources */,
+				4F8C6A149CC364C906105D5C918A0CD1 /* Headers */,
+				BEC632E598E7718C12CC9D8494186336 /* Sources */,
+				3E5AFF22D0ADA09309E18F2879F4ED60 /* Frameworks */,
+				A538CC081EB0812B3CDE54C52CA7EE75 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				7EF94685323F3C76227478F7949E6B1B /* PBXTargetDependency */,
+			);
+			name = JGProgressHUD;
+			productName = JGProgressHUD;
+			productReference = 7FBAFAA66E9C7401884F439AE8BC662C /* JGProgressHUD.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		77F08EE0C643C824DDB2686C6F394E86 /* Pods-Mensaplan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC4235038BC2113BF7F7FEB19A9CA1DD /* Build configuration list for PBXNativeTarget "Pods-Mensaplan" */;
+			buildPhases = (
+				D4810DAA2E3D5CE5F4CD4D215EB195C4 /* Headers */,
+				6C96BDA3EFA6512EE890680AE7137B3D /* Sources */,
+				5C64121E323976C83E6560BC80062CC1 /* Frameworks */,
+				35265F4D2B0191E52F0BCD3CF602D115 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B31EAA186DDFA69CEF2F2E60FE2EF6D1 /* PBXTargetDependency */,
+				C824BFA2833F12C40E2788EB9DEC757F /* PBXTargetDependency */,
+				4F72A135FF322754F2598993FA8A6655 /* PBXTargetDependency */,
 			);
 			name = "Pods-Mensaplan";
 			productName = "Pods-Mensaplan";
 			productReference = CD95C164FD5A48C9E3A9AD51494C2B40 /* Pods_Mensaplan.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B990BD87169C76A3ED3FE8A9258D91A3 /* Toast-Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B8C401847A53B4C2810311A8CBD715AD /* Build configuration list for PBXNativeTarget "Toast-Swift" */;
+			buildPhases = (
+				541A0721D8D26374CF7CF04B1473A45A /* Headers */,
+				32133C6B0EACD421CB9EB1ABFCE89B97 /* Sources */,
+				6102CF7EA55F5A7D669F88BF0D1A701F /* Frameworks */,
+				8812DCC289D1E7BE07818E350A3B8656 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Toast-Swift";
+			productName = "Toast-Swift";
+			productReference = D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast_Swift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		C96998A189BC645DB45F2AFFF9D802BD /* SwiftyXMLParser */ = {
@@ -324,13 +595,15 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 90AD9C859DB5CE77567D644C817F2D99 /* Products */;
+			productRefGroup = DA26E86529040442EDE085C57AE530E1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				6F3964F174D0EBFB0D64F8DBC20E1429 /* JGProgressHUD */,
 				77F08EE0C643C824DDB2686C6F394E86 /* Pods-Mensaplan */,
 				67FA9D244A6B0C37B30B9F01677E4B99 /* Pods-Mensaplan-MensaplanUITests */,
 				C96998A189BC645DB45F2AFFF9D802BD /* SwiftyXMLParser */,
+				B990BD87169C76A3ED3FE8A9258D91A3 /* Toast-Swift */,
 			);
 		};
 /* End PBXProject section */
@@ -343,14 +616,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B911D2961544721847E8EF1C9AC52EFA /* Resources */ = {
+		35265F4D2B0191E52F0BCD3CF602D115 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F40765E1D9B72F6FF29AA0C18CF43C34 /* Resources */ = {
+		5F255E279218112B11F68FCB705D3917 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8812DCC289D1E7BE07818E350A3B8656 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A538CC081EB0812B3CDE54C52CA7EE75 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -360,6 +647,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		32133C6B0EACD421CB9EB1ABFCE89B97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B326644BB08AEDF697A82A0F1A66D68 /* Toast-Swift-dummy.m in Sources */,
+				4753716AE7A1AB22FB6BA61AA74D942F /* Toast.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		46D4D9F8C26D3F8C900EAF39D5D120AD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -373,46 +669,88 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D9E1EFCE47FEE783D7ED89F88A45A195 /* Sources */ = {
+		6C96BDA3EFA6512EE890680AE7137B3D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38594AE7124D395F70EA9B526D8551F5 /* Pods-Mensaplan-dummy.m in Sources */,
+				8B3C6EEAC0991FA521F6D9F1BFF7B900 /* Pods-Mensaplan-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DE869D244BFDAAF887AEE1A34ADE82AE /* Sources */ = {
+		BEC632E598E7718C12CC9D8494186336 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB33937B5356588A40530410B64425B7 /* Pods-Mensaplan-MensaplanUITests-dummy.m in Sources */,
+				99A1378F4758867783A9F5F8519CFAFC /* JGProgressHUD-dummy.m in Sources */,
+				0DCCE84DF2E5C1E8ED3903A04E476D8D /* JGProgressHUD.m in Sources */,
+				083B5CFA58A3339BDF6D6DC3A0507DEA /* JGProgressHUDAnimation.m in Sources */,
+				33E9E0ED94A4081E696295F83DD2D9C7 /* JGProgressHUDErrorIndicatorView.m in Sources */,
+				8E2CB0ED9A07AE57055399DEDBC27B87 /* JGProgressHUDFadeAnimation.m in Sources */,
+				040AD92907B972B42FFD4B6174887B34 /* JGProgressHUDFadeZoomAnimation.m in Sources */,
+				3EB1E8171A8E2E15A7B0AFF2095210F7 /* JGProgressHUDImageIndicatorView.m in Sources */,
+				5C78BE7864470C1E2BA20C5CBD81B9D7 /* JGProgressHUDIndeterminateIndicatorView.m in Sources */,
+				A5B8DA90893EAE4E3C805B684A53182E /* JGProgressHUDIndicatorView.m in Sources */,
+				A0128FB8A04711277900964B8220F2D9 /* JGProgressHUDPieIndicatorView.m in Sources */,
+				812150E28251B383E29ADE04BC481D44 /* JGProgressHUDRingIndicatorView.m in Sources */,
+				2834DA992389D0AFB77DAC86AC0CA540 /* JGProgressHUDShadow.m in Sources */,
+				18CF94C361B05399BC6E83328DFF96DF /* JGProgressHUDSuccessIndicatorView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E030F54B2D4135740ED1A5FE09772E33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1BA64B306C3D2DBBE1D1C692B20733B /* Pods-Mensaplan-MensaplanUITests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		65205A3714E92204BABB78082B6FE23F /* PBXTargetDependency */ = {
+		2209C0E73A36050EA372C7F0C49C4099 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SwiftyXMLParser;
-			target = C96998A189BC645DB45F2AFFF9D802BD /* SwiftyXMLParser */;
-			targetProxy = 16E98815E82677ABEE81A06CCC21AB1F /* PBXContainerItemProxy */;
+			name = "Toast-Swift";
+			target = B990BD87169C76A3ED3FE8A9258D91A3 /* Toast-Swift */;
+			targetProxy = BA4D731061F0974449C80CA617238BE4 /* PBXContainerItemProxy */;
 		};
-		7EF94685323F3C76227478F7949E6B1B /* PBXTargetDependency */ = {
+		4F72A135FF322754F2598993FA8A6655 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Toast-Swift";
+			target = B990BD87169C76A3ED3FE8A9258D91A3 /* Toast-Swift */;
+			targetProxy = D34A2EA10C291711DF14423790C90657 /* PBXContainerItemProxy */;
+		};
+		8C74C726270FDF86021BC462BFE51B32 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JGProgressHUD;
+			target = 6F3964F174D0EBFB0D64F8DBC20E1429 /* JGProgressHUD */;
+			targetProxy = 68A63F37F7DF6FF135B437A985CC3F1B /* PBXContainerItemProxy */;
+		};
+		B31EAA186DDFA69CEF2F2E60FE2EF6D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JGProgressHUD;
+			target = 6F3964F174D0EBFB0D64F8DBC20E1429 /* JGProgressHUD */;
+			targetProxy = A7343554E3008B03B225E936E4D6702F /* PBXContainerItemProxy */;
+		};
+		C824BFA2833F12C40E2788EB9DEC757F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftyXMLParser;
 			target = C96998A189BC645DB45F2AFFF9D802BD /* SwiftyXMLParser */;
-			targetProxy = 5016E3D431445D7425BC2FF8B1E63B72 /* PBXContainerItemProxy */;
+			targetProxy = 98BACA79BFFDA25BB2BEB0DC30214622 /* PBXContainerItemProxy */;
+		};
+		FA9A55464F56C04F55585F5EF24CDC23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftyXMLParser;
+			target = C96998A189BC645DB45F2AFFF9D802BD /* SwiftyXMLParser */;
+			targetProxy = A145F241E3E0116A9899C1B6B4D8C2D9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		08D7BE8B0A5FC140D2F17B8FD33B0988 /* Release */ = {
+		038B741B68FEE79DB9656EBC16680747 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D86E942FB9DAA4321A8F3A66234F0099 /* Pods-Mensaplan.release.xcconfig */;
+			baseConfigurationReference = 027C13698337AB076E8FE39BEF44190B /* JGProgressHUD.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -422,23 +760,22 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Mensaplan/Pods-Mensaplan-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/JGProgressHUD/JGProgressHUD-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JGProgressHUD/JGProgressHUD-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Mensaplan/Pods-Mensaplan.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/JGProgressHUD/JGProgressHUD.modulemap";
+				PRODUCT_MODULE_NAME = JGProgressHUD;
+				PRODUCT_NAME = JGProgressHUD;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -506,9 +843,9 @@
 			};
 			name = Release;
 		};
-		28C35E350131A7AF03436BC47B892C9E /* Debug */ = {
+		264303BEE766965D59E01B66E15667F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B8459E854E6B69C235776CAC879887A /* Pods-Mensaplan-MensaplanUITests.debug.xcconfig */;
+			baseConfigurationReference = 8F79264A6FB21D23B43CDE310EB7E00B /* Pods-Mensaplan.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -521,7 +858,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Mensaplan-MensaplanUITests/Pods-Mensaplan-MensaplanUITests-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-Mensaplan/Pods-Mensaplan-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -530,7 +867,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Mensaplan-MensaplanUITests/Pods-Mensaplan-MensaplanUITests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-Mensaplan/Pods-Mensaplan.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -544,7 +881,7 @@
 			};
 			name = Debug;
 		};
-		621D042884DEB085D79DA0B009629B65 /* Release */ = {
+		668C65CDBA70AA56A676F15ED847E3CB /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 72E1424E005425A2C80839174B99FDB7 /* Pods-Mensaplan-MensaplanUITests.release.xcconfig */;
 			buildSettings = {
@@ -583,9 +920,82 @@
 			};
 			name = Release;
 		};
-		C1346E06F7E8745395FBFE9032E5FBF1 /* Debug */ = {
+		8DE99AF44440EF276B8069ECBEDE2133 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8F79264A6FB21D23B43CDE310EB7E00B /* Pods-Mensaplan.debug.xcconfig */;
+			baseConfigurationReference = 1B8459E854E6B69C235776CAC879887A /* Pods-Mensaplan-MensaplanUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Mensaplan-MensaplanUITests/Pods-Mensaplan-MensaplanUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Mensaplan-MensaplanUITests/Pods-Mensaplan-MensaplanUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		98898C6F52A6A7DBE554A243A24C2F51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F58C4C703A0206B76CD0A893C280326C /* Toast-Swift.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Toast-Swift/Toast-Swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Toast-Swift/Toast-Swift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Toast-Swift/Toast-Swift.modulemap";
+				PRODUCT_MODULE_NAME = Toast_Swift;
+				PRODUCT_NAME = Toast_Swift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		ADD04D163C2ECBF937666760DFDBF7DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D86E942FB9DAA4321A8F3A66234F0099 /* Pods-Mensaplan.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -616,14 +1026,15 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		C77BA84FCB8CA92EF80BDFD7B663CCC0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8EDA74E0C9547ADA61B6E7FBEDF7FF3A /* SwiftyXMLParser.xcconfig */;
+			baseConfigurationReference = 405F6C068E51F40C1542DD86FEE26A6E /* SwiftyXMLParser.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -656,9 +1067,44 @@
 			};
 			name = Debug;
 		};
+		C8AA5837008C8AE76AC993717871730B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 027C13698337AB076E8FE39BEF44190B /* JGProgressHUD.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/JGProgressHUD/JGProgressHUD-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JGProgressHUD/JGProgressHUD-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/JGProgressHUD/JGProgressHUD.modulemap";
+				PRODUCT_MODULE_NAME = JGProgressHUD;
+				PRODUCT_NAME = JGProgressHUD;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		D25E0519E0237A0F7E6EC27CF4AF6E38 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8EDA74E0C9547ADA61B6E7FBEDF7FF3A /* SwiftyXMLParser.xcconfig */;
+			baseConfigurationReference = 405F6C068E51F40C1542DD86FEE26A6E /* SwiftyXMLParser.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -756,6 +1202,42 @@
 			};
 			name = Debug;
 		};
+		F3D7AA7B6797C4885E6D6232E7580830 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F58C4C703A0206B76CD0A893C280326C /* Toast-Swift.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Toast-Swift/Toast-Swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Toast-Swift/Toast-Swift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Toast-Swift/Toast-Swift.modulemap";
+				PRODUCT_MODULE_NAME = Toast_Swift;
+				PRODUCT_NAME = Toast_Swift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -777,20 +1259,38 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		69CAE9987A1F16356088E1517D4F9E21 /* Build configuration list for PBXNativeTarget "Pods-Mensaplan" */ = {
+		A3EA1895A7952B144E734075B2176612 /* Build configuration list for PBXNativeTarget "Pods-Mensaplan-MensaplanUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C1346E06F7E8745395FBFE9032E5FBF1 /* Debug */,
-				08D7BE8B0A5FC140D2F17B8FD33B0988 /* Release */,
+				8DE99AF44440EF276B8069ECBEDE2133 /* Debug */,
+				668C65CDBA70AA56A676F15ED847E3CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BEE9DF781E92B3D1DC6FFA2CB5CDC49A /* Build configuration list for PBXNativeTarget "Pods-Mensaplan-MensaplanUITests" */ = {
+		B8C401847A53B4C2810311A8CBD715AD /* Build configuration list for PBXNativeTarget "Toast-Swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				28C35E350131A7AF03436BC47B892C9E /* Debug */,
-				621D042884DEB085D79DA0B009629B65 /* Release */,
+				98898C6F52A6A7DBE554A243A24C2F51 /* Debug */,
+				F3D7AA7B6797C4885E6D6232E7580830 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C053E87AE4FCCF4B415A6BADCFC7249B /* Build configuration list for PBXNativeTarget "JGProgressHUD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C8AA5837008C8AE76AC993717871730B /* Debug */,
+				038B741B68FEE79DB9656EBC16680747 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC4235038BC2113BF7F7FEB19A9CA1DD /* Build configuration list for PBXNativeTarget "Pods-Mensaplan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				264303BEE766965D59E01B66E15667F5 /* Debug */,
+				ADD04D163C2ECBF937666760DFDBF7DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

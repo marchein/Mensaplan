@@ -24,10 +24,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     @IBOutlet weak var developerCell: UITableViewCell!
     
     var isPickerHidden = true
-    var standorteValues = ["Mensa Tarforst", "Bistro A/B", "Mensa Petrisberg", "Mensa Schneidershof", "Mensa Irminenfreihof" ,"forU"]
-    var standorteKeys = ["standort-1","standort-2","standort-3","standort-4","standort-5","standort-7"]
     var selectedMensa : String!
-    var priceValues = ["student", "worker", "guest"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,20 +41,23 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     }
     
     func setupView() {
-        let isSetup  = UserDefaults.standard.bool(forKey: LocalKeys.isSetup)
+        let isSetup  = MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.isSetup)
         if isSetup {
-            refreshOnStartToggle.isOn = UserDefaults.standard.bool(forKey: LocalKeys.refreshOnStart)
-            guard let selectedPrice = UserDefaults.standard.string(forKey: LocalKeys.selectedPrice) else {
+            refreshOnStartToggle.isOn = MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.refreshOnStart)
+            guard let selectedPrice = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedPrice) else {
                 return
             }
-            pricePicker.selectedSegmentIndex = priceValues.firstIndex(of: selectedPrice)!
-            let selectedMensaValue = UserDefaults.standard.string(forKey: LocalKeys.selectedMensa)!
-            let selectedMensaValueIndex = standorteKeys.firstIndex(of: selectedMensaValue)!
-            selectedMensaName.text = standorteValues[selectedMensaValueIndex]
+            pricePicker.selectedSegmentIndex = MensaplanApp.priceValues.firstIndex(of: selectedPrice)!
+            let selectedMensaValue = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa)!
+            let selectedMensaValueIndex = MensaplanApp.standorteKeys.firstIndex(of: selectedMensaValue)!
+            selectedMensaName.text = MensaplanApp.standorteValues[selectedMensaValueIndex]
             mensaPicker.selectRow(selectedMensaValueIndex, inComponent: 0, animated: false)
             appVersionCell.detailTextLabel?.text = MensaplanApp.versionString
         }
         navigationController?.navigationBar.prefersLargeTitles = true
+        if #available(iOS 13.0, *) {
+            navigationController?.isModalInPresentation = true
+        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -65,29 +65,27 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return standorteKeys.count
+        return MensaplanApp.standorteKeys.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return standorteValues[row]
+        return MensaplanApp.standorteValues[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedMensa = standorteKeys[row]
-        selectedMensaName.text = standorteValues[row]
-        UserDefaults.standard.set(selectedMensa, forKey: LocalKeys.selectedMensa)
+        selectedMensa = MensaplanApp.standorteKeys[row]
+        selectedMensaName.text = MensaplanApp.standorteValues[row]
+        MensaplanApp.sharedDefaults.set(selectedMensa, forKey: LocalKeys.selectedMensa)
     }
     
     @IBAction func setRefreshOnStart(_ sender: Any) {
-        UserDefaults.standard.set(refreshOnStartToggle.isOn, forKey: LocalKeys.refreshOnStart)
+        MensaplanApp.sharedDefaults.set(refreshOnStartToggle.isOn, forKey: LocalKeys.refreshOnStart)
     }
     
     @IBAction func priceSelection(_ sender: Any) {
         let selectedIndex = pricePicker.selectedSegmentIndex
-        print(selectedIndex)
-        let priceValue = priceValues[selectedIndex]
-        print(priceValue)
-        UserDefaults.standard.set(priceValue, forKey: LocalKeys.selectedPrice)
+        let priceValue = MensaplanApp.priceValues[selectedIndex]
+        MensaplanApp.sharedDefaults.set(priceValue, forKey: LocalKeys.selectedPrice)
     }
     @IBAction func doneAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

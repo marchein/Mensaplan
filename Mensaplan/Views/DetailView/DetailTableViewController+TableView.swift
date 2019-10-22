@@ -36,7 +36,7 @@ extension DetailTableViewController {
             let meal = day.counters[indexPath.section].meals[indexPath.row]
             //cell.mealImage.image = #imageLiteral(resourceName: "Meal")
             cell.mealTitleLabel.text = meal.title
-            let selectedPrice = UserDefaults.standard.string(forKey: LocalKeys.selectedPrice)
+            let selectedPrice = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedPrice)
             if selectedPrice == "student" {
                 cell.mealPriceLabel.text = meal.getFormattedPrice(price: meal.priceStudent)
             } else if selectedPrice == "worker" {

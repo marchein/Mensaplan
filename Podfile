@@ -7,6 +7,7 @@ target 'Mensaplan' do
 
   # Pods for Mensaplan
   pod "SwiftyXMLParser", :git => 'https://github.com/yahoojapan/SwiftyXMLParser.git'
+  pod 'Toast-Swift', '~> 5.0.0'
   
   target 'MensaplanUITests' do
     # Pods for testing

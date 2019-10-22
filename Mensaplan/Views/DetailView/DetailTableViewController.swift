@@ -27,10 +27,8 @@ class DetailTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         if mensaPlanDay.isToday() {
             setupTodayIntent()
-            print("Setup today intent")
         } else if mensaPlanDay.isTomorrow() {
             setupTomorrowIntent()
-            print("Setup tomorrow intent")
         }
     }
     
@@ -58,5 +56,17 @@ class DetailTableViewController: UITableViewController {
         }
         view.userActivity = activity // 7
         activity.becomeCurrent() // 8
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showMealSegue" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let meal = mensaPlanDay!.counters[indexPath.section].meals[indexPath.row]
+                let vc = segue.destination as! MealViewController
+                vc.meal = meal
+            } else {
+                print("Oops, no row has been selected")
+            }
+        }
     }
 }

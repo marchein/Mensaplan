@@ -151,12 +151,14 @@ struct Meal: Decodable {
     let priceStudent: Double
      let priceWorker: Double
      let pricePublic: Double
+    let image: String?
     
     enum CodingKeys : String, CodingKey {
         case title
         case priceStudent
         case priceWorker
         case pricePublic
+        case image
     }
     
     func getFormattedPrice(price: Double) -> String? {

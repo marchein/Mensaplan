@@ -20,15 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
        if #available(iOS 12.0, *) {
+            let viewController = self.window?.rootViewController as! UINavigationController
+            let mainVC = viewController.viewControllers[0] as! MainTableViewController
             if userActivity.activityType == Shortcuts.showToday {
-                let viewController = self.window?.rootViewController as! UINavigationController
-                let mainVC = viewController.viewControllers[0] as! MainTableViewController
                 mainVC.showDay(dayValue: DayValue.TODAY)
             } else if userActivity.activityType == Shortcuts.showTomorrow {
-                let viewController = self.window?.rootViewController as! UINavigationController
-                let mainVC = viewController.viewControllers[0] as! MainTableViewController
                 mainVC.showDay(dayValue: DayValue.TOMORROW)
-        }
+            }
        }
        return true
     }
@@ -45,6 +43,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        print("FOREGROUND")
+        guard let viewController = self.window?.rootViewController as? UINavigationController else {
+            return
+        }
+        guard let mainVC = viewController.viewControllers[0] as? MainTableViewController else {
+            return
+        }
+        mainVC.tableView.reloadData()
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {

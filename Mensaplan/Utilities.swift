@@ -69,15 +69,22 @@ func getDayName(by date: Date) -> String {
 }
 
 func dateSuffix(date: Date, string: String) -> String {
-    if Calendar.current.isDateInYesterday(date) {
+    if Calendar.autoupdatingCurrent.isDateInYesterday(date) {
         return "\(string) - (Gestern)"
-    } else if Calendar.current.isDateInToday(date) {
+    } else if Calendar.autoupdatingCurrent.isDateInToday(date) {
         return "\(string) - (Heute)"
-    } else if Calendar.current.isDateInTomorrow(date) {
+    } else if Calendar.autoupdatingCurrent.isDateInTomorrow(date) {
         return  "\(string) - (Morgen)"
     } else {
         return string
     }
+}
+
+func isDateOver(date: Date) -> Bool {
+    let now = Date()
+    let cal = Calendar(identifier: .gregorian)
+    let newDate = cal.startOfDay(for: now)
+    return date < newDate
 }
 
 func whenIsDate(_ date: Date) -> DAY_VALUE? {
