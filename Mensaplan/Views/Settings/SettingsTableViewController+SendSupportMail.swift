@@ -18,12 +18,12 @@ extension SettingsTableViewController: MFMailComposeViewControllerDelegate {
             mail.mailComposeDelegate = self
             mail.setSubject("[Mensaplan] - Version \(MensaplanApp.versionString) (Build: \(MensaplanApp.buildNumber) - \(getReleaseTitle()))")
             mail.setToRecipients([MensaplanApp.mailAdress])
-            mail.setMessageBody(NSLocalizedString("support_mail_body", comment: ""), isHTML: false)
+            mail.setMessageBody("Warum kontaktierst Du den Support?", isHTML: false)
             present(mail, animated: true)
         } else {
             print("No mail account configured")
-            let mailErrorMessage = NSLocalizedString("mail_error", comment: "")
-            showMessage(title: NSLocalizedString("Error", comment: ""), message: String(format: mailErrorMessage, MensaplanApp.mailAdress), on: self)
+            let mailErrorMessage = "Es ist kein E-Mail Konto in Apple Mail hinterlegt. Bitte kontaktiere uns unter %@"
+            showMessage(title: "Fehler", message: String(format: mailErrorMessage, MensaplanApp.mailAdress), on: self)
         }
     }
     

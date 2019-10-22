@@ -1,16 +1,13 @@
 PODS:
-  - JGProgressHUD (2.1)
   - SwiftyXMLParser (5.1.0)
   - Toast-Swift (5.0.0)
 
 DEPENDENCIES:
-  - JGProgressHUD
   - SwiftyXMLParser (from `https://github.com/yahoojapan/SwiftyXMLParser.git`)
   - Toast-Swift (~> 5.0.0)
 
 SPEC REPOS:
   trunk:
-    - JGProgressHUD
     - Toast-Swift
 
 EXTERNAL SOURCES:
@@ -23,10 +20,9 @@ CHECKOUT OPTIONS:
     :git: https://github.com/yahoojapan/SwiftyXMLParser.git
 
 SPEC CHECKSUMS:
-  JGProgressHUD: aa403e9a5b45cae98903c4600cccdd98c0c3ec90
   SwiftyXMLParser: 8271497e0a37b5c04b0b167c77b4896e36175a21
   Toast-Swift: 36f4720243c8582c2be243a60a51e193c761f541
 
-PODFILE CHECKSUM: 1ca1e0a3adb058088f4666ee2c5867427e517847
+PODFILE CHECKSUM: a17e3cd93a8a6fcbadc736179998595a5406efcf
 
 COCOAPODS: 1.8.4

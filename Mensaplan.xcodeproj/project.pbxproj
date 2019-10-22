@@ -111,8 +111,8 @@
 			children = (
 				5B187032235A40CC00EF54DF /* Main */,
 				5B277276235D0B0100E3894B /* DetailView */,
-				5BEA0A2F235DC0A0003E3616 /* Settings */,
 				5B5C8EC1235F2B2C00C29E62 /* MealView */,
+				5BEA0A2F235DC0A0003E3616 /* Settings */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -600,7 +600,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Mensaplan/Mensaplan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = Mensaplan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -622,7 +622,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Mensaplan/Mensaplan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = Mensaplan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
