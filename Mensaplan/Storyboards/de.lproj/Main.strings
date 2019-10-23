@@ -1,0 +1,99 @@
+
+/* Class = "UILabel"; text = "Gäste"; ObjectID = "0um-ev-hPu"; */
+"0um-ev-hPu.text" = "Gäste";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "2TM-h7-JHt"; */
+"2TM-h7-JHt.text" = "Title";
+
+/* Class = "UISegmentedControl"; 4mX-eq-Yge.segmentTitles[0] = "Studierende"; ObjectID = "4mX-eq-Yge"; */
+"4mX-eq-Yge.segmentTitles[0]" = "Studierende";
+
+/* Class = "UISegmentedControl"; 4mX-eq-Yge.segmentTitles[1] = "Bedienstete"; ObjectID = "4mX-eq-Yge"; */
+"4mX-eq-Yge.segmentTitles[1]" = "Bedienstete";
+
+/* Class = "UISegmentedControl"; 4mX-eq-Yge.segmentTitles[2] = "Gast"; ObjectID = "4mX-eq-Yge"; */
+"4mX-eq-Yge.segmentTitles[2]" = "Gast";
+
+/* Class = "UILabel"; text = "Studierende"; ObjectID = "6CL-6U-rLv"; */
+"6CL-6U-rLv.text" = "Studierende";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "89j-4F-tJT"; */
+"89j-4F-tJT.text" = "Subtitle";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "AO9-lT-ong"; */
+"AO9-lT-ong.text" = "Detail";
+
+/* Class = "UILabel"; text = "1.0"; ObjectID = "C2J-xp-q74"; */
+"C2J-xp-q74.text" = "1.0";
+
+/* Class = "UILabel"; text = "App Version"; ObjectID = "CoO-Gf-pcB"; */
+"CoO-Gf-pcB.text" = "App Version";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "DrH-xj-zSC"; */
+"DrH-xj-zSC.text" = "Label";
+
+/* Class = "UITableViewSection"; headerTitle = "Einstellungen"; ObjectID = "ETR-Qo-Xlz"; */
+"ETR-Qo-Xlz.headerTitle" = "Einstellungen";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "GZ3-L2-StY"; */
+"GZ3-L2-StY.text" = "Title";
+
+/* Class = "UILabel"; text = "Aktualisieren beim Öffnen"; ObjectID = "H63-z0-zQB"; */
+"H63-z0-zQB.text" = "Aktualisieren beim Öffnen";
+
+/* Class = "UILabel"; text = "Mensaplan im App Store"; ObjectID = "HTt-rp-NOl"; */
+"HTt-rp-NOl.text" = "Mensaplan im App Store";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "LaK-bR-6Xu"; */
+"LaK-bR-6Xu.text" = "Title";
+
+/* Class = "UILabel"; text = "Website des Entwicklers"; ObjectID = "MVw-iu-pac"; */
+"MVw-iu-pac.text" = "Website des Entwicklers";
+
+/* Class = "UIBarButtonItem"; title = "Schließen"; ObjectID = "RF8-qC-EjA"; */
+"RF8-qC-EjA.title" = "Schließen";
+
+/* Class = "UILabel"; text = "App Kundendienst"; ObjectID = "T5S-7g-nwA"; */
+"T5S-7g-nwA.text" = "App Kundendienst";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Tm8-0V-K5g"; */
+"Tm8-0V-K5g.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Über"; ObjectID = "U0i-Rf-rX8"; */
+"U0i-Rf-rX8.title" = "Über";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "V7Z-jx-sWm"; */
+"V7Z-jx-sWm.text" = "Detail";
+
+/* Class = "UINavigationItem"; title = "Gericht"; ObjectID = "WQJ-pN-xR5"; */
+"WQJ-pN-xR5.title" = "Gericht";
+
+/* Class = "UINavigationItem"; title = "Tag"; ObjectID = "Z05-bB-Ktf"; */
+"Z05-bB-Ktf.title" = "Tag";
+
+/* Class = "UINavigationItem"; title = "Mensaplan"; ObjectID = "Zcz-Ka-wIq"; */
+"Zcz-Ka-wIq.title" = "Mensaplan";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "cEF-BU-QBg"; */
+"cEF-BU-QBg.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "eJ8-r3-VCz"; */
+"eJ8-r3-VCz.text" = "Label";
+
+/* Class = "UILabel"; text = "MENSA_NAME"; ObjectID = "gpq-S3-5d1"; */
+"gpq-S3-5d1.text" = "MENSA_NAME";
+
+/* Class = "UITableViewController"; title = "Einstellungen"; ObjectID = "iMO-rV-dQG"; */
+"iMO-rV-dQG.title" = "Einstellungen";
+
+/* Class = "UILabel"; text = "Bedienstete"; ObjectID = "jN9-zC-Sfg"; */
+"jN9-zC-Sfg.text" = "Bedienstete";
+
+/* Class = "UINavigationController"; title = "Mensaplan"; ObjectID = "mnc-zb-IMr"; */
+"mnc-zb-IMr.title" = "Mensaplan";
+
+/* Class = "UILabel"; text = "Mensaplan bewerten"; ObjectID = "sbf-9y-RnN"; */
+"sbf-9y-RnN.text" = "Mensaplan bewerten";
+
+/* Class = "UILabel"; text = "Mensa"; ObjectID = "vyW-Ss-gaS"; */
+"vyW-Ss-gaS.text" = "Mensa";

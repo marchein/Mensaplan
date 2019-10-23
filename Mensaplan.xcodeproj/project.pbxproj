@@ -70,6 +70,8 @@
 		5BEA0A34235DCA55003E3616 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		5BEA0A36235E0990003E3616 /* Mensaplan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mensaplan.entitlements; sourceTree = "<group>"; };
 		5BEA0A37235E09AE003E3616 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		5BFEA021235F664E003EE713 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		5BFEA022235F664E003EE713 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		94C6D0F32CDB59148AC7FBC1 /* Pods_Mensaplan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mensaplan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8A79967504697D0B4F0CA20 /* Pods-Mensaplan-MensaplanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mensaplan-MensaplanUITests.debug.xcconfig"; path = "Target Support Files/Pods-Mensaplan-MensaplanUITests/Pods-Mensaplan-MensaplanUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		ECCA21AD57E22B3309E32480 /* Pods-Mensaplan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mensaplan.release.xcconfig"; path = "Target Support Files/Pods-Mensaplan/Pods-Mensaplan.release.xcconfig"; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 5B458AD5235A3D7D0027CAE1;
 			productRefGroup = 5B458ADF235A3D7D0027CAE1 /* Products */;
@@ -464,6 +467,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				5B458AE8235A3D7D0027CAE1 /* Base */,
+				5BFEA021235F664E003EE713 /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -472,6 +476,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				5B458AED235A3D7E0027CAE1 /* Base */,
+				5BFEA022235F664E003EE713 /* de */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -483,6 +488,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -543,6 +549,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -601,6 +608,7 @@
 				CODE_SIGN_ENTITLEMENTS = Mensaplan/Mensaplan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 6;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = Mensaplan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -610,6 +618,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.marc-hein.mensaplan";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -623,6 +632,7 @@
 				CODE_SIGN_ENTITLEMENTS = Mensaplan/Mensaplan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 6;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = Mensaplan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -632,6 +642,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.marc-hein.mensaplan";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
