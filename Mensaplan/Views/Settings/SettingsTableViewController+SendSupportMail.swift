@@ -9,7 +9,6 @@
 import Foundation
 import MessageUI
 import UIKit
-import AppKit
 
 // MARK:- Mail Extension
 extension SettingsTableViewController: MFMailComposeViewControllerDelegate {

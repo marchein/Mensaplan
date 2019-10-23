@@ -31,7 +31,7 @@ func isTestFlight() -> Bool {
 // MARK: - showDialog
 func showMessage(title: String, message: String, on view: UIViewController) {
     let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-    alert.addAction(UIAlertAction(title: NSLocalizedString("Got it", comment: ""), style: .cancel, handler: nil))
+    alert.addAction(UIAlertAction(title: "Verstanden", style: .cancel, handler: nil))
     DispatchQueue.main.async {
         view.present(alert, animated: true)
     }
