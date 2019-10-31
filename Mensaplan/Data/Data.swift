@@ -28,11 +28,15 @@ struct LocationDay: Decodable {
     let data: MensaplanDay
     let date: Int
     let title: String
+    let closed: Bool
+    let closedReason: String?
     
     enum CodingKeys : String, CodingKey {
         case date
         case data
         case title
+        case closed
+        case closedReason
     }
     
     func isToday() -> Bool {

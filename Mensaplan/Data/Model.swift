@@ -15,6 +15,7 @@ struct LocalKeys {
     static let selectedMensa = "selectedMensa"
     static let lastUpdate = "lastUpdate"
     static let jsonData = "jsonData"
+    static let showSideDish = "showSideDish"
 }
 
 struct Shortcuts {

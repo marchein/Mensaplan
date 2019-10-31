@@ -13,6 +13,7 @@ import Toast_Swift
 class MainTableViewController: UITableViewController {
     var JSONData: Mensaplan?
     var tempMensaData: MensaplanDay?
+    var showSideDish = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,7 @@ class MainTableViewController: UITableViewController {
         let isSetup  = MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.isSetup)
         if !isSetup {
             MensaplanApp.sharedDefaults.set(true, forKey: LocalKeys.refreshOnStart)
+            MensaplanApp.sharedDefaults.set(false, forKey: LocalKeys.showSideDish)
             MensaplanApp.sharedDefaults.set("standort-1", forKey: LocalKeys.selectedMensa)
             MensaplanApp.sharedDefaults.set("student", forKey: LocalKeys.selectedPrice)
             MensaplanApp.sharedDefaults.set(true, forKey: LocalKeys.isSetup)
@@ -66,11 +68,16 @@ class MainTableViewController: UITableViewController {
         let selectedLocation = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa)!
         for location in selectedDay.day {
             if location.title == selectedLocation {
-                tempMensaData = location.data
-                let navVC = self.parent as! UINavigationController
-                navVC.popToRootViewController(animated: true)
-                performSegue(withIdentifier: "manualDetailSegue", sender: self)
-                return
+                if location.closed {
+                    let when = dayValue == DayValue.TODAY ? " heute " : dayValue == DayValue.TOMORROW ? " morgen ": " "
+                    showMessage(title: "Mensa\(when)geschlossen", message: location.closedReason ?? "Aushänge beachten", on: self)
+                } else {
+                    tempMensaData = location.data
+                    let navVC = self.parent as! UINavigationController
+                    navVC.popToRootViewController(animated: true)
+                    performSegue(withIdentifier: "manualDetailSegue", sender: self)
+                    return
+                }
             }
         }
    }
@@ -119,9 +126,6 @@ class MainTableViewController: UITableViewController {
             
             for location in dates["content", "calendarday", "standort-liste"]["standort"] {
                 if let locationValue = location.attributes["id"] {
-                    if let counterClosed = location["geschlossen"].text, counterClosed == "1" {
-                        continue
-                    }
                     var dayPlan = [String: Any]()
                     var dayPlanCounters = [Any]()
                     
@@ -132,6 +136,7 @@ class MainTableViewController: UITableViewController {
                     for counter in counters {
                         var counterPlan = [String: Any]()
                         counterPlan["label"] = counter["label"].text!
+                        
                         var counterMeals = [Any]()
                         
                         let meals = counter["mahlzeit-liste", "mahlzeit"].makeIterator()
@@ -157,7 +162,8 @@ class MainTableViewController: UITableViewController {
                                     }
                                 }
                             }
-                            if counterPlan["label"] as! String == MensaplanApp.NOODLE_COUNTER || mealPriceStudent >= MensaplanApp.MAIN_DISH_MINIMAL_PRICE {
+                            showSideDish = MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.showSideDish)
+                            if showSideDish || counterPlan["label"] as! String == MensaplanApp.NOODLE_COUNTER || mealPriceStudent >= MensaplanApp.MAIN_DISH_MINIMAL_PRICE {
                                 var mealResult = [String: Any]()
                                 mealResult["title"] = meal["titel"].text;
                                 mealResult["priceStudent"] = mealPriceStudent;
@@ -179,9 +185,13 @@ class MainTableViewController: UITableViewController {
                         dayPlan["counters"] = dayPlanCounters
                     }
                     var locationData = [String: Any]()
+                     
                     locationData["date"] = Int(dates.attributes["date"]!)
                     locationData["data"] = dayPlan
                     locationData["title"] = locationValue
+                    locationData["closed"] = location["geschlossen"].text ?? "0" == "1"
+                    locationData["closedReason"] = location["geschlossen_hinweis"].text
+                    
                     locations.append(locationData)
                 }
 
@@ -199,10 +209,13 @@ class MainTableViewController: UITableViewController {
          });
          */
         
-        
         guard let data = try? JSONSerialization.data(withJSONObject: result, options: []) else {
             return
         }
+        
+        print("LOADING DATA")
+        print(String(data: data, encoding: String.Encoding.utf8) ?? "Data could not be printed")
+
         
         MensaplanApp.sharedDefaults.set(data, forKey: LocalKeys.jsonData)
         print("Successfully load JSON")
@@ -255,7 +268,11 @@ class MainTableViewController: UITableViewController {
     }
     
     @IBAction func unwindFromSegue(segue: UIStoryboardSegue) {
-        self.tableView.reloadData()
+        if showSideDish != MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.showSideDish) {
+            refresh(sender: self)
+        } else {
+            self.tableView.reloadData()
+        }
     }
     
     @objc func refresh(sender: Any) {

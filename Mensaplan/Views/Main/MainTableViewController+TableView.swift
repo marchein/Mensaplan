@@ -33,23 +33,40 @@ extension MainTableViewController {
         // Configure the cell...
         if indexPath.section == 0 {
             if let mensaData = JSONData {
+                var  dayData: LocationDay?
                 let cell = tableView.dequeueReusableCell(withIdentifier: "dayCell", for: indexPath)
-                let row = indexPath.row
-                let dayData = mensaData.plan[row].day[0]
-                let dateOfCell = dayData.getDateValue()
-                cell.textLabel?.text = dateSuffix(date: dateOfCell, string: getDayName(by: dateOfCell))
-                cell.detailTextLabel?.text = dayData.getDate(showDay: false)
-                
-                if isDateOver(date: dateOfCell) {
-                    cell.isUserInteractionEnabled = false
-                    cell.textLabel?.isEnabled = false
-                    cell.detailTextLabel?.isEnabled = false
-                } else {
-                    cell.isUserInteractionEnabled = true
-                    cell.textLabel?.isEnabled = true
-                    cell.detailTextLabel?.isEnabled = true
-                }
-                return cell
+                let selectedDay = mensaData.plan[indexPath.row]
+                let selectedLocation = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa)!
+                   for location in selectedDay.day {
+                       if location.title == selectedLocation {
+                        dayData = location
+                        break
+                       }
+               }
+                if let dayDataResult = dayData {
+                    let dateOfCell = dayDataResult.getDateValue()
+                    cell.textLabel?.text = dateSuffix(date: dateOfCell, string: getDayName(by: dateOfCell))
+                    cell.detailTextLabel?.text = dayDataResult.getDate(showDay: false)
+                    
+                    if dayDataResult.closed || isDateOver(date: dateOfCell) {
+                        cell.isUserInteractionEnabled = false
+                        cell.textLabel?.isEnabled = false
+                        cell.detailTextLabel?.isEnabled = false
+                        if dayDataResult.closed {
+                            cell.textLabel?.text = "\(dateSuffix(date: dateOfCell, string: getDayName(by: dateOfCell))) - \(dayDataResult.getDate(showDay: false)!)"
+                            cell.detailTextLabel?.text = dayDataResult.closedReason
+                        }
+                    } else {
+                        cell.isUserInteractionEnabled = true
+                        cell.textLabel?.isEnabled = true
+                        cell.detailTextLabel?.isEnabled = true
+                    }
+                    return cell
+                }  else {
+                   let cell = UITableViewCell()
+                   cell.textLabel?.text = "Es sind keine Daten vorhanden."
+                   return cell
+               }
             } else {
                 let cell = UITableViewCell()
                 cell.textLabel?.text = "Es sind keine Daten vorhanden."

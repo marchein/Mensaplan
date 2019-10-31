@@ -22,6 +22,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     @IBOutlet weak var appStoreCell: UITableViewCell!
     @IBOutlet weak var rateAppCell: UITableViewCell!
     @IBOutlet weak var developerCell: UITableViewCell!
+    @IBOutlet weak var showSideDishToggle: UISwitch!
     
     var isPickerHidden = true
     var selectedMensa : String!
@@ -44,6 +45,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         let isSetup  = MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.isSetup)
         if isSetup {
             refreshOnStartToggle.isOn = MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.refreshOnStart)
+            showSideDishToggle.isOn = MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.showSideDish)
             guard let selectedPrice = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedPrice) else {
                 return
             }
@@ -80,6 +82,10 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     
     @IBAction func setRefreshOnStart(_ sender: Any) {
         MensaplanApp.sharedDefaults.set(refreshOnStartToggle.isOn, forKey: LocalKeys.refreshOnStart)
+    }
+    
+    @IBAction func setShowSideDish(_ sender: Any) {
+        MensaplanApp.sharedDefaults.set(showSideDishToggle.isOn, forKey: LocalKeys.showSideDish)
     }
     
     @IBAction func priceSelection(_ sender: Any) {
