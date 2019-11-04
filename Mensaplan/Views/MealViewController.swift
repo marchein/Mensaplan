@@ -33,4 +33,5 @@ class MealViewController: UIViewController {
             imageView.downloaded(from: image)
         }
     }
+    
 }

@@ -33,7 +33,7 @@ extension MainTableViewController {
         // Configure the cell...
         if indexPath.section == 0 {
             if let mensaData = JSONData {
-                var  dayData: LocationDay?
+                var dayData: LocationDay?
                 let cell = tableView.dequeueReusableCell(withIdentifier: "dayCell", for: indexPath)
                 let selectedDay = mensaData.plan[indexPath.row]
                 let selectedLocation = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa)!
@@ -48,7 +48,9 @@ extension MainTableViewController {
                     cell.textLabel?.text = dateSuffix(date: dateOfCell, string: getDayName(by: dateOfCell))
                     cell.detailTextLabel?.text = dayDataResult.getDate(showDay: false)
                     
-                    if dayDataResult.closed || isDateOver(date: dateOfCell) {
+                    print(dayDataResult.data.counters)
+                    
+                    if dayDataResult.closed || isDateOver(date: dateOfCell) || dayDataResult.data.counters.count == 0 {
                         cell.isUserInteractionEnabled = false
                         cell.textLabel?.isEnabled = false
                         cell.detailTextLabel?.isEnabled = false

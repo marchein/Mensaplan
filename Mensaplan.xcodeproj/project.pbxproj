@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		2015CB23EDD1FF3146659B8B /* Pods_Mensaplan_MensaplanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09CED77E670AD4B6AF74F34D /* Pods_Mensaplan_MensaplanUITests.framework */; };
+		5B09BB33237058B0004E1981 /* TipJarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09BB30237058B0004E1981 /* TipJarTableViewController.swift */; };
+		5B09BB34237058B0004E1981 /* TipJar+Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09BB31237058B0004E1981 /* TipJar+Transaction.swift */; };
+		5B09BB35237058B0004E1981 /* TipJar+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09BB32237058B0004E1981 /* TipJar+TableView.swift */; };
+		5B09BB3823705A0E004E1981 /* TipTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09BB3723705A0E004E1981 /* TipTableViewCell.swift */; };
+		5B09BB3F23705A37004E1981 /* UIView+Effects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09BB3923705A37004E1981 /* UIView+Effects.swift */; };
+		5B09BB4023705A37004E1981 /* UserDefaults+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09BB3A23705A37004E1981 /* UserDefaults+Helper.swift */; };
+		5B09BB4123705A37004E1981 /* Bundle+Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09BB3B23705A37004E1981 /* Bundle+Icon.swift */; };
+		5B09BB4323705A37004E1981 /* SKProduct+LocalizedPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09BB3D23705A37004E1981 /* SKProduct+LocalizedPrice.swift */; };
+		5B09BB4423705A37004E1981 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09BB3E23705A37004E1981 /* Date+Helpers.swift */; };
+		5B09BB4723705A59004E1981 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09BB4623705A59004E1981 /* BorderedButton.swift */; };
 		5B18702F235A403E00EF54DF /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B18702E235A403E00EF54DF /* MainTableViewController.swift */; };
 		5B187034235A40E200EF54DF /* MainTableViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B187033235A40E200EF54DF /* MainTableViewController+TableView.swift */; };
 		5B277275235D033500E3894B /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B277274235D033500E3894B /* Data.swift */; };
@@ -45,6 +55,16 @@
 		09CED77E670AD4B6AF74F34D /* Pods_Mensaplan_MensaplanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mensaplan_MensaplanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E9AF4A53CD72DC304D27F9 /* Pods-Mensaplan-MensaplanUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mensaplan-MensaplanUITests.release.xcconfig"; path = "Target Support Files/Pods-Mensaplan-MensaplanUITests/Pods-Mensaplan-MensaplanUITests.release.xcconfig"; sourceTree = "<group>"; };
 		59532A6DF7B573FFF59EB462 /* Pods-Mensaplan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mensaplan.debug.xcconfig"; path = "Target Support Files/Pods-Mensaplan/Pods-Mensaplan.debug.xcconfig"; sourceTree = "<group>"; };
+		5B09BB30237058B0004E1981 /* TipJarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipJarTableViewController.swift; sourceTree = "<group>"; };
+		5B09BB31237058B0004E1981 /* TipJar+Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TipJar+Transaction.swift"; sourceTree = "<group>"; };
+		5B09BB32237058B0004E1981 /* TipJar+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TipJar+TableView.swift"; sourceTree = "<group>"; };
+		5B09BB3723705A0E004E1981 /* TipTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipTableViewCell.swift; sourceTree = "<group>"; };
+		5B09BB3923705A37004E1981 /* UIView+Effects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Effects.swift"; sourceTree = "<group>"; };
+		5B09BB3A23705A37004E1981 /* UserDefaults+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Helper.swift"; sourceTree = "<group>"; };
+		5B09BB3B23705A37004E1981 /* Bundle+Icon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Icon.swift"; sourceTree = "<group>"; };
+		5B09BB3D23705A37004E1981 /* SKProduct+LocalizedPrice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKProduct+LocalizedPrice.swift"; sourceTree = "<group>"; };
+		5B09BB3E23705A37004E1981 /* Date+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Helpers.swift"; sourceTree = "<group>"; };
+		5B09BB4623705A59004E1981 /* BorderedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
 		5B18702E235A403E00EF54DF /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		5B187033235A40E200EF54DF /* MainTableViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainTableViewController+TableView.swift"; sourceTree = "<group>"; };
 		5B277274235D033500E3894B /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
@@ -104,6 +124,32 @@
 				09CED77E670AD4B6AF74F34D /* Pods_Mensaplan_MensaplanUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5B09BB2F237058B0004E1981 /* TipJar */ = {
+			isa = PBXGroup;
+			children = (
+				5B09BB30237058B0004E1981 /* TipJarTableViewController.swift */,
+				5B09BB31237058B0004E1981 /* TipJar+Transaction.swift */,
+				5B09BB32237058B0004E1981 /* TipJar+TableView.swift */,
+			);
+			path = TipJar;
+			sourceTree = "<group>";
+		};
+		5B09BB3623705A03004E1981 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5B09BB3723705A0E004E1981 /* TipTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		5B09BB4523705A47004E1981 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				5B09BB4623705A59004E1981 /* BorderedButton.swift */,
+			);
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 		5B187030235A40AC00EF54DF /* Views */ = {
@@ -168,6 +214,8 @@
 		5B458AE0235A3D7D0027CAE1 /* Mensaplan */ = {
 			isa = PBXGroup;
 			children = (
+				5B09BB4523705A47004E1981 /* Custom Views */,
+				5B09BB3623705A03004E1981 /* Cells */,
 				5BEA0A36235E0990003E3616 /* Mensaplan.entitlements */,
 				5B187030235A40AC00EF54DF /* Views */,
 				5B187031235A40B700EF54DF /* Storyboards */,
@@ -203,6 +251,11 @@
 			children = (
 				5B5C8EBD235E5EDF00C29E62 /* UIViewController+SafariActions.swift */,
 				5B5C8EC2235F2DA500C29E62 /* UIImageView+Download.swift */,
+				5B09BB3B23705A37004E1981 /* Bundle+Icon.swift */,
+				5B09BB3E23705A37004E1981 /* Date+Helpers.swift */,
+				5B09BB3D23705A37004E1981 /* SKProduct+LocalizedPrice.swift */,
+				5B09BB3923705A37004E1981 /* UIView+Effects.swift */,
+				5B09BB3A23705A37004E1981 /* UserDefaults+Helper.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -219,6 +272,7 @@
 		5BEA0A2F235DC0A0003E3616 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				5B09BB2F237058B0004E1981 /* TipJar */,
 				5BEA0A30235DC0BA003E3616 /* SettingsTableViewController.swift */,
 				5BEA0A32235DC0D0003E3616 /* SettingsTableViewController+TableView.swift */,
 				5B5C8EBB235E5E7700C29E62 /* SettingsTableViewController+SendSupportMail.swift */,
@@ -423,20 +477,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B27727A235D0B2900E3894B /* DetailTableViewController+TableView.swift in Sources */,
+				5B09BB34237058B0004E1981 /* TipJar+Transaction.swift in Sources */,
 				5B5C8EC5235F370200C29E62 /* MealViewController.swift in Sources */,
 				5B18702F235A403E00EF54DF /* MainTableViewController.swift in Sources */,
+				5B09BB4123705A37004E1981 /* Bundle+Icon.swift in Sources */,
 				5B5C8EBA235E59BD00C29E62 /* Utilities.swift in Sources */,
 				5B27727C235D102A00E3894B /* MealTableViewCell.swift in Sources */,
+				5B09BB4723705A59004E1981 /* BorderedButton.swift in Sources */,
 				5BEA0A33235DC0D0003E3616 /* SettingsTableViewController+TableView.swift in Sources */,
 				5B5C8EBC235E5E7700C29E62 /* SettingsTableViewController+SendSupportMail.swift in Sources */,
 				5B5C8EBE235E5EDF00C29E62 /* UIViewController+SafariActions.swift in Sources */,
 				5B277278235D0B1900E3894B /* DetailTableViewController.swift in Sources */,
 				5BEA0A35235DCA55003E3616 /* Model.swift in Sources */,
+				5B09BB35237058B0004E1981 /* TipJar+TableView.swift in Sources */,
 				5BEA0A31235DC0BA003E3616 /* SettingsTableViewController.swift in Sources */,
+				5B09BB3823705A0E004E1981 /* TipTableViewCell.swift in Sources */,
+				5B09BB33237058B0004E1981 /* TipJarTableViewController.swift in Sources */,
+				5B09BB4023705A37004E1981 /* UserDefaults+Helper.swift in Sources */,
+				5B09BB3F23705A37004E1981 /* UIView+Effects.swift in Sources */,
 				5B458AE2235A3D7D0027CAE1 /* AppDelegate.swift in Sources */,
 				5B5C8EC3235F2DA500C29E62 /* UIImageView+Download.swift in Sources */,
+				5B09BB4323705A37004E1981 /* SKProduct+LocalizedPrice.swift in Sources */,
 				5B187034235A40E200EF54DF /* MainTableViewController+TableView.swift in Sources */,
 				5B277275235D033500E3894B /* Data.swift in Sources */,
+				5B09BB4423705A37004E1981 /* Date+Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,7 +665,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Mensaplan/Mensaplan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = Mensaplan/Info.plist;
@@ -609,7 +673,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.marc-hein.mensaplan";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -625,7 +689,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Mensaplan/Mensaplan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = Mensaplan/Info.plist;
@@ -633,7 +697,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.marc-hein.mensaplan";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;

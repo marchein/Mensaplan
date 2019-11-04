@@ -16,7 +16,10 @@ struct LocalKeys {
     static let lastUpdate = "lastUpdate"
     static let jsonData = "jsonData"
     static let showSideDish = "showSideDish"
+    static let hasTipped = "hasTipped"
 }
+
+
 
 struct Shortcuts {
     static let showToday = "de.marc-hein.mensaplan.showToday"
@@ -57,6 +60,19 @@ struct MensaplanApp {
     static let askForReviewAt = 5
 
     static let sharedDefaults: UserDefaults = UserDefaults(suiteName: MensaplanApp.groupIdentifier)!
+}
+
+struct MensaplanIAP {
+    static let prefix = "maccatalyst."
+    static let smallTip = "de.marc_hein.mensaplan.tip.small"
+    static let mediumTip = "de.marc_hein.mensaplan.tip.medium"
+    static let largeTip = "de.marc_hein.mensaplan.tip.large"
+    
+    #if targetEnvironment(macCatalyst)
+    static let allTips = [MensaplanIAP.prefix + MensaplanIAP.smallTip, MensaplanIAP.prefix + MensaplanIAP.mediumTip, MensaplanIAP.prefix + MensaplanIAP.largeTip]
+    #else
+    static let allTips = [MensaplanIAP.smallTip, MensaplanIAP.mediumTip, MensaplanIAP.largeTip]
+    #endif
 }
 
 class Opening {

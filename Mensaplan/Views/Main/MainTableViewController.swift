@@ -213,10 +213,6 @@ class MainTableViewController: UITableViewController {
             return
         }
         
-        print("LOADING DATA")
-        print(String(data: data, encoding: String.Encoding.utf8) ?? "Data could not be printed")
-
-        
         MensaplanApp.sharedDefaults.set(data, forKey: LocalKeys.jsonData)
         print("Successfully load JSON")
         getJSON(data: data)
