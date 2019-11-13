@@ -1,14 +1,15 @@
 //
-//  MealViewController.swift
+//  MealTableViewController.swift
 //  Mensaplan
 //
-//  Created by Marc Hein on 22.10.19.
+//  Created by Marc Hein on 13.11.19.
 //  Copyright © 2019 Marc Hein. All rights reserved.
 //
 
 import UIKit
 
-class MealViewController: UIViewController {
+class MealTableViewController: UITableViewController {
+
     
     var meal: Meal?
 
@@ -19,9 +20,9 @@ class MealViewController: UIViewController {
     @IBOutlet weak var priceLabelPublic: UILabel!
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+
         guard let meal = meal else {
             return
         }
@@ -33,5 +34,5 @@ class MealViewController: UIViewController {
             imageView.downloaded(from: image)
         }
     }
-    
+
 }

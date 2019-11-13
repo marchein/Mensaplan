@@ -62,7 +62,7 @@ class DetailTableViewController: UITableViewController {
         if segue.identifier == "showMealSegue" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let meal = mensaPlanDay!.counters[indexPath.section].meals[indexPath.row]
-                let vc = segue.destination as! MealViewController
+                let vc = segue.destination as! MealTableViewController
                 vc.meal = meal
             } else {
                 print("Oops, no row has been selected")

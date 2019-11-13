@@ -13,7 +13,6 @@ extension DetailTableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         if let day = mensaPlanDay {
             return day.counters.count
         }
@@ -21,7 +20,6 @@ extension DetailTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         if let day = mensaPlanDay {
             return day.counters[section].meals.count
         }
@@ -35,14 +33,12 @@ extension DetailTableViewController {
         if let day = mensaPlanDay  {
             let meal = day.counters[indexPath.section].meals[indexPath.row]
             //cell.mealImage.image = #imageLiteral(resourceName: "Meal")
-            cell.mealTitleLabel.text = meal.title
-            guard let imageView = cell.imageView else {
-                fatalError()
-            }
-                
-            if let image = meal.image {
+            cell.mealTitleLabel.text = meal.title + "\n"
+            
+            if let imageView = cell.mealImage, let image = meal.image {
                 imageView.downloaded(from: image)
             }
+
             let selectedPrice = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedPrice)
             if selectedPrice == "student" {
                 cell.mealPriceLabel.text = meal.getFormattedPrice(price: meal.priceStudent)
@@ -51,9 +47,7 @@ extension DetailTableViewController {
             } else if selectedPrice == "guest" {
                 cell.mealPriceLabel.text = meal.getFormattedPrice(price: meal.pricePublic)
             }
-            
         }
-
         return cell
     }
     
@@ -62,10 +56,6 @@ extension DetailTableViewController {
             return day.counters[section].label
         }
         return nil
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 75
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
