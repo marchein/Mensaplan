@@ -47,9 +47,7 @@ extension MainTableViewController {
                     let dateOfCell = dayDataResult.getDateValue()
                     cell.textLabel?.text = dateSuffix(date: dateOfCell, string: getDayName(by: dateOfCell))
                     cell.detailTextLabel?.text = dayDataResult.getDate(showDay: false)
-                    
-                    print(dayDataResult.data.counters)
-                    
+                                        
                     if dayDataResult.closed || isDateOver(date: dateOfCell) || dayDataResult.data.counters.count == 0 {
                         cell.isUserInteractionEnabled = false
                         cell.textLabel?.isEnabled = false

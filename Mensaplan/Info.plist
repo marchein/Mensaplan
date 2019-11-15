@@ -29,6 +29,11 @@
 		<string>de.marc-hein.mensaplan.showTomorrow</string>
 		<string>de.marc-hein.mensaplan.showToday</string>
 	</array>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<false/>
+	</dict>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

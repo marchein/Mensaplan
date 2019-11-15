@@ -26,7 +26,6 @@ extension TipJarTableViewController: SKProductsRequestDelegate, SKPaymentTransac
         if response.products.count != 0 {
             for product in response.products {
                 productsArray.append(product)
-                print(product)
             }
             productsArray = productsArray.reversed()
             
@@ -37,6 +36,7 @@ extension TipJarTableViewController: SKProductsRequestDelegate, SKPaymentTransac
             }
         } else {
             print("There are no products.")
+            print(response.invalidProductIdentifiers)
             DispatchQueue.main.async {
                 self.navigationController?.view.hideToastActivity()
             }
@@ -74,7 +74,7 @@ extension TipJarTableViewController: SKProductsRequestDelegate, SKPaymentTransac
                 self.navigationController?.view.hideToastActivity()
                 SKPaymentQueue.default().finishTransaction(transaction)
                 transactionInProgress = false
-                showMessage(title: "Fehler", message: "Es ist ein Fehler beim Abschließen der Transaktion aufgetreten.", on: self)
+                showMessage(title: "Der Kauf konnte nicht abgeschlossen werden", message: "Entweder wurde der Kauf abgebrochen oder es ist ein Fehler aufgetreten. Bitte versuche es nochmals.", on: self)
             default:
                 print(transaction.transactionState.rawValue)
             }

@@ -31,7 +31,6 @@ class TipJarTableViewController: UITableViewController {
     // MARK:- IAP
     fileprivate func setupProducts() {
         productIDs = MensaplanIAP.allTips
-        print(productIDs)
     }
     
     @IBAction func tipButtonAction(_ sender: UIButton) {

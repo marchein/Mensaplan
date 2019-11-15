@@ -122,7 +122,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-image-meal" translatesAutoresizingMaskIntoConstraints="NO" id="BYN-bc-OXT">
-                                            <rect key="frame" x="16" y="5" width="100.00000000000006" height="75.333333333333329"/>
+                                            <rect key="frame" x="16" y="5" width="100" height="75.333333333333329"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="75" id="e6Q-Jn-R2E"/>
                                                 <constraint firstAttribute="width" constant="100" id="gK7-8d-aId"/>
@@ -187,7 +187,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-image-meal" translatesAutoresizingMaskIntoConstraints="NO" id="zNp-Vq-y6y">
-                                                    <rect key="frame" x="153" y="8" width="37.3333333333334" height="28"/>
+                                                    <rect key="frame" x="153" y="8" width="37.333333333333343" height="28"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="260" id="MCu-M0-qbo"/>
                                                         <constraint firstAttribute="width" secondItem="zNp-Vq-y6y" secondAttribute="height" multiplier="4:3" id="tUf-EZ-6ll"/>

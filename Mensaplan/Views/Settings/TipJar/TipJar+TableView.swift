@@ -38,8 +38,25 @@ extension TipJarTableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "tipCell", for: indexPath) as! TipTableViewCell
             if productsArray.count > indexPath.row {
                 if let product = productsArray[indexPath.row] {
-                    cell.tipTitle.text = product.localizedTitle
-                    cell.tipDesc.text = product.localizedDescription
+                    var fallbackTitle: String?
+                    var fallbackDesc: String?
+                    
+                    switch indexPath.row {
+                        case 0:
+                            fallbackTitle = "Kleine Spende"
+                            fallbackDesc = "Kleine Spende, welche der Entwicklung hilft"
+                        case 1:
+                            fallbackTitle = "Mittlere Spende"
+                            fallbackDesc = "Mittlere Spende, welche der Entwicklung hilft"
+                        case 2:
+                            fallbackTitle = "Riesige Spende"
+                            fallbackDesc = "Riesige Spende, welche der Entwicklung hilft"
+                    default:
+                        break
+                    }
+                    
+                    cell.tipTitle.text = product.localizedTitle.count == 0 ? fallbackTitle! : product.localizedTitle
+                    cell.tipDesc.text = product.localizedDescription.count == 0 ? fallbackDesc! : product.localizedDescription
                     cell.purchaseButton.isHidden = false
                     cell.purchaseButton.setTitle(product.localizedPrice, for: .normal)
                 }

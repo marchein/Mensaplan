@@ -51,7 +51,11 @@ struct MensaplanApp {
     static let MAIN_DISH_MINIMAL_PRICE: Double = 1.15
     
     static let groupIdentifier = "group.de.marc-hein.Mensaplan.Data"
+    #if targetEnvironment(macCatalyst)
+    static let appStoreId = "1484515269"
+    #else
     static let appStoreId = "1484281036"
+    #endif
     static let mailAdress = "dev@marc-hein.de"
     static let website = "https://marc-hein.de/"
     static let versionString = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
@@ -64,9 +68,9 @@ struct MensaplanApp {
 
 struct MensaplanIAP {
     static let prefix = "maccatalyst."
-    static let smallTip = "de.marc_hein.mensaplan.tip.small"
-    static let mediumTip = "de.marc_hein.mensaplan.tip.medium"
-    static let largeTip = "de.marc_hein.mensaplan.tip.large"
+    static let smallTip = "de.marc_hein.mensaplan.tip.sm"
+    static let mediumTip = "de.marc_hein.mensaplan.tip.md"
+    static let largeTip = "de.marc_hein.mensaplan.tip.lg"
     
     #if targetEnvironment(macCatalyst)
     static let allTips = [MensaplanIAP.prefix + MensaplanIAP.smallTip, MensaplanIAP.prefix + MensaplanIAP.mediumTip, MensaplanIAP.prefix + MensaplanIAP.largeTip]
