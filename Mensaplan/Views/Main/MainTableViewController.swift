@@ -9,20 +9,21 @@
 import UIKit
 import SwiftyXMLParser
 import Toast_Swift
+import CoreNFC
 
 class MainTableViewController: UITableViewController {
     var JSONData: Mensaplan?
     var tempMensaData: MensaplanDay?
     var showSideDish = false
+    var demo: Bool = false
 
+    var db = MensaDatabase()
+    static var APP_ID: Int = 0x5F8415
+    static var FILE_ID: UInt8  = 1
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         setupApp()
         if MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.refreshOnStart) {
             loadXML()
@@ -44,6 +45,15 @@ class MainTableViewController: UITableViewController {
             if let localCopyOfData = MensaplanApp.sharedDefaults.data(forKey: LocalKeys.jsonData) {
                 getJSON(data: localCopyOfData)
             }
+        }
+        
+        if demo {
+            db.insertRecord(
+                balance: 19.56,
+                lastTransaction: 2.85,
+              date: getCurrentDate(),
+              cardID: "1234567890"
+            )
         }
     }
 
@@ -217,10 +227,7 @@ class MainTableViewController: UITableViewController {
         print("Successfully load JSON")
         getJSON(data: data)
         
-        let dateformatter = DateFormatter()
-        dateformatter.dateFormat = "dd.MM.yyyy - HH:mm"
-        let now = dateformatter.string(from: Date())
-        MensaplanApp.sharedDefaults.set(now, forKey: LocalKeys.lastUpdate)
+        MensaplanApp.sharedDefaults.set(getCurrentDate(), forKey: LocalKeys.lastUpdate)
     }
     
     func getJSON(data: Data) {
@@ -256,6 +263,12 @@ class MainTableViewController: UITableViewController {
             let vc = segue.destination as! DetailTableViewController
             vc.mensaPlanDay = tempMensaData
         }
+    }
+    
+    func getCurrentDate() -> String {
+        let dateformatter = DateFormatter()
+        dateformatter.dateFormat = "dd.MM.yyyy - HH:mm"
+        return dateformatter.string(from: Date())
     }
     
     

@@ -67,12 +67,70 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cardCell" textLabel="PoQ-6O-Mof" detailTextLabel="9Xi-q9-DRG" style="IBUITableViewCellStyleValue1" id="TTE-FV-1Ss">
+                                <rect key="frame" x="0.0" y="165.66666793823242" width="375" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TTE-FV-1Ss" id="SAM-uN-6RL">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PoQ-6O-Mof">
+                                            <rect key="frame" x="15.999999999999996" y="11.999999999999998" width="36.666666666666664" height="20.333333333333332"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9Xi-q9-DRG">
+                                            <rect key="frame" x="300.33333333333331" y="11.999999999999998" width="58.666666666666664" height="20.333333333333332"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="scanCell" rowHeight="30.333333969116211" id="JFy-sa-WI6">
+                                <rect key="frame" x="0.0" y="209.33333587646484" width="375" height="30.333333969116211"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JFy-sa-WI6" id="sRI-dF-oe8">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="30.333333969116211"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5c2-v9-IAg">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="30.333333333333332"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44.5" id="Xxu-wC-WmC"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                            <state key="normal" title="Mensa-Karte scannen"/>
+                                            <connections>
+                                                <action selector="onClick:" destination="t2a-2R-URF" eventType="touchUpInside" id="nzS-ub-LS5"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="5c2-v9-IAg" secondAttribute="trailing" id="AmI-sn-vCN"/>
+                                        <constraint firstAttribute="bottom" secondItem="5c2-v9-IAg" secondAttribute="bottom" id="DXr-yq-DdV"/>
+                                        <constraint firstItem="5c2-v9-IAg" firstAttribute="top" secondItem="sRI-dF-oe8" secondAttribute="top" id="aKM-1G-KRL"/>
+                                        <constraint firstItem="5c2-v9-IAg" firstAttribute="leading" secondItem="sRI-dF-oe8" secondAttribute="leading" id="lcp-z6-Pb5"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="t2a-2R-URF" id="D73-Hd-N1B"/>
                             <outlet property="delegate" destination="t2a-2R-URF" id="Yut-fp-Mtj"/>
                         </connections>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem title="Read" id="fI8-qi-pG2">
+                            <connections>
+                                <action selector="onClick:" destination="t2a-2R-URF" id="n1l-q9-nGF"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Mensaplan" id="Zcz-Ka-wIq">
                         <barButtonItem key="leftBarButtonItem" image="Settings" style="done" id="4fI-IP-u5Q">
                             <connections>

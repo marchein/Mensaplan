@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreNFC
 
 extension MainTableViewController {
     
@@ -15,7 +16,11 @@ extension MainTableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-       return 2
+        if #available(iOS 13.0, *), NFCTagReaderSession.readingAvailable || demo {
+            return 3
+        } else {
+            return 2
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -25,8 +30,11 @@ extension MainTableViewController {
                 return mensaData.plan.count
             }
             return 1
+        } else if #available(iOS 13.0, *), (NFCTagReaderSession.readingAvailable || demo), section == 1 {
+            return 3
+        } else{
+            return 2
         }
-        return 2
     }
         
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -72,6 +80,25 @@ extension MainTableViewController {
                 cell.textLabel?.text = "Es sind keine Daten vorhanden."
                 return cell
             }
+        } else if #available(iOS 13.0, *), (NFCTagReaderSession.readingAvailable || demo), indexPath.section == 1 {
+            if indexPath.row < (tableView.numberOfRows(inSection: 1) - 1) {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath)
+                let data: [HistoryItem] = db.getEntries()
+                if data.count == 0 {
+                    cell.textLabel?.isEnabled = false
+                    cell.detailTextLabel?.isEnabled = false
+                }
+                if indexPath.row == 0 {
+                    cell.textLabel?.text = "Guthaben"
+                    cell.detailTextLabel?.text = data.count > 0 ? String(format: "%.2f €", data[0].balance) : "0,00 €"
+                } else if indexPath.row == 1 {
+                    cell.textLabel?.text = "Letzte Transaktion"
+                    cell.detailTextLabel?.text =  data.count > 0 ? String(format: "%.2f €", data[0].lastTransaction) : "0,00 €"
+                }
+                return cell
+            } else {
+                return tableView.dequeueReusableCell(withIdentifier: "scanCell", for: indexPath)
+            }
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "openingCell", for: indexPath)
             let isSetup = MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.isSetup)
@@ -103,6 +130,8 @@ extension MainTableViewController {
                 return MensaplanApp.standorteValues[index]
             }
             return nil
+        } else if #available(iOS 13.0, *), (NFCTagReaderSession.readingAvailable || demo), section == 1 {
+            return "Guthaben"
         } else {
             return "Öffnungszeiten"
         }
@@ -114,7 +143,13 @@ extension MainTableViewController {
                 return "Letzte Aktualisierung: \(lastUpdate) Uhr"
             }
             return "Keine Aktualisierung vorgenommen"
+        } else if #available(iOS 13.0, *), (NFCTagReaderSession.readingAvailable || demo), section == 1 {
+            let data: [HistoryItem] = db.getEntries()
+            if data.count > 0 {
+                return "Einlesedatum: \(data[0].date) Uhr"
             }
+            return "Guthaben wurde noch nicht eingelesen"
+        }
         return nil
     }
 }
