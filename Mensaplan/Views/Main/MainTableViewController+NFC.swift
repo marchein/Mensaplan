@@ -124,7 +124,7 @@ extension MainTableViewController: NFCTagReaderSessionDelegate {
                                         )
                                         
                                         // dismiss iOS NFC window
-                                        //session.invalidate()
+                                        session.invalidate()
                                         
                                         DispatchQueue.main.async {
                                             self.tableView.reloadData()

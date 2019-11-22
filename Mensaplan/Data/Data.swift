@@ -153,9 +153,11 @@ struct Counter: Decodable {
 struct Meal: Decodable {
     let title: String
     let priceStudent: Double
-     let priceWorker: Double
-     let pricePublic: Double
+    let priceWorker: Double
+    let pricePublic: Double
     let image: String?
+    let inhaltsStoffe: [Inhaltsstoff]?
+    let zusatzStoffe: [Zusatzstoff]?
     
     enum CodingKeys : String, CodingKey {
         case title
@@ -163,9 +165,31 @@ struct Meal: Decodable {
         case priceWorker
         case pricePublic
         case image
+        case inhaltsStoffe = "inhaltsstoffe"
+        case zusatzStoffe = "zusatzstoffe"
     }
     
     func getFormattedPrice(price: Double) -> String? {
         return String(format: "%.02f€", price)
     }
+}
+
+struct Inhaltsstoff: Decodable {
+    let id: Int
+    let title: String
+    
+    enum CodingKeys : String, CodingKey {
+        case id
+        case title
+    }
+}
+
+struct Zusatzstoff: Decodable {
+    enum CodingKeys : String, CodingKey {
+        case id
+        case title
+    }
+    
+    let id: Int
+    let title: String
 }

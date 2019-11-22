@@ -24,6 +24,7 @@
 		5B09BB4323705A37004E1981 /* SKProduct+LocalizedPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09BB3D23705A37004E1981 /* SKProduct+LocalizedPrice.swift */; };
 		5B09BB4423705A37004E1981 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09BB3E23705A37004E1981 /* Date+Helpers.swift */; };
 		5B09BB4723705A59004E1981 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09BB4623705A59004E1981 /* BorderedButton.swift */; };
+		5B0AE9C123887786005C22A7 /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0AE9C023887786005C22A7 /* ImageViewCell.swift */; };
 		5B18702F235A403E00EF54DF /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B18702E235A403E00EF54DF /* MainTableViewController.swift */; };
 		5B187034235A40E200EF54DF /* MainTableViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B187033235A40E200EF54DF /* MainTableViewController+TableView.swift */; };
 		5B277275235D033500E3894B /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B277274235D033500E3894B /* Data.swift */; };
@@ -79,6 +80,7 @@
 		5B09BB3D23705A37004E1981 /* SKProduct+LocalizedPrice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKProduct+LocalizedPrice.swift"; sourceTree = "<group>"; };
 		5B09BB3E23705A37004E1981 /* Date+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Helpers.swift"; sourceTree = "<group>"; };
 		5B09BB4623705A59004E1981 /* BorderedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
+		5B0AE9C023887786005C22A7 /* ImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
 		5B18702E235A403E00EF54DF /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		5B187033235A40E200EF54DF /* MainTableViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainTableViewController+TableView.swift"; sourceTree = "<group>"; };
 		5B277274235D033500E3894B /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			children = (
 				5B09BB3723705A0E004E1981 /* TipTableViewCell.swift */,
 				5B27727B235D102A00E3894B /* MealTableViewCell.swift */,
+				5B0AE9C023887786005C22A7 /* ImageViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				5B06EFA42382CC6C0020FF0E /* HistoryItem.swift in Sources */,
 				5BC7628B237C4F260062CDD3 /* MealTableViewCell.swift in Sources */,
 				5B5C8EBE235E5EDF00C29E62 /* UIViewController+SafariActions.swift in Sources */,
+				5B0AE9C123887786005C22A7 /* ImageViewCell.swift in Sources */,
 				5B06EFA82382CF000020FF0E /* Double+Rounding.swift in Sources */,
 				5B277278235D0B1900E3894B /* DetailTableViewController.swift in Sources */,
 				5BEA0A35235DCA55003E3616 /* Model.swift in Sources */,
@@ -705,7 +709,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Mensaplan/Mensaplan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = Mensaplan/Info.plist;
@@ -713,7 +717,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.marc-hein.mensaplan";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -729,7 +733,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Mensaplan/Mensaplan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = Mensaplan/Info.plist;
@@ -737,7 +741,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.marc-hein.mensaplan";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreNFC
 
 //MARK:- Local Keys
 struct LocalKeys {
@@ -70,15 +71,26 @@ struct MensaplanApp {
     static let sharedDefaults: UserDefaults = UserDefaults(suiteName: MensaplanApp.groupIdentifier)!
     
     // MARK:- NFC Data
-    static let demo: Bool = true
+    static let demo: Bool = false
     static let APP_ID: Int = 0x5F8415
     static let FILE_ID: UInt8  = 1
     
+    
     #if targetEnvironment(macCatalyst)
         static let canScan = false
+    #elseif targetEnvironment(simulator)
+        static let canScan = MensaplanApp.demo
     #else
-        static let canScan = NFCTagReaderSession.readingAvailable || MensaplanApp.demo
+        static let canScan = appCanScan()
     #endif
+    
+    static func appCanScan() -> Bool {
+        if #available(iOS 13.0, *) {
+            return NFCTagReaderSession.readingAvailable || MensaplanApp.demo
+        } else {
+            return MensaplanApp.demo
+        }
+    }
 
 }
 

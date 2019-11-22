@@ -179,6 +179,33 @@ class MainTableViewController: UITableViewController {
                                 mealResult["pricePublic"] = mealPricePublic;
              
                                 let mealMainPart = meal["hauptkomponente", "mahlzeitkomponenten-list", "mahlzeitkomponenten-item", "data"]
+                                
+                                let inhaltsstoffe = mealMainPart["inhaltsstoffe", "item"].makeIterator()
+                                var inhaltsstoffeValues: [Any] = [Any]()
+                                for item in inhaltsstoffe {
+                                    var inhaltsstoffeData = [String: Any]()
+                                    inhaltsstoffeData["id"] = Int(item.attributes["id"]!)!
+                                    inhaltsstoffeData["title"] = item.text
+                                    inhaltsstoffeValues.append(inhaltsstoffeData)
+                                }
+                               
+                                mealResult["inhaltsstoffe"] = inhaltsstoffeValues.count > 0 ? inhaltsstoffeValues : nil
+                                
+                                let zusatzstoffe = mealMainPart["zusatzstoffe", "item"].makeIterator()
+                                var zusatzstoffeValues: [Any] = [Any]()
+                                for item in zusatzstoffe {
+                                    var zusatzstoffeData = [String: Any]()
+                                    zusatzstoffeData["id"] = Int(item.attributes["key"]!)!
+                                    zusatzstoffeData["title"] = item.text
+                                    zusatzstoffeValues.append(zusatzstoffeData)
+                                }
+                              
+                                mealResult["zusatzstoffe"] = zusatzstoffeValues.count > 0 ? zusatzstoffeValues : nil
+                                /*let zusatzstoffe = mealMainPart["zusatzstoffe"].makeIterator()
+                                for item in zusatzstoffe {
+                                    print(item["item"].text)
+                                }*/
+                                
                                 let image = mealMainPart.attributes["bild-url"]
                                 mealResult["image"] = image != nil ? "\(MensaplanApp.STUDIWERK_URL)\(image!)" : nil
                                 
@@ -230,7 +257,8 @@ class MainTableViewController: UITableViewController {
     
     func getJSON(data: Data) {
         do {
-            let mensaData = try JSONDecoder().decode(Mensaplan.self, from: data) 
+            let mensaData = try JSONDecoder().decode(Mensaplan.self, from: data)
+            
             JSONData = mensaData
             DispatchQueue.main.async {
                 print("Successfully used JSON in UI")

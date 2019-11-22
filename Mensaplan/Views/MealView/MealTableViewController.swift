@@ -11,7 +11,8 @@ import UIKit
 class MealTableViewController: UITableViewController {
 
     
-    var meal: Meal?
+    var meal: Meal!
+    let dynamicSection = 4
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -22,16 +23,87 @@ class MealTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        guard let meal = meal else {
-            return
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        if let _ = meal.zusatzStoffe {
+            return 5
         }
-        nameLabel.text = meal.title
-        priceLabelStudent.text = meal.getFormattedPrice(price: meal.priceStudent)
-        priceLabelWorker.text = meal.getFormattedPrice(price: meal.priceWorker)
-        priceLabelPublic.text = meal.getFormattedPrice(price: meal.pricePublic)
-        if let image = meal.image {
-            imageView.downloaded(from: image)
+        return 4
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 1 {
+            return "Name des Gerichtes"
+        } else if section == 2 {
+            return "Preise"
+        } else if section == 3, let _ = meal.zusatzStoffe {
+            return "Zusatzinformationen"
+        } else if section == 3 || section == 4 {
+            return "Inhaltsstoffe"
+        }
+        return nil
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 2 {
+            return 3
+        } else if section == 3, let _ = meal.zusatzStoffe {
+            return meal.zusatzStoffe?.count ?? 1
+        } else if section == 3 || section == 4 {
+            return meal.inhaltsStoffe?.count ?? 1
+        } else {
+            return 1
+        }
+    }
+
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let section = indexPath.section
+        let row = indexPath.row
+        if section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "imageCell") as! ImageViewCell
+            if let image = meal.image {
+                cell.mealImage.downloaded(from: image)
+            }
+            return cell
+        } else if section == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "titleCell", for: indexPath)
+            cell.textLabel?.text = meal.title
+            return cell
+        } else if section == 2 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "priceCell", for: indexPath)
+            if row == 0 {
+                cell.textLabel?.text = "Studierende"
+                cell.detailTextLabel?.text = meal.getFormattedPrice(price: meal.priceStudent)
+            } else if row == 1 {
+                cell.textLabel?.text = "Bedienstete"
+                cell.detailTextLabel?.text =  meal.getFormattedPrice(price: meal.priceWorker)
+            } else {
+                cell.textLabel?.text = "Gäste"
+                cell.detailTextLabel?.text = meal.getFormattedPrice(price: meal.pricePublic)
+            }
+            return cell
+        } else if section == 3, let _ = meal.zusatzStoffe {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "inhaltsStoffCell")
+            if let zusatzstoffe = meal.zusatzStoffe {
+                cell?.textLabel?.text = zusatzstoffe[row].title
+            } else {
+                cell?.textLabel?.text = "Keine Zusatzinformationen vorhanden"
+                cell?.textLabel?.isEnabled = false
+            }
+            return cell!
+        } else if section == 3 || section == 4 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "inhaltsStoffCell")
+            if let inhaltsstoffe = meal.inhaltsStoffe {
+                cell?.textLabel?.text = inhaltsstoffe[row].title
+            } else {
+                cell?.textLabel?.text = "Keine Inhaltsstoffe vorhanden"
+                cell?.textLabel?.isEnabled = false
+            }
+            return cell!
+        } else {
+            return UITableViewCell()
         }
     }
 

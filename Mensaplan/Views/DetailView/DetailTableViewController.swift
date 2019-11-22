@@ -20,17 +20,49 @@ class DetailTableViewController: UITableViewController {
         
         title = getDayName(by: mensaPlanDay.getDateValue())
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         if mensaPlanDay.isToday() {
             setupTodayIntent()
         } else if mensaPlanDay.isTomorrow() {
             setupTomorrowIntent()
         }
+        
+        /*
+        var possibleZusatz = [Any]()
+
+        
+        for couter in mensaPlanDay.counters {
+            for meal in couter.meals {
+                if let zusatz = meal.zusatzStoffe {
+                    for zs in zusatz {
+                        var item = [String: String]()
+                        let id: String = "\(zs.id)"
+                        let title = zs.title
+                        item["id"] = id
+                        item["title"] = title
+                        if !containsValue(array: possibleZusatz, id: id) {
+                            possibleZusatz.append(item)
+                        }
+                        
+                    }
+                }
+                
+            }
+        }
+        print("possibleZusatz: \(possibleZusatz)")
+        */
     }
+    
+     /*
+     func containsValue(array: [Any], id: String) -> Bool {
+        for item in array {
+            let i = item as! [String: String]
+            if i["id"] == id {
+                return true
+            }
+        }
+        return false
+    }
+    */
     
     func setupTodayIntent() {
         let activity = NSUserActivity(activityType: Shortcuts.showToday) // 1
