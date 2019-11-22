@@ -8,6 +8,7 @@
 
 import Foundation
 
+//MARK:- Local Keys
 struct LocalKeys {
     static let isSetup = "isSetup"
     static let refreshOnStart = "refreshOnStart"
@@ -20,18 +21,20 @@ struct LocalKeys {
 }
 
 
-
+//MARK:- Shortcuts
 struct Shortcuts {
     static let showToday = "de.marc-hein.mensaplan.showToday"
     static let showTomorrow = "de.marc-hein.mensaplan.showTomorrow"
 
 }
 
+//MARK:- DayValue
 enum DayValue {
     case TODAY
     case TOMORROW
 }
 
+//MARK:- App Data
 struct MensaplanApp {
     static let standorteValues = ["Mensa Tarforst", "Bistro A/B", "Mensa Petrisberg", "Mensa Schneidershof", "Mensa Irminenfreihof" ,"forU"]
     static let standorteKeys = ["standort-1","standort-2","standort-3","standort-4","standort-5","standort-7"]
@@ -45,6 +48,7 @@ struct MensaplanApp {
     ]
     static let priceValues = ["student", "worker", "guest"]
     
+    //MARK:- API Data
     static let STUDIWERK_URL = "https://www.studiwerk.de";
     static let API = "https://www.studiwerk.de/export/speiseplan.xml"
     static let NOODLE_COUNTER = "CASA BLANCA"
@@ -64,8 +68,21 @@ struct MensaplanApp {
     static let askForReviewAt = 5
 
     static let sharedDefaults: UserDefaults = UserDefaults(suiteName: MensaplanApp.groupIdentifier)!
+    
+    // MARK:- NFC Data
+    static let demo: Bool = true
+    static let APP_ID: Int = 0x5F8415
+    static let FILE_ID: UInt8  = 1
+    
+    #if targetEnvironment(macCatalyst)
+        static let canScan = false
+    #else
+        static let canScan = NFCTagReaderSession.readingAvailable || MensaplanApp.demo
+    #endif
+
 }
 
+//MARK:- MensaplanIAP
 struct MensaplanIAP {
     static let prefix = "maccatalyst."
     static let smallTip = "de.marc_hein.mensaplan.tip.sm"

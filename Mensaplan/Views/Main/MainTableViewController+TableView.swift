@@ -16,7 +16,7 @@ extension MainTableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        if #available(iOS 13.0, *), NFCTagReaderSession.readingAvailable || demo {
+        if #available(iOS 13.0, *), MensaplanApp.canScan {
             return 3
         } else {
             return 2
@@ -25,14 +25,15 @@ extension MainTableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        
         if section == 0 {
             if let mensaData = JSONData {
                 return mensaData.plan.count
             }
             return 1
-        } else if #available(iOS 13.0, *), (NFCTagReaderSession.readingAvailable || demo), section == 1 {
+        } else if #available(iOS 13.0, *), MensaplanApp.canScan, section == 1 {
             return 3
-        } else{
+        } else {
             return 2
         }
     }
@@ -80,7 +81,7 @@ extension MainTableViewController {
                 cell.textLabel?.text = "Es sind keine Daten vorhanden."
                 return cell
             }
-        } else if #available(iOS 13.0, *), (NFCTagReaderSession.readingAvailable || demo), indexPath.section == 1 {
+        } else if #available(iOS 13.0, *), MensaplanApp.canScan, indexPath.section == 1 {
             if indexPath.row < (tableView.numberOfRows(inSection: 1) - 1) {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath)
                 let data: [HistoryItem] = db.getEntries()
@@ -130,7 +131,7 @@ extension MainTableViewController {
                 return MensaplanApp.standorteValues[index]
             }
             return nil
-        } else if #available(iOS 13.0, *), (NFCTagReaderSession.readingAvailable || demo), section == 1 {
+        } else if #available(iOS 13.0, *), MensaplanApp.canScan, section == 1 {
             return "Guthaben"
         } else {
             return "Öffnungszeiten"
@@ -143,7 +144,7 @@ extension MainTableViewController {
                 return "Letzte Aktualisierung: \(lastUpdate) Uhr"
             }
             return "Keine Aktualisierung vorgenommen"
-        } else if #available(iOS 13.0, *), (NFCTagReaderSession.readingAvailable || demo), section == 1 {
+        } else if #available(iOS 13.0, *), MensaplanApp.canScan, section == 1 {
             let data: [HistoryItem] = db.getEntries()
             if data.count > 0 {
                 return "Einlesedatum: \(data[0].date) Uhr"

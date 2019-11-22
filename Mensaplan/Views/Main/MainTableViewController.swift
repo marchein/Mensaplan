@@ -15,11 +15,8 @@ class MainTableViewController: UITableViewController {
     var JSONData: Mensaplan?
     var tempMensaData: MensaplanDay?
     var showSideDish = false
-    var demo: Bool = false
-
     var db = MensaDatabase()
-    static var APP_ID: Int = 0x5F8415
-    static var FILE_ID: UInt8  = 1
+  
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +25,7 @@ class MainTableViewController: UITableViewController {
         if MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.refreshOnStart) {
             loadXML()
         }
+        
         self.refreshControl?.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
     }
     
@@ -47,7 +45,7 @@ class MainTableViewController: UITableViewController {
             }
         }
         
-        if demo {
+        if MensaplanApp.demo {
             db.insertRecord(
                 balance: 19.56,
                 lastTransaction: 2.85,
@@ -80,7 +78,7 @@ class MainTableViewController: UITableViewController {
             if location.title == selectedLocation {
                 if location.closed {
                     let when = dayValue == DayValue.TODAY ? " heute " : dayValue == DayValue.TOMORROW ? " morgen ": " "
-                    showMessage(title: "Mensa\(when)geschlossen", message: location.closedReason ?? "Aushänge beachten", on: self)
+                    showMessage(title: "Mensa\(when)geschlossen", message: location.closedReason ?? "Bitte die Aushänge beachten", on: self)
                 } else {
                     tempMensaData = location.data
                     let navVC = self.parent as! UINavigationController
@@ -285,7 +283,6 @@ class MainTableViewController: UITableViewController {
     }
     
     @objc func refresh(sender: Any) {
-        // Updating your data here...
         refreshAction(sender)
 
         self.tableView.reloadData()

@@ -13,23 +13,24 @@ import UIKit
 @available(iOS 13.0, *)
 extension MainTableViewController: NFCTagReaderSessionDelegate {
     @IBAction func onClick(_ sender: Any) {
-      guard NFCTagReaderSession.readingAvailable else {
-           let alertController = UIAlertController(
-               title: NSLocalizedString("NFC Not Supported", comment: ""),
-               message: NSLocalizedString("This device doesn't support NFC tag scanning.", comment: ""),
-               preferredStyle: .alert
-           )
-           alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-           self.present(alertController, animated: true, completion: nil)
-           return
-       }
-       
+        guard NFCTagReaderSession.readingAvailable else {
+            let alertController = UIAlertController(
+                title: NSLocalizedString("NFC Not Supported", comment: ""),
+                message: NSLocalizedString("This device doesn't support NFC tag scanning.", comment: ""),
+                preferredStyle: .alert
+            )
+            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+
         let session = NFCTagReaderSession(pollingOption: .iso14443, delegate: self)
-       session?.alertMessage = NSLocalizedString("Please hold your Mensa card near the NFC sensor.", comment: "")
-       session?.begin()
-   }
+        session?.alertMessage = NSLocalizedString("Please hold your Mensa card near the NFC sensor.", comment: "")
+        session?.begin()
+    }
     
-   func tagReaderSessionDidBecomeActive(_ session: NFCTagReaderSession) {
+    func tagReaderSessionDidBecomeActive(_ session: NFCTagReaderSession) {
+    
     }
     
     func tagReaderSession(_ session: NFCTagReaderSession, didInvalidateWithError error: Error) {
@@ -63,9 +64,9 @@ extension MainTableViewController: NFCTagReaderSessionDelegate {
                 print("CARD-ID hex:"+idData.hexEncodedString())
                 
                 var appIdBuff : [Int] = [];
-                appIdBuff.append ((MainTableViewController.APP_ID & 0xFF0000) >> 16)
-                appIdBuff.append ((MainTableViewController.APP_ID & 0xFF00) >> 8)
-                appIdBuff.append  (MainTableViewController.APP_ID & 0xFF)
+                appIdBuff.append ((MensaplanApp.APP_ID & 0xFF0000) >> 16)
+                appIdBuff.append ((MensaplanApp.APP_ID & 0xFF00) >> 8)
+                appIdBuff.append  (MensaplanApp.APP_ID & 0xFF)
                 
                 // 1st command : select app
                 self.send(
@@ -81,7 +82,7 @@ extension MainTableViewController: NFCTagReaderSessionDelegate {
                             tag: tag,
                             data: Data(_: self.wrap(
                                 command: 0x6c, // command : read value
-                                parameter: [MainTableViewController.FILE_ID] // file id : 1
+                                parameter: [MensaplanApp.FILE_ID] // file id : 1
                             )),
                             completion: { (data2) -> () in
                                 
@@ -100,7 +101,7 @@ extension MainTableViewController: NFCTagReaderSessionDelegate {
                                     tag: tag,
                                     data: Data(_: self.wrap(
                                         command: 0xf5, // command : get file settings
-                                        parameter: [MainTableViewController.FILE_ID] // file id : 1
+                                        parameter: [MensaplanApp.FILE_ID] // file id : 1
                                     )),
                                     completion: { (data3) -> () in
                                         
@@ -123,7 +124,7 @@ extension MainTableViewController: NFCTagReaderSessionDelegate {
                                         )
                                         
                                         // dismiss iOS NFC window
-                                        session.invalidate()
+                                        //session.invalidate()
                                         
                                         DispatchQueue.main.async {
                                             self.tableView.reloadData()

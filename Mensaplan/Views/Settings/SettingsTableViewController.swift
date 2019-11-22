@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsTableViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class SettingsTableViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate,UIAdaptivePresentationControllerDelegate {
     
     @IBOutlet weak var refreshOnStartToggle: UISwitch!
     @IBOutlet weak var priceSelector: UIView!
@@ -39,6 +39,8 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         setupView()
+        
+        self.navigationController?.presentationController?.delegate = self
     }
     
     func setupView() {
@@ -56,11 +58,19 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
             mensaPicker.selectRow(selectedMensaValueIndex, inComponent: 0, animated: false)
             appVersionCell.detailTextLabel?.text = MensaplanApp.versionString
         }
-        navigationController?.navigationBar.prefersLargeTitles = true
+
         if #available(iOS 13.0, *) {
-            navigationController?.isModalInPresentation = true
+            //navigationController?.isModalInPresentation = true
+        }
+        
+    }
+    
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        if let navVC = UIApplication.shared.windows.first!.rootViewController as? UINavigationController, let mainVC = navVC.viewControllers[0] as? MainTableViewController {
+            mainVC.refreshAction(presentationController)
         }
     }
+    
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -93,6 +103,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         let priceValue = MensaplanApp.priceValues[selectedIndex]
         MensaplanApp.sharedDefaults.set(priceValue, forKey: LocalKeys.selectedPrice)
     }
+    
     @IBAction func doneAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
         performSegue(withIdentifier: "unwindToMain", sender: sender)
