@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
     
     var window: UIWindow?
 
@@ -19,20 +19,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
         UserDefaults.standard.set(false, forKey: "NSConstraintBasedLayoutLogUnsatisfiable")
         UserDefaults.standard.set(false, forKey: "__NSConstraintBasedLayoutLogUnsatisfiable")
+        
+        // Override point for customization after application launch.
+        let splitViewController = self.window!.rootViewController as! UISplitViewController
+        let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
+        navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
+        splitViewController.delegate = self
+        splitViewController.preferredDisplayMode = .allVisible
+        
         return true
     }
     
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
        if #available(iOS 12.0, *) {
-            let viewController = self.window?.rootViewController as! UINavigationController
-            let mainVC = viewController.viewControllers[0] as! MainTableViewController
+        if let splitVC = self.window?.rootViewController as? UISplitViewController, let splitNavVC = splitVC.viewControllers[0] as? UINavigationController, let mainVC = splitNavVC.viewControllers[0] as? MainTableViewController {
+            print(splitNavVC)
             if userActivity.activityType == Shortcuts.showToday {
                 mainVC.showDay(dayValue: DayValue.TODAY)
             } else if userActivity.activityType == Shortcuts.showTomorrow {
                 mainVC.showDay(dayValue: DayValue.TOMORROW)
             }
+            return true
+        }
+            
+            
        }
-       return true
+       return false
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -59,6 +71,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    // MARK: - Split view
+    
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController:UIViewController, onto primaryViewController:UIViewController) -> Bool {
+        if let secondaryAsNavController = secondaryViewController as? UINavigationController, let topAsDetailController = secondaryAsNavController.topViewController as? DetailTableViewController, topAsDetailController.mensaPlanDay == nil {
+            // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
+            return true
+        }
+        return false
+    }
+    
 
 }
 

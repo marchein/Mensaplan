@@ -64,6 +64,14 @@ class DetailTableViewController: UITableViewController {
     }
     */
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if mensaPlanDay == nil, let splitVC = splitViewController, let splitNavVC = splitVC.viewControllers[1] as? UINavigationController {
+            splitNavVC.performSegue(withIdentifier: MensaplanSegue.emptyDetail, sender: self)
+        }
+    }
+    
     func setupTodayIntent() {
         let activity = NSUserActivity(activityType: Shortcuts.showToday) // 1
         activity.title = "Mensaplan für heute anzeigen" // 2

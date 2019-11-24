@@ -94,6 +94,14 @@ struct MensaplanApp {
 
 }
 
+//MARK:- Segues
+struct MensaplanSegue {
+    static let emptyDetail = "emptyDetail"
+    static let showDetail = "showDetail"
+    static let manualShowDetail = "manualShowDetail"
+    
+}
+
 //MARK:- MensaplanIAP
 struct MensaplanIAP {
     static let prefix = "maccatalyst."
