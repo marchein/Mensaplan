@@ -156,8 +156,8 @@ struct Meal: Decodable {
     let priceWorker: Double
     let pricePublic: Double
     let image: String?
-    let inhaltsStoffe: [Inhaltsstoff]?
-    let zusatzStoffe: [Zusatzstoff]?
+    let inhaltsStoffe: [Stoff]?
+    let zusatzStoffe: [Stoff]?
     
     enum CodingKeys : String, CodingKey {
         case title
@@ -174,7 +174,7 @@ struct Meal: Decodable {
     }
 }
 
-struct Inhaltsstoff: Decodable {
+struct Stoff: Decodable {
     let id: Int
     let title: String
     
@@ -182,14 +182,4 @@ struct Inhaltsstoff: Decodable {
         case id
         case title
     }
-}
-
-struct Zusatzstoff: Decodable {
-    enum CodingKeys : String, CodingKey {
-        case id
-        case title
-    }
-    
-    let id: Int
-    let title: String
 }

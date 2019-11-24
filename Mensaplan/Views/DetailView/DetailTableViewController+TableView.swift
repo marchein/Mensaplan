@@ -47,6 +47,54 @@ extension DetailTableViewController {
             } else if selectedPrice == "guest" {
                 cell.mealPriceLabel.text = meal.getFormattedPrice(price: meal.pricePublic)
             }
+            
+            cell.infoStackView.removeAllArrangedSubviews()
+            
+            let MAX_ICONS = 3
+            var addedIcons = 0
+            if let zusatzstoffe = meal.zusatzStoffe {
+                for zusatzstoff in zusatzstoffe {
+                    var image: UIImage?
+                    switch zusatzstoff.id {
+                    case 10320:
+                        image = #imageLiteral(resourceName: "Vegetarisch")
+                        break
+                    case 10321:
+                        image = #imageLiteral(resourceName: "Vegan")
+                        break
+                    case 10322:
+                        image = #imageLiteral(resourceName: "Schwein")
+                        break
+                    case 10323:
+                        image = #imageLiteral(resourceName: "Kuh")
+                        break
+                    case 10325:
+                        image = #imageLiteral(resourceName: "Geflügel")
+                        break
+                    case 10327:
+                        image = #imageLiteral(resourceName: "Fisch")
+                        break
+                    default:
+                        break
+                    }
+                    if let image = image {
+                        if addedIcons < MAX_ICONS {
+                            let imageView = UIImageView(image: image)
+                            imageView.image = imageView.image?.withRenderingMode(.alwaysTemplate)
+                            if #available(iOS 13.0, *) {
+                                imageView.tintColor = UIColor.label
+                            } else {
+                                imageView.tintColor = UIColor.black
+                            }
+                            imageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
+                            imageView.widthAnchor.constraint(equalToConstant: 24).isActive = true
+                            cell.infoStackView.addArrangedSubview(imageView)
+                            addedIcons += 1
+                        }
+                    }
+                }
+            }
+            
         }
         return cell
     }

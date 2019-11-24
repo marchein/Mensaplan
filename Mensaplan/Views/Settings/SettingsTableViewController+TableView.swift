@@ -21,7 +21,9 @@ extension SettingsTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        if section == 1 {
+        if section == 0 {
+            return "Die Mensaplan Daten stammen vom Studierendenwerk Trier.\nAlle Angaben ohne Gewähr."
+        } else if section == 1 {
             return "Build Nummer: \(MensaplanApp.buildNumber) (\(getReleaseTitle()))"
         }
         return nil

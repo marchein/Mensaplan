@@ -92,7 +92,6 @@ class MainTableViewController: UITableViewController {
 
     func loadXML() {
         if let mensaAPI = URL(string: MensaplanApp.API) {
-        self.navigationController?.view.makeToastActivity(.center)
         let dispatchQueue = DispatchQueue(label: "xmlThread", qos: .background)
             dispatchQueue.async {
                 URLSession.shared.dataTask(with: mensaAPI, completionHandler: {(data, response, error) -> Void in
@@ -101,12 +100,12 @@ class MainTableViewController: UITableViewController {
                         if let localCopyOfData = MensaplanApp.sharedDefaults.data(forKey: LocalKeys.jsonData) {
                             self.getJSON(data: localCopyOfData)
                             DispatchQueue.main.async {
-                                self.navigationController?.view.hideToastActivity()
+                                //self.navigationController?.view.hideToastActivity()
                                 self.navigationController?.view.makeToast("Fehler beim Aktualisieren der Daten.\nVersuche es bitte später erneut.")
                             }
                         } else {
                             DispatchQueue.main.async {
-                                self.navigationController?.view.hideToastActivity()
+                                //self.navigationController?.view.hideToastActivity()
                                 self.navigationController?.view.makeToast("Fehler beim Laden der Daten.\nVersuche es bitte später erneut.")
                             }
                         }
@@ -201,10 +200,6 @@ class MainTableViewController: UITableViewController {
                                 }
                               
                                 mealResult["zusatzstoffe"] = zusatzstoffeValues.count > 0 ? zusatzstoffeValues : nil
-                                /*let zusatzstoffe = mealMainPart["zusatzstoffe"].makeIterator()
-                                for item in zusatzstoffe {
-                                    print(item["item"].text)
-                                }*/
                                 
                                 let image = mealMainPart.attributes["bild-url"]
                                 mealResult["image"] = image != nil ? "\(MensaplanApp.STUDIWERK_URL)\(image!)" : nil
@@ -263,6 +258,7 @@ class MainTableViewController: UITableViewController {
             DispatchQueue.main.async {
                 print("Successfully used JSON in UI")
                 self.navigationController?.view.hideToastActivity()
+                self.refreshControl?.endRefreshing()
                 self.tableView.reloadData()
             }
         } catch {
@@ -297,8 +293,12 @@ class MainTableViewController: UITableViewController {
         return dateformatter.string(from: Date())
     }
     
-    
     @IBAction func refreshAction(_ sender: Any) {
+        if let _ = sender as? UIRefreshControl {
+            // refresh from refresh control
+        } else {
+            self.navigationController?.view.makeToastActivity(.center)
+        }
         loadXML()
     }
     
@@ -312,8 +312,5 @@ class MainTableViewController: UITableViewController {
     
     @objc func refresh(sender: Any) {
         refreshAction(sender)
-
-        self.tableView.reloadData()
-        self.refreshControl?.endRefreshing()
     }
 }
