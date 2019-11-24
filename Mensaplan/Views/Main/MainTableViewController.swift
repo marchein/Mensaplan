@@ -80,11 +80,14 @@ class MainTableViewController: UITableViewController {
                     let when = dayValue == DayValue.TODAY ? " heute " : dayValue == DayValue.TOMORROW ? " morgen ": " "
                     showMessage(title: "Mensa\(when)geschlossen", message: location.closedReason ?? "Bitte die Aushänge beachten", on: self)
                 } else {
-                    tempMensaData = location.data
-                    let navVC = self.parent as! UINavigationController
-                    navVC.popToRootViewController(animated: true)
-                    performSegue(withIdentifier: "manualDetailSegue", sender: self)
-                    return
+                    if dayValue == .TODAY && !selectedDay.day[0].isToday() || dayValue == .TOMORROW && !selectedDay.day[0].isTomorrow() {
+                        showMessage(title: "Geschlossen", message: "Heute werde keine Gerichte in der Mensa angeboten", on: self)
+                    } else {
+                        tempMensaData = location.data
+                        let navVC = self.parent as! UINavigationController
+                        navVC.popToRootViewController(animated: true)
+                        performSegue(withIdentifier: MensaplanSegue.manualShowDetail, sender: self)
+                    }
                 }
             }
         }
@@ -257,6 +260,9 @@ class MainTableViewController: UITableViewController {
             JSONData = mensaData
             DispatchQueue.main.async {
                 print("Successfully used JSON in UI")
+                if let splitVC = self.splitViewController, splitVC.viewControllers.count > 1 ,let splitNavVC = splitVC.viewControllers[1] as? UINavigationController {
+                    splitNavVC.performSegue(withIdentifier: MensaplanSegue.emptyDetail, sender: self)
+                }
                 self.navigationController?.view.hideToastActivity()
                 self.refreshControl?.endRefreshing()
                 self.tableView.reloadData()
@@ -267,13 +273,13 @@ class MainTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "detailSegue" {
+        if segue.identifier == MensaplanSegue.showDetail {
             if let indexPath = self.tableView.indexPathForSelectedRow, let mensaData = JSONData {
                 let selectedDay = mensaData.plan[indexPath.row]
                 let selectedLocation = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa)!
                 for location in selectedDay.day {
                     if location.title == selectedLocation {
-                        let vc = segue.destination as! DetailTableViewController
+                        let vc = (segue.destination as! UINavigationController).topViewController as! DetailTableViewController
                         vc.mensaPlanDay = location.data
                         return
                     }
@@ -281,8 +287,8 @@ class MainTableViewController: UITableViewController {
             } else {
                 print("Oops, no row has been selected")
             }
-        } else if segue.identifier == "manualDetailSegue" {
-            let vc = segue.destination as! DetailTableViewController
+        } else if segue.identifier == MensaplanSegue.manualShowDetail {
+            let vc = (segue.destination as! UINavigationController).topViewController as! DetailTableViewController
             vc.mensaPlanDay = tempMensaData
         }
     }
