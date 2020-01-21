@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SDWebImage
 
 extension DetailTableViewController {
     // MARK: - Table view data source
@@ -28,15 +29,16 @@ extension DetailTableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "mealCell", for: indexPath) as! MealTableViewCell
+        let cellIdentifier = "mealCell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MealTableViewCell
 
         if let day = mensaPlanDay  {
             let meal = day.counters[indexPath.section].meals[indexPath.row]
             //cell.mealImage.image = #imageLiteral(resourceName: "Meal")
             cell.mealTitleLabel.text = meal.title + "\n"
             
-            if let imageView = cell.mealImage, let image = meal.image {
-                imageView.downloaded(from: image)
+            if let imageView = cell.mealImage, let imageURL = meal.image {
+                imageView.sd_setImage(with: URL(string: imageURL), placeholderImage: #imageLiteral(resourceName: "no-image-meal"))
             }
 
             let selectedPrice = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedPrice)
@@ -48,55 +50,58 @@ extension DetailTableViewController {
                 cell.mealPriceLabel.text = meal.getFormattedPrice(price: meal.pricePublic)
             }
             
-            cell.infoStackView.removeAllArrangedSubviews()
-            
-            let MAX_ICONS = 3
-            var addedIcons = 0
-            if let zusatzstoffe = meal.zusatzStoffe {
-                for zusatzstoff in zusatzstoffe {
-                    var image: UIImage?
-                    switch zusatzstoff.id {
-                    case 10320:
-                        image = #imageLiteral(resourceName: "Vegetarisch")
-                        break
-                    case 10321:
-                        image = #imageLiteral(resourceName: "Vegan")
-                        break
-                    case 10322:
-                        image = #imageLiteral(resourceName: "Schwein")
-                        break
-                    case 10323:
-                        image = #imageLiteral(resourceName: "Kuh")
-                        break
-                    case 10325:
-                        image = #imageLiteral(resourceName: "Geflügel")
-                        break
-                    case 10327:
-                        image = #imageLiteral(resourceName: "Fisch")
-                        break
-                    default:
-                        break
-                    }
-                    if let image = image {
-                        if addedIcons < MAX_ICONS {
-                            let imageView = UIImageView(image: image)
-                            imageView.image = imageView.image?.withRenderingMode(.alwaysTemplate)
-                            if #available(iOS 13.0, *) {
-                                imageView.tintColor = UIColor.label
-                            } else {
-                                imageView.tintColor = UIColor.black
-                            }
-                            imageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
-                            imageView.widthAnchor.constraint(equalToConstant: 24).isActive = true
-                            cell.infoStackView.addArrangedSubview(imageView)
-                            addedIcons += 1
-                        }
-                    }
-                }
-            }
+            setIcons(in: cell, for: meal.zusatzStoffe)
             
         }
         return cell
+    }
+    
+    
+    func setIcons(in cell: MealTableViewCell, for zusatzStoffe: [Stoff]?) {
+        // max number of icons
+        let MAX_ICONS = 3
+        // how many icons have been added
+        var addedIcons = 0
+        
+        // remove every icon for each cell
+        cell.infoStackView.removeAllArrangedSubviews()
+        
+        if let zusatzstoffe = zusatzStoffe {
+            for zusatzstoff in zusatzstoffe {
+                if addedIcons < MAX_ICONS {
+                    let imageView = UIImageView(image: getIcon(for: zusatzstoff))
+                    imageView.image = imageView.image?.withRenderingMode(.alwaysTemplate)
+                    if #available(iOS 13.0, *) {
+                        imageView.tintColor = UIColor.label
+                    } else {
+                        imageView.tintColor = UIColor.black
+                    }
+                    imageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
+                    imageView.widthAnchor.constraint(equalToConstant: 24).isActive = true
+                    cell.infoStackView.addArrangedSubview(imageView)
+                    addedIcons += 1
+                }
+            }
+        }
+    }
+    
+    func getIcon(for stoff: Stoff) -> UIImage {
+        switch stoff.id {
+        case 10320:
+             return #imageLiteral(resourceName: "Vegetarisch")
+        case 10321:
+             return #imageLiteral(resourceName: "Vegan")
+        case 10322:
+            return #imageLiteral(resourceName: "Schwein")
+        case 10323:
+            return #imageLiteral(resourceName: "Kuh")
+        case 10325:
+             return #imageLiteral(resourceName: "Geflügel")
+        case 10327:
+            return #imageLiteral(resourceName: "Fisch")
+        default:
+            return #imageLiteral(resourceName: "Splash")
+        }
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

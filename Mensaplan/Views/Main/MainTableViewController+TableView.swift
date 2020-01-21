@@ -23,9 +23,7 @@ extension MainTableViewController {
         }
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {      
         if section == 0 {
             if let mensaData = JSONData {
                 return mensaData.plan.count

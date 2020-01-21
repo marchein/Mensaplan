@@ -70,6 +70,9 @@ struct MensaplanApp {
 
     static let sharedDefaults: UserDefaults = UserDefaults(suiteName: MensaplanApp.groupIdentifier)!
     
+    static let imageCache = NSCache<AnyObject, AnyObject>()
+
+    
     // MARK:- NFC Data
     static let demo: Bool = false
     static let APP_ID: Int = 0x5F8415

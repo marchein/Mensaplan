@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DE0031CE5E627E67F1257EC /* Pods_Mensaplan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B75E182238BF522004814B1 /* Pods_Mensaplan.framework */; };
 		2015CB23EDD1FF3146659B8B /* Pods_Mensaplan_MensaplanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09CED77E670AD4B6AF74F34D /* Pods_Mensaplan_MensaplanUITests.framework */; };
 		5B06EFA22382CC5C0020FF0E /* MensaDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06EFA12382CC5C0020FF0E /* MensaDatabase.swift */; };
 		5B06EFA42382CC6C0020FF0E /* HistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06EFA32382CC6C0020FF0E /* HistoryItem.swift */; };
@@ -74,12 +75,12 @@
 		5B629D3C238AB67B00E39C8D /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B277274235D033500E3894B /* Data.swift */; };
 		5B629D3D238AB67B00E39C8D /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09BB3E23705A37004E1981 /* Date+Helpers.swift */; };
 		5B629D3F238AB67B00E39C8D /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BEA0A37235E09AE003E3616 /* Intents.framework */; };
-		5B629D40238AB67B00E39C8D /* Pods_Mensaplan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C6D0F32CDB59148AC7FBC1 /* Pods_Mensaplan.framework */; };
 		5B629D42238AB67B00E39C8D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B06EFAF2382EE640020FF0E /* Localizable.strings */; };
 		5B629D43238AB67B00E39C8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B458AEC235A3D7E0027CAE1 /* LaunchScreen.storyboard */; };
 		5B629D44238AB67B00E39C8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B458AEA235A3D7E0027CAE1 /* Assets.xcassets */; };
 		5B629D45238AB67B00E39C8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B458AE7235A3D7D0027CAE1 /* Main.storyboard */; };
 		5B629D46238AB67B00E39C8D /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BC7628C237C4F910062CDD3 /* Settings.storyboard */; };
+		5BAED42D238F36C600CDCD89 /* Pods_Mensaplan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BAED42C238F36C600CDCD89 /* Pods_Mensaplan.framework */; };
 		5BC7628B237C4F260062CDD3 /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B27727B235D102A00E3894B /* MealTableViewCell.swift */; };
 		5BC7628D237C4F910062CDD3 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BC7628C237C4F910062CDD3 /* Settings.storyboard */; };
 		5BC76291237C65950062CDD3 /* TopAlignedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC76290237C65950062CDD3 /* TopAlignedLabel.swift */; };
@@ -104,7 +105,6 @@
 /* Begin PBXFileReference section */
 		09CED77E670AD4B6AF74F34D /* Pods_Mensaplan_MensaplanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mensaplan_MensaplanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E9AF4A53CD72DC304D27F9 /* Pods-Mensaplan-MensaplanUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mensaplan-MensaplanUITests.release.xcconfig"; path = "Target Support Files/Pods-Mensaplan-MensaplanUITests/Pods-Mensaplan-MensaplanUITests.release.xcconfig"; sourceTree = "<group>"; };
-		59532A6DF7B573FFF59EB462 /* Pods-Mensaplan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mensaplan.debug.xcconfig"; path = "Target Support Files/Pods-Mensaplan/Pods-Mensaplan.debug.xcconfig"; sourceTree = "<group>"; };
 		5B06EFA12382CC5C0020FF0E /* MensaDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensaDatabase.swift; sourceTree = "<group>"; };
 		5B06EFA32382CC6C0020FF0E /* HistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItem.swift; sourceTree = "<group>"; };
 		5B06EFA52382CCA10020FF0E /* MainTableViewController+NFC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainTableViewController+NFC.swift"; sourceTree = "<group>"; };
@@ -145,6 +145,8 @@
 		5B629D19238AB43C00E39C8D /* Mensaplan Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mensaplan Mac.entitlements"; sourceTree = "<group>"; };
 		5B629D4B238AB67B00E39C8D /* Mensaplan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mensaplan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B629D4C238AB67B00E39C8D /* Mensaplan copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Mensaplan copy-Info.plist"; path = "/Users/marchein/Projekte/Private/Mensaplan/Mensaplan copy-Info.plist"; sourceTree = "<absolute>"; };
+		5B75E182238BF522004814B1 /* Pods_Mensaplan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Mensaplan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BAED42C238F36C600CDCD89 /* Pods_Mensaplan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Mensaplan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BC7628C237C4F910062CDD3 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		5BC76290237C65950062CDD3 /* TopAlignedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAlignedLabel.swift; sourceTree = "<group>"; };
 		5BC76292237C67E40062CDD3 /* MealTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableViewController.swift; sourceTree = "<group>"; };
@@ -153,9 +155,10 @@
 		5BEA0A34235DCA55003E3616 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		5BEA0A36235E0990003E3616 /* Mensaplan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mensaplan.entitlements; sourceTree = "<group>"; };
 		5BEA0A37235E09AE003E3616 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		608B42DA153E6AACF1BF5311 /* Pods-Mensaplan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mensaplan.release.xcconfig"; path = "Target Support Files/Pods-Mensaplan/Pods-Mensaplan.release.xcconfig"; sourceTree = "<group>"; };
 		94C6D0F32CDB59148AC7FBC1 /* Pods_Mensaplan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mensaplan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8A79967504697D0B4F0CA20 /* Pods-Mensaplan-MensaplanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mensaplan-MensaplanUITests.debug.xcconfig"; path = "Target Support Files/Pods-Mensaplan-MensaplanUITests/Pods-Mensaplan-MensaplanUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		ECCA21AD57E22B3309E32480 /* Pods-Mensaplan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mensaplan.release.xcconfig"; path = "Target Support Files/Pods-Mensaplan/Pods-Mensaplan.release.xcconfig"; sourceTree = "<group>"; };
+		D8DEAA82AC01711763DAE943 /* Pods-Mensaplan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mensaplan.debug.xcconfig"; path = "Target Support Files/Pods-Mensaplan/Pods-Mensaplan.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +168,7 @@
 			files = (
 				5BEA0A38235E09AE003E3616 /* Intents.framework in Frameworks */,
 				C21570277CD31A0300AEA94B /* Pods_Mensaplan.framework in Frameworks */,
+				1DE0031CE5E627E67F1257EC /* Pods_Mensaplan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,8 +184,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BAED42D238F36C600CDCD89 /* Pods_Mensaplan.framework in Frameworks */,
 				5B629D3F238AB67B00E39C8D /* Intents.framework in Frameworks */,
-				5B629D40238AB67B00E39C8D /* Pods_Mensaplan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +195,8 @@
 		3CC711BAEDFFBD9CFA2C533F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5BAED42C238F36C600CDCD89 /* Pods_Mensaplan.framework */,
+				5B75E182238BF522004814B1 /* Pods_Mensaplan.framework */,
 				5BEA0A37235E09AE003E3616 /* Intents.framework */,
 				94C6D0F32CDB59148AC7FBC1 /* Pods_Mensaplan.framework */,
 				09CED77E670AD4B6AF74F34D /* Pods_Mensaplan_MensaplanUITests.framework */,
@@ -368,10 +374,10 @@
 		845D45492358EE53AC8ABB18 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				59532A6DF7B573FFF59EB462 /* Pods-Mensaplan.debug.xcconfig */,
-				ECCA21AD57E22B3309E32480 /* Pods-Mensaplan.release.xcconfig */,
 				B8A79967504697D0B4F0CA20 /* Pods-Mensaplan-MensaplanUITests.debug.xcconfig */,
 				52E9AF4A53CD72DC304D27F9 /* Pods-Mensaplan-MensaplanUITests.release.xcconfig */,
+				D8DEAA82AC01711763DAE943 /* Pods-Mensaplan.debug.xcconfig */,
+				608B42DA153E6AACF1BF5311 /* Pods-Mensaplan.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -422,11 +428,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B629D48238AB67B00E39C8D /* Build configuration list for PBXNativeTarget "Mensaplan Mac" */;
 			buildPhases = (
-				5B629D1B238AB67B00E39C8D /* [CP] Check Pods Manifest.lock */,
 				5B629D1C238AB67B00E39C8D /* Sources */,
 				5B629D3E238AB67B00E39C8D /* Frameworks */,
 				5B629D41238AB67B00E39C8D /* Resources */,
-				5B629D47238AB67B00E39C8D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -444,7 +448,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1110;
-				LastUpgradeCheck = 1110;
+				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Marc Hein";
 				TargetAttributes = {
 					5B458ADD235A3D7D0027CAE1 = {
@@ -530,45 +534,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5B629D1B238AB67B00E39C8D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Mensaplan-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5B629D47238AB67B00E39C8D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Mensaplan/Pods-Mensaplan-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Mensaplan/Pods-Mensaplan-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mensaplan/Pods-Mensaplan-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		74F186822FFAAB13ED7D096A /* [CP] Embed Pods Frameworks */ = {
@@ -874,14 +839,14 @@
 		};
 		5B458AFE235A3D7E0027CAE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 59532A6DF7B573FFF59EB462 /* Pods-Mensaplan.debug.xcconfig */;
+			baseConfigurationReference = D8DEAA82AC01711763DAE943 /* Pods-Mensaplan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Mensaplan/Mensaplan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = Mensaplan/Info.plist;
@@ -889,7 +854,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.marc-hein.mensaplan";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -902,14 +867,14 @@
 		};
 		5B458AFF235A3D7E0027CAE1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ECCA21AD57E22B3309E32480 /* Pods-Mensaplan.release.xcconfig */;
+			baseConfigurationReference = 608B42DA153E6AACF1BF5311 /* Pods-Mensaplan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Mensaplan/Mensaplan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = Mensaplan/Info.plist;
@@ -917,7 +882,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.marc-hein.mensaplan";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -972,14 +937,13 @@
 		};
 		5B629D49238AB67B00E39C8D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 59532A6DF7B573FFF59EB462 /* Pods-Mensaplan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Mensaplan/Mensaplan Mac.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = "Mensaplan copy-Info.plist";
@@ -1000,14 +964,13 @@
 		};
 		5B629D4A238AB67B00E39C8D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ECCA21AD57E22B3309E32480 /* Pods-Mensaplan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Mensaplan/Mensaplan Mac.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = "Mensaplan copy-Info.plist";
