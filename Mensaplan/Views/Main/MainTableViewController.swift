@@ -26,7 +26,7 @@ class MainTableViewController: UITableViewController {
             loadXML()
         }
         
-        self.refreshControl?.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
+        self.refreshControl?.addTarget(self, action: #selector(refreshAction), for: UIControl.Event.valueChanged)
     }
     
     func setupApp() {
@@ -235,13 +235,7 @@ class MainTableViewController: UITableViewController {
             plans.append(locationResult)
             result["plan"] = plans
         }
-        
-        /*
-         result.sort((dateResult1, dateResult2) => {
-             return dateResult1.date - dateResult2.date;
-         });
-         */
-        
+               
         guard let data = try? JSONSerialization.data(withJSONObject: result, options: []) else {
             return
         }
@@ -260,9 +254,7 @@ class MainTableViewController: UITableViewController {
             JSONData = mensaData
             DispatchQueue.main.async {
                 print("Successfully used JSON in UI")
-                if let splitVC = self.splitViewController, splitVC.viewControllers.count > 1 ,let splitNavVC = splitVC.viewControllers[1] as? UINavigationController {
-                    splitNavVC.performSegue(withIdentifier: MensaplanSegue.emptyDetail, sender: self)
-                }
+                self.showEmptyView()
                 self.navigationController?.view.hideToastActivity()
                 self.refreshControl?.endRefreshing()
                 self.tableView.reloadData()
@@ -299,7 +291,7 @@ class MainTableViewController: UITableViewController {
         return dateformatter.string(from: Date())
     }
     
-    @IBAction func refreshAction(_ sender: Any) {
+    @IBAction @objc func refreshAction(_ sender: Any) {
         if let _ = sender as? UIRefreshControl {
             // refresh from refresh control
         } else {
@@ -310,13 +302,17 @@ class MainTableViewController: UITableViewController {
     
     @IBAction func unwindFromSegue(segue: UIStoryboardSegue) {
         if showSideDish != MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.showSideDish) {
-            refresh(sender: self)
+            refreshAction(self)
         } else {
             self.tableView.reloadData()
         }
+        //decide if changes have been made
+        showEmptyView()
     }
     
-    @objc func refresh(sender: Any) {
-        refreshAction(sender)
+    func showEmptyView() {
+        if let splitVC = self.splitViewController, splitVC.viewControllers.count > 1 ,let splitNavVC = splitVC.viewControllers[1] as? UINavigationController {
+            splitNavVC.performSegue(withIdentifier: MensaplanSegue.emptyDetail, sender: self)
+        }
     }
 }

@@ -1,3 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-Mensaplan/Pods-Mensaplan-frameworks.sh
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyXMLParser/SwiftyXMLParser.framework
 ${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework

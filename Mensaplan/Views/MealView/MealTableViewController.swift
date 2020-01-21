@@ -63,8 +63,8 @@ class MealTableViewController: UITableViewController {
         let row = indexPath.row
         if section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "imageCell") as! ImageViewCell
-            if let image = meal.image {
-                cell.mealImage.downloaded(from: image)
+            if let imageURL = meal.image {
+                cell.mealImage.sd_setImage(with: URL(string: imageURL), placeholderImage: #imageLiteral(resourceName: "no-image-meal"))
             }
             return cell
         } else if section == 1 {

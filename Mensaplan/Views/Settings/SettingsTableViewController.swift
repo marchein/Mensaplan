@@ -26,6 +26,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     
     var isPickerHidden = true
     var selectedMensa : String!
+    var madeChanges = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,7 +88,10 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedMensa = MensaplanApp.standorteKeys[row]
         selectedMensaName.text = MensaplanApp.standorteValues[row]
-        MensaplanApp.sharedDefaults.set(selectedMensa, forKey: LocalKeys.selectedMensa)
+        if selectedMensa != MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa) {
+            MensaplanApp.sharedDefaults.set(selectedMensa, forKey: LocalKeys.selectedMensa)
+            madeChanges = true
+        }
     }
     
     @IBAction func setRefreshOnStart(_ sender: Any) {

@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         //Hide Autolayout Warning
         UserDefaults.standard.set(false, forKey: "UIConstraintBasedLayoutLogUnsatisfiable")
         UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
@@ -33,7 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
        if #available(iOS 12.0, *) {
         if let splitVC = self.window?.rootViewController as? UISplitViewController, let splitNavVC = splitVC.viewControllers[0] as? UINavigationController, let mainVC = splitNavVC.viewControllers[0] as? MainTableViewController {
-            print(splitNavVC)
             if userActivity.activityType == Shortcuts.showToday {
                 mainVC.showDay(dayValue: DayValue.TODAY)
             } else if userActivity.activityType == Shortcuts.showTomorrow {
@@ -74,13 +74,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     // MARK: - Split view
     
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController:UIViewController, onto primaryViewController:UIViewController) -> Bool {
-        if let secondaryAsNavController = secondaryViewController as? UINavigationController, let topAsDetailController = secondaryAsNavController.topViewController as? DetailTableViewController, topAsDetailController.mensaPlanDay == nil {
-            // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
-            return true
-        }
-        return false
+        return true
     }
     
-
+    #if targetEnvironment(macCatalyst)
+    override func buildMenu(with builder: UIMenuBuilder) {
+        super.buildMenu(with: builder)
+        
+        builder.remove(menu: .services)
+        builder.remove(menu: .file)
+        builder.remove(menu: .edit)
+        builder.remove(menu: .format)
+        builder.remove(menu: .help)
+    }
+    #endif
 }
 
