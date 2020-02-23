@@ -80,7 +80,9 @@
 		5B629D44238AB67B00E39C8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B458AEA235A3D7E0027CAE1 /* Assets.xcassets */; };
 		5B629D45238AB67B00E39C8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B458AE7235A3D7D0027CAE1 /* Main.storyboard */; };
 		5B629D46238AB67B00E39C8D /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BC7628C237C4F910062CDD3 /* Settings.storyboard */; };
-		5BAED42D238F36C600CDCD89 /* Pods_Mensaplan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BAED42C238F36C600CDCD89 /* Pods_Mensaplan.framework */; };
+		5BBEA09524033759005790E9 /* DayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBEA09424033759005790E9 /* DayTableViewCell.swift */; };
+		5BBEA09624033759005790E9 /* DayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBEA09424033759005790E9 /* DayTableViewCell.swift */; };
+		5BC2298D23FCA22300C71FC4 /* MensaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC2298C23FCA22300C71FC4 /* MensaData.swift */; };
 		5BC7628B237C4F260062CDD3 /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B27727B235D102A00E3894B /* MealTableViewCell.swift */; };
 		5BC7628D237C4F910062CDD3 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BC7628C237C4F910062CDD3 /* Settings.storyboard */; };
 		5BC76291237C65950062CDD3 /* TopAlignedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC76290237C65950062CDD3 /* TopAlignedLabel.swift */; };
@@ -146,7 +148,8 @@
 		5B629D4B238AB67B00E39C8D /* Mensaplan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mensaplan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B629D4C238AB67B00E39C8D /* Mensaplan copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Mensaplan copy-Info.plist"; path = "/Users/marchein/Projekte/Private/Mensaplan/Mensaplan copy-Info.plist"; sourceTree = "<absolute>"; };
 		5B75E182238BF522004814B1 /* Pods_Mensaplan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Mensaplan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5BAED42C238F36C600CDCD89 /* Pods_Mensaplan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Mensaplan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BBEA09424033759005790E9 /* DayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTableViewCell.swift; sourceTree = "<group>"; };
+		5BC2298C23FCA22300C71FC4 /* MensaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensaData.swift; sourceTree = "<group>"; };
 		5BC7628C237C4F910062CDD3 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		5BC76290237C65950062CDD3 /* TopAlignedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAlignedLabel.swift; sourceTree = "<group>"; };
 		5BC76292237C67E40062CDD3 /* MealTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableViewController.swift; sourceTree = "<group>"; };
@@ -184,7 +187,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BAED42D238F36C600CDCD89 /* Pods_Mensaplan.framework in Frameworks */,
 				5B629D3F238AB67B00E39C8D /* Intents.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,8 +197,6 @@
 		3CC711BAEDFFBD9CFA2C533F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5BAED42C238F36C600CDCD89 /* Pods_Mensaplan.framework */,
-				5B75E182238BF522004814B1 /* Pods_Mensaplan.framework */,
 				5BEA0A37235E09AE003E3616 /* Intents.framework */,
 				94C6D0F32CDB59148AC7FBC1 /* Pods_Mensaplan.framework */,
 				09CED77E670AD4B6AF74F34D /* Pods_Mensaplan_MensaplanUITests.framework */,
@@ -220,6 +220,7 @@
 				5B09BB3723705A0E004E1981 /* TipTableViewCell.swift */,
 				5B27727B235D102A00E3894B /* MealTableViewCell.swift */,
 				5B0AE9C023887786005C22A7 /* ImageViewCell.swift */,
+				5BBEA09424033759005790E9 /* DayTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -282,6 +283,7 @@
 				845D45492358EE53AC8ABB18 /* Pods */,
 				3CC711BAEDFFBD9CFA2C533F /* Frameworks */,
 				5B629D4C238AB67B00E39C8D /* Mensaplan copy-Info.plist */,
+				5BC2298B23FC9F2E00C71FC4 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -356,8 +358,17 @@
 				5BEA0A34235DCA55003E3616 /* Model.swift */,
 				5B06EFA12382CC5C0020FF0E /* MensaDatabase.swift */,
 				5B06EFA32382CC6C0020FF0E /* HistoryItem.swift */,
+				5BC2298C23FCA22300C71FC4 /* MensaData.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		5BC2298B23FC9F2E00C71FC4 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				5B75E182238BF522004814B1 /* Pods_Mensaplan.framework */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		5BEA0A2F235DC0A0003E3616 /* Settings */ = {
@@ -606,6 +617,7 @@
 				5B06EFA22382CC5C0020FF0E /* MensaDatabase.swift in Sources */,
 				5B5C8EBA235E59BD00C29E62 /* Utilities.swift in Sources */,
 				5B09BB4723705A59004E1981 /* BorderedButton.swift in Sources */,
+				5BBEA09524033759005790E9 /* DayTableViewCell.swift in Sources */,
 				5BEA0A33235DC0D0003E3616 /* SettingsTableViewController+TableView.swift in Sources */,
 				5B5C8EBC235E5E7700C29E62 /* SettingsTableViewController+SendSupportMail.swift in Sources */,
 				5B06EFA42382CC6C0020FF0E /* HistoryItem.swift in Sources */,
@@ -625,6 +637,7 @@
 				5B06EFAA2382CF170020FF0E /* Data+HexEnconding.swift in Sources */,
 				5B09BB33237058B0004E1981 /* TipJarTableViewController.swift in Sources */,
 				5B09BB4023705A37004E1981 /* UserDefaults+Helper.swift in Sources */,
+				5BC2298D23FCA22300C71FC4 /* MensaData.swift in Sources */,
 				5B09BB3F23705A37004E1981 /* UIView+Effects.swift in Sources */,
 				5B458AE2235A3D7D0027CAE1 /* AppDelegate.swift in Sources */,
 				5B5C8EC3235F2DA500C29E62 /* UIImageView+Download.swift in Sources */,
@@ -653,6 +666,7 @@
 				5B629D20238AB67B00E39C8D /* Bundle+Icon.swift in Sources */,
 				5B629D21238AB67B00E39C8D /* MensaDatabase.swift in Sources */,
 				5B629D22238AB67B00E39C8D /* Utilities.swift in Sources */,
+				5BBEA09624033759005790E9 /* DayTableViewCell.swift in Sources */,
 				5B629D23238AB67B00E39C8D /* BorderedButton.swift in Sources */,
 				5B629D24238AB67B00E39C8D /* SettingsTableViewController+TableView.swift in Sources */,
 				5B629D25238AB67B00E39C8D /* SettingsTableViewController+SendSupportMail.swift in Sources */,
@@ -846,7 +860,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 22;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = Mensaplan/Info.plist;
@@ -874,7 +888,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 22;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = Mensaplan/Info.plist;

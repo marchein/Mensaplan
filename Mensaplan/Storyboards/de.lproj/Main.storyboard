@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IBz-Rs-FF6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IBz-Rs-FF6">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -44,8 +44,53 @@
                                     <segue destination="Crw-aN-aAr" kind="showDetail" identifier="showDetail" id="gyI-zY-odD"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="newDayCell" id="r4k-WO-gvg" customClass="DayTableViewCell" customModule="Mensaplan" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="114" width="375" height="91"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r4k-WO-gvg" id="Geo-UU-o8F">
+                                    <rect key="frame" x="0.0" y="0.0" width="348" height="91"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RbM-3v-hxU">
+                                            <rect key="frame" x="16" y="11" width="324" height="69"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6s-eY-Ckz">
+                                                    <rect key="frame" x="0.0" y="0.0" width="324" height="21"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Reason Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5A8-jZ-zGW">
+                                                    <rect key="frame" x="0.0" y="29" width="324" height="16"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Date Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBE-va-qjK">
+                                                    <rect key="frame" x="0.0" y="53" width="324" height="16"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="RbM-3v-hxU" firstAttribute="leading" secondItem="Geo-UU-o8F" secondAttribute="leadingMargin" id="J0d-qL-upt"/>
+                                        <constraint firstItem="RbM-3v-hxU" firstAttribute="top" secondItem="Geo-UU-o8F" secondAttribute="topMargin" id="Lvg-Sh-Ja0"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="RbM-3v-hxU" secondAttribute="trailing" id="Uad-20-O8P"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="RbM-3v-hxU" secondAttribute="bottom" id="lmm-No-uWL"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="ZBE-va-qjK" id="wih-6x-zeh"/>
+                                    <outlet property="reasonLabel" destination="5A8-jZ-zGW" id="zh7-qf-MwJ"/>
+                                    <outlet property="titleLabel" destination="h6s-eY-Ckz" id="IT8-D6-NQv"/>
+                                    <segue destination="Crw-aN-aAr" kind="showDetail" identifier="showDetail" id="z9z-O4-0Iu"/>
+                                </connections>
+                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="openingCell" textLabel="2TM-h7-JHt" detailTextLabel="89j-4F-tJT" style="IBUITableViewCellStyleSubtitle" id="9UE-m8-eyo">
-                                <rect key="frame" x="0.0" y="114" width="375" height="54.5"/>
+                                <rect key="frame" x="0.0" y="205" width="375" height="54.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9UE-m8-eyo" id="698-2J-Ixi">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
@@ -69,7 +114,7 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cardCell" textLabel="PoQ-6O-Mof" detailTextLabel="9Xi-q9-DRG" style="IBUITableViewCellStyleValue1" id="TTE-FV-1Ss">
-                                <rect key="frame" x="0.0" y="168.5" width="375" height="43.5"/>
+                                <rect key="frame" x="0.0" y="259.5" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TTE-FV-1Ss" id="SAM-uN-6RL">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -93,7 +138,7 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="scanCell" id="JFy-sa-WI6">
-                                <rect key="frame" x="0.0" y="212" width="375" height="43.5"/>
+                                <rect key="frame" x="0.0" y="303" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JFy-sa-WI6" id="sRI-dF-oe8">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -153,7 +198,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n2B-I8-Icl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="666" y="-63"/>
+            <point key="canvasLocation" x="481" y="-1170"/>
         </scene>
         <!--Tag-->
         <scene sceneID="G6X-JL-5j9">
@@ -257,7 +302,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r0u-kq-FHQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="629" y="696"/>
+            <point key="canvasLocation" x="481" y="-397"/>
         </scene>
         <!--Gericht-->
         <scene sceneID="GfM-zv-L3r">
@@ -364,7 +409,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ebo-R5-DsK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1321" y="696"/>
+            <point key="canvasLocation" x="1348" y="-397"/>
         </scene>
         <!--Mensaplan-->
         <scene sceneID="5xZ-Zn-sbk">
@@ -382,7 +427,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m8h-WF-tgr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-65" y="-63"/>
+            <point key="canvasLocation" x="-434" y="-1171"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="rg6-h1-BP1">
@@ -395,7 +440,7 @@
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GGd-q4-feF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-906" y="156"/>
+            <point key="canvasLocation" x="-1263" y="-397"/>
         </scene>
         <!--Settings-->
         <scene sceneID="utp-G1-1g1">
@@ -403,7 +448,7 @@
                 <viewControllerPlaceholder storyboardName="Settings" id="0ZH-Ou-mcR" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mDU-hf-cmJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1114" y="-63"/>
+            <point key="canvasLocation" x="1151" y="-1171"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Xbw-SA-hAT">
@@ -449,7 +494,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ft7-Qb-SqI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-66" y="1443"/>
+            <point key="canvasLocation" x="2170" y="-397"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QhW-Gw-o1y">
@@ -466,7 +511,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="477-CC-XdP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-66" y="696"/>
+            <point key="canvasLocation" x="-434" y="-397"/>
         </scene>
     </scenes>
     <resources>
@@ -477,6 +522,6 @@
         <image name="no-image-meal" width="376.5" height="375"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qvH-gO-lII"/>
+        <segue reference="z9z-O4-0Iu"/>
     </inferredMetricsTieBreakers>
 </document>

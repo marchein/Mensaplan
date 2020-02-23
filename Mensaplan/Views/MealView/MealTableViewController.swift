@@ -10,7 +10,6 @@ import UIKit
 
 class MealTableViewController: UITableViewController {
 
-    
     var meal: Meal!
     let dynamicSection = 4
 

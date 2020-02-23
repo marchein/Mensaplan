@@ -1,9 +1,9 @@
 PODS:
-  - SDWebImage (5.3.2):
-    - SDWebImage/Core (= 5.3.2)
-  - SDWebImage/Core (5.3.2)
+  - SDWebImage (5.5.2):
+    - SDWebImage/Core (= 5.5.2)
+  - SDWebImage/Core (5.5.2)
   - SwiftyXMLParser (5.1.0)
-  - Toast-Swift (5.0.0)
+  - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
   - SDWebImage (~> 5.0)
@@ -25,9 +25,9 @@ CHECKOUT OPTIONS:
     :git: https://github.com/yahoojapan/SwiftyXMLParser.git
 
 SPEC CHECKSUMS:
-  SDWebImage: 6ac2eb96571bff96ecde31a987172c5934a0eb7d
+  SDWebImage: 4d5c027c935438f341ed33dbac53ff9f479922ca
   SwiftyXMLParser: 8271497e0a37b5c04b0b167c77b4896e36175a21
-  Toast-Swift: 36f4720243c8582c2be243a60a51e193c761f541
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
 PODFILE CHECKSUM: d1fdbba9134c10977b021770a277426fc2206102
 
