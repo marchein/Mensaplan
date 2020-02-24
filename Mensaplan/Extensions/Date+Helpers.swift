@@ -18,4 +18,10 @@ extension Date {
         formatter.dateFormat = "dd.MM.yyyy"
         return formatter.date(from: date)
     }
+    
+    static func getCurrentDate() -> String {
+        let dateformatter = DateFormatter()
+        dateformatter.dateFormat = "dd.MM.yyyy - HH:mm"
+        return dateformatter.string(from: Date())
+    }
 }

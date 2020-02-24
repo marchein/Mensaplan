@@ -6,7 +6,7 @@ target 'Mensaplan' do
   use_frameworks!
 
   # Pods for Mensaplan
-  pod "SwiftyXMLParser", :git => 'https://github.com/yahoojapan/SwiftyXMLParser.git'
+  pod 'SwiftyXMLParser', :git => 'https://github.com/yahoojapan/SwiftyXMLParser.git'
   pod 'Toast-Swift', '~> 5.0.0'
   pod 'SDWebImage', '~> 5.0'
 

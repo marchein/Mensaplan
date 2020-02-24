@@ -4,15 +4,10 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Mensaplan Mac.xcscheme_^#shared#^_</key>
+		<key>Mensaplan Mac.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>6</integer>
-		</dict>
-		<key>Mensaplan copy.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>1</integer>
 		</dict>
 		<key>Mensaplan.xcscheme_^#shared#^_</key>
 		<dict>
@@ -28,6 +23,16 @@
 			<true/>
 		</dict>
 		<key>5B458AF3235A3D7E0027CAE1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5B629D1A238AB67B00E39C8D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5B85DEB5240414D4004A8224</key>
 		<dict>
 			<key>primary</key>
 			<true/>

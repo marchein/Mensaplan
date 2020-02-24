@@ -12,9 +12,8 @@ import CoreNFC
 
 extension MainTableViewController {
     
-
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         if #available(iOS 13.0, *), MensaplanApp.canScan {
             return 3
@@ -22,11 +21,11 @@ extension MainTableViewController {
             return 2
         }
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {      
         if section == 0 {
-            if let mensaData = JSONData {
-                return mensaData.plan.count
+            if let mensaData = self.mensaData, let mensaDataJSON = mensaData.JSONData {
+                return mensaDataJSON.plan.count
             }
             return 1
         } else if #available(iOS 13.0, *), MensaplanApp.canScan, section == 1 {
@@ -35,33 +34,45 @@ extension MainTableViewController {
             return 2
         }
     }
-        
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Configure the cell...
         if indexPath.section == 0 {
-            if let mensaData = JSONData {
+            if let mensaData = self.mensaData, let mensaDataJSON = mensaData.JSONData {
                 var dayData: LocationDay?
-                let cell = tableView.dequeueReusableCell(withIdentifier: "dayCell", for: indexPath)
-                let selectedDay = mensaData.plan[indexPath.row]
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "newDayCell", for: indexPath) as? DayTableViewCell else { return UITableViewCell()}
+                cell.titleLabel.numberOfLines = 0
+                cell.reasonLabel.numberOfLines = 0
+                cell.dateLabel.numberOfLines = 0
+                let selectedDay = mensaDataJSON.plan[indexPath.row]
                 let selectedLocation = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa)!
-                   for location in selectedDay.day {
-                       if location.title == selectedLocation {
+                for location in selectedDay.day {
+                    if location.title == selectedLocation {
                         dayData = location
                         break
-                       }
-               }
+                    }
+                }
                 if let dayDataResult = dayData {
                     let dateOfCell = dayDataResult.getDateValue()
-                    cell.textLabel?.text = dateSuffix(date: dateOfCell, string: getDayName(by: dateOfCell))
-                    cell.detailTextLabel?.text = dayDataResult.getDate(showDay: false)
-                                        
+                    cell.titleLabel.text = dateSuffix(date: dateOfCell, string: getDayName(by: dateOfCell))
+                    cell.reasonLabel.text = nil
+                    cell.dateLabel.text = dayDataResult.getDate(showDay: false)
+                    
+                    
                     if dayDataResult.closed || isDateOver(date: dateOfCell) || dayDataResult.data.counters.count == 0 {
                         cell.isUserInteractionEnabled = false
                         cell.textLabel?.isEnabled = false
                         cell.detailTextLabel?.isEnabled = false
+                        cell.accessoryType = .none
                         if dayDataResult.closed {
-                            cell.textLabel?.text = "\(dateSuffix(date: dateOfCell, string: getDayName(by: dateOfCell))) - \(dayDataResult.getDate(showDay: false)!)"
-                            cell.detailTextLabel?.text = dayDataResult.closedReason
+                            if #available(iOS 13.0, *) {
+                                cell.titleLabel.textColor = .secondaryLabel
+                            } else {
+                                cell.titleLabel.textColor = UIColor(red: 60.0, green: 60.0, blue: 67.0, alpha: 0.6)
+                            }
+                            cell.titleLabel.text = dateSuffix(date: dateOfCell, string: getDayName(by: dateOfCell))
+                            cell.reasonLabel.text = dayDataResult.closedReason
+                            cell.reasonLabel.isHidden = false
                         }
                     } else {
                         cell.isUserInteractionEnabled = true
@@ -70,19 +81,19 @@ extension MainTableViewController {
                     }
                     return cell
                 }  else {
-                   let cell = UITableViewCell()
-                   cell.textLabel?.text = "Es sind keine Daten vorhanden."
-                   return cell
-               }
+                    let cell = UITableViewCell()
+                    cell.textLabel?.text = "Es sind keine Daten vorhanden."
+                    return cell
+                }
             } else {
                 let cell = UITableViewCell()
                 cell.textLabel?.text = "Es sind keine Daten vorhanden."
                 return cell
             }
         } else if #available(iOS 13.0, *), MensaplanApp.canScan, indexPath.section == 1 {
-            if indexPath.row < (tableView.numberOfRows(inSection: 1) - 1) {
+            if indexPath.row < (tableView.numberOfRows(inSection: 1) - 1), let mensaData = self.mensaData {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath)
-                let data: [HistoryItem] = db.getEntries()
+                let data: [HistoryItem] = mensaData.db.getEntries()
                 if data.count == 0 {
                     cell.textLabel?.isEnabled = false
                     cell.detailTextLabel?.isEnabled = false
@@ -100,6 +111,7 @@ extension MainTableViewController {
             }
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "openingCell", for: indexPath)
+            cell.textLabel?.numberOfLines = 0
             let isSetup = MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.isSetup)
             if isSetup {
                 let selectedMensa = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa)
@@ -116,7 +128,7 @@ extension MainTableViewController {
         }
     }
     
-
+    
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
@@ -141,9 +153,11 @@ extension MainTableViewController {
             }
             return "Keine Aktualisierung vorgenommen"
         } else if #available(iOS 13.0, *), MensaplanApp.canScan, section == 1 {
-            let data: [HistoryItem] = db.getEntries()
-            if data.count > 0 {
-                return "Einlesedatum: \(data[0].date) Uhr"
+            if let mensaData = self.mensaData {
+                let data: [HistoryItem] = mensaData.db.getEntries()
+                if data.count > 0 {
+                    return "Einlesedatum: \(data[0].date) Uhr"
+                }
             }
             return "Guthaben wurde noch nicht eingelesen"
         }

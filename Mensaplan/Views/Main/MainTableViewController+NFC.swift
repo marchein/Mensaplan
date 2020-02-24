@@ -116,12 +116,14 @@ extension MainTableViewController: NFCTagReaderSessionDelegate {
                                         }
                                         
                                         // insert into history
-                                        self.db.insertRecord(
-                                            balance: currentBalanceValue,
-                                            lastTransaction: lastTransactionValue,
-                                            date: self.getCurrentDate(),
-                                            cardID: String(idInt)
-                                        )
+                                        if let mensaData = self.mensaData {
+                                            mensaData.db.insertRecord(
+                                                balance: currentBalanceValue,
+                                                lastTransaction: lastTransactionValue,
+                                                date: Date.getCurrentDate(),
+                                                cardID: String(idInt)
+                                            )
+                                        }
                                         
                                         // dismiss iOS NFC window
                                         session.invalidate()

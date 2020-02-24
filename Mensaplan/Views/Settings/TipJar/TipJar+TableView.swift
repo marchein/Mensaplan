@@ -24,39 +24,16 @@ extension TipJarTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "introCell")
+            let cell = tableView.dequeueReusableCell(withIdentifier: "introCell", for: indexPath)
             cell.textLabel?.text = "Heyho 😌"
-            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 15)
-            cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 14)
-            cell.detailTextLabel?.numberOfLines = 5
-            cell.detailTextLabel?.lineBreakMode = .byWordWrapping
             cell.detailTextLabel?.text = "Falls Dir die Mensaplan App sehr gefällt, kannst Du hier mit einer Spende an den Entwickler die Entwicklung unterstützen.\nSelbst wenn Du das nicht möchtest, dennoch danke. Der Gedanke zählt!"
-            cell.selectionStyle = .none
-            cell.isUserInteractionEnabled = false
             return cell
         } else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "tipCell", for: indexPath) as! TipTableViewCell
             if productsArray.count > indexPath.row {
                 if let product = productsArray[indexPath.row] {
-                    var fallbackTitle: String?
-                    var fallbackDesc: String?
-                    
-                    switch indexPath.row {
-                        case 0:
-                            fallbackTitle = "Kleine Spende"
-                            fallbackDesc = "Kleine Spende, welche der Entwicklung hilft"
-                        case 1:
-                            fallbackTitle = "Mittlere Spende"
-                            fallbackDesc = "Mittlere Spende, welche der Entwicklung hilft"
-                        case 2:
-                            fallbackTitle = "Riesige Spende"
-                            fallbackDesc = "Riesige Spende, welche der Entwicklung hilft"
-                    default:
-                        break
-                    }
-                    
-                    cell.tipTitle.text = product.localizedTitle.count == 0 ? fallbackTitle! : product.localizedTitle
-                    cell.tipDesc.text = product.localizedDescription.count == 0 ? fallbackDesc! : product.localizedDescription
+                    cell.tipTitle.text = product.localizedTitle
+                    cell.tipDesc.text = product.localizedDescription
                     cell.purchaseButton.isHidden = false
                     cell.purchaseButton.setTitle(product.localizedPrice, for: .normal)
                 }
