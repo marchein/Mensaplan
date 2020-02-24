@@ -74,7 +74,7 @@ struct MensaplanApp {
 
     
     // MARK:- NFC Data
-    static let demo: Bool = false
+    static let demo: Bool = true
     static let APP_ID: Int = 0x5F8415
     static let FILE_ID: UInt8  = 1
     

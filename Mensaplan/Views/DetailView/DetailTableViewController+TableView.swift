@@ -26,6 +26,10 @@ extension DetailTableViewController {
         }
         return 0
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -35,7 +39,7 @@ extension DetailTableViewController {
         if let day = mensaPlanDay  {
             let meal = day.counters[indexPath.section].meals[indexPath.row]
             //cell.mealImage.image = #imageLiteral(resourceName: "Meal")
-            cell.mealTitleLabel.text = meal.title + "\n"
+            cell.mealTitleLabel.text = meal.title            
             
             if let imageView = cell.mealImage, let imageURL = meal.image {
                 imageView.sd_setImage(with: URL(string: imageURL), placeholderImage: #imageLiteral(resourceName: "no-image-meal"))
