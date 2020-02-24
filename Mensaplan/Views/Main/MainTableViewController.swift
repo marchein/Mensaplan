@@ -17,12 +17,7 @@ class MainTableViewController: UITableViewController {
         super.viewDidLoad()
         
         self.mensaData = MensaData(mainVC: self)
-        
         setupApp()
-        if MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.refreshOnStart), let mensaData = self.mensaData {
-            mensaData.loadXML()
-        }
-        
         self.refreshControl?.addTarget(self, action: #selector(refreshAction), for: UIControl.Event.valueChanged)
     }
     
@@ -39,7 +34,7 @@ class MainTableViewController: UITableViewController {
         } else {
             print("MainTableViewController.swift - setupApp() - load local copy")
             if let localCopyOfData = MensaplanApp.sharedDefaults.data(forKey: LocalKeys.jsonData), let mensaData = self.mensaData {
-                mensaData.getJSON(data: localCopyOfData)
+                mensaData.loadJSONintoUI(data: localCopyOfData,local: true)
             }
         }
         

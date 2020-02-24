@@ -9,7 +9,6 @@
 import UIKit
 import SwiftyXMLParser
 
-
 class MensaData {
     var showSideDish = false
     var db = MensaDatabase()
@@ -20,7 +19,10 @@ class MensaData {
     
     init(mainVC: MainTableViewController) {
         self.mainVC = mainVC
-        loadXML()
+        self.navigationController = mainVC.parent as? UINavigationController
+        if MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.refreshOnStart) {
+            loadXML()
+        }
     }
     
     func loadXML() {
@@ -28,21 +30,13 @@ class MensaData {
             let dispatchQueue = DispatchQueue(label: "xmlThread", qos: .background)
             dispatchQueue.async {
                 URLSession.shared.dataTask(with: mensaAPI, completionHandler: {(data, response, error) -> Void in
-                    if let error = error {
-                        print("MensaData.swift - loadXML() - try to load local copy")
-                        if let localCopyOfData = MensaplanApp.sharedDefaults.data(forKey: LocalKeys.jsonData) {
-                            self.getJSON(data: localCopyOfData)
-                            DispatchQueue.main.async {
-                                //self.navigationController?.view.hideToastActivity()
-                                self.navigationController?.view.makeToast("Fehler beim Aktualisieren der Daten.\nVersuche es bitte später erneut.")
-                            }
-                        } else {
-                            DispatchQueue.main.async {
-                                //self.navigationController?.view.hideToastActivity()
-                                self.navigationController?.view.makeToast("Fehler beim Laden der Daten.\nVersuche es bitte später erneut.")
-                            }
+                    if let _ = error, let mainVC = self.mainVC {
+                        print("MensaData.swift - loadXML() - error - no network connection")
+                        DispatchQueue.main.async {
+                            self.navigationController?.view.hideToastActivity()
+                            self.navigationController?.view.makeToast("Fehler beim Laden der Daten.\nVersuche es bitte später erneut.")
+                            mainVC.refreshControl?.endRefreshing()
                         }
-                        print("error: \(error)")
                     } else {
                         if let response = response as? HTTPURLResponse, let data = data  {
                             print("MensaData.swift - loadXML() - statusCode: \(response.statusCode)")
@@ -172,19 +166,19 @@ class MensaData {
         
         MensaplanApp.sharedDefaults.set(data, forKey: LocalKeys.jsonData)
         print("MensaData.swift - processXML() - Successfully load JSON")
-        getJSON(data: data)
+        loadJSONintoUI(data: data, local: false)
         
         MensaplanApp.sharedDefaults.set(Date.getCurrentDate(), forKey: LocalKeys.lastUpdate)
     }
     
     
-    func getJSON(data: Data) {
+    func loadJSONintoUI(data: Data, local: Bool) {
         do {
             let mensaData = try JSONDecoder().decode(Mensaplan.self, from: data)
             
             JSONData = mensaData
             DispatchQueue.main.async {
-                print("MensaData.swift - getJSON() - Successfully used JSON in UI")
+                print("MensaData.swift - loadJSONintoUI() - Successfully used \(local ? "local" : "remote") JSON in UI")
                 if let mainVC = self.mainVC {
                     mainVC.showEmptyView()
                     self.navigationController?.view.hideToastActivity()

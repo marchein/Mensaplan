@@ -355,27 +355,27 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="tipCell" rowHeight="100" id="xN1-MA-rYz" customClass="TipTableViewCell" customModule="Mensaplan" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="118" width="414" height="100"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="tipCell" id="xN1-MA-rYz" customClass="TipTableViewCell" customModule="Mensaplan" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="118" width="414" height="63"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xN1-MA-rYz" id="QrF-sa-zlt">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="63"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="wlm-v7-NP9">
-                                            <rect key="frame" x="20" y="19" width="374" height="62"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="wlm-v7-NP9">
+                                            <rect key="frame" x="20" y="11" width="374" height="41"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="zbf-xs-cCf">
-                                                    <rect key="frame" x="0.0" y="11" width="259" height="40.5"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="zbf-xs-cCf">
+                                                    <rect key="frame" x="0.0" y="0.5" width="72" height="40.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tip_name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYV-U4-PBd">
-                                                            <rect key="frame" x="0.0" y="0.0" width="259" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="72" height="20.5"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tip_desc" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLo-q1-H44">
-                                                            <rect key="frame" x="0.0" y="24.5" width="259" height="16"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tip_desc" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLo-q1-H44">
+                                                            <rect key="frame" x="0.0" y="24.5" width="50.5" height="16"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                             <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -383,7 +383,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="y6J-mh-vfi" customClass="BorderedButton" customModule="Mensaplan" customModuleProvider="target">
-                                                    <rect key="frame" x="274" y="15.5" width="100" height="31"/>
+                                                    <rect key="frame" x="274" y="5" width="100" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="Qjd-od-efg"/>
                                                     </constraints>
@@ -406,17 +406,13 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="70" id="6Yk-tF-ZmE"/>
-                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="wlm-v7-NP9" firstAttribute="leading" secondItem="QrF-sa-zlt" secondAttribute="leadingMargin" id="0vw-aC-guq"/>
-                                        <constraint firstItem="wlm-v7-NP9" firstAttribute="centerY" secondItem="QrF-sa-zlt" secondAttribute="centerY" id="9fg-4G-lVI"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="wlm-v7-NP9" secondAttribute="bottom" constant="8" id="bUG-3C-PcV"/>
-                                        <constraint firstItem="wlm-v7-NP9" firstAttribute="top" secondItem="QrF-sa-zlt" secondAttribute="topMargin" constant="8" id="jqh-Ra-aXU"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="wlm-v7-NP9" secondAttribute="trailing" id="pqS-9m-wkr"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="wlm-v7-NP9" secondAttribute="bottom" id="S6S-mf-Zhz"/>
+                                        <constraint firstItem="wlm-v7-NP9" firstAttribute="top" secondItem="QrF-sa-zlt" secondAttribute="topMargin" id="hW0-ez-HFd"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="wlm-v7-NP9" secondAttribute="trailing" id="lxn-pg-9Yb"/>
+                                        <constraint firstItem="wlm-v7-NP9" firstAttribute="leading" secondItem="QrF-sa-zlt" secondAttribute="leadingMargin" id="r4k-Ee-1N6"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

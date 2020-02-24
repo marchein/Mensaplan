@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 struct Mensaplan: Decodable {
     let plan: [Location]
     

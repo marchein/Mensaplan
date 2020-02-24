@@ -18,4 +18,8 @@ extension Data {
         let format = options.contains(.upperCase) ? "%02hhX" : "%02hhx"
         return map { String(format: format, $0) }.joined()
     }
+    
+    static func debug(file: String = #file, line: Int = #line, function: String = #function) -> String {
+        return "\(file):\(line) : \(function)"
+    }
 }
