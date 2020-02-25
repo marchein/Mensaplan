@@ -184,6 +184,9 @@ class MensaData {
                     self.navigationController?.view.hideToastActivity()
                     mainVC.refreshControl?.endRefreshing()
                     mainVC.tableView.reloadData()
+                    #if !targetEnvironment(macCatalyst)
+                    mainVC.sendMessageToWatch()
+                    #endif
                 }
             }
         } catch {

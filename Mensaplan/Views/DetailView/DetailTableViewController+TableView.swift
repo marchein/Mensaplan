@@ -38,7 +38,6 @@ extension DetailTableViewController {
 
         if let day = mensaPlanDay  {
             let meal = day.counters[indexPath.section].meals[indexPath.row]
-            //cell.mealImage.image = #imageLiteral(resourceName: "Meal")
             cell.mealTitleLabel.text = meal.title            
             
             if let imageView = cell.mealImage, let imageURL = meal.image {

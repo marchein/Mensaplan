@@ -58,11 +58,11 @@ extension MainTableViewController {
                     cell.reasonLabel.text = nil
                     cell.dateLabel.text = dayDataResult.getDate(showDay: false)
                     
-                    
                     if dayDataResult.closed || isDateOver(date: dateOfCell) || dayDataResult.data.counters.count == 0 {
                         cell.isUserInteractionEnabled = false
-                        cell.textLabel?.isEnabled = false
-                        cell.detailTextLabel?.isEnabled = false
+                        cell.titleLabel.isEnabled = false
+                        cell.reasonLabel.isEnabled = false
+                        cell.dateLabel.isEnabled = false
                         cell.accessoryType = .none
                         if dayDataResult.closed {
                             if #available(iOS 13.0, *) {
@@ -76,8 +76,15 @@ extension MainTableViewController {
                         }
                     } else {
                         cell.isUserInteractionEnabled = true
-                        cell.textLabel?.isEnabled = true
-                        cell.detailTextLabel?.isEnabled = true
+                        cell.titleLabel.isEnabled = true
+                        cell.reasonLabel.isEnabled = true
+                        cell.dateLabel.isEnabled = true
+                        cell.accessoryType = .disclosureIndicator
+                        if #available(iOS 13.0, *) {
+                            cell.titleLabel.textColor = .label
+                        } else {
+                            cell.titleLabel.textColor = .black
+                        }
                     }
                     return cell
                 }  else {
