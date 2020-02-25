@@ -9,16 +9,19 @@
 import UIKit
 import Toast_Swift
 import CoreNFC
+import WatchSync
 
 class MainTableViewController: UITableViewController {
     var mensaData: MensaData?
+    var subscriptionToken: SubscriptionToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.mensaData = MensaData(mainVC: self)
-        setupApp()
         self.refreshControl?.addTarget(self, action: #selector(refreshAction), for: UIControl.Event.valueChanged)
+        
+        setupApp()
     }
     
     func setupApp() {
@@ -30,12 +33,17 @@ class MainTableViewController: UITableViewController {
             MensaplanApp.sharedDefaults.set("standort-1", forKey: LocalKeys.selectedMensa)
             MensaplanApp.sharedDefaults.set("student", forKey: LocalKeys.selectedPrice)
             MensaplanApp.sharedDefaults.set(true, forKey: LocalKeys.isSetup)
-            print("MainTableViewController.swift - setupApp() -INITIAL SETUP DONE")
+            print("MainTableViewController.swift - setupApp() - INITIAL SETUP DONE")
+            refreshAction(self)
         } else {
             print("MainTableViewController.swift - setupApp() - load local copy")
             if let localCopyOfData = MensaplanApp.sharedDefaults.data(forKey: LocalKeys.jsonData), let mensaData = self.mensaData {
-                mensaData.loadJSONintoUI(data: localCopyOfData,local: true)
+                mensaData.loadJSONintoUI(data: localCopyOfData, local: true)
             }
+        }
+        
+        subscriptionToken = WatchSync.shared.subscribeToMessages(ofType: WatchMessage.self) { watchMessage in
+            print(String(describing: watchMessage.lastUpdate), String(describing: watchMessage.selectedMensa), String(describing: watchMessage.selectedPrice), String(describing: watchMessage.jsonData))
         }
         
         if MensaplanApp.demo, let mensaData = self.mensaData {
@@ -127,6 +135,10 @@ class MainTableViewController: UITableViewController {
         } else {
             self.tableView.reloadData()
         }
+        
+        #if !targetEnvironment(macCatalyst)
+        sendMessageToWatch()
+        #endif
         //decide if changes have been made
         showEmptyView()
     }
@@ -136,4 +148,45 @@ class MainTableViewController: UITableViewController {
             splitNavVC.performSegue(withIdentifier: MensaplanSegue.emptyDetail, sender: self)
         }
     }
+    
+    #if !targetEnvironment(macCatalyst)
+    func sendMessageToWatch() {
+        print("Sending message to watch")
+        let selectedPrice = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedPrice)
+        let selectedMensa = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa)
+        let lastUpdate = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.lastUpdate)
+        let jsonData = MensaplanApp.sharedDefaults.data(forKey: LocalKeys.jsonData)
+
+        let newWatchMessage = WatchMessage(selectedPrice: selectedPrice, selectedMensa: selectedMensa, lastUpdate: lastUpdate, jsonData: jsonData)
+        
+        WatchSync.shared.sendMessage(newWatchMessage) { result in
+            print(result)
+            switch result {
+            case .failure(let failure):
+                switch failure {
+                case .sessionNotActivated:
+                    break
+                case .watchConnectivityNotAvailable:
+                    break
+                case .unableToSerializeMessageAsJSON(let error), .unableToCompressMessage(let error):
+                    print(error.localizedDescription)
+                case .watchAppNotPaired:
+                    break
+                case .watchAppNotInstalled:
+                    break
+                case .unhandledError(let error):
+                    print(error.localizedDescription)
+                case .badPayloadError(let error):
+                    print(error.localizedDescription)
+                case .failedToDeliver(let error):
+                    print("Failed to Deliver \(error.localizedDescription)")
+                }
+            case .sent:
+                print("Sent!")
+            case .delivered:
+                print("Delivery Confirmed")
+            }
+        }
+    }
+    #endif
 }

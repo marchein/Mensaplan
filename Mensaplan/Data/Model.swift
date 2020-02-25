@@ -7,7 +7,9 @@
 //
 
 import Foundation
+#if !os(watchOS)
 import CoreNFC
+#endif
 
 //MARK:- Local Keys
 struct LocalKeys {
@@ -78,7 +80,7 @@ struct MensaplanApp {
     static let APP_ID: Int = 0x5F8415
     static let FILE_ID: UInt8  = 1
     
-    
+    #if !os(watchOS)
     #if targetEnvironment(macCatalyst)
         static let canScan = false
     #elseif targetEnvironment(simulator)
@@ -94,6 +96,7 @@ struct MensaplanApp {
             return MensaplanApp.demo
         }
     }
+    #endif
 
 }
 

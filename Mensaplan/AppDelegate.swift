@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WatchSync
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
@@ -27,6 +28,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
         splitViewController.delegate = self
         splitViewController.preferredDisplayMode = .allVisible
+        
+        WatchSync.shared.activateSession { error in
+            if let error = error {
+                print("Error activating session \(error.localizedDescription)")
+                return
+            }
+            print("Activated")
+        }
         
         return true
     }

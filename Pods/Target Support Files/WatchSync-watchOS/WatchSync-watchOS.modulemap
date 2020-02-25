@@ -1,0 +1,6 @@
+framework module WatchSync {
+  umbrella header "WatchSync-watchOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
