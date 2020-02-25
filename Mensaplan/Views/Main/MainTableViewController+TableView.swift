@@ -57,7 +57,15 @@ extension MainTableViewController {
                     cell.titleLabel.text = dateSuffix(date: dateOfCell, string: getDayName(by: dateOfCell))
                     cell.reasonLabel.text = nil
                     cell.dateLabel.text = dayDataResult.getDate(showDay: false)
-                    
+                    cell.isUserInteractionEnabled = true
+                    cell.textLabel?.isEnabled = true
+                    cell.detailTextLabel?.isEnabled = true
+                    cell.accessoryType = .disclosureIndicator
+                    if #available(iOS 13.0, *) {
+                        cell.titleLabel.textColor = .label
+                    } else {
+                        cell.titleLabel.textColor = .black
+                    }
                     
                     if dayDataResult.closed || isDateOver(date: dateOfCell) || dayDataResult.data.counters.count == 0 {
                         cell.isUserInteractionEnabled = false
