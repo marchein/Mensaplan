@@ -78,11 +78,12 @@ class MainTableViewController: UITableViewController {
         for location in selectedDay.day {
             if location.title == selectedLocation {
                 if location.closed {
-                    let when = dayValue == DayValue.TODAY ? " heute " : dayValue == DayValue.TOMORROW ? " morgen ": " "
+                    let when = dayValue == .TODAY ? " heute " : dayValue == .TOMORROW ? " morgen ": " "
                     showMessage(title: "Mensa\(when)geschlossen", message: location.closedReason ?? "Bitte die Aushänge beachten", on: self)
                 } else {
+                    let when = dayValue == .TODAY ? "Heute" : dayValue == .TOMORROW ? "Morgen": " "
                     if dayValue == .TODAY && !selectedDay.day[0].isToday() || dayValue == .TOMORROW && !selectedDay.day[0].isTomorrow() {
-                        showMessage(title: "Geschlossen", message: "Heute werde keine Gerichte in der Mensa angeboten", on: self)
+                        showMessage(title: "Geschlossen", message: "\(when) werden keine Gerichte in der Mensa angeboten", on: self)
                     } else {
                         mensaData.tempMensaData = location.data
                         let navVC = self.parent as! UINavigationController

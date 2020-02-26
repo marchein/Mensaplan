@@ -37,7 +37,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             print("Activated")
         }
         
+        let showTodayShortcut = UIMutableApplicationShortcutItem(type: Shortcuts.showToday,
+                localizedTitle: "Mensaplan für heute anzeigen",
+                localizedSubtitle: nil,
+                icon: UIApplicationShortcutIcon(type: .date),
+                userInfo: nil
+        )
+
+        let showTomorrowShortcut = UIMutableApplicationShortcutItem(type: Shortcuts.showTomorrow,
+                localizedTitle: "Mensaplan für morgen anzeigen",
+                localizedSubtitle: nil,
+                icon: UIApplicationShortcutIcon(type: .date),
+                userInfo: nil
+        )
+
+        application.shortcutItems = [showTodayShortcut, showTomorrowShortcut]
+        
         return true
+    }
+    
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        if let splitVC = self.window?.rootViewController as? UISplitViewController, let splitNavVC = splitVC.viewControllers[0] as? UINavigationController, let mainVC = splitNavVC.viewControllers[0] as? MainTableViewController {
+            if shortcutItem.type == Shortcuts.showToday {
+                mainVC.showDay(dayValue: DayValue.TODAY)
+            } else if shortcutItem.type == Shortcuts.showTomorrow {
+                mainVC.showDay(dayValue: DayValue.TOMORROW)
+            }
+        }
+        completionHandler(true)
     }
     
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
