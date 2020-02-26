@@ -1,6 +1,0 @@
-framework module Pods_Mensaplan_TV {
-  umbrella header "Pods-Mensaplan TV-umbrella.h"
-
-  export *
-  module * { export * }
-}

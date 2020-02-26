@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15705" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch42"/>
     <dependencies>
+        <deployment identifier="watchOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
     </dependencies>
@@ -12,10 +13,10 @@
                 <controller identifier="MealList" title="Mensaplan" hidesWhenLoading="NO" id="AgC-eL-Hgc" customClass="MainInterfaceController" customModule="Watchapp_Extension">
                     <items>
                         <label alignment="left" text="LOCATION LABEL" numberOfLines="0" id="nsl-i4-gfx">
-                            <fontDescription key="font" type="system" weight="semibold" pointSize="18"/>
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                         </label>
                         <label alignment="left" text="INTRO LABEL" numberOfLines="0" id="E5E-Q1-C8y">
-                            <fontDescription key="font" type="system" pointSize="16"/>
+                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
                         </label>
                         <table alignment="left" id="c9L-KL-4hm">
                             <items>
@@ -23,7 +24,7 @@
                                     <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="Zsj-IK-tgt">
                                         <items>
                                             <label alignment="left" text="COUNTER NAME" textAlignment="left" numberOfLines="0" id="D5z-XR-z0N">
-                                                <fontDescription key="font" type="system" weight="semibold" pointSize="20"/>
+                                                <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                             </label>
                                         </items>
                                     </group>
@@ -42,15 +43,15 @@
                                                     <group width="1" alignment="left" layout="vertical" spacing="4" id="BiT-Aq-0Ln">
                                                         <items>
                                                             <label alignment="left" text="MEAL TITLE" textAlignment="left" numberOfLines="3" id="TZR-3l-FhP">
-                                                                <fontDescription key="font" type="boldSystem" pointSize="17"/>
+                                                                <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
                                                             </label>
                                                             <group width="1" alignment="left" spacing="4" id="fxR-pA-10L">
                                                                 <items>
                                                                     <label alignment="left" text="Preis" id="Ij5-kZ-kvh">
-                                                                        <fontDescription key="font" type="system" weight="medium" pointSize="16"/>
+                                                                        <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
                                                                     </label>
                                                                     <label alignment="left" text="MEAL PRICE" id="VNe-pX-5yv">
-                                                                        <fontDescription key="font" type="system" pointSize="16"/>
+                                                                        <fontDescription key="font" style="UICTFontTextStyleBody"/>
                                                                     </label>
                                                                 </items>
                                                             </group>
@@ -87,7 +88,7 @@
                                 <group width="1" alignment="left" layout="vertical" spacing="4" id="cvz-Pt-Emo">
                                     <items>
                                         <label alignment="left" text="NAME DES GERICHTES NAME DES GERICHTES " numberOfLines="0" id="cnt-24-2X2">
-                                            <fontDescription key="font" type="boldSystem" pointSize="17"/>
+                                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                         </label>
                                         <separator alignment="left" id="y3E-qH-HQt">
                                             <color key="color" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
@@ -95,35 +96,35 @@
                                         <group width="1" alignment="left" layout="vertical" id="WZP-I8-YPW">
                                             <items>
                                                 <label alignment="left" text="Preise" id="z4L-ml-qYv">
-                                                    <fontDescription key="font" type="boldSystem" pointSize="16"/>
+                                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
                                                 </label>
                                                 <group width="1" alignment="left" spacing="4" id="s59-He-1DT">
                                                     <items>
                                                         <label alignment="left" text="Studierende" id="JSQ-aP-iNc">
-                                                            <fontDescription key="font" type="system" weight="medium" pointSize="16"/>
+                                                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
                                                         </label>
                                                         <label alignment="left" text="2,65€" id="F4M-Ov-6WR">
-                                                            <fontDescription key="font" type="system" pointSize="16"/>
+                                                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
                                                         </label>
                                                     </items>
                                                 </group>
                                                 <group width="1" alignment="left" spacing="4" id="wLN-K0-HfI">
                                                     <items>
                                                         <label alignment="left" text="Bedienstete " id="6ds-87-xMK">
-                                                            <fontDescription key="font" type="system" weight="medium" pointSize="16"/>
+                                                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
                                                         </label>
                                                         <label alignment="left" text="2,65€" id="MH3-Fh-p2u">
-                                                            <fontDescription key="font" type="system" pointSize="16"/>
+                                                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
                                                         </label>
                                                     </items>
                                                 </group>
                                                 <group width="1" alignment="left" spacing="4" id="EYW-2J-hmx">
                                                     <items>
                                                         <label alignment="left" text="Gäste              " id="exv-cN-JUP">
-                                                            <fontDescription key="font" type="system" weight="medium" pointSize="16"/>
+                                                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
                                                         </label>
                                                         <label alignment="left" text="2,65€" id="t37-pv-Ls3">
-                                                            <fontDescription key="font" type="system" pointSize="16"/>
+                                                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
                                                         </label>
                                                     </items>
                                                 </group>
@@ -145,7 +146,7 @@
                                             <color key="color" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
                                         </separator>
                                         <label alignment="left" text="Informationen" id="urF-XX-K8w">
-                                            <fontDescription key="font" type="boldSystem" pointSize="16"/>
+                                            <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
                                         </label>
                                         <table alignment="left" id="xa5-zU-LXA">
                                             <items>
@@ -169,7 +170,7 @@
                                             <color key="color" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
                                         </separator>
                                         <label alignment="left" text="Inhaltsstoffe" id="uy6-lu-Bto">
-                                            <fontDescription key="font" type="boldSystem" pointSize="16"/>
+                                            <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
                                         </label>
                                         <table alignment="left" id="nVF-zc-3EG">
                                             <items>
