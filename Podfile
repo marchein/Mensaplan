@@ -26,8 +26,8 @@ target 'Watchapp Extension' do
   shared_pods_ios
 end
 
-#target 'Mensaplan TV' do
-#  platform :tvos, '9.0'
-#  shared_pods_all
-#  shared_pods_tv
-#end
+target 'Mensaplan TV' do
+  platform :tvos, '9.0'
+  shared_pods_all
+  shared_pods_tv
+end

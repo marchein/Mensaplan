@@ -39,6 +39,15 @@
 		5B277278235D0B1900E3894B /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B277277235D0B1900E3894B /* DetailTableViewController.swift */; };
 		5B27727A235D0B2900E3894B /* DetailTableViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B277279235D0B2900E3894B /* DetailTableViewController+TableView.swift */; };
 		5B2AEB362407050D00C64437 /* Settings-Watch.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5B2AEB352407050D00C64437 /* Settings-Watch.bundle */; };
+		5B2AEB402407123500C64437 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2AEB3F2407123500C64437 /* AppDelegate.swift */; };
+		5B2AEB422407123500C64437 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2AEB412407123500C64437 /* ViewController.swift */; };
+		5B2AEB452407123500C64437 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B2AEB432407123500C64437 /* Main.storyboard */; };
+		5B2AEB472407123500C64437 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B2AEB462407123500C64437 /* Assets.xcassets */; };
+		5B2AEB4A2407123500C64437 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B2AEB482407123500C64437 /* LaunchScreen.storyboard */; };
+		5B2AEB4F240712A800C64437 /* MensaXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B342F002406E1D300718C95 /* MensaXML.swift */; };
+		5B2AEB50240712AE00C64437 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEA0A34235DCA55003E3616 /* Model.swift */; };
+		5B2AEB51240712B200C64437 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B277274235D033500E3894B /* Data.swift */; };
+		5B2AEB522407138300C64437 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09BB3E23705A37004E1981 /* Date+Helpers.swift */; };
 		5B342F012406E1D300718C95 /* MensaXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B342F002406E1D300718C95 /* MensaXML.swift */; };
 		5B458AE2235A3D7D0027CAE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B458AE1235A3D7D0027CAE1 /* AppDelegate.swift */; };
 		5B458AE9235A3D7D0027CAE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B458AE7235A3D7D0027CAE1 /* Main.storyboard */; };
@@ -58,6 +67,7 @@
 		5BA2CCB32405503900CF6954 /* WatchMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA2CCB22405503900CF6954 /* WatchMessage.swift */; };
 		5BA2CCB42405546F00CF6954 /* WatchMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA2CCB22405503900CF6954 /* WatchMessage.swift */; };
 		5BA2CCB62405699000CF6954 /* CounterRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA2CCB52405699000CF6954 /* CounterRowController.swift */; };
+		5BA30D1424071A6D00F5109B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5BA30D1324071A6D00F5109B /* Settings.bundle */; };
 		5BBEA09524033759005790E9 /* DayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBEA09424033759005790E9 /* DayTableViewCell.swift */; };
 		5BC2298D23FCA22300C71FC4 /* MensaContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC2298C23FCA22300C71FC4 /* MensaContainer.swift */; };
 		5BC7628B237C4F260062CDD3 /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B27727B235D102A00E3894B /* MealTableViewCell.swift */; };
@@ -70,6 +80,7 @@
 		5BEA0A38235E09AE003E3616 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BEA0A37235E09AE003E3616 /* Intents.framework */; };
 		74D6AA5713A4F34ADB0879EC /* Pods_Mensaplan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BF820DC24059B70002945F0 /* Pods_Mensaplan.framework */; };
 		85ADB9EEE116D303B9F40446 /* Pods_Mensaplan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C7CD9B491C1B7CCAF2535C /* Pods_Mensaplan.framework */; };
+		FBD4B173A366AA85338DB664 /* Pods_Mensaplan_TV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B812F5F8059DADE15B29FBA1 /* Pods_Mensaplan_TV.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +168,13 @@
 		5B2AEB352407050D00C64437 /* Settings-Watch.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "Settings-Watch.bundle"; sourceTree = "<group>"; };
 		5B2AEB372407051C00C64437 /* Watchapp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Watchapp.entitlements; sourceTree = "<group>"; };
 		5B2AEB382407052300C64437 /* Watchapp Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Watchapp Extension.entitlements"; sourceTree = "<group>"; };
+		5B2AEB3D2407123500C64437 /* Mensaplan TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mensaplan TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B2AEB3F2407123500C64437 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5B2AEB412407123500C64437 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5B2AEB442407123500C64437 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5B2AEB462407123500C64437 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5B2AEB492407123500C64437 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5B2AEB4B2407123500C64437 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B2DE9EB23608B380064E3AF /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B2DE9EC23608B380064E3AF /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B342F002406E1D300718C95 /* MensaXML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensaXML.swift; sourceTree = "<group>"; };
@@ -181,6 +199,7 @@
 		5B9FAD0B24043EBC00EC94D2 /* MealInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealInterfaceController.swift; sourceTree = "<group>"; };
 		5BA2CCB22405503900CF6954 /* WatchMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchMessage.swift; sourceTree = "<group>"; };
 		5BA2CCB52405699000CF6954 /* CounterRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterRowController.swift; sourceTree = "<group>"; };
+		5BA30D1324071A6D00F5109B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		5BBEA09424033759005790E9 /* DayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTableViewCell.swift; sourceTree = "<group>"; };
 		5BC2298C23FCA22300C71FC4 /* MensaContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensaContainer.swift; sourceTree = "<group>"; };
 		5BC7628C237C4F910062CDD3 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
@@ -220,6 +239,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AE035F0EFD034BD12833D35 /* Pods_Watchapp_Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B2AEB3A2407123500C64437 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBD4B173A366AA85338DB664 /* Pods_Mensaplan_TV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +380,20 @@
 			path = DetailView;
 			sourceTree = "<group>";
 		};
+		5B2AEB3E2407123500C64437 /* Mensaplan TV */ = {
+			isa = PBXGroup;
+			children = (
+				5B2AEB3F2407123500C64437 /* AppDelegate.swift */,
+				5B2AEB412407123500C64437 /* ViewController.swift */,
+				5B2AEB432407123500C64437 /* Main.storyboard */,
+				5B2AEB462407123500C64437 /* Assets.xcassets */,
+				5B2AEB482407123500C64437 /* LaunchScreen.storyboard */,
+				5B2AEB4B2407123500C64437 /* Info.plist */,
+				5BA30D1324071A6D00F5109B /* Settings.bundle */,
+			);
+			path = "Mensaplan TV";
+			sourceTree = "<group>";
+		};
 		5B458AD5235A3D7D0027CAE1 = {
 			isa = PBXGroup;
 			children = (
@@ -360,6 +401,7 @@
 				5B458AF7235A3D7E0027CAE1 /* MensaplanUITests */,
 				5B20E14124042B10001066B4 /* Watchapp */,
 				5B20E15024042B10001066B4 /* Watchapp Extension */,
+				5B2AEB3E2407123500C64437 /* Mensaplan TV */,
 				5B458ADF235A3D7D0027CAE1 /* Products */,
 				845D45492358EE53AC8ABB18 /* Pods */,
 				3CC711BAEDFFBD9CFA2C533F /* Frameworks */,
@@ -376,6 +418,7 @@
 				5B458AF4235A3D7E0027CAE1 /* MensaplanUITests.xctest */,
 				5B20E14024042B10001066B4 /* Watchapp.app */,
 				5B20E14C24042B10001066B4 /* Watchapp Extension.appex */,
+				5B2AEB3D2407123500C64437 /* Mensaplan TV.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -540,6 +583,25 @@
 			productReference = 5B20E14C24042B10001066B4 /* Watchapp Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
+		5B2AEB3C2407123500C64437 /* Mensaplan TV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B2AEB4C2407123500C64437 /* Build configuration list for PBXNativeTarget "Mensaplan TV" */;
+			buildPhases = (
+				A3BE6F0BD22A922C925C567B /* [CP] Check Pods Manifest.lock */,
+				5B2AEB392407123500C64437 /* Sources */,
+				5B2AEB3A2407123500C64437 /* Frameworks */,
+				5B2AEB3B2407123500C64437 /* Resources */,
+				39876C42A890883A10814ECC /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mensaplan TV";
+			productName = "Mensaplan TV";
+			productReference = 5B2AEB3D2407123500C64437 /* Mensaplan TV.app */;
+			productType = "com.apple.product-type.application";
+		};
 		5B458ADD235A3D7D0027CAE1 /* Mensaplan */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B458AFD235A3D7E0027CAE1 /* Build configuration list for PBXNativeTarget "Mensaplan" */;
@@ -595,6 +657,9 @@
 					5B20E14B24042B10001066B4 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
+					5B2AEB3C2407123500C64437 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
 					5B458ADD235A3D7D0027CAE1 = {
 						CreatedOnToolsVersion = 11.1;
 					};
@@ -621,6 +686,7 @@
 				5B458AF3235A3D7E0027CAE1 /* MensaplanUITests */,
 				5B20E13F24042B0F001066B4 /* Watchapp */,
 				5B20E14B24042B10001066B4 /* Watchapp Extension */,
+				5B2AEB3C2407123500C64437 /* Mensaplan TV */,
 			);
 		};
 /* End PBXProject section */
@@ -640,6 +706,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B20E15624042B11001066B4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B2AEB3B2407123500C64437 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BA30D1424071A6D00F5109B /* Settings.bundle in Resources */,
+				5B2AEB4A2407123500C64437 /* LaunchScreen.storyboard in Resources */,
+				5B2AEB472407123500C64437 /* Assets.xcassets in Resources */,
+				5B2AEB452407123500C64437 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +743,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		39876C42A890883A10814ECC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mensaplan TV/Pods-Mensaplan TV-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mensaplan TV/Pods-Mensaplan TV-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mensaplan TV/Pods-Mensaplan TV-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6136B3D231684D0D25E0992D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -722,6 +816,28 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Watchapp Extension/Pods-Watchapp Extension-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A3BE6F0BD22A922C925C567B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mensaplan TV-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B2E681AAC9222B03DD7792D8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -761,6 +877,19 @@
 				5B20E16424042B36001066B4 /* Data.swift in Sources */,
 				5BA2CCB42405546F00CF6954 /* WatchMessage.swift in Sources */,
 				5B9FAD0A2404392D00EC94D2 /* MealRowController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B2AEB392407123500C64437 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B2AEB422407123500C64437 /* ViewController.swift in Sources */,
+				5B2AEB522407138300C64437 /* Date+Helpers.swift in Sources */,
+				5B2AEB51240712B200C64437 /* Data.swift in Sources */,
+				5B2AEB402407123500C64437 /* AppDelegate.swift in Sources */,
+				5B2AEB4F240712A800C64437 /* MensaXML.swift in Sources */,
+				5B2AEB50240712AE00C64437 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -852,6 +981,22 @@
 				5B20E14324042B10001066B4 /* Base */,
 			);
 			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		5B2AEB432407123500C64437 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B2AEB442407123500C64437 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5B2AEB482407123500C64437 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B2AEB492407123500C64437 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 		5B458AE7235A3D7D0027CAE1 /* Main.storyboard */ = {
@@ -974,6 +1119,52 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 5.0;
+			};
+			name = Release;
+		};
+		5B2AEB4D2407123500C64437 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F77E1A23D2A853A7D7BF893 /* Pods-Mensaplan TV.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UJR28ZV94C;
+				INFOPLIST_FILE = "Mensaplan TV/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "de.marc-hein.Mensaplan-TV";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 13.2;
+			};
+			name = Debug;
+		};
+		5B2AEB4E2407123500C64437 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA8A8D0081A324820D0DC511 /* Pods-Mensaplan TV.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UJR28ZV94C;
+				INFOPLIST_FILE = "Mensaplan TV/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "de.marc-hein.Mensaplan-TV";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 13.2;
 			};
 			name = Release;
 		};
@@ -1206,6 +1397,15 @@
 			buildConfigurations = (
 				5B20E15C24042B11001066B4 /* Debug */,
 				5B20E15D24042B11001066B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B2AEB4C2407123500C64437 /* Build configuration list for PBXNativeTarget "Mensaplan TV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B2AEB4D2407123500C64437 /* Debug */,
+				5B2AEB4E2407123500C64437 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
