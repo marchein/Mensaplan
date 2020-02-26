@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15705" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch38"/>
+    <device id="watch44"/>
     <dependencies>
         <deployment identifier="watchOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -130,13 +130,13 @@
                                                 </group>
                                             </items>
                                         </group>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" layout="vertical" spacing="8" id="oq0-8H-yxW">
+                                    <items>
                                         <separator alignment="left" id="57V-4M-C9H">
                                             <color key="color" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
                                         </separator>
-                                    </items>
-                                </group>
-                                <group width="1" alignment="left" id="oq0-8H-yxW">
-                                    <items>
                                         <imageView alignment="left" image="watch-no-image-meal" id="E4q-Ct-1Py"/>
                                     </items>
                                 </group>
@@ -197,6 +197,7 @@
                         </group>
                     </items>
                     <connections>
+                        <outlet property="imageGroup" destination="oq0-8H-yxW" id="AIm-Ig-6MM"/>
                         <outlet property="informationGroup" destination="8Cn-3F-ulS" id="Ic5-TY-Mrn"/>
                         <outlet property="informationTable" destination="xa5-zU-LXA" id="WGg-49-dga"/>
                         <outlet property="mealImage" destination="E4q-Ct-1Py" id="TzV-dx-fHV"/>

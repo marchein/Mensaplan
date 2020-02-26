@@ -38,6 +38,7 @@
 		5B277275235D033500E3894B /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B277274235D033500E3894B /* Data.swift */; };
 		5B277278235D0B1900E3894B /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B277277235D0B1900E3894B /* DetailTableViewController.swift */; };
 		5B27727A235D0B2900E3894B /* DetailTableViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B277279235D0B2900E3894B /* DetailTableViewController+TableView.swift */; };
+		5B2AEB362407050D00C64437 /* Settings-Watch.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5B2AEB352407050D00C64437 /* Settings-Watch.bundle */; };
 		5B342F012406E1D300718C95 /* MensaXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B342F002406E1D300718C95 /* MensaXML.swift */; };
 		5B458AE2235A3D7D0027CAE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B458AE1235A3D7D0027CAE1 /* AppDelegate.swift */; };
 		5B458AE9235A3D7D0027CAE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B458AE7235A3D7D0027CAE1 /* Main.storyboard */; };
@@ -153,6 +154,9 @@
 		5B277277235D0B1900E3894B /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		5B277279235D0B2900E3894B /* DetailTableViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailTableViewController+TableView.swift"; sourceTree = "<group>"; };
 		5B27727B235D102A00E3894B /* MealTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MealTableViewCell.swift; path = Mensaplan/Cells/MealTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		5B2AEB352407050D00C64437 /* Settings-Watch.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "Settings-Watch.bundle"; sourceTree = "<group>"; };
+		5B2AEB372407051C00C64437 /* Watchapp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Watchapp.entitlements; sourceTree = "<group>"; };
+		5B2AEB382407052300C64437 /* Watchapp Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Watchapp Extension.entitlements"; sourceTree = "<group>"; };
 		5B2DE9EB23608B380064E3AF /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B2DE9EC23608B380064E3AF /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B342F002406E1D300718C95 /* MensaXML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensaXML.swift; sourceTree = "<group>"; };
@@ -319,6 +323,7 @@
 		5B20E14124042B10001066B4 /* Watchapp */ = {
 			isa = PBXGroup;
 			children = (
+				5B2AEB372407051C00C64437 /* Watchapp.entitlements */,
 				5B20E14224042B10001066B4 /* Interface.storyboard */,
 				5B20E14524042B10001066B4 /* Assets.xcassets */,
 				5B20E14724042B10001066B4 /* Info.plist */,
@@ -329,6 +334,7 @@
 		5B20E15024042B10001066B4 /* Watchapp Extension */ = {
 			isa = PBXGroup;
 			children = (
+				5B2AEB382407052300C64437 /* Watchapp Extension.entitlements */,
 				5BAD41A324056AC800C5A83D /* Interfaces */,
 				5BA2CCB72405699400CF6954 /* Rows */,
 				5B20E15324042B10001066B4 /* ExtensionDelegate.swift */,
@@ -389,6 +395,7 @@
 				5B458AEF235A3D7E0027CAE1 /* Info.plist */,
 				5B06EFAF2382EE640020FF0E /* Localizable.strings */,
 				5BEA0A36235E0990003E3616 /* Mensaplan.entitlements */,
+				5B2AEB352407050D00C64437 /* Settings-Watch.bundle */,
 			);
 			path = Mensaplan;
 			sourceTree = "<group>";
@@ -642,6 +649,7 @@
 			files = (
 				5B06EFAD2382EE640020FF0E /* Localizable.strings in Resources */,
 				5B458AEE235A3D7E0027CAE1 /* LaunchScreen.storyboard in Resources */,
+				5B2AEB362407050D00C64437 /* Settings-Watch.bundle in Resources */,
 				5B458AEB235A3D7E0027CAE1 /* Assets.xcassets in Resources */,
 				5B458AE9235A3D7D0027CAE1 /* Main.storyboard in Resources */,
 				5BC7628D237C4F910062CDD3 /* Settings.storyboard in Resources */,
@@ -870,6 +878,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Watchapp/Watchapp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -893,7 +902,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = Watchapp/Watchapp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -917,6 +926,7 @@
 			baseConfigurationReference = F8909D12C83F3919AAAD2686 /* Pods-Watchapp Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Watchapp Extension/Watchapp Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 25;
@@ -944,7 +954,7 @@
 			baseConfigurationReference = 8775A4F28EE1DB8423314597 /* Pods-Watchapp Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = "Watchapp Extension/Watchapp Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 25;

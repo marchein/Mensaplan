@@ -16,6 +16,7 @@ class MealInterfaceController: WKInterfaceController {
     @IBOutlet var mealStudentPriceLabel: WKInterfaceLabel!
     @IBOutlet var mealWorkerPriceLabel: WKInterfaceLabel!
     @IBOutlet var mealPublicPriceLabel: WKInterfaceLabel!
+    @IBOutlet var imageGroup: WKInterfaceGroup!
     @IBOutlet var mealImage: WKInterfaceImage!
     @IBOutlet var informationGroup: WKInterfaceGroup!
     @IBOutlet var informationTable: WKInterfaceTable!
@@ -30,10 +31,17 @@ class MealInterfaceController: WKInterfaceController {
             mealWorkerPriceLabel.setText(meal.getFormattedPrice(price: meal.priceWorker))
             mealPublicPriceLabel.setText(meal.getFormattedPrice(price: meal.pricePublic))
             
-            if let imageURL = meal.image {
-                mealImage.sd_setImage(with: URL(string: imageURL), placeholderImage: UIImage(named: "watch-no-image-meal"))
+            let globalDefaults = UserDefaults(suiteName: MensaplanApp.groupIdentifier)!
+            
+            if globalDefaults.bool(forKey: "show_images") {
+                imageGroup.setHidden(false)
+                if let imageURL = meal.image {
+                    mealImage.sd_setImage(with: URL(string: imageURL), placeholderImage: UIImage(named: "watch-no-image-meal"))
+                } else {
+                    mealImage.setImage(UIImage(named: "watch-no-image-meal"))
+                }
             } else {
-                mealImage.setImage(UIImage(named: "watch-no-image-meal"))
+                imageGroup.setHidden(true)
             }
             
             if let information = meal.zusatzStoffe {
