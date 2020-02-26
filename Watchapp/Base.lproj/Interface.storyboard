@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15705" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch42"/>
+    <device id="watch44"/>
     <dependencies>
+        <deployment identifier="watchOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
     </dependencies>
@@ -12,18 +13,18 @@
                 <controller identifier="MealList" title="Mensaplan" hidesWhenLoading="NO" id="AgC-eL-Hgc" customClass="MainInterfaceController" customModule="Watchapp_Extension">
                     <items>
                         <label alignment="left" text="LOCATION LABEL" numberOfLines="0" id="nsl-i4-gfx">
-                            <fontDescription key="font" type="system" weight="semibold" pointSize="18"/>
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                         </label>
                         <label alignment="left" text="INTRO LABEL" numberOfLines="0" id="E5E-Q1-C8y">
-                            <fontDescription key="font" type="system" pointSize="16"/>
+                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
                         </label>
                         <table alignment="left" id="c9L-KL-4hm">
                             <items>
                                 <tableRow identifier="CounterRow" selectable="NO" id="xHf-13-9dw" customClass="CounterRowController" customModule="Watchapp_Extension">
-                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="Zsj-IK-tgt">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="0.0" id="Zsj-IK-tgt">
                                         <items>
                                             <label alignment="left" text="COUNTER NAME" textAlignment="left" numberOfLines="0" id="D5z-XR-z0N">
-                                                <fontDescription key="font" type="system" weight="semibold" pointSize="20"/>
+                                                <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                             </label>
                                         </items>
                                     </group>
@@ -32,7 +33,7 @@
                                     </connections>
                                 </tableRow>
                                 <tableRow identifier="MealRow" id="LYP-lO-cXa" customClass="MealRowController" customModule="Watchapp_Extension">
-                                    <group key="rootItem" width="1" height="0.0" alignment="left" spacing="6" id="wlq-rz-Quh">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" spacing="4" id="wlq-rz-Quh">
                                         <items>
                                             <separator height="1" heightAdjustment="-4" alignment="left" verticalAlignment="center" id="eYQ-rE-TNT">
                                                 <color key="color" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
@@ -41,16 +42,16 @@
                                                 <items>
                                                     <group width="1" alignment="left" layout="vertical" spacing="4" id="BiT-Aq-0Ln">
                                                         <items>
-                                                            <label alignment="left" text="MEAL TITLE" textAlignment="left" numberOfLines="3" id="TZR-3l-FhP">
-                                                                <fontDescription key="font" type="boldSystem" pointSize="17"/>
+                                                            <label alignment="left" text="NAMES DES GERICHTES" textAlignment="left" numberOfLines="3" id="TZR-3l-FhP">
+                                                                <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                                             </label>
                                                             <group width="1" alignment="left" spacing="4" id="fxR-pA-10L">
                                                                 <items>
                                                                     <label alignment="left" text="Preis" id="Ij5-kZ-kvh">
-                                                                        <fontDescription key="font" type="system" weight="medium" pointSize="16"/>
+                                                                        <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                                                     </label>
-                                                                    <label alignment="left" text="MEAL PRICE" id="VNe-pX-5yv">
-                                                                        <fontDescription key="font" type="system" pointSize="16"/>
+                                                                    <label alignment="left" text="2,65€" id="VNe-pX-5yv">
+                                                                        <fontDescription key="font" style="UICTFontTextStyleBody"/>
                                                                     </label>
                                                                 </items>
                                                             </group>
@@ -87,7 +88,7 @@
                                 <group width="1" alignment="left" layout="vertical" spacing="4" id="cvz-Pt-Emo">
                                     <items>
                                         <label alignment="left" text="NAME DES GERICHTES NAME DES GERICHTES " numberOfLines="0" id="cnt-24-2X2">
-                                            <fontDescription key="font" type="boldSystem" pointSize="17"/>
+                                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                         </label>
                                         <separator alignment="left" id="y3E-qH-HQt">
                                             <color key="color" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
@@ -95,47 +96,47 @@
                                         <group width="1" alignment="left" layout="vertical" id="WZP-I8-YPW">
                                             <items>
                                                 <label alignment="left" text="Preise" id="z4L-ml-qYv">
-                                                    <fontDescription key="font" type="boldSystem" pointSize="16"/>
+                                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                                 </label>
-                                                <group width="1" alignment="left" spacing="4" id="s59-He-1DT">
+                                                <group alignment="left" id="Hsl-1l-zvs">
                                                     <items>
-                                                        <label alignment="left" text="Studierende" id="JSQ-aP-iNc">
-                                                            <fontDescription key="font" type="system" weight="medium" pointSize="16"/>
-                                                        </label>
-                                                        <label alignment="left" text="2,65€" id="F4M-Ov-6WR">
-                                                            <fontDescription key="font" type="system" pointSize="16"/>
-                                                        </label>
-                                                    </items>
-                                                </group>
-                                                <group width="1" alignment="left" spacing="4" id="wLN-K0-HfI">
-                                                    <items>
-                                                        <label alignment="left" text="Bedienstete " id="6ds-87-xMK">
-                                                            <fontDescription key="font" type="system" weight="medium" pointSize="16"/>
-                                                        </label>
-                                                        <label alignment="left" text="2,65€" id="MH3-Fh-p2u">
-                                                            <fontDescription key="font" type="system" pointSize="16"/>
-                                                        </label>
-                                                    </items>
-                                                </group>
-                                                <group width="1" alignment="left" spacing="4" id="EYW-2J-hmx">
-                                                    <items>
-                                                        <label alignment="left" text="Gäste              " id="exv-cN-JUP">
-                                                            <fontDescription key="font" type="system" weight="medium" pointSize="16"/>
-                                                        </label>
-                                                        <label alignment="left" text="2,65€" id="t37-pv-Ls3">
-                                                            <fontDescription key="font" type="system" pointSize="16"/>
-                                                        </label>
+                                                        <group alignment="left" layout="vertical" spacing="1" id="AkD-fB-ELQ">
+                                                            <items>
+                                                                <label width="91" alignment="left" text="Studierende" id="JSQ-aP-iNc">
+                                                                    <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                                                </label>
+                                                                <label alignment="left" text="Bedienstete" id="6ds-87-xMK">
+                                                                    <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                                                </label>
+                                                                <label alignment="left" text="Gäste             " id="exv-cN-JUP">
+                                                                    <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                                                </label>
+                                                            </items>
+                                                        </group>
+                                                        <group width="1" alignment="left" layout="vertical" spacing="1" id="VU6-Nk-tye">
+                                                            <items>
+                                                                <label alignment="left" text="2,65€" textAlignment="left" id="F4M-Ov-6WR">
+                                                                    <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                                                </label>
+                                                                <label alignment="left" text="2,65€" id="MH3-Fh-p2u">
+                                                                    <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                                                </label>
+                                                                <label alignment="left" text="2,65€" id="t37-pv-Ls3">
+                                                                    <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                                                </label>
+                                                            </items>
+                                                        </group>
                                                     </items>
                                                 </group>
                                             </items>
                                         </group>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" layout="vertical" spacing="8" id="oq0-8H-yxW">
+                                    <items>
                                         <separator alignment="left" id="57V-4M-C9H">
                                             <color key="color" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
                                         </separator>
-                                    </items>
-                                </group>
-                                <group width="1" alignment="left" id="oq0-8H-yxW">
-                                    <items>
                                         <imageView alignment="left" image="watch-no-image-meal" id="E4q-Ct-1Py"/>
                                     </items>
                                 </group>
@@ -145,7 +146,7 @@
                                             <color key="color" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
                                         </separator>
                                         <label alignment="left" text="Informationen" id="urF-XX-K8w">
-                                            <fontDescription key="font" type="boldSystem" pointSize="16"/>
+                                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                         </label>
                                         <table alignment="left" id="xa5-zU-LXA">
                                             <items>
@@ -169,7 +170,7 @@
                                             <color key="color" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
                                         </separator>
                                         <label alignment="left" text="Inhaltsstoffe" id="uy6-lu-Bto">
-                                            <fontDescription key="font" type="boldSystem" pointSize="16"/>
+                                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                         </label>
                                         <table alignment="left" id="nVF-zc-3EG">
                                             <items>
@@ -196,6 +197,7 @@
                         </group>
                     </items>
                     <connections>
+                        <outlet property="imageGroup" destination="oq0-8H-yxW" id="AIm-Ig-6MM"/>
                         <outlet property="informationGroup" destination="8Cn-3F-ulS" id="Ic5-TY-Mrn"/>
                         <outlet property="informationTable" destination="xa5-zU-LXA" id="WGg-49-dga"/>
                         <outlet property="mealImage" destination="E4q-Ct-1Py" id="TzV-dx-fHV"/>
@@ -207,7 +209,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="358" y="105"/>
+            <point key="canvasLocation" x="357.43589743589746" y="104.17948717948718"/>
         </scene>
     </scenes>
     <resources>

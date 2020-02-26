@@ -23,13 +23,9 @@ class MainInterfaceController: WKInterfaceController {
     var jsonData: Data?
     var meals: [Meal?] = []
     
-    
-    
-    
     @IBOutlet weak var locationLabel: WKInterfaceLabel!
     @IBOutlet weak var introLabel: WKInterfaceLabel!
     @IBOutlet weak var mealsTable: WKInterfaceTable!
-    
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -98,6 +94,14 @@ class MainInterfaceController: WKInterfaceController {
         dismiss()
         
         parseJSONToObject(data: self.jsonData)
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        print(keyPath)
+        print(object)
+        print(change)
+        print(context)
+        print("KVO: %@ changed property %@ to value %@", object, keyPath, change)
     }
     
     func parseJSONToObject(data: Data?) {

@@ -1,58 +1,45 @@
 //
-//  MensaData.swift
+//  MensaXML.swift
 //  Mensaplan
 //
-//  Created by Marc Hein on 18.02.20.
+//  Created by Marc Hein on 26.02.20.
 //  Copyright © 2020 Marc Hein. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import SwiftyXMLParser
 
-class MensaData {
+class MensaXML {
     var showSideDish = false
-    var db = MensaDatabase()
-    var JSONData: Mensaplan?
-    var tempMensaData: MensaplanDay?
-    var navigationController: UINavigationController?
-    var mainVC: MainTableViewController?
+    var apiURL: URL?
+    var apiData: Data?
     
-    init(mainVC: MainTableViewController) {
-        self.mainVC = mainVC
-        self.navigationController = mainVC.parent as? UINavigationController
-        if MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.refreshOnStart) {
-            loadXML()
-        }
+    init(url: URL?) {
+        self.apiURL = url
     }
     
-    func loadXML() {
-        if let mensaAPI = URL(string: MensaplanApp.API) {
+    func loadXML(onDone: @escaping (Data) -> Void) {
+        if let apiURL = apiURL {
             let dispatchQueue = DispatchQueue(label: "xmlThread", qos: .background)
             dispatchQueue.async {
-                URLSession.shared.dataTask(with: mensaAPI, completionHandler: {(data, response, error) -> Void in
-                    if let _ = error, let mainVC = self.mainVC {
-                        print("MensaData.swift - loadXML() - error - no network connection")
-                        DispatchQueue.main.async {
-                            self.navigationController?.view.hideToastActivity()
-                            self.navigationController?.view.makeToast("Fehler beim Laden der Daten.\nVersuche es bitte später erneut.")
-                            mainVC.refreshControl?.endRefreshing()
-                        }
+                URLSession.shared.dataTask(with: apiURL, completionHandler: {(data, response, error) -> Void in
+                    if let error = error {
+                        print(error.localizedDescription)
                     } else {
                         if let response = response as? HTTPURLResponse, let data = data  {
-                            print("MensaData.swift - loadXML() - statusCode: \(response.statusCode)")
+                            print("Status Code: \(response.statusCode)")
                             let xml = XML.parse(data)
-                            print("MensaData.swift - loadXML() - Successfully load xml")
-                            self.processXML(with: xml)
+                            if let data = self.processXML(with: xml) {
+                                onDone(data)
+                            }
                         }
                     }
                 }).resume()
             }
-        } else {
-            fatalError("Provided invalid mensaAPI value")
         }
     }
     
-    func processXML(with data: XML.Accessor) {
+    func processXML(with data: XML.Accessor) -> Data? {
         var result: [String: Any] = [:]
         var plans = [Any]()
         for dates in data["artikel-liste", "artikel"].makeIterator() {
@@ -161,36 +148,8 @@ class MensaData {
         }
         
         guard let data = try? JSONSerialization.data(withJSONObject: result, options: []) else {
-            return
+            return nil
         }
-        
-        MensaplanApp.sharedDefaults.set(data, forKey: LocalKeys.jsonData)
-        print("MensaData.swift - processXML() - Successfully load JSON")
-        loadJSONintoUI(data: data, local: false)
-        
-        MensaplanApp.sharedDefaults.set(Date.getCurrentDate(), forKey: LocalKeys.lastUpdate)
-    }
-    
-    
-    func loadJSONintoUI(data: Data, local: Bool) {
-        do {
-            let mensaData = try JSONDecoder().decode(Mensaplan.self, from: data)
-            
-            JSONData = mensaData
-            DispatchQueue.main.async {
-                print("MensaData.swift - loadJSONintoUI() - Successfully used \(local ? "local" : "remote") JSON in UI")
-                if let mainVC = self.mainVC {
-                    mainVC.showEmptyView()
-                    self.navigationController?.view.hideToastActivity()
-                    mainVC.refreshControl?.endRefreshing()
-                    mainVC.tableView.reloadData()
-                    #if !targetEnvironment(macCatalyst)
-                    mainVC.sendMessageToWatch()
-                    #endif
-                }
-            }
-        } catch {
-            print(error)
-        }
+        return data
     }
 }

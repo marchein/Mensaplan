@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -434,7 +434,7 @@
 		014A35E4399F6DF30B2B0AD845EF8633 /* GzipSwift-watchOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GzipSwift-watchOS-dummy.m"; path = "../GzipSwift-watchOS/GzipSwift-watchOS-dummy.m"; sourceTree = "<group>"; };
 		020328CCD02509CE9C4F5EF7E9D429F2 /* WatchSync-watchOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WatchSync-watchOS-prefix.pch"; path = "../WatchSync-watchOS/WatchSync-watchOS-prefix.pch"; sourceTree = "<group>"; };
 		020C6049CAD95BCEB9C1BB4D3EF05767 /* WatchSync-iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "WatchSync-iOS-Info.plist"; sourceTree = "<group>"; };
-		023A98CCD176D9129F6AFEFF865150E3 /* Gzip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Gzip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		023A98CCD176D9129F6AFEFF865150E3 /* Gzip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Gzip.framework; path = "GzipSwift-watchOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		02CA4D80F4105A69105256011114408B /* SDImageLoadersManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageLoadersManager.m; path = SDWebImage/Core/SDImageLoadersManager.m; sourceTree = "<group>"; };
 		04241CCF5444ADF6ACD7B2DADD2544A2 /* SDWebImageOptionsProcessor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageOptionsProcessor.h; path = SDWebImage/Core/SDWebImageOptionsProcessor.h; sourceTree = "<group>"; };
 		0534D35CEE9EDCE79577D282F1F58CC7 /* UIView+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+WebCache.h"; path = "SDWebImage/Core/UIView+WebCache.h"; sourceTree = "<group>"; };
@@ -448,7 +448,7 @@
 		0A7F143F0D6EB0E2B5BD1A03B7B47F76 /* SDAnimatedImageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDAnimatedImageView.h; path = SDWebImage/Core/SDAnimatedImageView.h; sourceTree = "<group>"; };
 		0B9E287DC3D2E8D8D6EB9EBF9E07EBE3 /* Toast-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Toast-Swift.modulemap"; sourceTree = "<group>"; };
 		0BFF44D39A8A133B6DC1A1AB19C4583B /* WatchSync-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "WatchSync-iOS.modulemap"; sourceTree = "<group>"; };
-		0D301687393C1CD1879BA88F5984F088 /* WatchSync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WatchSync.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D301687393C1CD1879BA88F5984F088 /* WatchSync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = WatchSync.framework; path = "WatchSync-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DA015A956865FCEEAE3260C2D43D802 /* SDImageHEICCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageHEICCoder.m; path = SDWebImage/Core/SDImageHEICCoder.m; sourceTree = "<group>"; };
 		102C4FB549F0D9FA5FB3121C2B19B852 /* SDWebImageCompat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCompat.m; path = SDWebImage/Core/SDWebImageCompat.m; sourceTree = "<group>"; };
 		13101EF0A524D987D3D8B84F476A5B59 /* UIImage+MemoryCacheCost.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+MemoryCacheCost.m"; path = "SDWebImage/Core/UIImage+MemoryCacheCost.m"; sourceTree = "<group>"; };
@@ -469,7 +469,7 @@
 		249452547517CD3FD8E4077E9F4614E3 /* SubscriptionToken.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SubscriptionToken.swift; path = Sources/WatchSync/Subscriptions/SubscriptionToken.swift; sourceTree = "<group>"; };
 		289BED7CC02A5F192BBA17476B23F768 /* UIColor+HexString.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+HexString.h"; path = "SDWebImage/Private/UIColor+HexString.h"; sourceTree = "<group>"; };
 		28F105F5D0D8932C7C23FA9185AA7E24 /* Pods-Mensaplan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Mensaplan.release.xcconfig"; sourceTree = "<group>"; };
-		29F95D207B77C866435357C8CCAB387B /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		29F95D207B77C866435357C8CCAB387B /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SDWebImage.framework; path = "SDWebImage-watchOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BCDA296475D6CC7ECD3FCF8263CCF2B /* GzipSwift-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GzipSwift-iOS-prefix.pch"; sourceTree = "<group>"; };
 		2BFCAA19CDEF3EBE65BD89E1FB56CFA2 /* UIImageView+HighlightedWebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+HighlightedWebCache.h"; path = "SDWebImage/Core/UIImageView+HighlightedWebCache.h"; sourceTree = "<group>"; };
 		2CD4BD96CAAA68115D7FF5CA3D308EB5 /* SDImageAssetManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageAssetManager.h; path = SDWebImage/Private/SDImageAssetManager.h; sourceTree = "<group>"; };
@@ -497,7 +497,7 @@
 		3E8ACCCBA162B2C2433AA389CE5C3269 /* SDDiskCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDDiskCache.h; path = SDWebImage/Core/SDDiskCache.h; sourceTree = "<group>"; };
 		3F3BC3C7F75DAD80764EEC1350210340 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
 		41B91E9C5B759B56A68A9886993ABF6E /* SDWebImageDownloaderResponseModifier.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloaderResponseModifier.h; path = SDWebImage/Core/SDWebImageDownloaderResponseModifier.h; sourceTree = "<group>"; };
-		4232468C2A600E06589CDB95C9D2FF29 /* SwiftyXMLParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyXMLParser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4232468C2A600E06589CDB95C9D2FF29 /* SwiftyXMLParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyXMLParser.framework; path = SwiftyXMLParser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		429AE3B1089C77E6F98FB570F55FEB40 /* SwiftyXMLParser-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyXMLParser-prefix.pch"; sourceTree = "<group>"; };
 		44E030BE1409DC3C559BDB1A81AA10EE /* SDWebImageOptionsProcessor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageOptionsProcessor.m; path = SDWebImage/Core/SDWebImageOptionsProcessor.m; sourceTree = "<group>"; };
 		450F2A70A88B198D125B2E2923CD4598 /* SDWebImageTransition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageTransition.h; path = SDWebImage/Core/SDWebImageTransition.h; sourceTree = "<group>"; };
@@ -509,7 +509,7 @@
 		4996A3730759CDA4B7CA813406C7EB1E /* MessageSubscription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MessageSubscription.swift; path = Sources/WatchSync/Subscriptions/MessageSubscription.swift; sourceTree = "<group>"; };
 		4A53BB0023163A322EEC3A4700A02075 /* XML.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XML.swift; path = SwiftyXMLParser/XML.swift; sourceTree = "<group>"; };
 		4B58C18DCC4ED125202D14E9975EB100 /* SwiftyXMLParser-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftyXMLParser-Info.plist"; sourceTree = "<group>"; };
-		4C3D95E4B1F6609A3337D28EDB675DC2 /* Pods_Watchapp_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Watchapp_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C3D95E4B1F6609A3337D28EDB675DC2 /* Pods_Watchapp_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Watchapp_Extension.framework; path = "Pods-Watchapp Extension.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E841AF13FA7650562CF73D0A0616FBE /* SDWebImageManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageManager.h; path = SDWebImage/Core/SDWebImageManager.h; sourceTree = "<group>"; };
 		512D9BB1199A333592466D6D84C77BCD /* Pods-Mensaplan.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Mensaplan.modulemap"; sourceTree = "<group>"; };
 		544072985398A278CC660E82C18737DF /* UpdateContextResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UpdateContextResult.swift; path = Sources/WatchSync/Results/UpdateContextResult.swift; sourceTree = "<group>"; };
@@ -571,14 +571,14 @@
 		9BB072262D364BFC960341B9F182D70A /* SDWebImageCacheKeyFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageCacheKeyFilter.h; path = SDWebImage/Core/SDWebImageCacheKeyFilter.h; sourceTree = "<group>"; };
 		9CE26B04845B474F6779A9A0231F67BF /* SDImageIOAnimatedCoderInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageIOAnimatedCoderInternal.h; path = SDWebImage/Private/SDImageIOAnimatedCoderInternal.h; sourceTree = "<group>"; };
 		9D1A429C382326A6F259A313FC14921E /* GzipSwift-watchOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "GzipSwift-watchOS.modulemap"; path = "../GzipSwift-watchOS/GzipSwift-watchOS.modulemap"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DECFAA601602DFA043E926901259B37 /* SDImageAssetManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageAssetManager.m; path = SDWebImage/Private/SDImageAssetManager.m; sourceTree = "<group>"; };
 		A04D5BC670EB02DF141AC00D7C4A6EE1 /* Toast-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Toast-Swift-dummy.m"; sourceTree = "<group>"; };
 		A1F8555E22881A3DC745D9A0E5A594FA /* SDAnimatedImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDAnimatedImage.m; path = SDWebImage/Core/SDAnimatedImage.m; sourceTree = "<group>"; };
 		A29A29AA66F4B215EF5EBA8D34CEE27E /* SDInternalMacros.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDInternalMacros.m; path = SDWebImage/Private/SDInternalMacros.m; sourceTree = "<group>"; };
 		A34A175AA967A6263EB1628D29A6A7BA /* SDAnimatedImageRep.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDAnimatedImageRep.h; path = SDWebImage/Core/SDAnimatedImageRep.h; sourceTree = "<group>"; };
 		A60EA6719182C21015EF7853A879FE25 /* SDImageCachesManagerOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCachesManagerOperation.m; path = SDWebImage/Private/SDImageCachesManagerOperation.m; sourceTree = "<group>"; };
-		A79397396EDD044C4C4A62BD9B7E86C8 /* Gzip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Gzip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A79397396EDD044C4C4A62BD9B7E86C8 /* Gzip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Gzip.framework; path = "GzipSwift-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7E8A4AABB407C60308B716FA66FA6FA /* SDImageCodersManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCodersManager.m; path = SDWebImage/Core/SDImageCodersManager.m; sourceTree = "<group>"; };
 		A8056C70B0852785E420F55A6986BF2C /* Pods-Watchapp Extension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Watchapp Extension-acknowledgements.markdown"; sourceTree = "<group>"; };
 		A88BB490B3F3BA6806A6DCE1A15F3A83 /* Pods-Watchapp Extension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Watchapp Extension-umbrella.h"; sourceTree = "<group>"; };
@@ -614,14 +614,14 @@
 		C807ED03D6EE343C16401066F05B547A /* SDImageCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCoder.h; path = SDWebImage/Core/SDImageCoder.h; sourceTree = "<group>"; };
 		CA49D4D8A28DDE9032192C1D69E34DED /* NSData+ImageContentType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+ImageContentType.h"; path = "SDWebImage/Core/NSData+ImageContentType.h"; sourceTree = "<group>"; };
 		CB0ABEF2CDD664900F5646BE4C42026E /* GzipSwift-watchOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GzipSwift-watchOS-prefix.pch"; path = "../GzipSwift-watchOS/GzipSwift-watchOS-prefix.pch"; sourceTree = "<group>"; };
-		CD95C164FD5A48C9E3A9AD51494C2B40 /* Pods_Mensaplan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mensaplan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD95C164FD5A48C9E3A9AD51494C2B40 /* Pods_Mensaplan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Mensaplan.framework; path = "Pods-Mensaplan.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC476D29383A6D624511B16104AB12B /* Pods-Mensaplan-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Mensaplan-frameworks.sh"; sourceTree = "<group>"; };
 		CEF42F9E84626C468A2CE34F89C6D434 /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+HighlightedWebCache.m"; path = "SDWebImage/Core/UIImageView+HighlightedWebCache.m"; sourceTree = "<group>"; };
-		CFF06E53BC38C0114EDAF51F6C433D9F /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFF06E53BC38C0114EDAF51F6C433D9F /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SDWebImage.framework; path = "SDWebImage-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D03D98A166E2422DC8CCECF9AB0792FA /* SDWebImageDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloader.h; path = SDWebImage/Core/SDWebImageDownloader.h; sourceTree = "<group>"; };
 		D0DC0443D9C43383A0C045E6B0E3AB2A /* Toast-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toast-Swift-prefix.pch"; sourceTree = "<group>"; };
 		D2E059254C81462F10D7A6FC33A3EC22 /* Pods-Watchapp Extension-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Watchapp Extension-Info.plist"; sourceTree = "<group>"; };
-		D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Toast_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Toast_Swift.framework; path = "Toast-Swift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D80323B7C6C4DCC04E0634CFA7064E05 /* SDWebImage-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SDWebImage-iOS-umbrella.h"; sourceTree = "<group>"; };
 		D824EA311D618D89ECD816EDCD51CA6A /* SDMemoryCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDMemoryCache.m; path = SDWebImage/Core/SDMemoryCache.m; sourceTree = "<group>"; };
 		D85DE4E5F1763A0219E5FB71A403B6CC /* Element.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Element.swift; path = SwiftyXMLParser/Element.swift; sourceTree = "<group>"; };
@@ -648,7 +648,7 @@
 		EAD5243A021E55372F0EB5E0C9843BF2 /* WatchSync-watchOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "WatchSync-watchOS-Info.plist"; path = "../WatchSync-watchOS/WatchSync-watchOS-Info.plist"; sourceTree = "<group>"; };
 		EB6FB7A1CE0AB6F798E2A91688DC6928 /* SDImageIOAnimatedCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageIOAnimatedCoder.m; path = SDWebImage/Core/SDImageIOAnimatedCoder.m; sourceTree = "<group>"; };
 		EC1EC28EE62C835AFCFFDCDF03D8CCE4 /* SDWebImageManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageManager.m; path = SDWebImage/Core/SDWebImageManager.m; sourceTree = "<group>"; };
-		EC35018150D11F990BDFCE98BBC1DBC5 /* WatchSync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WatchSync.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC35018150D11F990BDFCE98BBC1DBC5 /* WatchSync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = WatchSync.framework; path = "WatchSync-watchOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC3D7EF67D254229F7D154C9C45147BE /* UIImage+GIF.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+GIF.h"; path = "SDWebImage/Core/UIImage+GIF.h"; sourceTree = "<group>"; };
 		ED4D99FD495F7C0AD921F25554EAABC6 /* SDAnimatedImagePlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDAnimatedImagePlayer.h; path = SDWebImage/Core/SDAnimatedImagePlayer.h; sourceTree = "<group>"; };
 		EDF0D58B2EDF66D6FB62C12416C8FFB0 /* SDWebImageCompat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageCompat.h; path = SDWebImage/Core/SDWebImageCompat.h; sourceTree = "<group>"; };
@@ -789,6 +789,7 @@
 				DFA81265BBBDF2DB5EBFEB1597928253 /* Toast.swift */,
 				E0D0CA1F971D52E532F9CB435DB2FDC1 /* Support Files */,
 			);
+			name = "Toast-Swift";
 			path = "Toast-Swift";
 			sourceTree = "<group>";
 		};
@@ -829,6 +830,7 @@
 				4A53BB0023163A322EEC3A4700A02075 /* XML.swift */,
 				C73CE694691121EA0F7C8597F82A9CBA /* Support Files */,
 			);
+			name = SwiftyXMLParser;
 			path = SwiftyXMLParser;
 			sourceTree = "<group>";
 		};
@@ -858,6 +860,7 @@
 				5494529B9D6C4826D9E8C1CE591BC84F /* Data+Gzip.swift */,
 				6288E839C1793AF72941B0E0B2D789D5 /* Support Files */,
 			);
+			name = GzipSwift;
 			path = GzipSwift;
 			sourceTree = "<group>";
 		};
@@ -1093,6 +1096,7 @@
 				9E35ECFC2830358DC907CAE254D9E8E9 /* Core */,
 				7F1FEEC3012874CD06BE9C673CD0A033 /* Support Files */,
 			);
+			name = SDWebImage;
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
@@ -1171,6 +1175,7 @@
 				DBEA8405B20083E852F0F9956CDC4449 /* WatchSync.swift */,
 				A7D5396DD6559995D33FE88E67E8B271 /* Support Files */,
 			);
+			name = WatchSync;
 			path = WatchSync;
 			sourceTree = "<group>";
 		};
@@ -1606,7 +1611,7 @@
 				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 10.0";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (

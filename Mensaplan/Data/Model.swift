@@ -7,7 +7,7 @@
 //
 
 import Foundation
-#if !os(watchOS)
+#if !os(watchOS) && !os(tvOS)
 import CoreNFC
 #endif
 
@@ -80,7 +80,7 @@ struct MensaplanApp {
     static let APP_ID: Int = 0x5F8415
     static let FILE_ID: UInt8  = 1
     
-    #if !os(watchOS)
+    #if !os(watchOS) && !os(tvOS)
     #if targetEnvironment(macCatalyst)
         static let canScan = false
     #elseif targetEnvironment(simulator)
