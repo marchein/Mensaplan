@@ -48,6 +48,8 @@
 		5B5C8EBE235E5EDF00C29E62 /* UIViewController+SafariActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5C8EBD235E5EDF00C29E62 /* UIViewController+SafariActions.swift */; };
 		5B5C8EC3235F2DA500C29E62 /* UIImageView+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5C8EC2235F2DA500C29E62 /* UIImageView+Download.swift */; };
 		5B629D18238A846400E39C8D /* UIStackView+removeAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B629D17238A846400E39C8D /* UIStackView+removeAll.swift */; };
+		5B94083F2406883F00BB153F /* InformationRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B94083E2406883F00BB153F /* InformationRowController.swift */; };
+		5B9408412406884B00BB153F /* StoffRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9408402406884B00BB153F /* StoffRowController.swift */; };
 		5B9FACFF24042E0700EC94D2 /* MainInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9FACFE24042E0700EC94D2 /* MainInterfaceController.swift */; };
 		5B9FAD0A2404392D00EC94D2 /* MealRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9FAD082404392D00EC94D2 /* MealRowController.swift */; };
 		5B9FAD0C24043EBC00EC94D2 /* MealInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9FAD0B24043EBC00EC94D2 /* MealInterfaceController.swift */; };
@@ -164,6 +166,8 @@
 		5B629D17238A846400E39C8D /* UIStackView+removeAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+removeAll.swift"; sourceTree = "<group>"; };
 		5B629D4C238AB67B00E39C8D /* Mensaplan copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Mensaplan copy-Info.plist"; path = "/Users/marchein/Projekte/Private/Mensaplan/Mensaplan copy-Info.plist"; sourceTree = "<absolute>"; };
 		5B85DEEA240414D4004A8224 /* Mensaplan copy2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Mensaplan copy2-Info.plist"; path = "/Users/marchein/Projekte/Private/Mensaplan/Mensaplan copy2-Info.plist"; sourceTree = "<absolute>"; };
+		5B94083E2406883F00BB153F /* InformationRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationRowController.swift; sourceTree = "<group>"; };
+		5B9408402406884B00BB153F /* StoffRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoffRowController.swift; sourceTree = "<group>"; };
 		5B9FACFE24042E0700EC94D2 /* MainInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInterfaceController.swift; sourceTree = "<group>"; };
 		5B9FAD082404392D00EC94D2 /* MealRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealRowController.swift; sourceTree = "<group>"; };
 		5B9FAD0B24043EBC00EC94D2 /* MealInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealInterfaceController.swift; sourceTree = "<group>"; };
@@ -433,6 +437,8 @@
 			children = (
 				5BA2CCB52405699000CF6954 /* CounterRowController.swift */,
 				5B9FAD082404392D00EC94D2 /* MealRowController.swift */,
+				5B94083E2406883F00BB153F /* InformationRowController.swift */,
+				5B9408402406884B00BB153F /* StoffRowController.swift */,
 			);
 			path = Rows;
 			sourceTree = "<group>";
@@ -726,8 +732,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B94083F2406883F00BB153F /* InformationRowController.swift in Sources */,
 				5B9FACFF24042E0700EC94D2 /* MainInterfaceController.swift in Sources */,
 				5BA2CCB62405699000CF6954 /* CounterRowController.swift in Sources */,
+				5B9408412406884B00BB153F /* StoffRowController.swift in Sources */,
 				5B20E16524042B43001066B4 /* Model.swift in Sources */,
 				5B9FAD0C24043EBC00EC94D2 /* MealInterfaceController.swift in Sources */,
 				5B20E15424042B10001066B4 /* ExtensionDelegate.swift in Sources */,

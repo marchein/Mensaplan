@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15705" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch44"/>
+    <device id="watch42"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
@@ -41,7 +41,7 @@
                                                 <items>
                                                     <group width="1" alignment="left" layout="vertical" spacing="4" id="BiT-Aq-0Ln">
                                                         <items>
-                                                            <label alignment="left" text="MEAL TITLE" textAlignment="left" numberOfLines="0" id="TZR-3l-FhP">
+                                                            <label alignment="left" text="MEAL TITLE" textAlignment="left" numberOfLines="3" id="TZR-3l-FhP">
                                                                 <fontDescription key="font" type="boldSystem" pointSize="17"/>
                                                             </label>
                                                             <group width="1" alignment="left" spacing="4" id="fxR-pA-10L">
@@ -92,14 +92,41 @@
                                         <separator alignment="left" id="y3E-qH-HQt">
                                             <color key="color" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
                                         </separator>
-                                        <group width="1" alignment="left" spacing="4" id="s59-He-1DT">
+                                        <group width="1" alignment="left" layout="vertical" id="WZP-I8-YPW">
                                             <items>
-                                                <label alignment="left" text="Preis" id="JSQ-aP-iNc">
-                                                    <fontDescription key="font" type="system" weight="medium" pointSize="16"/>
+                                                <label alignment="left" text="Preise" id="z4L-ml-qYv">
+                                                    <fontDescription key="font" type="boldSystem" pointSize="16"/>
                                                 </label>
-                                                <label alignment="left" text="2,65€" id="F4M-Ov-6WR">
-                                                    <fontDescription key="font" type="system" pointSize="16"/>
-                                                </label>
+                                                <group width="1" alignment="left" spacing="4" id="s59-He-1DT">
+                                                    <items>
+                                                        <label alignment="left" text="Studierende" id="JSQ-aP-iNc">
+                                                            <fontDescription key="font" type="system" weight="medium" pointSize="16"/>
+                                                        </label>
+                                                        <label alignment="left" text="2,65€" id="F4M-Ov-6WR">
+                                                            <fontDescription key="font" type="system" pointSize="16"/>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                                <group width="1" alignment="left" spacing="4" id="wLN-K0-HfI">
+                                                    <items>
+                                                        <label alignment="left" text="Bedienstete " id="6ds-87-xMK">
+                                                            <fontDescription key="font" type="system" weight="medium" pointSize="16"/>
+                                                        </label>
+                                                        <label alignment="left" text="2,65€" id="MH3-Fh-p2u">
+                                                            <fontDescription key="font" type="system" pointSize="16"/>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                                <group width="1" alignment="left" spacing="4" id="EYW-2J-hmx">
+                                                    <items>
+                                                        <label alignment="left" text="Gäste              " id="exv-cN-JUP">
+                                                            <fontDescription key="font" type="system" weight="medium" pointSize="16"/>
+                                                        </label>
+                                                        <label alignment="left" text="2,65€" id="t37-pv-Ls3">
+                                                            <fontDescription key="font" type="system" pointSize="16"/>
+                                                        </label>
+                                                    </items>
+                                                </group>
                                             </items>
                                         </group>
                                         <separator alignment="left" id="57V-4M-C9H">
@@ -112,6 +139,54 @@
                                         <imageView alignment="left" image="watch-no-image-meal" id="E4q-Ct-1Py"/>
                                     </items>
                                 </group>
+                                <group width="1" alignment="left" layout="vertical" id="8Cn-3F-ulS">
+                                    <items>
+                                        <separator alignment="left" id="D6u-th-qJp">
+                                            <color key="color" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
+                                        </separator>
+                                        <label alignment="left" text="Informationen" id="urF-XX-K8w">
+                                            <fontDescription key="font" type="boldSystem" pointSize="16"/>
+                                        </label>
+                                        <table alignment="left" id="xa5-zU-LXA">
+                                            <items>
+                                                <tableRow identifier="InformationRow" selectable="NO" id="FzE-Vo-Gk1" customClass="InformationRowController" customModule="Watchapp_Extension">
+                                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="HVj-7k-s9X">
+                                                        <items>
+                                                            <label alignment="left" text="CONTAINS_XYZ" textAlignment="left" numberOfLines="0" id="dsC-4R-2nE"/>
+                                                        </items>
+                                                    </group>
+                                                    <connections>
+                                                        <outlet property="titleLabel" destination="dsC-4R-2nE" id="kTs-9M-zha"/>
+                                                    </connections>
+                                                </tableRow>
+                                            </items>
+                                        </table>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" layout="vertical" id="3EM-O7-kiY">
+                                    <items>
+                                        <separator alignment="left" id="biK-k9-5Fo">
+                                            <color key="color" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
+                                        </separator>
+                                        <label alignment="left" text="Inhaltsstoffe" id="uy6-lu-Bto">
+                                            <fontDescription key="font" type="boldSystem" pointSize="16"/>
+                                        </label>
+                                        <table alignment="left" id="nVF-zc-3EG">
+                                            <items>
+                                                <tableRow identifier="StoffRow" selectable="NO" id="cC3-9y-Hp6" customClass="StoffRowController" customModule="Watchapp_Extension">
+                                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="yq7-zs-o1l">
+                                                        <items>
+                                                            <label alignment="left" text="CONTAINS_XYZ" textAlignment="left" numberOfLines="0" id="Lcj-Zp-Q7A"/>
+                                                        </items>
+                                                    </group>
+                                                    <connections>
+                                                        <outlet property="titleLabel" destination="Lcj-Zp-Q7A" id="noq-fA-Ud0"/>
+                                                    </connections>
+                                                </tableRow>
+                                            </items>
+                                        </table>
+                                    </items>
+                                </group>
                                 <button width="1" alignment="left" title="Schließen" id="Qhb-e3-otS">
                                     <connections>
                                         <action selector="closeAction" destination="Skh-rQ-8M1" id="deZ-7a-4h4"/>
@@ -121,9 +196,14 @@
                         </group>
                     </items>
                     <connections>
+                        <outlet property="informationGroup" destination="8Cn-3F-ulS" id="Ic5-TY-Mrn"/>
+                        <outlet property="informationTable" destination="xa5-zU-LXA" id="WGg-49-dga"/>
                         <outlet property="mealImage" destination="E4q-Ct-1Py" id="TzV-dx-fHV"/>
-                        <outlet property="mealPriceLabel" destination="F4M-Ov-6WR" id="BWq-He-9fv"/>
+                        <outlet property="mealPublicPriceLabel" destination="t37-pv-Ls3" id="h8v-Tp-xra"/>
+                        <outlet property="mealStudentPriceLabel" destination="F4M-Ov-6WR" id="BWq-He-9fv"/>
                         <outlet property="mealTitleLabel" destination="cnt-24-2X2" id="Ymk-WR-fz7"/>
+                        <outlet property="mealWorkerPriceLabel" destination="MH3-Fh-p2u" id="MY3-E7-mmA"/>
+                        <outlet property="stoffTable" destination="nVF-zc-3EG" id="1GI-Zy-jTO"/>
                     </connections>
                 </controller>
             </objects>

@@ -13,27 +13,49 @@ import SDWebImage
 
 class MealInterfaceController: WKInterfaceController {
     @IBOutlet var mealTitleLabel: WKInterfaceLabel!
-    @IBOutlet var mealPriceLabel: WKInterfaceLabel!
+    @IBOutlet var mealStudentPriceLabel: WKInterfaceLabel!
+    @IBOutlet var mealWorkerPriceLabel: WKInterfaceLabel!
+    @IBOutlet var mealPublicPriceLabel: WKInterfaceLabel!
     @IBOutlet var mealImage: WKInterfaceImage!
+    @IBOutlet var informationGroup: WKInterfaceGroup!
+    @IBOutlet var informationTable: WKInterfaceTable!
+    @IBOutlet var stoffTable: WKInterfaceTable!
     
     var meal: Meal? {
         didSet {
             guard let meal = meal else { return }
             
             mealTitleLabel.setText(meal.title)
-            if let selectedPrice = UserDefaults.standard.string(forKey: LocalKeys.selectedPrice) {
-                if selectedPrice == "student" {
-                    mealPriceLabel.setText(meal.getFormattedPrice(price: meal.priceStudent))
-                } else if selectedPrice == "worker" {
-                    mealPriceLabel.setText(meal.getFormattedPrice(price: meal.priceWorker))
-                } else if selectedPrice == "guest" {
-                    mealPriceLabel.setText(meal.getFormattedPrice(price: meal.pricePublic))
-                }
-            }
+            mealStudentPriceLabel.setText(meal.getFormattedPrice(price: meal.priceStudent))
+            mealWorkerPriceLabel.setText(meal.getFormattedPrice(price: meal.priceWorker))
+            mealPublicPriceLabel.setText(meal.getFormattedPrice(price: meal.pricePublic))
+            
             if let imageURL = meal.image {
                 mealImage.sd_setImage(with: URL(string: imageURL), placeholderImage: UIImage(named: "watch-no-image-meal"))
             } else {
                 mealImage.setImage(UIImage(named: "watch-no-image-meal"))
+            }
+            
+            if let information = meal.zusatzStoffe {
+                informationTable.setNumberOfRows(information.count, withRowType: "InformationRow")
+                for index in 0..<informationTable.numberOfRows {
+                    guard let controller = informationTable.rowController(at: index) as? InformationRowController else { continue }
+                    controller.information = information[index]
+                }
+            } else {
+                informationGroup.setHidden(true)
+            }
+            
+            if let inhaltsStoffe = meal.inhaltsStoffe {
+                stoffTable.setNumberOfRows(inhaltsStoffe.count, withRowType: "StoffRow")
+                for index in 0..<stoffTable.numberOfRows {
+                    guard let controller = stoffTable.rowController(at: index) as? StoffRowController else { continue }
+                    controller.stoff = inhaltsStoffe[index]
+                }
+            } else {
+                stoffTable.setNumberOfRows(1, withRowType: "StoffRow")
+                guard let controller = stoffTable.rowController(at: 0) as? StoffRowController else { return }
+                controller.stoff = Stoff(id: 0, title: "Keine Inhaltsstoffe vorhanden")
             }
         }
     }
