@@ -57,6 +57,7 @@ class MainInterfaceController: WKInterfaceController {
     }
     
     func processWatchMessage(message: WatchMessage) {
+        print(message)
         if let lastUpdate = message.lastUpdate {
             defaults.set(lastUpdate, forKey: LocalKeys.lastUpdate)
         }
@@ -104,7 +105,9 @@ class MainInterfaceController: WKInterfaceController {
             do {
                 self.mensaData = try JSONDecoder().decode(Mensaplan.self, from: rawMensaData)
                 if let mensaData = mensaData {
-                    processMensaData(data: mensaData)
+                    DispatchQueue.main.async {
+                        self.processMensaData(data: mensaData)
+                    }
                 }
             } catch {
                 print(error)
@@ -114,19 +117,27 @@ class MainInterfaceController: WKInterfaceController {
     
     func processMensaData(data: Mensaplan) {
         let locations = data.plan
-        for location in locations {
-            for locationDay in location.day {
-                if Calendar.autoupdatingCurrent.isDateInToday(locationDay.getDateValue()), locationDay.title == self.selectedMensa! {
-                    DispatchQueue.main.async {
-                        let index = MensaplanApp.standorteKeys.firstIndex(of: locationDay.title)!
-                        self.locationLabel.setText(MensaplanApp.standorteValues[index])
+        var dataForToday = false
+        if let selectedMensa = self.selectedMensa {
+            let index = MensaplanApp.standorteKeys.firstIndex(of: selectedMensa)!
+            self.locationLabel.setText(MensaplanApp.standorteValues[index])
+            
+            for location in locations {
+                for locationDay in location.day {
+                    if Calendar.autoupdatingCurrent.isDateInToday(locationDay.getDateValue()), locationDay.title == selectedMensa {
                         if locationDay.closed {
                             self.introLabel.setText(locationDay.closedReason)
                             self.introLabel.setHidden(false)
                         }
                         self.setupTable(counters: locationDay.data.counters)
+                        dataForToday = true
                     }
                 }
+            }
+            
+            if !dataForToday {
+                self.introLabel.setText("Für heute liegen für diese Mensa leider keine Daten vor.")
+                self.introLabel.setHidden(false)
             }
         }
     }
