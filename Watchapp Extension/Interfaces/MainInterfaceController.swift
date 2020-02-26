@@ -116,6 +116,7 @@ class MainInterfaceController: WKInterfaceController {
     }
     
     func processMensaData(data: Mensaplan) {
+        print(data)
         let locations = data.plan
         var dataForToday = false
         if let selectedMensa = self.selectedMensa {

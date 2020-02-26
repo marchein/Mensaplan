@@ -116,7 +116,7 @@ extension MainTableViewController: NFCTagReaderSessionDelegate {
                                         }
                                         
                                         // insert into history
-                                        if let mensaData = self.mensaData {
+                                        if let mensaData = self.mensaContainer {
                                             mensaData.db.insertRecord(
                                                 balance: currentBalanceValue,
                                                 lastTransaction: lastTransactionValue,

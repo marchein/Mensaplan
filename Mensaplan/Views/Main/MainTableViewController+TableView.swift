@@ -24,8 +24,8 @@ extension MainTableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {      
         if section == 0 {
-            if let mensaData = self.mensaData, let mensaDataJSON = mensaData.JSONData {
-                return mensaDataJSON.plan.count
+            if let mensaContainer = self.mensaContainer, let mensaData = mensaContainer.mensaData {
+                return mensaData.plan.count
             }
             return 1
         } else if #available(iOS 13.0, *), MensaplanApp.canScan, section == 1 {
@@ -38,13 +38,13 @@ extension MainTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Configure the cell...
         if indexPath.section == 0 {
-            if let mensaData = self.mensaData, let mensaDataJSON = mensaData.JSONData {
+            if let mensaContainer = self.mensaContainer, let mensaData = mensaContainer.mensaData {
                 var dayData: LocationDay?
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: "newDayCell", for: indexPath) as? DayTableViewCell else { return UITableViewCell()}
                 cell.titleLabel.numberOfLines = 0
                 cell.reasonLabel.numberOfLines = 0
                 cell.dateLabel.numberOfLines = 0
-                let selectedDay = mensaDataJSON.plan[indexPath.row]
+                let selectedDay = mensaData.plan[indexPath.row]
                 let selectedLocation = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa)!
                 for location in selectedDay.day {
                     if location.title == selectedLocation {
@@ -98,7 +98,7 @@ extension MainTableViewController {
                 return cell
             }
         } else if #available(iOS 13.0, *), MensaplanApp.canScan, indexPath.section == 1 {
-            if indexPath.row < (tableView.numberOfRows(inSection: 1) - 1), let mensaData = self.mensaData {
+            if indexPath.row < (tableView.numberOfRows(inSection: 1) - 1), let mensaData = self.mensaContainer {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath)
                 let data: [HistoryItem] = mensaData.db.getEntries()
                 if data.count == 0 {
@@ -160,7 +160,7 @@ extension MainTableViewController {
             }
             return "Keine Aktualisierung vorgenommen"
         } else if #available(iOS 13.0, *), MensaplanApp.canScan, section == 1 {
-            if let mensaData = self.mensaData {
+            if let mensaData = self.mensaContainer {
                 let data: [HistoryItem] = mensaData.db.getEntries()
                 if data.count > 0 {
                     return "Einlesedatum: \(data[0].date) Uhr"

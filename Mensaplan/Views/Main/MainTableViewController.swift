@@ -12,13 +12,13 @@ import CoreNFC
 import WatchSync
 
 class MainTableViewController: UITableViewController {
-    var mensaData: MensaData?
+    var mensaContainer: MensaContainer?
     var subscriptionToken: SubscriptionToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.mensaData = MensaData(mainVC: self)
+        self.mensaContainer = MensaContainer(mainVC: self)
         self.refreshControl?.addTarget(self, action: #selector(refreshAction), for: UIControl.Event.valueChanged)
         
         setupApp()
@@ -37,7 +37,7 @@ class MainTableViewController: UITableViewController {
             refreshAction(self)
         } else {
             print("MainTableViewController.swift - setupApp() - load local copy")
-            if let localCopyOfData = MensaplanApp.sharedDefaults.data(forKey: LocalKeys.jsonData), let mensaData = self.mensaData {
+            if let localCopyOfData = MensaplanApp.sharedDefaults.data(forKey: LocalKeys.jsonData), let mensaData = self.mensaContainer {
                 mensaData.loadJSONintoUI(data: localCopyOfData, local: true)
             }
         }
@@ -46,7 +46,7 @@ class MainTableViewController: UITableViewController {
             print(String(describing: watchMessage.lastUpdate), String(describing: watchMessage.selectedMensa), String(describing: watchMessage.selectedPrice), String(describing: watchMessage.jsonData))
         }
         
-        if MensaplanApp.demo, let mensaData = self.mensaData {
+        if MensaplanApp.demo, let mensaData = self.mensaContainer {
             mensaData.db.insertRecord(
                 balance: 19.56,
                 lastTransaction: 2.85,
@@ -57,11 +57,11 @@ class MainTableViewController: UITableViewController {
     }
     
     public func showDay(dayValue: DayValue) {
-        guard let mensaData = self.mensaData, let mensaDataJSON = mensaData.JSONData else {
+        guard let mensaContainer = self.mensaContainer, let mensaData = mensaContainer.mensaData else {
             return
         }
         var dayIndex = -1
-        for days in mensaDataJSON.plan {
+        for days in mensaData.plan {
             dayIndex += 1
             if dayValue == DayValue.TODAY {
                 if days.day[0].isToday() {
@@ -73,7 +73,7 @@ class MainTableViewController: UITableViewController {
                 }
             }
         }
-        let selectedDay = mensaDataJSON.plan[dayIndex]
+        let selectedDay = mensaData.plan[dayIndex]
         let selectedLocation = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa)!
         for location in selectedDay.day {
             if location.title == selectedLocation {
@@ -85,7 +85,7 @@ class MainTableViewController: UITableViewController {
                     if dayValue == .TODAY && !selectedDay.day[0].isToday() || dayValue == .TOMORROW && !selectedDay.day[0].isTomorrow() {
                         showMessage(title: "Geschlossen", message: "\(when) werden keine Gerichte in der Mensa angeboten", on: self)
                     } else {
-                        mensaData.tempMensaData = location.data
+                        mensaContainer.tempMensaData = location.data
                         let navVC = self.parent as! UINavigationController
                         navVC.popToRootViewController(animated: true)
                         performSegue(withIdentifier: MensaplanSegue.manualShowDetail, sender: self)
@@ -97,8 +97,8 @@ class MainTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == MensaplanSegue.showDetail {
-            if let indexPath = self.tableView.indexPathForSelectedRow, let mensaData = self.mensaData, let mensaDataJSON = mensaData.JSONData {
-                let selectedDay = mensaDataJSON.plan[indexPath.row]
+            if let indexPath = self.tableView.indexPathForSelectedRow, let mensaContainer = self.mensaContainer, let mensaData = mensaContainer.mensaData {
+                let selectedDay = mensaData.plan[indexPath.row]
                 let selectedLocation = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa)!
                 for location in selectedDay.day {
                     if location.title == selectedLocation {
@@ -113,7 +113,7 @@ class MainTableViewController: UITableViewController {
         } else if segue.identifier == MensaplanSegue.manualShowDetail {
             if let destination = segue.destination as? UINavigationController,
                 let detailTableVC = destination.topViewController as? DetailTableViewController,
-                let mensaData = self.mensaData {
+                let mensaData = self.mensaContainer {
                 detailTableVC.mensaPlanDay = mensaData.tempMensaData
             }
         }
@@ -125,13 +125,14 @@ class MainTableViewController: UITableViewController {
         } else {
             self.navigationController?.view.makeToastActivity(.center)
         }
-        if let mensaData = self.mensaData {
-            mensaData.loadXML()
+        if let mensaContainer = self.mensaContainer {
+            mensaContainer.loadMensaData()
+            
         }
     }
     
     @IBAction func unwindFromSegue(segue: UIStoryboardSegue) {
-        if let mensaData = self.mensaData, mensaData.showSideDish != MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.showSideDish) {
+        if let mensaContainer = self.mensaContainer, mensaContainer.mensaXML?.showSideDish != MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.showSideDish) {
             refreshAction(self)
         } else {
             self.tableView.reloadData()
@@ -157,7 +158,7 @@ class MainTableViewController: UITableViewController {
         let selectedMensa = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa)
         let lastUpdate = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.lastUpdate)
         let jsonData = MensaplanApp.sharedDefaults.data(forKey: LocalKeys.jsonData)
-
+        
         let newWatchMessage = WatchMessage(selectedPrice: selectedPrice, selectedMensa: selectedMensa, lastUpdate: lastUpdate, jsonData: jsonData)
         
         WatchSync.shared.sendMessage(newWatchMessage) { result in
