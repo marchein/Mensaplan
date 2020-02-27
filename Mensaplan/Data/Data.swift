@@ -15,6 +15,11 @@ struct Mensaplan: Decodable {
     enum CodingKeys : String, CodingKey {
         case plan = "plan"
     }
+    
+    func getSortedPlan() -> Mensaplan {
+        let newPlan = plan.sorted(by: {$0.day[0].getDateValue().compare($1.day[0].getDateValue()) == .orderedAscending})
+        return Mensaplan(plan: newPlan)
+    }
 }
 
 struct Location: Decodable {

@@ -21,10 +21,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                 return
             }
         }
-        
-        subscriptionToken = WatchSync.shared.subscribeToMessages(ofType: WatchMessage.self) { newWatchMessage in
-            print(newWatchMessage)
-        }
     }
 
     func applicationDidBecomeActive() {

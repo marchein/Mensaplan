@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "77F08EE0C643C824DDB2686C6F394E86"
-               BuildableName = "Pods_Mensaplan.framework"
-               BlueprintName = "Pods-Mensaplan"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "5BBAE9E92407DA7F005F8098"
+               BuildableName = "Mensaplan Mac.app"
+               BlueprintName = "Mensaplan Mac"
+               ReferencedContainer = "container:Mensaplan.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -40,6 +40,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "5BBAE9E92407DA7F005F8098"
+            BuildableName = "Mensaplan Mac.app"
+            BlueprintName = "Mensaplan Mac"
+            ReferencedContainer = "container:Mensaplan.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -47,6 +57,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "5BBAE9E92407DA7F005F8098"
+            BuildableName = "Mensaplan Mac.app"
+            BlueprintName = "Mensaplan Mac"
+            ReferencedContainer = "container:Mensaplan.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
