@@ -194,6 +194,7 @@
                                     </items>
                                 </group>
                                 <button width="1" alignment="left" title="Schließen" id="Qhb-e3-otS">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                     <connections>
                                         <action selector="closeAction" destination="Skh-rQ-8M1" id="deZ-7a-4h4"/>
                                     </connections>
