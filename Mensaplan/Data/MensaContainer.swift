@@ -36,9 +36,10 @@ class MensaContainer {
             MensaplanApp.sharedDefaults.set(Date.getCurrentDate(), forKey: LocalKeys.lastUpdate)
         })
     }
-    
+
     func loadJSONintoUI(data: Data, local: Bool) {
-        self.mensaData = try? JSONDecoder().decode(Mensaplan.self, from: data)
+        let unsortedMensaPlan = try? JSONDecoder().decode(Mensaplan.self, from: data)
+        self.mensaData = unsortedMensaPlan?.getSortedPlan()
         
         DispatchQueue.main.async {
             print("MensaData.swift - loadJSONintoUI() - Successfully used \(local ? "local" : "remote") JSON in UI")

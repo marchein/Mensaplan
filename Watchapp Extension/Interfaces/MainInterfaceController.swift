@@ -26,11 +26,13 @@ class MainInterfaceController: WKInterfaceController {
     @IBOutlet weak var locationLabel: WKInterfaceLabel!
     @IBOutlet weak var introLabel: WKInterfaceLabel!
     @IBOutlet weak var mealsTable: WKInterfaceTable!
+    @IBOutlet weak var lastUpdateLabel: WKInterfaceLabel!
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
         subscriptionToken = WatchSync.shared.subscribeToMessages(ofType: WatchMessage.self) {  newWatchMessage in
+            print(newWatchMessage)
             self.processWatchMessage(message: newWatchMessage)
         }
         
@@ -39,7 +41,8 @@ class MainInterfaceController: WKInterfaceController {
     
     override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
         let meal = meals[rowIndex]
-        presentController(withName: "Meal", context: meal)
+        //presentController(withName: "Meal", context: meal)
+        pushController(withName: "Meal", context: meal)
     }
     
     override func willActivate() {
@@ -53,7 +56,6 @@ class MainInterfaceController: WKInterfaceController {
     }
     
     func processWatchMessage(message: WatchMessage) {
-        print(message)
         if let lastUpdate = message.lastUpdate {
             defaults.set(lastUpdate, forKey: LocalKeys.lastUpdate)
         }
@@ -77,6 +79,7 @@ class MainInterfaceController: WKInterfaceController {
         DispatchQueue.main.async {
             self.introLabel.setHidden(false)
             self.mealsTable.setHidden(true)
+            self.lastUpdateLabel.setHidden(true)
         }
         
         self.lastUpdate = defaults.string(forKey: LocalKeys.lastUpdate)
@@ -91,17 +94,16 @@ class MainInterfaceController: WKInterfaceController {
             }
         }
         
+        DispatchQueue.main.async {
+            if let lastUpdate = self.lastUpdate {
+                self.lastUpdateLabel.setHidden(false)
+                self.lastUpdateLabel.setText("Letzte Aktualisierung: \(lastUpdate) Uhr")
+            }
+        }
+        
         dismiss()
         
         parseJSONToObject(data: self.jsonData)
-    }
-    
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        print(keyPath)
-        print(object)
-        print(change)
-        print(context)
-        print("KVO: %@ changed property %@ to value %@", object, keyPath, change)
     }
     
     func parseJSONToObject(data: Data?) {
@@ -140,7 +142,7 @@ class MainInterfaceController: WKInterfaceController {
             }
             
             if !dataForToday {
-                self.introLabel.setText("Für heute liegen für diese Mensa leider keine Daten vor.")
+                self.introLabel.setText("Für heute liegen für diese Mensa leider keine Daten vor.\n\nEventuell musst Du die Mensaplan App auf Deinem iPhone öffnen, um neue Daten anzuzeigen.")
                 self.introLabel.setHidden(false)
             }
         }

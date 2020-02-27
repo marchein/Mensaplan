@@ -32,8 +32,7 @@ class MealInterfaceController: WKInterfaceController {
             mealPublicPriceLabel.setText(meal.getFormattedPrice(price: meal.pricePublic))
             
             let globalDefaults = UserDefaults(suiteName: MensaplanApp.groupIdentifier)!
-            
-            if globalDefaults.bool(forKey: "show_images") {
+            if globalDefaults.optionalBool(forKey: "show_images") ?? true {
                 imageGroup.setHidden(false)
                 if let imageURL = meal.image {
                     mealImage.sd_setImage(with: URL(string: imageURL), placeholderImage: UIImage(named: "watch-no-image-meal"))
@@ -91,7 +90,7 @@ class MealInterfaceController: WKInterfaceController {
     
     
     @IBAction func closeAction() {
-        dismiss()
+        pop()
     }
     
 }

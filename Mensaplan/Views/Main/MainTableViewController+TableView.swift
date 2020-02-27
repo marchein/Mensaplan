@@ -104,6 +104,10 @@ extension MainTableViewController {
                 if data.count == 0 {
                     cell.textLabel?.isEnabled = false
                     cell.detailTextLabel?.isEnabled = false
+                    cell.textLabel?.textColor = .secondaryLabel
+                } else {
+                    cell.textLabel?.textColor = .label
+
                 }
                 if indexPath.row == 0 {
                     cell.textLabel?.text = "Guthaben"
