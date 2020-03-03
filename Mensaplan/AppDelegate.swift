@@ -126,3 +126,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     #endif
 }
 
+#if targetEnvironment(macCatalyst)
+
+let RefreshButtonTouchBarIdentifier = NSTouchBarItem.Identifier("refreshButton")
+
+extension AppDelegate: NSTouchBarDelegate {
+        override func makeTouchBar() -> NSTouchBar? {
+            let touchBar = NSTouchBar()
+            touchBar.defaultItemIdentifiers = [RefreshButtonTouchBarIdentifier]
+            touchBar.delegate = self
+            
+            return touchBar
+        }
+        
+        func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItem.Identifier) -> NSTouchBarItem? {
+            if identifier == RefreshButtonTouchBarIdentifier {
+                let item = NSButtonTouchBarItem(
+                    identifier: RefreshButtonTouchBarIdentifier)
+                item.target = self
+                item.title = "Aktualisieren"
+                item.action = #selector(refresh)
+                return item
+            }
+            return nil
+        }
+        
+    @objc func refresh() {
+        if let splitVC = self.window?.rootViewController as? UISplitViewController, let splitNavVC = splitVC.viewControllers[0] as? UINavigationController, let mainVC = splitNavVC.viewControllers[0] as? MainTableViewController {
+            mainVC.refreshAction(self)
+        }
+        
+    }
+
+
+}
+#endif
+
