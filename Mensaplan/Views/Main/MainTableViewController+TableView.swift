@@ -25,7 +25,11 @@ extension MainTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {      
         if section == 0 {
             if let mensaContainer = self.mensaContainer, let mensaData = mensaContainer.mensaData {
-                return mensaData.plan.count
+                if let selectedLocation = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa), let locationPostition = MensaplanApp.standorteKeys.firstIndex(of: selectedLocation), mensaData.allDaysClosed(location: locationPostition) {
+                    return 1
+                } else {
+                    return mensaData.plan.count
+                }
             }
             return 1
         } else if #available(iOS 13.0, *), MensaplanApp.canScan, section == 1 {
@@ -70,7 +74,13 @@ extension MainTableViewController {
                             } else {
                                 cell.titleLabel.textColor = UIColor(red: 60.0, green: 60.0, blue: 67.0, alpha: 0.6)
                             }
-                            cell.titleLabel.text = dateSuffix(date: dateOfCell, string: getDayName(by: dateOfCell))
+
+                            if let locationPostition = MensaplanApp.standorteKeys.firstIndex(of: selectedLocation), mensaData.allDaysClosed(location: locationPostition) {
+                                cell.titleLabel.text = "Geschlossen"
+                            } else {
+                                cell.titleLabel.text = dateSuffix(date: dateOfCell, string: getDayName(by: dateOfCell))
+                            }
+                            
                             cell.reasonLabel.text = dayDataResult.closedReason
                             cell.reasonLabel.isHidden = false
                         }
