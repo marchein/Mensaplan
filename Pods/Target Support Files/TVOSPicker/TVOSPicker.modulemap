@@ -1,0 +1,6 @@
+framework module TVOSPicker {
+  umbrella header "TVOSPicker-umbrella.h"
+
+  export *
+  module * { export * }
+}

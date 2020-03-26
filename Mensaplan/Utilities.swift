@@ -37,7 +37,7 @@ func showMessage(title: String, message: String, on view: UIViewController) {
     }
 }
 
-func getShareSheet(for meal: Meal?) -> UIActivityViewController? {
+/*func getShareSheet(for meal: Meal?) -> UIActivityViewController? {
     guard let meal = meal else {
         fatalError("ERROR WHILE READING MEAL")
     }
@@ -50,6 +50,7 @@ func getShareSheet(for meal: Meal?) -> UIActivityViewController? {
 
     return activityVC
  }
+*/
 
 func getReleaseTitle() -> String {
     if isSimulator() {
