@@ -134,8 +134,9 @@ class MainInterfaceController: WKInterfaceController {
                         if locationDay.closed {
                             self.introLabel.setText(locationDay.closedReason)
                             self.introLabel.setHidden(false)
+                        } else {
+                            self.setupTable(counters: locationDay.data.counters)
                         }
-                        self.setupTable(counters: locationDay.data.counters)
                         dataForToday = true
                     }
                 }
