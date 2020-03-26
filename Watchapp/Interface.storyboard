@@ -68,9 +68,14 @@
                                 </tableRow>
                             </items>
                         </table>
+                        <label alignment="left" text="LAST UPDATED" numberOfLines="0" id="Vd0-bU-LS6">
+                            <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
                     </items>
                     <connections>
                         <outlet property="introLabel" destination="E5E-Q1-C8y" id="dhD-MT-a69"/>
+                        <outlet property="lastUpdateLabel" destination="Vd0-bU-LS6" id="XEw-ae-Oge"/>
                         <outlet property="locationLabel" destination="nsl-i4-gfx" id="2Bx-c0-ayS"/>
                         <outlet property="mealsTable" destination="c9L-KL-4hm" id="yW3-iY-4lx"/>
                     </connections>
@@ -78,10 +83,10 @@
             </objects>
             <point key="canvasLocation" x="120" y="104"/>
         </scene>
-        <!--Gericht-->
+        <!--Meal-->
         <scene sceneID="ktP-F8-em7">
             <objects>
-                <controller identifier="Meal" title="Gericht" hidesWhenLoading="NO" id="Skh-rQ-8M1" customClass="MealInterfaceController" customModule="Watchapp_Extension">
+                <controller identifier="Meal" hidesWhenLoading="NO" id="Skh-rQ-8M1" customClass="MealInterfaceController" customModule="Watchapp_Extension">
                     <items>
                         <group width="1" alignment="left" layout="vertical" spacing="10" id="nUc-ix-KKo">
                             <items>
@@ -102,7 +107,7 @@
                                                     <items>
                                                         <group alignment="left" layout="vertical" spacing="1" id="AkD-fB-ELQ">
                                                             <items>
-                                                                <label width="91" alignment="left" text="Studierende" id="JSQ-aP-iNc">
+                                                                <label alignment="left" text="Studierende" id="JSQ-aP-iNc">
                                                                     <fontDescription key="font" style="UICTFontTextStyleBody"/>
                                                                 </label>
                                                                 <label alignment="left" text="Bedienstete" id="6ds-87-xMK">
@@ -189,6 +194,7 @@
                                     </items>
                                 </group>
                                 <button width="1" alignment="left" title="Schließen" id="Qhb-e3-otS">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                     <connections>
                                         <action selector="closeAction" destination="Skh-rQ-8M1" id="deZ-7a-4h4"/>
                                     </connections>

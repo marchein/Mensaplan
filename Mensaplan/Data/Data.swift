@@ -15,6 +15,34 @@ struct Mensaplan: Decodable {
     enum CodingKeys : String, CodingKey {
         case plan = "plan"
     }
+    
+    func getSortedPlan() -> Mensaplan {
+        let newPlan = plan.sorted(by: {$0.day[0].getDateValue().compare($1.day[0].getDateValue()) == .orderedAscending})
+        return Mensaplan(plan: newPlan)
+    }
+    
+    private func numberOfClosedDays() -> [[Int]] {
+        var closedDays: [[Int]] = []
+        for days in plan {
+            var closed: [Int] = []
+            for location in days.day {
+                closed.append(location.closed ? 1 : 0)
+            }
+            closed.remove(at: 5)
+            closedDays.append(closed)
+        }
+       return closedDays
+    }
+    
+    func allDaysClosed(location: Int) -> Bool {
+        var daysClosed = 0
+        for day in numberOfClosedDays() {
+            if day[location] == 1 {
+                daysClosed += 1
+            }
+        }
+        return daysClosed == plan.count
+    }
 }
 
 struct Location: Decodable {

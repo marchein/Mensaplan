@@ -13,8 +13,8 @@ import Toast_Swift
 
 class TipJarTableViewController: UITableViewController {
     internal let impact = UIImpactFeedbackGenerator()
-    internal var productIDs: Array<String> = []
-    internal var productsArray: Array<SKProduct?> = []
+    internal var productIDs: [String] = []
+    internal var productsArray: [SKProduct?] = []
     internal var selectedProductIndex: Int!
     internal var transactionInProgress = false
     internal var hasData = false

@@ -39,8 +39,8 @@ enum DayValue {
 
 //MARK:- App Data
 struct MensaplanApp {
-    static let standorteValues = ["Mensa Tarforst", "Bistro A/B", "Mensa Petrisberg", "Mensa Schneidershof", "Mensa Irminenfreihof" ,"forU"]
-    static let standorteKeys = ["standort-1","standort-2","standort-3","standort-4","standort-5","standort-7"]
+    static let standorteValues = ["Mensa Tarforst", "Bistro A/B", "Mensa Petrisberg", "Mensa Schneidershof", "Mensa Irminenfreihof", "forU"]
+    static let standorteKeys = ["standort-1","standort-2","standort-3","standort-4","standort-5", "standort-7"]
     static let standorteOpenings: [Opening] = [
         Opening(semester: "1. Untergeschoss:\nMo.-Do. 11.15 Uhr bis 13.45 Uhr\nFr. 11.15 Uhr bis 13.30 Uhr\n\n2. Untergeschoss:\nMo.-Do. 11.15 Uhr bis 14.15 Uhr", semesterFerien: "Mo.-Fr. 11.30 Uhr bis 13.30 Uhr"),
         Opening(semester: "Mo.-Do. 07.45 Uhr bis 19.30 Uhr\nFr. 07.45 Uhr bis 16.30 Uhr\nSa. 08.45 Uhr bis 13.30 Uhr\n\nAbendmensa: Mo.-Do. 17.30 Uhr bis 19.00 Uhr\n\nSamstagsmensa: 11.30 Uhr bis 13.30 Uhr\n\nPASTA-THEKE: Mo.-Do. 11.30 Uhr bis 14.30 Uhr\nFreitag 11.30 Uhr bis 14.00 Uhr ", semesterFerien: "Mo.-Fr. 08.30 Uhr bis 16.30 Uhr\n\nPASTA-THEKE: Mo.-Do. 11.30 Uhr bis 14.30 Uhr\nFreitag 11.30 Uhr bis 14.00 Uhr"),
@@ -110,16 +110,11 @@ struct MensaplanSegue {
 
 //MARK:- MensaplanIAP
 struct MensaplanIAP {
-    static let prefix = "maccatalyst."
     static let smallTip = "de.marc_hein.mensaplan.tip.sm"
     static let mediumTip = "de.marc_hein.mensaplan.tip.md"
     static let largeTip = "de.marc_hein.mensaplan.tip.lg"
     
-    #if targetEnvironment(macCatalyst)
-    static let allTips = [MensaplanIAP.prefix + MensaplanIAP.smallTip, MensaplanIAP.prefix + MensaplanIAP.mediumTip, MensaplanIAP.prefix + MensaplanIAP.largeTip]
-    #else
     static let allTips = [MensaplanIAP.smallTip, MensaplanIAP.mediumTip, MensaplanIAP.largeTip]
-    #endif
 }
 
 class Opening {

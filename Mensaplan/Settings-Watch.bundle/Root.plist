@@ -20,7 +20,7 @@
 			<key>Key</key>
 			<string>show_images</string>
 			<key>DefaultValue</key>
-			<false/>
+			<true/>
 		</dict>
 	</array>
 	<key>ApplicationGroupContainerIdentifier</key>
