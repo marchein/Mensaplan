@@ -5,6 +5,7 @@ PODS:
   - SDWebImage/Core (5.5.2)
   - SwiftyXMLParser (5.1.0)
   - Toast-Swift (5.0.1)
+  - TVOSPicker (0.0.2)
   - WatchSync (1.3.2):
     - GzipSwift (>= 4.1.0)
 
@@ -12,6 +13,7 @@ DEPENDENCIES:
   - SDWebImage (~> 5.0)
   - SwiftyXMLParser (from `https://github.com/yahoojapan/SwiftyXMLParser.git`)
   - Toast-Swift (~> 5.0.0)
+  - TVOSPicker
   - WatchSync
 
 SPEC REPOS:
@@ -19,6 +21,7 @@ SPEC REPOS:
     - GzipSwift
     - SDWebImage
     - Toast-Swift
+    - TVOSPicker
     - WatchSync
 
 EXTERNAL SOURCES:
@@ -35,8 +38,9 @@ SPEC CHECKSUMS:
   SDWebImage: 4d5c027c935438f341ed33dbac53ff9f479922ca
   SwiftyXMLParser: 8271497e0a37b5c04b0b167c77b4896e36175a21
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+  TVOSPicker: ce7f12fa1cf0f403a57af8fbaa9110f521545c27
   WatchSync: 659dec699f1756fd03726cd6fb0c5f77cdc5356b
 
-PODFILE CHECKSUM: 6230ccea544203d41efec2fca484c334c4b48e29
+PODFILE CHECKSUM: 5b24566c4fb5d0e992a56be2c3c17dc041c82cec
 
 COCOAPODS: 1.8.4

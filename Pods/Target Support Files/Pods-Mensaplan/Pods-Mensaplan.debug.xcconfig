@@ -1,7 +1,7 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/GzipSwift-iOS" "${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage-iOS" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyXMLParser" "${PODS_CONFIGURATION_BUILD_DIR}/Toast-Swift" "${PODS_CONFIGURATION_BUILD_DIR}/WatchSync-iOS"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/GzipSwift-iOS" "${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage-iOS" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyXMLParser-iOS" "${PODS_CONFIGURATION_BUILD_DIR}/Toast-Swift" "${PODS_CONFIGURATION_BUILD_DIR}/WatchSync-iOS"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/GzipSwift-iOS/Gzip.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage-iOS/SDWebImage.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyXMLParser/SwiftyXMLParser.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Toast-Swift/Toast_Swift.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/WatchSync-iOS/WatchSync.framework/Headers"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/GzipSwift-iOS/Gzip.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage-iOS/SDWebImage.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyXMLParser-iOS/SwiftyXMLParser.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Toast-Swift/Toast_Swift.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/WatchSync-iOS/WatchSync.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
 OTHER_LDFLAGS = $(inherited) -l"z" -framework "Gzip" -framework "ImageIO" -framework "QuartzCore" -framework "SDWebImage" -framework "SwiftyXMLParser" -framework "Toast_Swift" -framework "WatchConnectivity" -framework "WatchSync"
 OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS

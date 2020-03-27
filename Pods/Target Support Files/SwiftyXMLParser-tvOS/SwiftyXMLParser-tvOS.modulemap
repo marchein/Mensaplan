@@ -1,5 +1,5 @@
 framework module SwiftyXMLParser {
-  umbrella header "SwiftyXMLParser-umbrella.h"
+  umbrella header "SwiftyXMLParser-tvOS-umbrella.h"
 
   export *
   module * { export * }

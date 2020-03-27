@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C96998A189BC645DB45F2AFFF9D802BD"
-               BuildableName = "SwiftyXMLParser.framework"
-               BlueprintName = "SwiftyXMLParser"
+               BlueprintIdentifier = "AACC4CA726FA5CC7D748471750C1EEBF"
+               BuildableName = "TVOSPicker.framework"
+               BlueprintName = "TVOSPicker"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
