@@ -77,6 +77,7 @@ extension MainTableViewController {
 
                             if let locationPostition = MensaplanApp.standorteKeys.firstIndex(of: selectedLocation), mensaData.allDaysClosed(location: locationPostition) {
                                 cell.titleLabel.text = "Geschlossen"
+                                cell.dateLabel.isHidden = true
                             } else {
                                 cell.titleLabel.text = dateSuffix(date: dateOfCell, string: getDayName(by: dateOfCell))
                             }
@@ -90,6 +91,7 @@ extension MainTableViewController {
                         cell.reasonLabel.isEnabled = true
                         cell.dateLabel.isEnabled = true
                         cell.accessoryType = .disclosureIndicator
+                        cell.dateLabel.isHidden = false
                         if #available(iOS 13.0, *) {
                             cell.titleLabel.textColor = .label
                         } else {
