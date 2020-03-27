@@ -77,7 +77,6 @@ class MainViewController: UIViewController {
             if let indexPath = self.tableView.indexPathForSelectedRow, let mensaData = self.mensaData {
                 let selectedDay = mensaData.plan[indexPath.row]
                 let selectedLocation = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa)!
-                print("selectedLocation \(selectedLocation)")
                 for location in selectedDay.day {
                     if location.title == selectedLocation, let vc = segue.destination as? DetailTableViewController {
                         vc.mensaPlanDay = location.data

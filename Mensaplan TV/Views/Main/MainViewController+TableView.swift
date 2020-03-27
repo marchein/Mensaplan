@@ -11,12 +11,11 @@ import UIKit
 extension MainViewController:UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let mensaData = mensaData {
-            /*if let selectedLocation = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa), let locationPostition = MensaplanApp.standorteKeys.firstIndex(of: selectedLocation), mensaData.allDaysClosed(location: locationPostition) {
-             return 1
-             } else {
-             return mensaData.plan.count
-             }*/
-            return mensaData.plan.count
+            if let selectedLocation = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa), let locationPostition = MensaplanApp.standorteKeys.firstIndex(of: selectedLocation), mensaData.allDaysClosed(location: locationPostition) {
+                return 1
+            } else {
+                return mensaData.plan.count
+            }
         }
         return 1
     }
@@ -80,7 +79,7 @@ extension MainViewController:UITableViewDataSource, UITableViewDelegate {
                 cell.reasonLabel.text = nil
                 cell.dateLabel.text = dayDataResult.getDate(showDay: false)
                 
-                /*if dayDataResult.closed || isDateOver(date: dateOfCell) || dayDataResult.data.counters.count == 0 {
+                if dayDataResult.closed || isDateOver(date: dateOfCell) || dayDataResult.data.counters.count == 0 {
                     cell.isUserInteractionEnabled = false
                     cell.titleLabel.isEnabled = false
                     cell.reasonLabel.isEnabled = false
@@ -91,6 +90,7 @@ extension MainViewController:UITableViewDataSource, UITableViewDelegate {
                         
                         if let locationPostition = MensaplanApp.standorteKeys.firstIndex(of: selectedLocation), mensaData.allDaysClosed(location: locationPostition) {
                             cell.titleLabel.text = "Geschlossen"
+                            cell.dateLabel.isHidden = true
                         } else {
                             cell.titleLabel.text = dateSuffix(date: dateOfCell, string: getDayName(by: dateOfCell))
                         }
@@ -98,14 +98,16 @@ extension MainViewController:UITableViewDataSource, UITableViewDelegate {
                         cell.reasonLabel.text = dayDataResult.closedReason
                         cell.reasonLabel.isHidden = false
                     }
-                } else {*/
+                } else {
                     cell.isUserInteractionEnabled = true
                     cell.titleLabel.isEnabled = true
                     cell.reasonLabel.isEnabled = true
                     cell.dateLabel.isEnabled = true
                     cell.accessoryType = .disclosureIndicator
                     cell.titleLabel.textColor = .label
-                //}
+                    cell.dateLabel.isHidden = false
+
+                }
                 return cell
             } else {
                 let cell = UITableViewCell()
