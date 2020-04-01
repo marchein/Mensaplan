@@ -43,7 +43,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             dataSource: MensaplanApp.standorteValues,
             initialSelection: selectedMensaIndex ?? 0,
             onSelectItem: { item, index in
-                print("\(item) selected at index \(MensaplanApp.standorteKeys[index])")
                 self.setNewLocation(selectedMensa: MensaplanApp.standorteKeys[index])
         })
     }

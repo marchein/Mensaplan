@@ -127,7 +127,6 @@ class MainTableViewController: UITableViewController {
         }
         if let mensaContainer = self.mensaContainer {
             mensaContainer.loadMensaData()
-            
         }
     }
     

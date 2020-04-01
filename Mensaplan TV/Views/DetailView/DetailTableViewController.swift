@@ -15,7 +15,6 @@ class DetailTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(mensaPlanDay)
     }
     
     // MARK: - Table view data source

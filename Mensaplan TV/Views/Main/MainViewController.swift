@@ -29,11 +29,7 @@ class MainViewController: UIViewController {
         setupApp()
         
         mensaXML = MensaXML(url: URL(string: MensaplanApp.API)!)
-        mensaXML?.loadXML(onDone: { (mensaPlanData) in
-            MensaplanApp.sharedDefaults.set(mensaPlanData, forKey: LocalKeys.jsonData)
-            self.loadJSONintoUI(data: mensaPlanData, local: false)
-            MensaplanApp.sharedDefaults.set(Date.getCurrentDate(), forKey: LocalKeys.lastUpdate)
-        })
+        refreshAction(self)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -72,19 +68,43 @@ class MainViewController: UIViewController {
         }
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == MensaplanSegue.showDetail, let selectedDay = getSelectedMensaPlanDay() {
+            return !selectedDay.closed
+        }
+        return true
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == MensaplanSegue.showDetail {
-            if let indexPath = self.tableView.indexPathForSelectedRow, let mensaData = self.mensaData {
-                let selectedDay = mensaData.plan[indexPath.row]
-                let selectedLocation = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa)!
-                for location in selectedDay.day {
-                    if location.title == selectedLocation, let vc = segue.destination as? DetailTableViewController {
-                        vc.mensaPlanDay = location.data
-                    }
-                }
+            let selectedDay = getSelectedMensaPlanDay()
+            if let selectedDay = selectedDay, let vc = segue.destination as? DetailTableViewController {
+                vc.mensaPlanDay = selectedDay.data
             } else {
                 print("Oops, no row has been selected")
             }
         }
+    }
+    
+    func getSelectedMensaPlanDay() -> LocationDay? {
+        if let indexPath = self.tableView.indexPathForSelectedRow, let mensaData = self.mensaData {
+            let selectedDay = mensaData.plan[indexPath.row]
+            let selectedLocation = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa)!
+            for location in selectedDay.day {
+                if location.title == selectedLocation  {
+                    return location
+                }
+            }
+        }
+        return nil
+    }
+    
+    @IBAction func refreshAction(_ sender: Any) {
+        mensaXML?.loadXML(onDone: { (mensaPlanData) in
+            MensaplanApp.sharedDefaults.set(mensaPlanData, forKey: LocalKeys.jsonData)
+            self.loadJSONintoUI(data: mensaPlanData, local: false)
+            MensaplanApp.sharedDefaults.set(Date.getCurrentDate(), forKey: LocalKeys.lastUpdate)
+        })
     }
 }

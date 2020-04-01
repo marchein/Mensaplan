@@ -80,11 +80,11 @@ extension MainViewController:UITableViewDataSource, UITableViewDelegate {
                 cell.dateLabel.text = dayDataResult.getDate(showDay: false)
                 
                 if dayDataResult.closed || isDateOver(date: dateOfCell) || dayDataResult.data.counters.count == 0 {
-                    cell.isUserInteractionEnabled = false
                     cell.titleLabel.isEnabled = false
                     cell.reasonLabel.isEnabled = false
                     cell.dateLabel.isEnabled = false
                     cell.accessoryType = .none
+                    
                     if dayDataResult.closed {
                         cell.titleLabel.textColor = .secondaryLabel
                         
@@ -99,7 +99,6 @@ extension MainViewController:UITableViewDataSource, UITableViewDelegate {
                         cell.reasonLabel.isHidden = false
                     }
                 } else {
-                    cell.isUserInteractionEnabled = true
                     cell.titleLabel.isEnabled = true
                     cell.reasonLabel.isEnabled = true
                     cell.dateLabel.isEnabled = true
