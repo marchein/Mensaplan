@@ -5,7 +5,7 @@
 # Mensaplan App
 This app allows you to see the current menu of the canteen of the University Trier and Hochschule Trier.
 
-[<img src="./images/as.svg">](https://apps.apple.com/de/app/mensaplan-trier/id1484281036) [<img src="./images/mas.svg">](https://apps.apple.com/de/app/mensaplan-trier/id1484515269)
+[<img src="./images/as.svg">](https://apps.apple.com/de/app/mensaplan-trier/id1484281036)
 
 
 
