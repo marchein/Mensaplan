@@ -127,12 +127,14 @@ class MainInterfaceController: WKInterfaceController {
         if let selectedMensa = self.selectedMensa {
             let index = MensaplanApp.standorteKeys.firstIndex(of: selectedMensa)!
             self.locationLabel.setText(MensaplanApp.standorteValues[index])
-            
             for location in locations {
                 for locationDay in location.day {
                     if Calendar.autoupdatingCurrent.isDateInToday(locationDay.getDateValue()), locationDay.title == selectedMensa {
                         if locationDay.closed {
                             self.introLabel.setText(locationDay.closedReason)
+                            self.introLabel.setHidden(false)
+                        } else if locationDay.data.counters.count == 0 {
+                            self.introLabel.setText("Für diesen Tag gibt es keine Gerichte an diesem Standort")
                             self.introLabel.setHidden(false)
                         } else {
                             self.setupTable(counters: locationDay.data.counters)

@@ -57,17 +57,30 @@ extension MainTableViewController {
                     }
                 }
                 if let dayDataResult = dayData {
+                    cell.reasonLabel.isHidden = true
                     let dateOfCell = dayDataResult.getDateValue()
                     cell.titleLabel.text = dateSuffix(date: dateOfCell, string: getDayName(by: dateOfCell))
                     cell.reasonLabel.text = nil
                     cell.dateLabel.text = dayDataResult.getDate(showDay: false)
-                    
-                    if dayDataResult.closed || isDateOver(date: dateOfCell) || dayDataResult.data.counters.count == 0 {
+                    let noMealsForDay = dayDataResult.data.counters.count == 0
+                    if dayDataResult.closed || isDateOver(date: dateOfCell) || noMealsForDay {
                         cell.isUserInteractionEnabled = false
                         cell.titleLabel.isEnabled = false
                         cell.reasonLabel.isEnabled = false
                         cell.dateLabel.isEnabled = false
                         cell.accessoryType = .none
+                        if noMealsForDay {
+                            if #available(iOS 13.0, *) {
+                                cell.titleLabel.textColor = .secondaryLabel
+                            } else {
+                                cell.titleLabel.textColor = UIColor(red: 60.0, green: 60.0, blue: 67.0, alpha: 0.6)
+                            }
+
+                            cell.titleLabel.text = dateSuffix(date: dateOfCell, string: getDayName(by: dateOfCell))
+                            
+                            cell.reasonLabel.text = "Für diesen Tag gibt es keine Gerichte an diesem Standort"
+                            cell.reasonLabel.isHidden = false
+                        }
                         if dayDataResult.closed {
                             if #available(iOS 13.0, *) {
                                 cell.titleLabel.textColor = .secondaryLabel

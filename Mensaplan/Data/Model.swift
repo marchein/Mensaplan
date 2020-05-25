@@ -58,11 +58,7 @@ struct MensaplanApp {
     static let MAIN_DISH_MINIMAL_PRICE: Double = 1.15
     
     static let groupIdentifier = "group.de.marc-hein.Mensaplan.Data"
-    #if targetEnvironment(macCatalyst)
-    static let appStoreId = "1484515269"
-    #else
     static let appStoreId = "1484281036"
-    #endif
     static let mailAdress = "dev@marc-hein.de"
     static let website = "https://marc-hein.de/"
     static let versionString = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String

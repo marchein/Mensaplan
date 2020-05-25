@@ -22,17 +22,14 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         self.settingsTableView.dataSource = self
         self.settingsTableView.delegate = self
         
-        guard let selectedPrice = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedPrice) else {
-            return
-        }
-        print(selectedPrice)
-        
         standortLabel.text = getCurrentSelectedMensa()
     }
     
     func getCurrentSelectedMensa() -> String {
         let selectedMensaValue = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa)!
+        
         selectedMensaIndex = MensaplanApp.standorteKeys.firstIndex(of: selectedMensaValue)
+        
         return MensaplanApp.standorteValues[selectedMensaIndex!]
     }
     

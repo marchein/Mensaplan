@@ -49,9 +49,9 @@ class MainViewController: UIViewController {
             MensaplanApp.sharedDefaults.set("standort-1", forKey: LocalKeys.selectedMensa)
             MensaplanApp.sharedDefaults.set("student", forKey: LocalKeys.selectedPrice)
             MensaplanApp.sharedDefaults.set(true, forKey: LocalKeys.isSetup)
-            print("ViewController.swift - setupApp() - INITIAL SETUP DONE")
+            print("MainViewController.swift - setupApp() - INITIAL SETUP DONE")
         } else {
-            print("ViewController.swift - setupApp() - load local copy")
+            print("MainViewController.swift - setupApp() - load local copy")
             if let localCopyOfData = MensaplanApp.sharedDefaults.data(forKey: LocalKeys.jsonData) {
                 loadJSONintoUI(data: localCopyOfData, local: true)
             }
@@ -63,7 +63,7 @@ class MainViewController: UIViewController {
         self.mensaData = try? JSONDecoder().decode(Mensaplan.self, from: data)
         
         DispatchQueue.main.async {
-            print("ViewController.swift - loadJSONintoUI() - Successfully used \(local ? "local" : "remote") JSON in UI")
+            print("MainViewController.swift - loadJSONintoUI() - Successfully used \(local ? "local" : "remote") JSON in UI")
             self.tableView.reloadData()
         }
     }
