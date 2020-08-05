@@ -13,7 +13,7 @@ import WatchSync
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
     
     var window: UIWindow?
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         //Hide Autolayout Warning
@@ -28,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
         splitViewController.delegate = self
         splitViewController.preferredDisplayMode = .allVisible
+        #if targetEnvironment(macCatalyst)
+        splitViewController.primaryBackgroundStyle = .sidebar
+        #endif
         
         WatchSync.shared.activateSession { error in
             if let error = error {
@@ -38,19 +41,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         }
         
         let showTodayShortcut = UIMutableApplicationShortcutItem(type: Shortcuts.showToday,
-                localizedTitle: "Mensaplan für heute anzeigen",
-                localizedSubtitle: nil,
-                icon: UIApplicationShortcutIcon(type: .date),
-                userInfo: nil
+                                                                 localizedTitle: "Mensaplan für heute anzeigen",
+                                                                 localizedSubtitle: nil,
+                                                                 icon: UIApplicationShortcutIcon(type: .date),
+                                                                 userInfo: nil
         )
-
+        
         let showTomorrowShortcut = UIMutableApplicationShortcutItem(type: Shortcuts.showTomorrow,
-                localizedTitle: "Mensaplan für morgen anzeigen",
-                localizedSubtitle: nil,
-                icon: UIApplicationShortcutIcon(type: .date),
-                userInfo: nil
+                                                                    localizedTitle: "Mensaplan für morgen anzeigen",
+                                                                    localizedSubtitle: nil,
+                                                                    icon: UIApplicationShortcutIcon(type: .date),
+                                                                    userInfo: nil
         )
-
+        
         application.shortcutItems = [showTodayShortcut, showTomorrowShortcut]
         
         return true
@@ -68,48 +71,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     }
     
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
-       if #available(iOS 12.0, *) {
-        if let splitVC = self.window?.rootViewController as? UISplitViewController, let splitNavVC = splitVC.viewControllers[0] as? UINavigationController, let mainVC = splitNavVC.viewControllers[0] as? MainTableViewController {
-            if userActivity.activityType == Shortcuts.showToday {
-                mainVC.showDay(dayValue: DayValue.TODAY)
-            } else if userActivity.activityType == Shortcuts.showTomorrow {
-                mainVC.showDay(dayValue: DayValue.TOMORROW)
+        if #available(iOS 12.0, *) {
+            if let splitVC = self.window?.rootViewController as? UISplitViewController, let splitNavVC = splitVC.viewControllers[0] as? UINavigationController, let mainVC = splitNavVC.viewControllers[0] as? MainTableViewController {
+                if userActivity.activityType == Shortcuts.showToday {
+                    mainVC.showDay(dayValue: DayValue.TODAY)
+                } else if userActivity.activityType == Shortcuts.showTomorrow {
+                    mainVC.showDay(dayValue: DayValue.TOMORROW)
+                }
+                return true
             }
-            return true
+            
+            
         }
-            
-            
-       }
-       return false
+        return false
     }
-
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
     }
-
+    
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
-
+    
     func applicationWillEnterForeground(_ application: UIApplication) {
         if let viewController = self.window?.rootViewController as? UINavigationController, let mainVC = viewController.viewControllers[0] as? MainTableViewController {
             mainVC.tableView.reloadData()
         }
     }
-
+    
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
-
+    
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
     // MARK: - Split view
     
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController:UIViewController, onto primaryViewController:UIViewController) -> Bool {
+        
         return true
     }
     
@@ -118,47 +122,67 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         super.buildMenu(with: builder)
         
         builder.remove(menu: .services)
+        builder.remove(menu: .toolbar)
         builder.remove(menu: .file)
         builder.remove(menu: .edit)
         builder.remove(menu: .format)
-        builder.remove(menu: .help)
+        //builder.remove(menu: .help)
     }
     #endif
 }
 
 #if targetEnvironment(macCatalyst)
 
+let SettingsButtonTouchBarIdentifier = NSTouchBarItem.Identifier("settingsButton")
 let RefreshButtonTouchBarIdentifier = NSTouchBarItem.Identifier("refreshButton")
 
+
 extension AppDelegate: NSTouchBarDelegate {
-        override func makeTouchBar() -> NSTouchBar? {
-            let touchBar = NSTouchBar()
-            touchBar.defaultItemIdentifiers = [RefreshButtonTouchBarIdentifier]
-            touchBar.delegate = self
-            
-            return touchBar
-        }
+    override func makeTouchBar() -> NSTouchBar? {
+        let touchBar = NSTouchBar()
+        touchBar.defaultItemIdentifiers = [SettingsButtonTouchBarIdentifier, RefreshButtonTouchBarIdentifier]
+        touchBar.delegate = self
         
-        func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItem.Identifier) -> NSTouchBarItem? {
-            if identifier == RefreshButtonTouchBarIdentifier {
-                let item = NSButtonTouchBarItem(
-                    identifier: RefreshButtonTouchBarIdentifier)
-                item.target = self
-                item.title = "Aktualisieren"
-                item.action = #selector(refresh)
-                return item
-            }
-            return nil
-        }
-        
-    @objc func refresh() {
-        if let splitVC = self.window?.rootViewController as? UISplitViewController, let splitNavVC = splitVC.viewControllers[0] as? UINavigationController, let mainVC = splitNavVC.viewControllers[0] as? MainTableViewController {
-            mainVC.refreshAction(self)
-        }
-        
+        return touchBar
     }
-
-
+    
+    func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItem.Identifier) -> NSTouchBarItem? {
+        if identifier == SettingsButtonTouchBarIdentifier {
+            let item = NSButtonTouchBarItem(
+                identifier: SettingsButtonTouchBarIdentifier)
+            item.target = self
+            item.image = UIImage(systemName: "gear")
+            item.title = "Einstellungen"
+            item.action = #selector(showSettings)
+            return item
+        } else if identifier == RefreshButtonTouchBarIdentifier {
+            let item = NSButtonTouchBarItem(
+                identifier: RefreshButtonTouchBarIdentifier)
+            item.target = self
+            item.image = UIImage(systemName: "arrow.clockwise")
+            item.title = "Aktualisieren"
+            item.action = #selector(refresh)
+            return item
+        }
+        return nil
+    }
+    
+    @objc func refresh() {
+        let mainVC = getMainVC()
+        mainVC.refreshAction(self)
+    }
+    
+    @objc func showSettings() {
+        let mainVC = getMainVC()
+        mainVC.openSettings()
+    }
+    
+    func getMainVC() -> MainTableViewController {
+        if let splitVC = self.window?.rootViewController as? UISplitViewController, let splitNavVC = splitVC.viewControllers[0] as? UINavigationController, let mainVC = splitNavVC.viewControllers[0] as? MainTableViewController {
+            return mainVC
+        }
+        return MainTableViewController()
+    }
 }
 #endif
 

@@ -1,8 +1,8 @@
 PODS:
   - GzipSwift (5.1.1)
-  - SDWebImage (5.5.2):
-    - SDWebImage/Core (= 5.5.2)
-  - SDWebImage/Core (5.5.2)
+  - SDWebImage (5.8.4):
+    - SDWebImage/Core (= 5.8.4)
+  - SDWebImage/Core (5.8.4)
   - SwiftyXMLParser (5.1.0)
   - Toast-Swift (5.0.1)
   - TVOSPicker (0.0.2)
@@ -30,12 +30,12 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SwiftyXMLParser:
-    :commit: bc85162ecee60d6eb94b778648bc4c51e1c4d34f
+    :commit: 9d82653e535a13a518b411934c0a5c0c84406c22
     :git: https://github.com/yahoojapan/SwiftyXMLParser.git
 
 SPEC CHECKSUMS:
   GzipSwift: 893f3e48e597a1a4f62fafcb6514220fcf8287fa
-  SDWebImage: 4d5c027c935438f341ed33dbac53ff9f479922ca
+  SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
   SwiftyXMLParser: 8271497e0a37b5c04b0b167c77b4896e36175a21
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
   TVOSPicker: ce7f12fa1cf0f403a57af8fbaa9110f521545c27
@@ -43,4 +43,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 5b24566c4fb5d0e992a56be2c3c17dc041c82cec
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3

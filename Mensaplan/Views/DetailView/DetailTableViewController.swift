@@ -23,6 +23,9 @@ class DetailTableViewController: UITableViewController {
                 setupShortcutIntent(activityType: Shortcuts.showTomorrow)
             }
         }
+        #if targetEnvironment(macCatalyst)
+        self.navigationController?.navigationBar.isHidden = true
+        #endif
     }
     
     override func viewWillAppear(_ animated: Bool) {

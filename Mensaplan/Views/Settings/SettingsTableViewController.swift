@@ -8,14 +8,13 @@
 
 import UIKit
 
-class SettingsTableViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate,UIAdaptivePresentationControllerDelegate {
+class SettingsTableViewController: UITableViewController, UIAdaptivePresentationControllerDelegate {
     
+    @IBOutlet weak var refreshOnStartCell: UITableViewCell!
     @IBOutlet weak var refreshOnStartToggle: UISwitch!
     @IBOutlet weak var priceSelector: UIView!
     @IBOutlet weak var selectedMensaName: UILabel!
-    @IBOutlet weak var mensaPicker: UIPickerView!
     @IBOutlet weak var mensaNameCell: UITableViewCell!
-    @IBOutlet weak var mensaPickerCell: UITableViewCell!
     @IBOutlet weak var pricePicker: UISegmentedControl!
     @IBOutlet weak var appVersionCell: UITableViewCell!
     @IBOutlet weak var appSupportCell: UITableViewCell!
@@ -23,25 +22,23 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     @IBOutlet weak var rateAppCell: UITableViewCell!
     @IBOutlet weak var developerCell: UITableViewCell!
     @IBOutlet weak var showSideDishToggle: UISwitch!
+    @IBOutlet weak var closeButton: UIBarButtonItem!
     
-    var isPickerHidden = true
     var selectedMensa : String!
-    var madeChanges = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        #if targetEnvironment(macCatalyst)
+        closeButton.tintColor = .label
+        #endif
         
-        mensaPicker.delegate = self
-        mensaPicker.dataSource = self
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         setupView()
         
         self.navigationController?.presentationController?.delegate = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.updateCurrentMensa()
     }
     
     func setupView() {
@@ -53,17 +50,19 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
                 return
             }
             pricePicker.selectedSegmentIndex = MensaplanApp.priceValues.firstIndex(of: selectedPrice)!
-            let selectedMensaValue = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa)!
-            let selectedMensaValueIndex = MensaplanApp.standorteKeys.firstIndex(of: selectedMensaValue)!
-            selectedMensaName.text = MensaplanApp.standorteValues[selectedMensaValueIndex]
-            mensaPicker.selectRow(selectedMensaValueIndex, inComponent: 0, animated: false)
             appVersionCell.detailTextLabel?.text = MensaplanApp.versionString
-        }
-
-        if #available(iOS 13.0, *) {
-            //navigationController?.isModalInPresentation = true
+            self.updateCurrentMensa()
         }
         
+        if #available(iOS 13.0, *) {
+            navigationController?.isModalInPresentation = true
+        }
+        
+    }
+    
+    func updateCurrentMensa() {
+        mensaNameCell.detailTextLabel?.text = MensaplanApp.standorteValues[MensaplanApp.standorteKeys.firstIndex(of: MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa) ?? MensaplanApp.standorteKeys[0]) ?? 0]
+
     }
     
     func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
@@ -72,34 +71,18 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         }
     }
     
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return MensaplanApp.standorteKeys.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return MensaplanApp.standorteValues[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedMensa = MensaplanApp.standorteKeys[row]
-        selectedMensaName.text = MensaplanApp.standorteValues[row]
-        if selectedMensa != MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa) {
-            MensaplanApp.sharedDefaults.set(selectedMensa, forKey: LocalKeys.selectedMensa)
-            madeChanges = true
-        }
-    }
-    
     @IBAction func setRefreshOnStart(_ sender: Any) {
         MensaplanApp.sharedDefaults.set(refreshOnStartToggle.isOn, forKey: LocalKeys.refreshOnStart)
+        #if targetEnvironment(macCatalyst)
+        showMessage(title: "Aktualisieren beim Öffnen", message: refreshOnStartToggle.isOn ? "Die Daten werden nun beim Start automatisch aktualisiert" : "Die Daten werden nun beim Start nicht mehr automatisch aktualisiert", on: self)
+        #endif
     }
     
     @IBAction func setShowSideDish(_ sender: Any) {
         MensaplanApp.sharedDefaults.set(showSideDishToggle.isOn, forKey: LocalKeys.showSideDish)
+        #if targetEnvironment(macCatalyst)
+        showMessage(title: "Beilagen anzeigen", message: showSideDishToggle.isOn ? "Die Beilagen werden nun angezeigt" : "Die Beilagen werden nun nicht mehr angezeigt", on: self)
+        #endif
     }
     
     @IBAction func priceSelection(_ sender: Any) {
