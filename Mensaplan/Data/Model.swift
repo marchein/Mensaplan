@@ -66,7 +66,7 @@ struct MensaplanApp {
     
     static let askForReviewAt = 5
 
-    static let sharedDefaults: UserDefaults = UserDefaults(suiteName: MensaplanApp.groupIdentifier)!
+    static let sharedDefaults = UserDefaults(suiteName: MensaplanApp.groupIdentifier)!
     
     static let imageCache = NSCache<AnyObject, AnyObject>()
 
@@ -101,6 +101,7 @@ struct MensaplanSegue {
     static let emptyDetail = "emptyDetail"
     static let showDetail = "showDetail"
     static let manualShowDetail = "manualShowDetail"
+    static let showSettings = "settingsSegue"
     
 }
 

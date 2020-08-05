@@ -82,6 +82,8 @@
 		5BC76291237C65950062CDD3 /* TopAlignedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC76290237C65950062CDD3 /* TopAlignedLabel.swift */; };
 		5BC76293237C67E40062CDD3 /* MealTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC76292237C67E40062CDD3 /* MealTableViewController.swift */; };
 		5BCD6862242D1CF3003E5B93 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCD6861242D1CF3003E5B93 /* SettingsViewController.swift */; };
+		5BE3438A24DAB89900A6524B /* SettingsMensaLocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE3438924DAB89900A6524B /* SettingsMensaLocationTableViewController.swift */; };
+		5BE3438E24DADB8600A6524B /* MainTableViewController+NSToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE3438D24DADB8600A6524B /* MainTableViewController+NSToolbar.swift */; };
 		5BE98C14242D06C0009ABBC8 /* MealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE98C13242D06C0009ABBC8 /* MealViewController.swift */; };
 		5BEA0A31235DC0BA003E3616 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEA0A30235DC0BA003E3616 /* SettingsTableViewController.swift */; };
 		5BEA0A33235DC0D0003E3616 /* SettingsTableViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEA0A32235DC0D0003E3616 /* SettingsTableViewController+TableView.swift */; };
@@ -203,7 +205,6 @@
 		5B629D17238A846400E39C8D /* UIStackView+removeAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+removeAll.swift"; sourceTree = "<group>"; };
 		5B629D4C238AB67B00E39C8D /* Mensaplan Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Mensaplan Info.plist"; path = "/Users/marchein/Projekte/Private/Mensaplan/Mensaplan Info.plist"; sourceTree = "<absolute>"; };
 		5BA2CCB22405503900CF6954 /* WatchMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchMessage.swift; sourceTree = "<group>"; };
-		5BBAEA252407DA7F005F8098 /* Mensaplan Mac Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Mensaplan Mac Info.plist"; path = "/Users/marchein/Projekte/Private/Mensaplan/Mensaplan Mac Info.plist"; sourceTree = "<absolute>"; };
 		5BBAEA262407DB1B005F8098 /* Mensaplan Mac.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "Mensaplan Mac.entitlements"; sourceTree = "<group>"; };
 		5BBEA09424033759005790E9 /* DayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTableViewCell.swift; sourceTree = "<group>"; };
 		5BC2298C23FCA22300C71FC4 /* MensaContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensaContainer.swift; sourceTree = "<group>"; };
@@ -211,6 +212,8 @@
 		5BC76290237C65950062CDD3 /* TopAlignedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAlignedLabel.swift; sourceTree = "<group>"; };
 		5BC76292237C67E40062CDD3 /* MealTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableViewController.swift; sourceTree = "<group>"; };
 		5BCD6861242D1CF3003E5B93 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		5BE3438924DAB89900A6524B /* SettingsMensaLocationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMensaLocationTableViewController.swift; sourceTree = "<group>"; };
+		5BE3438D24DADB8600A6524B /* MainTableViewController+NSToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainTableViewController+NSToolbar.swift"; sourceTree = "<group>"; };
 		5BE98C13242D06C0009ABBC8 /* MealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewController.swift; sourceTree = "<group>"; };
 		5BEA0A30235DC0BA003E3616 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		5BEA0A32235DC0D0003E3616 /* SettingsTableViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsTableViewController+TableView.swift"; sourceTree = "<group>"; };
@@ -343,6 +346,7 @@
 				5B18702E235A403E00EF54DF /* MainTableViewController.swift */,
 				5B187033235A40E200EF54DF /* MainTableViewController+TableView.swift */,
 				5B06EFA52382CCA10020FF0E /* MainTableViewController+NFC.swift */,
+				5BE3438D24DADB8600A6524B /* MainTableViewController+NSToolbar.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -450,7 +454,6 @@
 				5BEA0A36235E0990003E3616 /* Mensaplan.entitlements */,
 				5BBAEA262407DB1B005F8098 /* Mensaplan Mac.entitlements */,
 				5B629D4C238AB67B00E39C8D /* Mensaplan Info.plist */,
-				5BBAEA252407DA7F005F8098 /* Mensaplan Mac Info.plist */,
 				5B2AEB352407050D00C64437 /* Settings-Watch.bundle */,
 			);
 			path = Mensaplan;
@@ -564,6 +567,14 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		5BE3438824DAB87100A6524B /* MensaLocation */ = {
+			isa = PBXGroup;
+			children = (
+				5BE3438924DAB89900A6524B /* SettingsMensaLocationTableViewController.swift */,
+			);
+			path = MensaLocation;
+			sourceTree = "<group>";
+		};
 		5BE98C12242D06A8009ABBC8 /* MealView */ = {
 			isa = PBXGroup;
 			children = (
@@ -575,6 +586,7 @@
 		5BEA0A2F235DC0A0003E3616 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				5BE3438824DAB87100A6524B /* MensaLocation */,
 				5B09BB2F237058B0004E1981 /* TipJar */,
 				5BEA0A30235DC0BA003E3616 /* SettingsTableViewController.swift */,
 				5BEA0A32235DC0D0003E3616 /* SettingsTableViewController+TableView.swift */,
@@ -913,9 +925,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B27727A235D0B2900E3894B /* DetailTableViewController+TableView.swift in Sources */,
+				5BE3438A24DAB89900A6524B /* SettingsMensaLocationTableViewController.swift in Sources */,
 				5B09BB34237058B0004E1981 /* TipJar+Transaction.swift in Sources */,
 				5B18702F235A403E00EF54DF /* MainTableViewController.swift in Sources */,
 				5B09BB4123705A37004E1981 /* Bundle+Icon.swift in Sources */,
+				5BE3438E24DADB8600A6524B /* MainTableViewController+NSToolbar.swift in Sources */,
 				5B06EFA22382CC5C0020FF0E /* MensaDatabase.swift in Sources */,
 				5B5C8EBA235E59BD00C29E62 /* Utilities.swift in Sources */,
 				5B09BB4723705A59004E1981 /* BorderedButton.swift in Sources */,
@@ -1206,7 +1220,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 31;
+				CURRENT_PROJECT_VERSION = 33;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = NO;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = Mensaplan/Info.plist;
@@ -1214,7 +1228,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.3;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.marc-hein.mensaplan";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1234,7 +1248,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 31;
+				CURRENT_PROJECT_VERSION = 33;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = NO;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = Mensaplan/Info.plist;
@@ -1242,7 +1256,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.3;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.marc-hein.mensaplan";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1261,11 +1275,11 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 31;
+				CURRENT_PROJECT_VERSION = 33;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				IBSC_MODULE = Watchapp_Extension;
 				INFOPLIST_FILE = Watchapp/Info.plist;
-				MARKETING_VERSION = 1.4.3;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.marc-hein.mensaplan.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1284,11 +1298,11 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 31;
+				CURRENT_PROJECT_VERSION = 33;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				IBSC_MODULE = Watchapp_Extension;
 				INFOPLIST_FILE = Watchapp/Info.plist;
-				MARKETING_VERSION = 1.4.3;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.marc-hein.mensaplan.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1306,7 +1320,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 31;
+				CURRENT_PROJECT_VERSION = 33;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = "Watchapp Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1314,7 +1328,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.4.3;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.marc-hein.mensaplan.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -1333,7 +1347,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 31;
+				CURRENT_PROJECT_VERSION = 33;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = "Watchapp Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1341,7 +1355,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.4.3;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.marc-hein.mensaplan.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;

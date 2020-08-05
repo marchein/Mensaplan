@@ -12,6 +12,8 @@ import CoreNFC
 import WatchSync
 
 class MainTableViewController: UITableViewController {
+    @IBOutlet weak var navBar: UINavigationItem!
+    
     var mensaContainer: MensaContainer?
     var subscriptionToken: SubscriptionToken?
     
@@ -21,7 +23,13 @@ class MainTableViewController: UITableViewController {
         self.mensaContainer = MensaContainer(mainVC: self)
         self.refreshControl?.addTarget(self, action: #selector(refreshAction), for: UIControl.Event.valueChanged)
         
-        setupApp()
+        self.setupApp()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.buildMacToolbar()
     }
     
     func setupApp() {
@@ -54,6 +62,14 @@ class MainTableViewController: UITableViewController {
                 cardID: "1234567890"
             )
         }
+        
+        #if targetEnvironment(macCatalyst)
+        self.navigationController?.navigationBar.isHidden = true
+        #endif
+    }
+    
+    @objc func openSettings() {
+        self.performSegue(withIdentifier: MensaplanSegue.showSettings, sender: self)
     }
     
     public func showDay(dayValue: DayValue) {
@@ -123,7 +139,9 @@ class MainTableViewController: UITableViewController {
         if let _ = sender as? UIRefreshControl {
             // refresh from refresh control
         } else {
-            self.navigationController?.view.makeToastActivity(.center)
+            DispatchQueue.main.async {
+                self.navigationController?.view.makeToastActivity(.center)
+            }
         }
         if let mensaContainer = self.mensaContainer {
             mensaContainer.loadMensaData()

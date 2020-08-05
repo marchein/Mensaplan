@@ -13,12 +13,6 @@ import StoreKit
 extension SettingsTableViewController {
     // MARK: - Table view data source
 
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 && indexPath.row == 3 {
-            return isPickerHidden ? 0 : 165
-        }
-        return UITableView.automaticDimension
-    }
     
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         if section == 0 {
@@ -35,11 +29,6 @@ extension SettingsTableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
   
         switch (selectedCell) {
-        case mensaNameCell:
-            isPickerHidden = !isPickerHidden
-            tableView.beginUpdates()
-            tableView.endUpdates()
-            break
         case appSupportCell:
             sendSupportMail()
             break
