@@ -116,19 +116,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         
         return true
     }
-    
-    #if targetEnvironment(macCatalyst)
-    override func buildMenu(with builder: UIMenuBuilder) {
-        super.buildMenu(with: builder)
-        
-        builder.remove(menu: .services)
-        builder.remove(menu: .toolbar)
-        builder.remove(menu: .file)
-        builder.remove(menu: .edit)
-        builder.remove(menu: .format)
-        //builder.remove(menu: .help)
-    }
-    #endif
 }
 
 #if targetEnvironment(macCatalyst)
@@ -182,6 +169,31 @@ extension AppDelegate: NSTouchBarDelegate {
             return mainVC
         }
         return MainTableViewController()
+    }
+    
+    override func buildMenu(with builder: UIMenuBuilder) {
+        super.buildMenu(with: builder)
+        
+        builder.remove(menu: .services)
+        builder.remove(menu: .toolbar)
+        builder.remove(menu: .format)
+        
+        addRefreshToMenubar(with: builder)
+        addPreferencesToMenubar(with: builder)
+    }
+    
+    func addRefreshToMenubar(with builder: UIMenuBuilder) {
+        let refreshCommand = UIKeyCommand(input: "R", modifierFlags: [.command], action: #selector(refresh))
+        refreshCommand.title = "Aktualisieren"
+        let reloadDataMenu = UIMenu(title: "Aktualisieren", image: nil, identifier: UIMenu.Identifier("refresh"), options: .displayInline, children: [refreshCommand])
+        builder.insertChild(reloadDataMenu, atStartOfMenu: .file)
+    }
+    
+    func addPreferencesToMenubar(with builder: UIMenuBuilder) {
+        let preferencesCommand = UIKeyCommand(input: ",", modifierFlags: [.command], action: #selector(showSettings))
+        preferencesCommand.title = "Einstellungen..."
+        let openPreferences = UIMenu(title: "Einstellungen...", image: nil, identifier: UIMenu.Identifier("showSettings"), options: .displayInline, children: [preferencesCommand])
+        builder.insertSibling(openPreferences, afterMenu: .about)
     }
 }
 #endif

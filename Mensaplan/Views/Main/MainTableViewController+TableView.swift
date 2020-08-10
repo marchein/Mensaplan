@@ -199,4 +199,11 @@ extension MainTableViewController {
         }
         return nil
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        #if targetEnvironment(macCatalyst)
+        //[tableView performSelector:@selector(resignFirstResponder) withObject:nil afterDelay:0.1];
+        tableView.perform(#selector(UIResponder.resignFirstResponder), with: nil, afterDelay: 0.01)
+        #endif
+    }
 }
