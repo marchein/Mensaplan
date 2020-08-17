@@ -191,8 +191,8 @@ extension AppDelegate: NSTouchBarDelegate {
     
     func addPreferencesToMenubar(with builder: UIMenuBuilder) {
         let preferencesCommand = UIKeyCommand(input: ",", modifierFlags: [.command], action: #selector(showSettings))
-        preferencesCommand.title = "Einstellungen..."
-        let openPreferences = UIMenu(title: "Einstellungen...", image: nil, identifier: UIMenu.Identifier("showSettings"), options: .displayInline, children: [preferencesCommand])
+        preferencesCommand.title = "Einstellungen ..."
+        let openPreferences = UIMenu(title: "Einstellungen ...", image: nil, identifier: UIMenu.Identifier("showSettings"), options: .displayInline, children: [preferencesCommand])
         builder.insertSibling(openPreferences, afterMenu: .about)
     }
 }

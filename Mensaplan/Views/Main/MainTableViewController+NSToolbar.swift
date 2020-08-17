@@ -16,7 +16,6 @@ extension MainTableViewController: NSToolbarDelegate {
     enum Toolbar {
         static let back = NSToolbarItem.Identifier(rawValue: "back")
         static let reload = NSToolbarItem.Identifier(rawValue: "reload")
-        static let settings = NSToolbarItem.Identifier(rawValue: "settings")
     }
     
     
@@ -29,14 +28,6 @@ extension MainTableViewController: NSToolbarDelegate {
             item.action = #selector(goBack)
             item.label = "Zurück"
             item.isEnabled = false
-            return item
-        } else if itemIdentifier == Toolbar.settings {
-            let item = NSToolbarItem(itemIdentifier: Toolbar.settings)
-            item.image = UIImage(systemName: "gear")
-            item.target = self
-            item.isBordered = true
-            item.action = #selector(openSettings)
-            item.label = "Einstellungen"
             return item
         } else if itemIdentifier == Toolbar.reload {
             let item = NSToolbarItem(itemIdentifier: Toolbar.reload)
@@ -54,7 +45,7 @@ extension MainTableViewController: NSToolbarDelegate {
     
     //5
     func toolbarDefaultItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
-        return [Toolbar.back, .flexibleSpace, Toolbar.settings, Toolbar.reload]
+        return [Toolbar.back, .flexibleSpace, Toolbar.reload]
     }
     
     func toolbarAllowedItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
