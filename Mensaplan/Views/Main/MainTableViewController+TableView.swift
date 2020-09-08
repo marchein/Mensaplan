@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import CoreNFC
+import HeinHelpers
 
 extension MainTableViewController {
     
@@ -59,11 +60,11 @@ extension MainTableViewController {
                 if let dayDataResult = dayData {
                     cell.reasonLabel.isHidden = true
                     let dateOfCell = dayDataResult.getDateValue()
-                    cell.titleLabel.text = dateSuffix(date: dateOfCell, string: getDayName(by: dateOfCell))
+                    cell.titleLabel.text = HeinHelpers.dateSuffix(date: dateOfCell, string: HeinHelpers.getDayName(by: dateOfCell))
                     cell.reasonLabel.text = nil
                     cell.dateLabel.text = dayDataResult.getDate(showDay: false)
                     let noMealsForDay = dayDataResult.data.counters.count == 0
-                    if dayDataResult.closed || isDateOver(date: dateOfCell) || noMealsForDay {
+                    if dayDataResult.closed || HeinHelpers.isDateOver(date: dateOfCell) || noMealsForDay {
                         cell.isUserInteractionEnabled = false
                         cell.titleLabel.isEnabled = false
                         cell.reasonLabel.isEnabled = false
@@ -76,7 +77,7 @@ extension MainTableViewController {
                                 cell.titleLabel.textColor = UIColor(red: 60.0, green: 60.0, blue: 67.0, alpha: 0.6)
                             }
 
-                            cell.titleLabel.text = dateSuffix(date: dateOfCell, string: getDayName(by: dateOfCell))
+                            cell.titleLabel.text = HeinHelpers.dateSuffix(date: dateOfCell, string: HeinHelpers.getDayName(by: dateOfCell))
                             
                             cell.reasonLabel.text = "Für diesen Tag gibt es keine Gerichte an diesem Standort"
                             cell.reasonLabel.isHidden = false
@@ -92,7 +93,7 @@ extension MainTableViewController {
                                 cell.titleLabel.text = "Geschlossen"
                                 cell.dateLabel.isHidden = true
                             } else {
-                                cell.titleLabel.text = dateSuffix(date: dateOfCell, string: getDayName(by: dateOfCell))
+                                cell.titleLabel.text = HeinHelpers.dateSuffix(date: dateOfCell, string: HeinHelpers.getDayName(by: dateOfCell))
                             }
                             
                             cell.reasonLabel.text = dayDataResult.closedReason

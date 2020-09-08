@@ -7,8 +7,20 @@
 //
 
 import UIKit
+import HeinHelpers
 
 class SettingsMensaLocationTableViewController: UITableViewController {
+    
+    var mainVC: MainTableViewController? {
+        get {
+            guard let splitVC = UIApplication.shared.windows.first!.rootViewController as? UISplitViewController,
+                let navVC = splitVC.children.first as? UINavigationController,
+                let mainVC = navVC.children.first as? MainTableViewController else {
+                    return nil
+            }
+            return mainVC
+        }
+    }
     
     var selectedLocation: String? {
         get {
@@ -26,6 +38,7 @@ class SettingsMensaLocationTableViewController: UITableViewController {
                     cell.accessoryType = .none
                 }
             }
+            self.mainVC?.refreshAction(self)
             indexPaths.append(IndexPath(row: selectedLocationIndex, section: 0))
             
             self.tableView.reloadRows(at: indexPaths, with: .automatic)
@@ -51,8 +64,11 @@ class SettingsMensaLocationTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return MensaplanApp.standorteKeys.count
     }
-
     
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+         return "Standort"
+     }
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "mensaLocationCell", for: indexPath)
         let row = indexPath.row
@@ -64,9 +80,9 @@ class SettingsMensaLocationTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedLocation = MensaplanApp.standorteKeys[indexPath.row]
+        self.selectedLocation = MensaplanApp.standorteKeys[indexPath.row]
         #if targetEnvironment(macCatalyst)
-        showMessage(title: "Mensa auswählen", message: "Der Standort \(MensaplanApp.standorteValues[indexPath.row]) wurde ausgewählt.", on: self)
+        HeinHelpers.showMessage(title: "Mensa auswählen", message: "Der Standort \(MensaplanApp.standorteValues[indexPath.row]) wurde ausgewählt.", on: self)
         #endif
     }
 }

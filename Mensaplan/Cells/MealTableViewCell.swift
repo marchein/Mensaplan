@@ -15,6 +15,8 @@ class MealTableViewCell: UITableViewCell {
     @IBOutlet weak var mealPriceLabel: UILabel!
     @IBOutlet weak var infoStackView: UIStackView!
     
+    static let cellIdentifier = "mealCell"
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

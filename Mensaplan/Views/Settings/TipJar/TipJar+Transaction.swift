@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import StoreKit
+import HeinHelpers
 
 extension TipJarTableViewController: SKProductsRequestDelegate, SKPaymentTransactionObserver {
     func requestProductInfo() {
@@ -69,12 +70,12 @@ extension TipJarTableViewController: SKProductsRequestDelegate, SKPaymentTransac
                 SKPaymentQueue.default().finishTransaction(transaction)
                 transactionInProgress = false
                 impact.impactOccurred()
-                showMessage(title: "Erfolgreich Mensaplan unterstützt!", message: "Vielen Dank für Deine Unterstützung!", on: self)
+                HeinHelpers.showMessage(title: "Erfolgreich Mensaplan unterstützt!", message: "Vielen Dank für Deine Unterstützung!", on: self)
             case SKPaymentTransactionState.failed:
                 self.navigationController?.view.hideToastActivity()
                 SKPaymentQueue.default().finishTransaction(transaction)
                 transactionInProgress = false
-                showMessage(title: "Der Kauf konnte nicht abgeschlossen werden", message: "Entweder wurde der Kauf abgebrochen oder es ist ein Fehler aufgetreten. Bitte versuche es nochmals.", on: self)
+                HeinHelpers.showMessage(title: "Der Kauf konnte nicht abgeschlossen werden", message: "Entweder wurde der Kauf abgebrochen oder es ist ein Fehler aufgetreten. Bitte versuche es nochmals.", on: self)
             default:
                 print(transaction.transactionState.rawValue)
             }

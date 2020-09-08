@@ -18,7 +18,7 @@ struct LocalKeys {
     static let selectedPrice = "selectedPrice"
     static let selectedMensa = "selectedMensa"
     static let lastUpdate = "lastUpdate"
-    static let jsonData = "jsonData"
+    static let mensaplanJSONData = "mensaplanJSONData"
     static let showSideDish = "showSideDish"
     static let hasTipped = "hasTipped"
 }

@@ -10,9 +10,11 @@ import UIKit
 import Toast_Swift
 import CoreNFC
 import WatchSync
+import HeinHelpers
 
 class MainTableViewController: UITableViewController {
     @IBOutlet weak var navBar: UINavigationItem!
+    @IBOutlet weak var settingsButton: UIBarButtonItem!
     
     var mensaContainer: MensaContainer?
     var subscriptionToken: SubscriptionToken?
@@ -45,11 +47,14 @@ class MainTableViewController: UITableViewController {
             refreshAction(self)
         } else {
             print("MainTableViewController.swift - setupApp() - load local copy")
-            if let localCopyOfData = MensaplanApp.sharedDefaults.data(forKey: LocalKeys.jsonData), let mensaData = self.mensaContainer {
-                mensaData.loadJSONintoUI(data: localCopyOfData, local: true)
+            if let localCopyOfMensaplanData = MensaplanApp.sharedDefaults.data(forKey: LocalKeys.mensaplanJSONData), let mensaContainer = self.mensaContainer {
+                mensaContainer.loadJSONintoUI(mensaPlanData: localCopyOfMensaplanData, local: true)
             }
         }
         
+        if #available(iOS 13.0,*)  {
+            self.settingsButton.image = UIImage(systemName: "gear")
+        }
         subscriptionToken = WatchSync.shared.subscribeToMessages(ofType: WatchMessage.self) { watchMessage in
             print(String(describing: watchMessage.lastUpdate), String(describing: watchMessage.selectedMensa), String(describing: watchMessage.selectedPrice), String(describing: watchMessage.jsonData))
         }
@@ -95,11 +100,11 @@ class MainTableViewController: UITableViewController {
             if location.title == selectedLocation {
                 if location.closed {
                     let when = dayValue == .TODAY ? " heute " : dayValue == .TOMORROW ? " morgen ": " "
-                    showMessage(title: "Mensa\(when)geschlossen", message: location.closedReason ?? "Bitte die Aushänge beachten", on: self)
+                    HeinHelpers.showMessage(title: "Mensa\(when)geschlossen", message: location.closedReason ?? "Bitte die Aushänge beachten", on: self)
                 } else {
                     let when = dayValue == .TODAY ? "Heute" : dayValue == .TOMORROW ? "Morgen": " "
                     if dayValue == .TODAY && !selectedDay.day[0].isToday() || dayValue == .TOMORROW && !selectedDay.day[0].isTomorrow() {
-                        showMessage(title: "Geschlossen", message: "\(when) werden keine Gerichte in der Mensa angeboten", on: self)
+                        HeinHelpers.showMessage(title: "Geschlossen", message: "\(when) werden keine Gerichte in der Mensa angeboten", on: self)
                     } else {
                         mensaContainer.tempMensaData = location.data
                         let navVC = self.parent as! UINavigationController
@@ -170,42 +175,15 @@ class MainTableViewController: UITableViewController {
     
     #if !targetEnvironment(macCatalyst)
     func sendMessageToWatch() {
-        print("Sending message to watch")
+        //print("Sending message to watch")
         let selectedPrice = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedPrice)
         let selectedMensa = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa)
         let lastUpdate = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.lastUpdate)
-        let jsonData = MensaplanApp.sharedDefaults.data(forKey: LocalKeys.jsonData)
+        let jsonData = MensaplanApp.sharedDefaults.data(forKey: LocalKeys.mensaplanJSONData)
         
         let newWatchMessage = WatchMessage(selectedPrice: selectedPrice, selectedMensa: selectedMensa, lastUpdate: lastUpdate, jsonData: jsonData)
         
-        WatchSync.shared.sendMessage(newWatchMessage) { result in
-            print(result)
-            switch result {
-            case .failure(let failure):
-                switch failure {
-                case .sessionNotActivated:
-                    break
-                case .watchConnectivityNotAvailable:
-                    break
-                case .unableToSerializeMessageAsJSON(let error), .unableToCompressMessage(let error):
-                    print(error.localizedDescription)
-                case .watchAppNotPaired:
-                    break
-                case .watchAppNotInstalled:
-                    break
-                case .unhandledError(let error):
-                    print(error.localizedDescription)
-                case .badPayloadError(let error):
-                    print(error.localizedDescription)
-                case .failedToDeliver(let error):
-                    print("Failed to Deliver \(error.localizedDescription)")
-                }
-            case .sent:
-                print("Sent!")
-            case .delivered:
-                print("Delivery Confirmed")
-            }
-        }
+        WatchSync.shared.sendMessage(newWatchMessage, completion: nil)
     }
     #endif
 }

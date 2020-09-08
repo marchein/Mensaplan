@@ -22,7 +22,6 @@ class MealTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -33,8 +32,10 @@ class MealTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 1 {
+        if section == 0 {
             return "Name des Gerichtes"
+        } else if section == 1 {
+            return "Bild"
         } else if section == 2 {
             return "Preise"
         } else if section == 3, let _ = meal.zusatzStoffe {
@@ -62,14 +63,12 @@ class MealTableViewController: UITableViewController {
         let section = indexPath.section
         let row = indexPath.row
         if section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "imageCell") as! ImageViewCell
-            if let imageURL = meal.image {
-                cell.mealImage.sd_setImage(with: URL(string: imageURL), placeholderImage: #imageLiteral(resourceName: "no-image-meal"))
-            }
-            return cell
-        } else if section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "titleCell", for: indexPath)
             cell.textLabel?.text = meal.title
+            return cell
+        } else if section == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: ImageViewCell.Identifier) as! ImageViewCell
+            cell.imageURL = meal.image
             return cell
         } else if section == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "priceCell", for: indexPath)
@@ -85,23 +84,23 @@ class MealTableViewController: UITableViewController {
             }
             return cell
         } else if section == 3, let _ = meal.zusatzStoffe {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "inhaltsStoffCell")
+            let cell = tableView.dequeueReusableCell(withIdentifier: "inhaltsStoffCell")!
             if let zusatzstoffe = meal.zusatzStoffe {
-                cell?.textLabel?.text = zusatzstoffe[row].title
+                cell.textLabel?.text = zusatzstoffe[row].title
             } else {
-                cell?.textLabel?.text = "Keine Zusatzinformationen vorhanden"
-                cell?.textLabel?.isEnabled = false
+                cell.textLabel?.text = "Keine Zusatzinformationen vorhanden"
+                cell.textLabel?.isEnabled = false
             }
-            return cell!
+            return cell
         } else if section == 3 || section == 4 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "inhaltsStoffCell")
+            let cell = tableView.dequeueReusableCell(withIdentifier: "inhaltsStoffCell")!
             if let inhaltsstoffe = meal.inhaltsStoffe {
-                cell?.textLabel?.text = inhaltsstoffe[row].title
+                cell.textLabel?.text = inhaltsstoffe[row].title
             } else {
-                cell?.textLabel?.text = "Keine Inhaltsstoffe vorhanden"
-                cell?.textLabel?.isEnabled = false
+                cell.textLabel?.text = "Keine Inhaltsstoffe vorhanden"
+                cell.textLabel?.isEnabled = false
             }
-            return cell!
+            return cell
         } else {
             return UITableViewCell()
         }

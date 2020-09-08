@@ -31,12 +31,11 @@ class MainInterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        subscriptionToken = WatchSync.shared.subscribeToMessages(ofType: WatchMessage.self) {  newWatchMessage in
-            print(newWatchMessage)
+        self.subscriptionToken = WatchSync.shared.subscribeToMessages(ofType: WatchMessage.self) {  newWatchMessage in
             self.processWatchMessage(message: newWatchMessage)
         }
         
-        setup()
+        self.setup()
     }
     
     override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
@@ -69,10 +68,10 @@ class MainInterfaceController: WKInterfaceController {
         }
         
         if let jsonData = message.jsonData {
-            defaults.set(jsonData, forKey: LocalKeys.jsonData)
+            defaults.set(jsonData, forKey: LocalKeys.mensaplanJSONData)
         }
         
-        setup()
+        self.setup()
     }
     
     func setup() {
@@ -85,7 +84,7 @@ class MainInterfaceController: WKInterfaceController {
         self.lastUpdate = defaults.string(forKey: LocalKeys.lastUpdate)
         self.selectedMensa = defaults.string(forKey: LocalKeys.selectedMensa)
         self.selectedPrice = defaults.string(forKey: LocalKeys.selectedPrice)
-        self.jsonData = defaults.data(forKey: LocalKeys.jsonData)
+        self.jsonData = defaults.data(forKey: LocalKeys.mensaplanJSONData)
         
         if self.jsonData == nil {
             DispatchQueue.main.async {

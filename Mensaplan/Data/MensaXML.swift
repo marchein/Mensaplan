@@ -26,8 +26,7 @@ class MensaXML {
                     if let error = error {
                         print(error.localizedDescription)
                     } else {
-                        if let response = response as? HTTPURLResponse, let data = data  {
-                            print("Status Code: \(response.statusCode)")
+                        if let data = data  {
                             let xml = XML.parse(data)
                             if let data = self.processXML(with: xml) {
                                 onDone(data)
