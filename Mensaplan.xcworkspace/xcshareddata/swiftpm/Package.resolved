@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "HeinHelpers",
+        "repositoryURL": "https://github.com/marchein/HeinHelpers.git",
+        "state": {
+          "branch": null,
+          "revision": "1e20c0cb1676454538bc6f891913132837b37234",
+          "version": "1.0.4"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

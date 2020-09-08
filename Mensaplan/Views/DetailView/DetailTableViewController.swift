@@ -7,15 +7,16 @@
 //
 
 import UIKit
+import HeinHelpers
 
 class DetailTableViewController: UITableViewController {
-    
     var mensaPlanDay: MensaplanDay?
 
+    //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         if let mensaPlanDay = mensaPlanDay {
-            title = getDayName(by: mensaPlanDay.getDateValue())
+            self.title = HeinHelpers.getDayName(by: mensaPlanDay.getDateValue())
 
             if mensaPlanDay.isToday() {
                 setupShortcutIntent(activityType: Shortcuts.showToday)
@@ -24,7 +25,7 @@ class DetailTableViewController: UITableViewController {
             }
         }
         #if targetEnvironment(macCatalyst)
-        self.navigationController?.navigationBar.isHidden = true
+            self.navigationController?.navigationBar.isHidden = true
         #endif
     }
     
@@ -35,7 +36,21 @@ class DetailTableViewController: UITableViewController {
             splitNavVC.performSegue(withIdentifier: MensaplanSegue.emptyDetail, sender: self)
         }
     }
+
+    //MARK:- Segues
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showMealSegue" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let meal = mensaPlanDay!.counters[indexPath.section].meals[indexPath.row]
+                let vc = segue.destination as! MealTableViewController
+                vc.meal = meal
+            } else {
+                print("Oops, no row has been selected")
+            }
+        }
+    }
     
+    //MARK:- Shortcuts
     func setupShortcutIntent(activityType: String) {
         let activity = NSUserActivity(activityType: activityType)
         activity.title = "Mensaplan für \(activityType == Shortcuts.showTomorrow ? "heute" : "morgen") anzeigen"
@@ -47,17 +62,5 @@ class DetailTableViewController: UITableViewController {
         }
         view.userActivity = activity
         activity.becomeCurrent()
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showMealSegue" {
-            if let indexPath = self.tableView.indexPathForSelectedRow {
-                let meal = mensaPlanDay!.counters[indexPath.section].meals[indexPath.row]
-                let vc = segue.destination as! MealTableViewController
-                vc.meal = meal
-            } else {
-                print("Oops, no row has been selected")
-            }
-        }
     }
 }

@@ -69,7 +69,7 @@ class MainInterfaceController: WKInterfaceController {
         }
         
         if let jsonData = message.jsonData {
-            defaults.set(jsonData, forKey: LocalKeys.jsonData)
+            defaults.set(jsonData, forKey: LocalKeys.mensaplanJSONData)
         }
         
         setup()
@@ -85,7 +85,7 @@ class MainInterfaceController: WKInterfaceController {
         self.lastUpdate = defaults.string(forKey: LocalKeys.lastUpdate)
         self.selectedMensa = defaults.string(forKey: LocalKeys.selectedMensa)
         self.selectedPrice = defaults.string(forKey: LocalKeys.selectedPrice)
-        self.jsonData = defaults.data(forKey: LocalKeys.jsonData)
+        self.jsonData = defaults.data(forKey: LocalKeys.mensaplanJSONData)
         
         if self.jsonData == nil {
             DispatchQueue.main.async {

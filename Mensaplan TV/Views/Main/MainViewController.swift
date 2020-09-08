@@ -52,7 +52,7 @@ class MainViewController: UIViewController {
             print("MainViewController.swift - setupApp() - INITIAL SETUP DONE")
         } else {
             print("MainViewController.swift - setupApp() - load local copy")
-            if let localCopyOfData = MensaplanApp.sharedDefaults.data(forKey: LocalKeys.jsonData) {
+            if let localCopyOfData = MensaplanApp.sharedDefaults.data(forKey: LocalKeys.mensaplanJSONData) {
                 loadJSONintoUI(data: localCopyOfData, local: true)
             }
         }
@@ -102,7 +102,7 @@ class MainViewController: UIViewController {
     
     @IBAction func refreshAction(_ sender: Any) {
         mensaXML?.loadXML(onDone: { (mensaPlanData) in
-            MensaplanApp.sharedDefaults.set(mensaPlanData, forKey: LocalKeys.jsonData)
+            MensaplanApp.sharedDefaults.set(mensaPlanData, forKey: LocalKeys.mensaplanJSONData)
             self.loadJSONintoUI(data: mensaPlanData, local: false)
             MensaplanApp.sharedDefaults.set(Date.getCurrentDate(), forKey: LocalKeys.lastUpdate)
         })

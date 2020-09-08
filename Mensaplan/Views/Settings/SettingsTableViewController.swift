@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HeinHelpers
 
 class SettingsTableViewController: UITableViewController, UIAdaptivePresentationControllerDelegate {
     
@@ -44,25 +45,19 @@ class SettingsTableViewController: UITableViewController, UIAdaptivePresentation
     func setupView() {
         let isSetup  = MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.isSetup)
         if isSetup {
-            refreshOnStartToggle.isOn = MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.refreshOnStart)
-            showSideDishToggle.isOn = MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.showSideDish)
+            self.refreshOnStartToggle.isOn = MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.refreshOnStart)
+            self.showSideDishToggle.isOn = MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.showSideDish)
             guard let selectedPrice = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedPrice) else {
                 return
             }
-            pricePicker.selectedSegmentIndex = MensaplanApp.priceValues.firstIndex(of: selectedPrice)!
-            appVersionCell.detailTextLabel?.text = MensaplanApp.versionString
+            self.pricePicker.selectedSegmentIndex = MensaplanApp.priceValues.firstIndex(of: selectedPrice)!
+            self.appVersionCell.detailTextLabel?.text = "\(MensaplanApp.versionString) (\(MensaplanApp.buildNumber))"
             self.updateCurrentMensa()
         }
-        
-        if #available(iOS 13.0, *) {
-            navigationController?.isModalInPresentation = true
-        }
-        
     }
     
     func updateCurrentMensa() {
-        mensaNameCell.detailTextLabel?.text = MensaplanApp.standorteValues[MensaplanApp.standorteKeys.firstIndex(of: MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa) ?? MensaplanApp.standorteKeys[0]) ?? 0]
-
+        self.mensaNameCell.detailTextLabel?.text = MensaplanApp.standorteValues[MensaplanApp.standorteKeys.firstIndex(of: MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa) ?? MensaplanApp.standorteKeys[0]) ?? 0]
     }
     
     func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
@@ -74,14 +69,14 @@ class SettingsTableViewController: UITableViewController, UIAdaptivePresentation
     @IBAction func setRefreshOnStart(_ sender: Any) {
         MensaplanApp.sharedDefaults.set(refreshOnStartToggle.isOn, forKey: LocalKeys.refreshOnStart)
         #if targetEnvironment(macCatalyst)
-        showMessage(title: "Aktualisieren beim Öffnen", message: refreshOnStartToggle.isOn ? "Die Daten werden nun beim Start automatisch aktualisiert" : "Die Daten werden nun beim Start nicht mehr automatisch aktualisiert", on: self)
+        HeinHelpers.showMessage(title: "Aktualisieren beim Öffnen", message: refreshOnStartToggle.isOn ? "Die Daten werden nun beim Start automatisch aktualisiert" : "Die Daten werden nun beim Start nicht mehr automatisch aktualisiert", on: self)
         #endif
     }
     
     @IBAction func setShowSideDish(_ sender: Any) {
         MensaplanApp.sharedDefaults.set(showSideDishToggle.isOn, forKey: LocalKeys.showSideDish)
         #if targetEnvironment(macCatalyst)
-        showMessage(title: "Beilagen anzeigen", message: showSideDishToggle.isOn ? "Die Beilagen werden nun angezeigt" : "Die Beilagen werden nun nicht mehr angezeigt", on: self)
+        HeinHelpers.showMessage(title: "Beilagen anzeigen", message: showSideDishToggle.isOn ? "Die Beilagen werden nun angezeigt" : "Die Beilagen werden nun nicht mehr angezeigt", on: self)
         #endif
     }
     

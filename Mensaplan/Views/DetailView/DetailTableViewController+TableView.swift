@@ -12,7 +12,6 @@ import SDWebImage
 
 extension DetailTableViewController {
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         if let day = mensaPlanDay {
             return day.counters.count
@@ -33,8 +32,7 @@ extension DetailTableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "mealCell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MealTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: MealTableViewCell.cellIdentifier , for: indexPath) as! MealTableViewCell
 
         if let day = mensaPlanDay  {
             let meal = day.counters[indexPath.section].meals[indexPath.row]
@@ -42,6 +40,7 @@ extension DetailTableViewController {
             
             if let imageView = cell.mealImage, let imageURL = meal.image {
                 imageView.sd_setImage(with: URL(string: imageURL), placeholderImage: #imageLiteral(resourceName: "no-image-meal"))
+                imageView.roundCorners(radius: 5)
             }
 
             let selectedPrice = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedPrice)
@@ -53,14 +52,14 @@ extension DetailTableViewController {
                 cell.mealPriceLabel.text = meal.getFormattedPrice(price: meal.pricePublic)
             }
             
-            setIcons(in: cell, for: meal.zusatzStoffe)
+            self.setIcons(in: cell, for: meal.zusatzStoffe)
             
         }
         return cell
     }
     
     
-    func setIcons(in cell: MealTableViewCell, for zusatzStoffe: [Stoff]?) {
+    fileprivate func setIcons(in cell: MealTableViewCell, for zusatzStoffe: [Stoff]?) {
         // max number of icons
         let MAX_ICONS = 3
         // how many icons have been added
@@ -88,34 +87,36 @@ extension DetailTableViewController {
         }
     }
     
-    func getIcon(for stoff: Stoff) -> UIImage {
+    fileprivate func getIcon(for stoff: Stoff) -> UIImage {
         switch stoff.id {
-        case 10320:
+        case 10320: // Vegetarisch
              return #imageLiteral(resourceName: "Vegetarisch")
-        case 10321:
+        case 10321: // Vegan
              return #imageLiteral(resourceName: "Vegan")
-        case 10322:
+        case 10322: // Schweinefleisch
             return #imageLiteral(resourceName: "Schwein")
-        case 10323:
+        case 10323: // Rindfleisch
             return #imageLiteral(resourceName: "Kuh")
-        case 10325:
+        case 10325: // Geflügel
              return #imageLiteral(resourceName: "Geflügel")
-        case 10327:
+        case 10327: // Fisch
             return #imageLiteral(resourceName: "Fisch")
-        default:
+        case 10360:
+            return #imageLiteral(resourceName: "Meeresfruechte_3x")
+        default: // Kein Symbol vorhanden
             return #imageLiteral(resourceName: "Splash")
         }
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if let day = mensaPlanDay {
+        if let day = self.mensaPlanDay {
             return day.counters[section].label
         }
         return nil
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        self.tableView.deselectRow(at: indexPath, animated: true)
     }
 
 }
