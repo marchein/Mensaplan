@@ -38,9 +38,12 @@ extension DetailTableViewController {
             let meal = day.counters[indexPath.section].meals[indexPath.row]
             cell.mealTitleLabel.text = meal.title            
             
-            if let imageView = cell.mealImage, let imageURL = meal.image {
-                imageView.sd_setImage(with: URL(string: imageURL), placeholderImage: #imageLiteral(resourceName: "no-image-meal"))
+            if let imageView = cell.mealImage {
                 imageView.roundCorners(radius: 5)
+                
+                if let imageURL = meal.image {
+                    imageView.sd_setImage(with: URL(string: imageURL), placeholderImage: #imageLiteral(resourceName: "no-image-meal"))
+                }
             }
 
             let selectedPrice = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedPrice)
