@@ -31,14 +31,14 @@ class MensaContainer {
     func loadMensaData() {
         mensaXML = MensaXML(url: URL(string: MensaplanApp.API)!)
         mensaXML?.loadXML(onDone: { (mensaPlanData: Data) in
-            MensaplanApp.sharedDefaults.set(mensaPlanData, forKey: LocalKeys.jsonData)
-            self.loadJSONintoUI(data: mensaPlanData, local: false)
+            MensaplanApp.sharedDefaults.set(mensaPlanData, forKey: LocalKeys.mensaplanJSONData)
+            self.loadJSONintoUI(mensaPlanData: mensaPlanData, local: false)
             MensaplanApp.sharedDefaults.set(Date.getCurrentDate(), forKey: LocalKeys.lastUpdate)
         })
     }
 
-    func loadJSONintoUI(data: Data, local: Bool) {
-        let unsortedMensaPlan = try? JSONDecoder().decode(Mensaplan.self, from: data)
+    func loadJSONintoUI(mensaPlanData: Data, local: Bool) {
+        let unsortedMensaPlan = try? JSONDecoder().decode(Mensaplan.self, from: mensaPlanData)
         self.mensaData = unsortedMensaPlan?.getSortedPlan()
         
         DispatchQueue.main.async {

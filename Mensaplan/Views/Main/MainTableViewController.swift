@@ -14,8 +14,7 @@ import HeinHelpers
 
 class MainTableViewController: UITableViewController {
     @IBOutlet weak var navBar: UINavigationItem!
-        @IBOutlet weak var settingsButton: UIBarButtonItem!
-        @IBOutlet weak var refreshButton: UIBarButtonItem!
+    @IBOutlet weak var settingsButton: UIBarButtonItem!
     
     var mensaContainer: MensaContainer?
     var subscriptionToken: SubscriptionToken?
@@ -49,12 +48,12 @@ class MainTableViewController: UITableViewController {
         } else {
             print("MainTableViewController.swift - setupApp() - load local copy")
             if let localCopyOfMensaplanData = MensaplanApp.sharedDefaults.data(forKey: LocalKeys.mensaplanJSONData), let mensaContainer = self.mensaContainer {
-                mensaContainer.loadJSONintoUI(mensaplanData: localCopyOfMensaplanData, local: true)
+                mensaContainer.loadJSONintoUI(mensaPlanData: localCopyOfMensaplanData, local: true)
             }
         }
         
         if #available(iOS 13.0,*)  {
-            //self.settingsButton.image = UIImage(systemName: "gear")
+            self.settingsButton.image = UIImage(systemName: "gear")
         }
         subscriptionToken = WatchSync.shared.subscribeToMessages(ofType: WatchMessage.self) { watchMessage in
             print(String(describing: watchMessage.lastUpdate), String(describing: watchMessage.selectedMensa), String(describing: watchMessage.selectedPrice), String(describing: watchMessage.jsonData))
@@ -176,7 +175,7 @@ class MainTableViewController: UITableViewController {
     
     #if !targetEnvironment(macCatalyst)
     func sendMessageToWatch() {
-        print("Sending message to watch")
+        //print("Sending message to watch")
         let selectedPrice = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedPrice)
         let selectedMensa = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa)
         let lastUpdate = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.lastUpdate)
@@ -184,34 +183,7 @@ class MainTableViewController: UITableViewController {
         
         let newWatchMessage = WatchMessage(selectedPrice: selectedPrice, selectedMensa: selectedMensa, lastUpdate: lastUpdate, jsonData: jsonData)
         
-        WatchSync.shared.sendMessage(newWatchMessage) { result in
-            print(result)
-            switch result {
-            case .failure(let failure):
-                switch failure {
-                case .sessionNotActivated:
-                    break
-                case .watchConnectivityNotAvailable:
-                    break
-                case .unableToSerializeMessageAsJSON(let error), .unableToCompressMessage(let error):
-                    print(error.localizedDescription)
-                case .watchAppNotPaired:
-                    break
-                case .watchAppNotInstalled:
-                    break
-                case .unhandledError(let error):
-                    print(error.localizedDescription)
-                case .badPayloadError(let error):
-                    print(error.localizedDescription)
-                case .failedToDeliver(let error):
-                    print("Failed to Deliver \(error.localizedDescription)")
-                }
-            case .sent:
-                print("Sent!")
-            case .delivered:
-                print("Delivery Confirmed")
-            }
-        }
+        WatchSync.shared.sendMessage(newWatchMessage, completion: nil)
     }
     #endif
 }

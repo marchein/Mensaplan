@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15705" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16097.3" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch44"/>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
     </dependencies>
     <scenes>
         <!--Mensaplan-->
@@ -35,14 +35,11 @@
                                 <tableRow identifier="MealRow" id="LYP-lO-cXa" customClass="MealRowController" customModule="Watchapp_Extension">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" spacing="4" id="wlq-rz-Quh">
                                         <items>
-                                            <separator height="1" heightAdjustment="-4" alignment="left" verticalAlignment="center" id="eYQ-rE-TNT">
-                                                <color key="color" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
-                                            </separator>
                                             <group alignment="left" layout="vertical" spacing="4" id="1bw-Tu-LZJ">
                                                 <items>
                                                     <group width="1" alignment="left" layout="vertical" spacing="4" id="BiT-Aq-0Ln">
                                                         <items>
-                                                            <label alignment="left" text="NAMES DES GERICHTES" textAlignment="left" numberOfLines="3" id="TZR-3l-FhP">
+                                                            <label alignment="left" text="NAMES DES GERICHTES" textAlignment="left" numberOfLines="0" id="TZR-3l-FhP">
                                                                 <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                                             </label>
                                                             <group width="1" alignment="left" spacing="4" id="fxR-pA-10L">
@@ -218,8 +215,8 @@
             <point key="canvasLocation" x="357.43589743589746" y="104.17948717948718"/>
         </scene>
     </scenes>
+    <color key="tintColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
     <resources>
         <image name="watch-no-image-meal" width="265" height="264"/>
     </resources>
-    <color key="tintColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
 </document>

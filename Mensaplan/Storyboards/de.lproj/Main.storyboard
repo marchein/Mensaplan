@@ -194,6 +194,7 @@
                     </refreshControl>
                     <connections>
                         <outlet property="navBar" destination="Zcz-Ka-wIq" id="EVz-K1-iDy"/>
+                        <outlet property="settingsButton" destination="4fI-IP-u5Q" id="EZj-xi-OJN"/>
                         <segue destination="Crw-aN-aAr" kind="showDetail" identifier="manualShowDetail" id="qvH-gO-lII"/>
                     </connections>
                 </tableViewController>

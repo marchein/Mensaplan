@@ -73,7 +73,6 @@
 		5B629D18238A846400E39C8D /* UIStackView+removeAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B629D17238A846400E39C8D /* UIStackView+removeAll.swift */; };
 		5B74FBE92507F78F0084BF9A /* HeinHelpers in Frameworks */ = {isa = PBXBuildFile; productRef = 5B74FBE82507F78F0084BF9A /* HeinHelpers */; };
 		5B74FBEB2507F7E80084BF9A /* TipTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B74FBEA2507F7E80084BF9A /* TipTableViewCell.swift */; };
-		5B74FBED25080AB10084BF9A /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B74FBEC25080AB10084BF9A /* SettingsManager.swift */; };
 		5BA2CCB32405503900CF6954 /* WatchMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA2CCB22405503900CF6954 /* WatchMessage.swift */; };
 		5BBEA09524033759005790E9 /* DayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBEA09424033759005790E9 /* DayTableViewCell.swift */; };
 		5BC2298D23FCA22300C71FC4 /* MensaContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC2298C23FCA22300C71FC4 /* MensaContainer.swift */; };
@@ -203,7 +202,6 @@
 		5B629D17238A846400E39C8D /* UIStackView+removeAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+removeAll.swift"; sourceTree = "<group>"; };
 		5B629D4C238AB67B00E39C8D /* Mensaplan Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Mensaplan Info.plist"; path = "/Users/marchein/Projekte/Private/Mensaplan/Mensaplan Info.plist"; sourceTree = "<absolute>"; };
 		5B74FBEA2507F7E80084BF9A /* TipTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TipTableViewCell.swift; path = "../../../../../../Downloads/Mensaplan-master/Mensaplan/Cells/TipTableViewCell.swift"; sourceTree = "<group>"; };
-		5B74FBEC25080AB10084BF9A /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		5BA2CCB22405503900CF6954 /* WatchMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchMessage.swift; sourceTree = "<group>"; };
 		5BBAEA262407DB1B005F8098 /* Mensaplan Mac.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "Mensaplan Mac.entitlements"; sourceTree = "<group>"; };
 		5BBEA09424033759005790E9 /* DayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTableViewCell.swift; sourceTree = "<group>"; };
@@ -547,7 +545,6 @@
 				5B06EFA32382CC6C0020FF0E /* HistoryItem.swift */,
 				5BEA0A34235DCA55003E3616 /* Model.swift */,
 				5BA2CCB22405503900CF6954 /* WatchMessage.swift */,
-				5B74FBEC25080AB10084BF9A /* SettingsManager.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -944,7 +941,6 @@
 				5B06EFA42382CC6C0020FF0E /* HistoryItem.swift in Sources */,
 				5BC7628B237C4F260062CDD3 /* MealTableViewCell.swift in Sources */,
 				5B74FBEB2507F7E80084BF9A /* TipTableViewCell.swift in Sources */,
-				5B74FBED25080AB10084BF9A /* SettingsManager.swift in Sources */,
 				5B5C8EBE235E5EDF00C29E62 /* UIViewController+SafariActions.swift in Sources */,
 				5BA2CCB32405503900CF6954 /* WatchMessage.swift in Sources */,
 				5B0AE9C123887786005C22A7 /* ImageViewCell.swift in Sources */,
@@ -1226,7 +1222,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 36;
+				CURRENT_PROJECT_VERSION = 39;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = NO;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = Mensaplan/Info.plist;
@@ -1254,7 +1250,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 36;
+				CURRENT_PROJECT_VERSION = 39;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = NO;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = Mensaplan/Info.plist;
@@ -1281,7 +1277,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 36;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				IBSC_MODULE = Watchapp_Extension;
 				INFOPLIST_FILE = Watchapp/Info.plist;
@@ -1304,7 +1300,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 36;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				IBSC_MODULE = Watchapp_Extension;
 				INFOPLIST_FILE = Watchapp/Info.plist;
@@ -1326,7 +1322,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 36;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = "Watchapp Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1353,7 +1349,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 36;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = "Watchapp Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
