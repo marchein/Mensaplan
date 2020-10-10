@@ -26,7 +26,7 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>WKCompanionAppBundleIdentifier</key>
-	<string>de.marc-hein.mensaplan</string>
+	<string>de.hochschule-trier.mensa</string>
 	<key>WKWatchKitApp</key>
 	<true/>
 </dict>

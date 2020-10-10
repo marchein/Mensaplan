@@ -616,7 +616,7 @@
 
 /* Begin PBXFileReference section */
 		00AAC5A0EF4B8DEE9164EAF85472A454 /* Pods-Watchapp Extension-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Watchapp Extension-Info.plist"; sourceTree = "<group>"; };
-		023A98CCD176D9129F6AFEFF865150E3 /* Gzip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Gzip.framework; path = "GzipSwift-watchOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		023A98CCD176D9129F6AFEFF865150E3 /* Gzip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Gzip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		023E9FE8C8972D52D27C31193D61DF1D /* SDWebImageDownloaderDecryptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloaderDecryptor.h; path = SDWebImage/Core/SDWebImageDownloaderDecryptor.h; sourceTree = "<group>"; };
 		03300B256E94AC76FF32E8B2C3FF4C1C /* Toast-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Toast-Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		04920D6A4F4A85292E1DA1EA8296F5AB /* NSData+ImageContentType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+ImageContentType.m"; path = "SDWebImage/Core/NSData+ImageContentType.m"; sourceTree = "<group>"; };
@@ -631,7 +631,7 @@
 		09B183380F569DDCB4DB37D5142FF17B /* SDWebImage-iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SDWebImage-iOS-Info.plist"; sourceTree = "<group>"; };
 		09FFC4FE2C641E65029C54EEEF66377B /* Toast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Toast.swift; path = Toast/Toast.swift; sourceTree = "<group>"; };
 		0AF57FF650374D66632C45ED47487829 /* Pods-Mensaplan-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Mensaplan-umbrella.h"; sourceTree = "<group>"; };
-		0D301687393C1CD1879BA88F5984F088 /* WatchSync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = WatchSync.framework; path = "WatchSync-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D301687393C1CD1879BA88F5984F088 /* WatchSync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WatchSync.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E4249B3CDA186F0DCE07B74D7433AE8 /* GzipSwift-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "GzipSwift-iOS.modulemap"; sourceTree = "<group>"; };
 		0EF0696BC810D77BFFD4BF773E784A43 /* SDFileAttributeHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDFileAttributeHelper.h; path = SDWebImage/Private/SDFileAttributeHelper.h; sourceTree = "<group>"; };
 		0F85F83E5FF03AA8F509E90C82DBAD62 /* SDWebImageCompat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCompat.m; path = SDWebImage/Core/SDWebImageCompat.m; sourceTree = "<group>"; };
@@ -666,7 +666,7 @@
 		26D207E1314AD02328C53871DD05C511 /* SDImageHEICCoderInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageHEICCoderInternal.h; path = SDWebImage/Private/SDImageHEICCoderInternal.h; sourceTree = "<group>"; };
 		2891080D172B1D012A709B12C608D75A /* SDWebImageManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageManager.m; path = SDWebImage/Core/SDWebImageManager.m; sourceTree = "<group>"; };
 		290886F8DD20A7FB5C1D3C161D52FDC6 /* SDAnimatedImagePlayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDAnimatedImagePlayer.m; path = SDWebImage/Core/SDAnimatedImagePlayer.m; sourceTree = "<group>"; };
-		29F95D207B77C866435357C8CCAB387B /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SDWebImage.framework; path = "SDWebImage-watchOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		29F95D207B77C866435357C8CCAB387B /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A4EB55777FC12D58CF3698B01D689AD /* Pods-Watchapp Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Watchapp Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		2A7D9D314D8113FF4E3320516D7417E9 /* SDDeviceHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDDeviceHelper.h; path = SDWebImage/Private/SDDeviceHelper.h; sourceTree = "<group>"; };
 		2DE73D3E73659CAF1C61DA0C8D458784 /* SDWebImageDownloaderRequestModifier.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDownloaderRequestModifier.m; path = SDWebImage/Core/SDWebImageDownloaderRequestModifier.m; sourceTree = "<group>"; };
@@ -700,7 +700,7 @@
 		49B195A01D006D44396F52816A336D29 /* GzipSwift-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GzipSwift-iOS-umbrella.h"; sourceTree = "<group>"; };
 		4A3DCFDAA0815E68D3CF44D2C48E533D /* SDWebImagePrefetcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImagePrefetcher.h; path = SDWebImage/Core/SDWebImagePrefetcher.h; sourceTree = "<group>"; };
 		4AC13871127A13A5EE63C7BD718FF578 /* WatchSync-iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "WatchSync-iOS-Info.plist"; sourceTree = "<group>"; };
-		4C3D95E4B1F6609A3337D28EDB675DC2 /* Pods_Watchapp_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Watchapp_Extension.framework; path = "Pods-Watchapp Extension.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C3D95E4B1F6609A3337D28EDB675DC2 /* Pods_Watchapp_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Watchapp_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		511D202963ACB578299BF32BAB26A594 /* GzipSwift-watchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "GzipSwift-watchOS.debug.xcconfig"; path = "../GzipSwift-watchOS/GzipSwift-watchOS.debug.xcconfig"; sourceTree = "<group>"; };
 		51B2F7C0FCCCB6F51ECBFEB01BE7D3EA /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImagePrefetcher.m; path = SDWebImage/Core/SDWebImagePrefetcher.m; sourceTree = "<group>"; };
 		527E7806D4FA159C086616E891D29D5B /* SDWebImageCacheSerializer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageCacheSerializer.h; path = SDWebImage/Core/SDWebImageCacheSerializer.h; sourceTree = "<group>"; };
@@ -724,7 +724,7 @@
 		65FFA73BC4E830AE330B15D9457C2C22 /* SDImageGIFCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageGIFCoder.h; path = SDWebImage/Core/SDImageGIFCoder.h; sourceTree = "<group>"; };
 		665BAD8E9A24E5BE6C2C8A559122A3D3 /* GzipSwift-iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "GzipSwift-iOS-Info.plist"; sourceTree = "<group>"; };
 		667A1C92EC73E9A11CC4244456007D41 /* SDImageCodersManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCodersManager.m; path = SDWebImage/Core/SDImageCodersManager.m; sourceTree = "<group>"; };
-		6689DEB069C32D35176CD7A2510878AA /* SwiftyXMLParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyXMLParser.framework; path = "SwiftyXMLParser-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6689DEB069C32D35176CD7A2510878AA /* SwiftyXMLParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyXMLParser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		677F327681CFAA5B0B9887515A2DB100 /* SDWebImageIndicator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageIndicator.h; path = SDWebImage/Core/SDWebImageIndicator.h; sourceTree = "<group>"; };
 		67AAEF7E5A8A17D49793989D96BF489F /* SDImageAssetManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageAssetManager.m; path = SDWebImage/Private/SDImageAssetManager.m; sourceTree = "<group>"; };
 		67FA1FF610C3EC05448E757CFDDE16B3 /* SDImageCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCoder.m; path = SDWebImage/Core/SDImageCoder.m; sourceTree = "<group>"; };
@@ -736,7 +736,7 @@
 		6A35B08E5368EA93A4907753B01F592B /* SDImageIOCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageIOCoder.h; path = SDWebImage/Core/SDImageIOCoder.h; sourceTree = "<group>"; };
 		6AB304700A03A751A0AF90DCBB73D29B /* SDImageCachesManagerOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCachesManagerOperation.m; path = SDWebImage/Private/SDImageCachesManagerOperation.m; sourceTree = "<group>"; };
 		6AF4621AFAB69DFFCC0782BAED329F85 /* SDWebImageCacheKeyFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageCacheKeyFilter.h; path = SDWebImage/Core/SDWebImageCacheKeyFilter.h; sourceTree = "<group>"; };
-		6CD237902E10D0DCFC80C5B0289CAFDE /* Pods_Mensaplan_TV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Mensaplan_TV.framework; path = "Pods-Mensaplan TV.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CD237902E10D0DCFC80C5B0289CAFDE /* Pods_Mensaplan_TV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mensaplan_TV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D20AFC814DD599E6E28FF27ECD43E88 /* SDWebImage-tvOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "SDWebImage-tvOS-Info.plist"; path = "../SDWebImage-tvOS/SDWebImage-tvOS-Info.plist"; sourceTree = "<group>"; };
 		6F1F3F76CCFEEAE2BD5B810CBACFFDE4 /* SDWebImage-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "SDWebImage-tvOS.debug.xcconfig"; path = "../SDWebImage-tvOS/SDWebImage-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		6F2EF7C3B3F3038F87F6A7C7987E7DB3 /* SDImageIOAnimatedCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageIOAnimatedCoder.h; path = SDWebImage/Core/SDImageIOAnimatedCoder.h; sourceTree = "<group>"; };
@@ -758,10 +758,10 @@
 		818E86D769BADD196F7A98A842C5FC24 /* SDWebImageTransition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageTransition.h; path = SDWebImage/Core/SDWebImageTransition.h; sourceTree = "<group>"; };
 		81D27C6704A9D8B45C3729E1BEA802DC /* Pods-Watchapp Extension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Watchapp Extension-dummy.m"; sourceTree = "<group>"; };
 		822D595CE659FBCD3EDCDAC49C543CD3 /* Pods-Watchapp Extension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Watchapp Extension-umbrella.h"; sourceTree = "<group>"; };
-		84B16559274FED240DB8F3BDAD6572CD /* TVOSPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TVOSPicker.framework; path = TVOSPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84B16559274FED240DB8F3BDAD6572CD /* TVOSPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TVOSPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8586243A16F17B651F41424DAECD19FF /* SDWebImageCacheKeyFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCacheKeyFilter.m; path = SDWebImage/Core/SDWebImageCacheKeyFilter.m; sourceTree = "<group>"; };
 		86FACA0C5A494CCE476DEE88C75C8D82 /* Pods-Mensaplan-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Mensaplan-dummy.m"; sourceTree = "<group>"; };
-		876FADBBC88175FBD100628A78762365 /* SwiftyXMLParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyXMLParser.framework; path = "SwiftyXMLParser-tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		876FADBBC88175FBD100628A78762365 /* SwiftyXMLParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyXMLParser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		877A2E5129C80E563BB5420D4B9BBD6A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		88546E16775FBDAB71CDAA50AD27A6DF /* GzipSwift-watchOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GzipSwift-watchOS-dummy.m"; path = "../GzipSwift-watchOS/GzipSwift-watchOS-dummy.m"; sourceTree = "<group>"; };
 		88F90E3E3586E29361E01F3B65770C37 /* SDWebImage-watchOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SDWebImage-watchOS-prefix.pch"; path = "../SDWebImage-watchOS/SDWebImage-watchOS-prefix.pch"; sourceTree = "<group>"; };
@@ -784,7 +784,7 @@
 		9B4CD6E9734CD986E4DDE0929B0B4A05 /* SwiftyXMLParser-iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftyXMLParser-iOS-Info.plist"; sourceTree = "<group>"; };
 		9BF7D911A7B80BE3FE43CBDE3A215EB2 /* SendResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SendResult.swift; path = Sources/WatchSync/Results/SendResult.swift; sourceTree = "<group>"; };
 		9D25C36031710635EF3865B6E2F61E4B /* SDImageFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageFrame.h; path = SDWebImage/Core/SDImageFrame.h; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9EB001C5D6AE850AD98AD2699AB51A33 /* SDImageIOAnimatedCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageIOAnimatedCoder.m; path = SDWebImage/Core/SDImageIOAnimatedCoder.m; sourceTree = "<group>"; };
 		A0501718BF5892F2C511DA03DB3B58B4 /* SDWebImage-tvOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SDWebImage-tvOS-prefix.pch"; path = "../SDWebImage-tvOS/SDWebImage-tvOS-prefix.pch"; sourceTree = "<group>"; };
 		A0ED2E4BCA64BC5903C0ADD8321E95DB /* Toast-Swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Toast-Swift-Info.plist"; sourceTree = "<group>"; };
@@ -800,7 +800,7 @@
 		A6CC0E837F76612099E0774B1258C39E /* UIColor+SDHexString.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+SDHexString.m"; path = "SDWebImage/Private/UIColor+SDHexString.m"; sourceTree = "<group>"; };
 		A72D3E8477D68453A382465981BE3D8E /* SDWebImage-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SDWebImage-iOS-dummy.m"; sourceTree = "<group>"; };
 		A769A482713E05D1170FCE5BE8D61C0D /* Pods-Mensaplan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Mensaplan.release.xcconfig"; sourceTree = "<group>"; };
-		A79397396EDD044C4C4A62BD9B7E86C8 /* Gzip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Gzip.framework; path = "GzipSwift-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A79397396EDD044C4C4A62BD9B7E86C8 /* Gzip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Gzip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A869A2EFB0AD370A4BF7A1393662EEE4 /* GzipSwift-watchOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GzipSwift-watchOS-prefix.pch"; path = "../GzipSwift-watchOS/GzipSwift-watchOS-prefix.pch"; sourceTree = "<group>"; };
 		A88196CC16192F37C2E4CF1912908AA4 /* SDImageGraphics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageGraphics.h; path = SDWebImage/Core/SDImageGraphics.h; sourceTree = "<group>"; };
 		A9F22AC62DB05E328380FBA18103A3A5 /* SDImageCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCoder.h; path = SDWebImage/Core/SDImageCoder.h; sourceTree = "<group>"; };
@@ -844,11 +844,11 @@
 		C97942845312E6BC8A96458311FCA702 /* SDImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCache.m; path = SDWebImage/Core/SDImageCache.m; sourceTree = "<group>"; };
 		C97C30B67248085480483B38E0A16505 /* SDWebImageError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageError.m; path = SDWebImage/Core/SDWebImageError.m; sourceTree = "<group>"; };
 		CA82359349540BF31B9D9C4098D9E90E /* SDWebImage-watchOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SDWebImage-watchOS-umbrella.h"; path = "../SDWebImage-watchOS/SDWebImage-watchOS-umbrella.h"; sourceTree = "<group>"; };
-		CD95C164FD5A48C9E3A9AD51494C2B40 /* Pods_Mensaplan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Mensaplan.framework; path = "Pods-Mensaplan.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD95C164FD5A48C9E3A9AD51494C2B40 /* Pods_Mensaplan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mensaplan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDE5598842363FC130B37D9F12D1D7EA /* Pods-Mensaplan.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Mensaplan.modulemap"; sourceTree = "<group>"; };
 		CF27988C1E164DA19796128412BF9556 /* SDImageLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageLoader.h; path = SDWebImage/Core/SDImageLoader.h; sourceTree = "<group>"; };
 		CFB15D6E77FC6BAF3822AF4D8B299900 /* Pods-Watchapp Extension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Watchapp Extension.modulemap"; sourceTree = "<group>"; };
-		CFF06E53BC38C0114EDAF51F6C433D9F /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SDWebImage.framework; path = "SDWebImage-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFF06E53BC38C0114EDAF51F6C433D9F /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D022253BBCF21CD05ED5972D8A1424A6 /* TVOSPicker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TVOSPicker-Info.plist"; sourceTree = "<group>"; };
 		D191EB23B18032C5FF3AFC35DF785F9C /* Pods-Mensaplan-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Mensaplan-Info.plist"; sourceTree = "<group>"; };
 		D3218F8C74D1D6C57FA90451E50946FB /* SDDiskCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDDiskCache.m; path = SDWebImage/Core/SDDiskCache.m; sourceTree = "<group>"; };
@@ -856,7 +856,7 @@
 		D3C2C548D73DBAB0F82045231913F41C /* UpdateContextResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UpdateContextResult.swift; path = Sources/WatchSync/Results/UpdateContextResult.swift; sourceTree = "<group>"; };
 		D4F0D499B07CB23CCE25E91E4EB9F77D /* GzipSwift-watchOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "GzipSwift-watchOS.modulemap"; path = "../GzipSwift-watchOS/GzipSwift-watchOS.modulemap"; sourceTree = "<group>"; };
 		D57DDBBC1D378289B40BF335EA2B9B36 /* NSBezierPath+SDRoundedCorners.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSBezierPath+SDRoundedCorners.m"; path = "SDWebImage/Private/NSBezierPath+SDRoundedCorners.m"; sourceTree = "<group>"; };
-		D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Toast_Swift.framework; path = "Toast-Swift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Toast_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D68EC94C52AD5BAF6030C3164874FB83 /* SDImageCacheDefine.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCacheDefine.m; path = SDWebImage/Core/SDImageCacheDefine.m; sourceTree = "<group>"; };
 		D6FE6FB81CA6AFB6FB126E17FF85F2F7 /* Pods-Mensaplan TV-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Mensaplan TV-dummy.m"; sourceTree = "<group>"; };
 		D7A80BD04B400D2CF1183FBF231CD613 /* Pods-Mensaplan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Mensaplan.debug.xcconfig"; sourceTree = "<group>"; };
@@ -879,7 +879,7 @@
 		E0E230A967CA98ACCB7C7391E7391EDA /* WatchSync-watchOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WatchSync-watchOS-umbrella.h"; path = "../WatchSync-watchOS/WatchSync-watchOS-umbrella.h"; sourceTree = "<group>"; };
 		E1AA6F3CBE43111F9F792CC1489E7CEE /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS5.2.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
 		E2842FC9388EF0D61C60F1357EC2BD6C /* SDAnimatedImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDAnimatedImage.h; path = SDWebImage/Core/SDAnimatedImage.h; sourceTree = "<group>"; };
-		E2E083379731A0EB82E75206694DC5AA /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SDWebImage.framework; path = "SDWebImage-tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2E083379731A0EB82E75206694DC5AA /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2EBB22C4E6B495D94205DAE0409B5A7 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
 		E30B77EF1801539671B060038FE768AF /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+WebCacheOperation.h"; path = "SDWebImage/Core/UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		E38B280CE02AFA13806F5D674D2848B1 /* SDAssociatedObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDAssociatedObject.h; path = SDWebImage/Private/SDAssociatedObject.h; sourceTree = "<group>"; };
@@ -888,7 +888,7 @@
 		E92159F5F3FF15A9915A8E465C4EA6B3 /* SDWebImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImage.h; path = WebImage/SDWebImage.h; sourceTree = "<group>"; };
 		E9993707B8024E0DFB2CD7BA0AEFB609 /* SDWebImageDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloader.h; path = SDWebImage/Core/SDWebImageDownloader.h; sourceTree = "<group>"; };
 		E9DF01C41A29F136DCC53607093350CA /* MessageSubscription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MessageSubscription.swift; path = Sources/WatchSync/Subscriptions/MessageSubscription.swift; sourceTree = "<group>"; };
-		EC35018150D11F990BDFCE98BBC1DBC5 /* WatchSync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = WatchSync.framework; path = "WatchSync-watchOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC35018150D11F990BDFCE98BBC1DBC5 /* WatchSync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WatchSync.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECE3D1D260423358C6C49E7F409134AB /* UIImage+Metadata.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Metadata.m"; path = "SDWebImage/Core/UIImage+Metadata.m"; sourceTree = "<group>"; };
 		EEA16D3C341E55F5B57D6206DC4C09C3 /* NSButton+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSButton+WebCache.h"; path = "SDWebImage/Core/NSButton+WebCache.h"; sourceTree = "<group>"; };
 		F0316FA4EE17E44C5931C21A84BE0198 /* TVOSPicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TVOSPicker.release.xcconfig; sourceTree = "<group>"; };
@@ -1126,7 +1126,6 @@
 				45963DB9DC88EE545323C8EE471FE052 /* WatchSync.swift */,
 				706E0DF156E530D631D978517F54EFA1 /* Support Files */,
 			);
-			name = WatchSync;
 			path = WatchSync;
 			sourceTree = "<group>";
 		};
@@ -1162,7 +1161,6 @@
 				BF380E17C62387E00CE5A04E0C138C43 /* XML.swift */,
 				2475FD480674F8AFE8325052E2EA6E8E /* Support Files */,
 			);
-			name = SwiftyXMLParser;
 			path = SwiftyXMLParser;
 			sourceTree = "<group>";
 		};
@@ -1376,7 +1374,6 @@
 				FDF443FE1C1264C54AAC77D8626BB67B /* Data+Gzip.swift */,
 				FAED1A7E4CC0CFCC1DFF46546FB384ED /* Support Files */,
 			);
-			name = GzipSwift;
 			path = GzipSwift;
 			sourceTree = "<group>";
 		};
@@ -1386,7 +1383,6 @@
 				6FA0D0C399D65C6B9EBC9CEBAE4EFE9C /* Core */,
 				10E0BA8C885F268082F1888076151823 /* Support Files */,
 			);
-			name = SDWebImage;
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
@@ -1449,7 +1445,6 @@
 				09FFC4FE2C641E65029C54EEEF66377B /* Toast.swift */,
 				C954C6C28A32C753BA4DC35B07EE149F /* Support Files */,
 			);
-			name = "Toast-Swift";
 			path = "Toast-Swift";
 			sourceTree = "<group>";
 		};
@@ -1489,7 +1484,6 @@
 				31D4F205B866DC917E04BFE3CF07A525 /* TVOSPickerViewController.swift */,
 				051F7528BD331DB32CE0C8585E7AB288 /* Support Files */,
 			);
-			name = TVOSPicker;
 			path = TVOSPicker;
 			sourceTree = "<group>";
 		};
@@ -2137,7 +2131,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1200;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 11.0";
@@ -2739,7 +2733,7 @@
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -2774,7 +2768,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -2797,7 +2791,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Toast-Swift/Toast-Swift-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Toast-Swift/Toast-Swift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2884,7 +2878,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -2906,7 +2900,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SwiftyXMLParser-iOS/SwiftyXMLParser-iOS-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SwiftyXMLParser-iOS/SwiftyXMLParser-iOS-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2954,7 +2948,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -2976,7 +2970,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SDWebImage-iOS/SDWebImage-iOS-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SDWebImage-iOS/SDWebImage-iOS-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3025,7 +3019,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -3058,6 +3052,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -3083,7 +3078,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -3093,7 +3088,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
-				TVOS_DEPLOYMENT_TARGET = 9.0;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
 			name = Debug;
@@ -3114,7 +3109,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/GzipSwift-iOS/GzipSwift-iOS-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/GzipSwift-iOS/GzipSwift-iOS-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3163,7 +3158,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -3185,7 +3180,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SwiftyXMLParser-iOS/SwiftyXMLParser-iOS-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SwiftyXMLParser-iOS/SwiftyXMLParser-iOS-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3258,7 +3253,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-Mensaplan/Pods-Mensaplan-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3296,7 +3291,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/WatchSync-iOS/WatchSync-iOS-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/WatchSync-iOS/WatchSync-iOS-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3346,7 +3341,7 @@
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -3369,7 +3364,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SDWebImage-iOS/SDWebImage-iOS-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SDWebImage-iOS/SDWebImage-iOS-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3404,7 +3399,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/WatchSync-iOS/WatchSync-iOS-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/WatchSync-iOS/WatchSync-iOS-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3453,7 +3448,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -3476,7 +3471,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Toast-Swift/Toast-Swift-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Toast-Swift/Toast-Swift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3592,6 +3587,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -3614,7 +3610,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3623,7 +3619,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
-				TVOS_DEPLOYMENT_TARGET = 9.0;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
 			name = Release;
@@ -3681,7 +3677,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/GzipSwift-iOS/GzipSwift-iOS-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/GzipSwift-iOS/GzipSwift-iOS-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3793,7 +3789,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-Mensaplan/Pods-Mensaplan-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

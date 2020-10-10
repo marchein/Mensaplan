@@ -13,7 +13,7 @@
 	<true/>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.de.marc-hein.Mensaplan.Data</string>
+		<string>group.de.hochschule-trier.mensa.Data</string>
 	</array>
 	<key>com.apple.security.network.client</key>
 	<true/>

@@ -24,6 +24,6 @@
 		</dict>
 	</array>
 	<key>ApplicationGroupContainerIdentifier</key>
-	<string>group.de.marc-hein.Mensaplan.Data</string>
+	<string>group.de.hochschule-trier.mensaplan.Data</string>
 </dict>
 </plist>

@@ -25,7 +25,7 @@
 		<key>NSExtensionAttributes</key>
 		<dict>
 			<key>WKAppBundleIdentifier</key>
-			<string>de.marc-hein.mensaplan.watchkitapp</string>
+			<string>de.hochschule-trier.mensa.watchkitapp</string>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.watchkit</string>
