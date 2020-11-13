@@ -11,7 +11,8 @@
   "platforms": {
     "ios": "8.0",
     "tvos": "9.0",
-    "osx": "10.10"
+    "osx": "10.10",
+    "watchos": "6.0"
   },
   "source_files": "SwiftyXMLParser/*.swift",
   "requires_arc": true,

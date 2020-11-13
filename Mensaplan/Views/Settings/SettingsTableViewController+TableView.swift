@@ -16,7 +16,11 @@ extension SettingsTableViewController {
     
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         if section == 0 {
+            #if targetEnvironment(macCatalyst)
+            return "Die Mensaplan Daten stammen vom Studierendenwerk Trier. Alle Angaben ohne Gewähr"
+            #else
             return "Die Mensaplan Daten stammen vom Studierendenwerk Trier.\nAlle Angaben ohne Gewähr"
+            #endif
         }
         return nil
     }

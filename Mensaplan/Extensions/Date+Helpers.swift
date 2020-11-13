@@ -19,9 +19,9 @@ extension Date {
         return formatter.date(from: date)
     }
     
-    static func getCurrentDate() -> String {
+    static func getCurrentDate(short: Bool = false, date: Date = Date()) -> String {
         let dateformatter = DateFormatter()
-        dateformatter.dateFormat = "dd.MM.yyyy - HH:mm"
-        return dateformatter.string(from: Date())
+        dateformatter.dateFormat = short ? "dd.MM.yy HH:mm" : "dd.MM.yyyy - HH:mm"
+        return dateformatter.string(from: date)
     }
 }

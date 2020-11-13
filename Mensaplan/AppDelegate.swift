@@ -139,7 +139,6 @@ extension AppDelegate: NSTouchBarDelegate {
                 identifier: SettingsButtonTouchBarIdentifier)
             item.target = self
             item.image = UIImage(systemName: "gear")
-            item.title = "Einstellungen"
             item.action = #selector(showSettings)
             return item
         } else if identifier == RefreshButtonTouchBarIdentifier {
@@ -147,7 +146,6 @@ extension AppDelegate: NSTouchBarDelegate {
                 identifier: RefreshButtonTouchBarIdentifier)
             item.target = self
             item.image = UIImage(systemName: "arrow.clockwise")
-            item.title = "Aktualisieren"
             item.action = #selector(refresh)
             return item
         }

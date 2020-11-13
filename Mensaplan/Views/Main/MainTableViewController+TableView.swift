@@ -185,8 +185,12 @@ extension MainTableViewController {
     
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         if section == 0 {
-            if let lastUpdate = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.lastUpdate) {
+            if let lastUpdate = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.lastUpdate), let dateObj = getDate(from: lastUpdate)  {
+                #if targetEnvironment(macCatalyst)
+                return "Letzte Aktualisierung: \(Date.getCurrentDate(short: true, date: dateObj)) Uhr"
+                #else
                 return "Letzte Aktualisierung: \(lastUpdate) Uhr"
+                #endif
             }
             return "Keine Aktualisierung vorgenommen"
         } else if #available(iOS 13.0, *), MensaplanApp.canScan, section == 1 {
@@ -206,5 +210,11 @@ extension MainTableViewController {
         //[tableView performSelector:@selector(resignFirstResponder) withObject:nil afterDelay:0.1];
         tableView.perform(#selector(UIResponder.resignFirstResponder), with: nil, afterDelay: 0.01)
         #endif
+    }
+    
+    func getDate(from: String) -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy - HH:mm"
+        return dateFormatter.date(from: from)
     }
 }
