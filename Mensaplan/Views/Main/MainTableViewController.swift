@@ -39,6 +39,7 @@ class MainTableViewController: UITableViewController {
             MensaplanApp.sharedDefaults.set(true, forKey: LocalKeys.refreshOnStart)
             MensaplanApp.sharedDefaults.set(false, forKey: LocalKeys.showSideDish)
             MensaplanApp.sharedDefaults.set("standort-1", forKey: LocalKeys.selectedMensa)
+            MensaplanApp.sharedDefaults.set("Mensaplan", forKey: LocalKeys.defaultTab)
             MensaplanApp.sharedDefaults.set("student", forKey: LocalKeys.selectedPrice)
             MensaplanApp.sharedDefaults.set(true, forKey: LocalKeys.isSetup)
             print("MainTableViewController.swift - setupApp() - INITIAL SETUP DONE")

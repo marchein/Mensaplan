@@ -15,16 +15,17 @@ struct LocalKeys {
     static let refreshOnStart = "refreshOnStart"
     static let selectedPrice = "selectedPrice"
     static let selectedMensa = "selectedMensa"
+    static let defaultTab = "defaultTab"
     static let lastUpdate = "lastUpdate"
     static let mensaplanJSONData = "mensaplanJSONData"
     static let showSideDish = "showSideDish"
+    static let hasTipped = "hasTipped"
 }
-
 
 //MARK:- Shortcuts
 struct Shortcuts {
-    static let showToday = "de.hochschule-trier.mensa.showToday"
-    static let showTomorrow = "de.hochschule-trier.mensa.showTomorrow"
+    static let showToday = "de.marc-hein.mensaplan.showToday"
+    static let showTomorrow = "de.marc-hein.mensaplan.showTomorrow"
     
 }
 
@@ -40,6 +41,8 @@ struct MensaplanApp {
     static let standorteKeys = ["standort-1","standort-2","standort-3","standort-4","standort-5", "standort-7"]
     static let priceValues = ["student", "worker", "guest"]
     
+    static let tabValues = ["Mensaplan", "Guthaben"]    
+    
     //MARK:- API Data
     static let STUDIWERK_URL = "https://www.studiwerk.de";
     static let API = "https://www.studiwerk.de/export/speiseplan.xml"
@@ -47,9 +50,9 @@ struct MensaplanApp {
     static let NOODLE_COUNTER = "CASA BLANCA"
     static let MAIN_DISH_MINIMAL_PRICE: Double = 1.15
     
-    static let groupIdentifier = "group.de.hochschule-trier.mensa.Data"
-    static let appStoreId = "1535338070"
-    static let mailAdress = "M.Hein@hochschule-trier.de"
+    static let groupIdentifier = "group.de.marc-hein.Mensaplan.Data"
+    static let appStoreId = "1484281036"
+    static let mailAdress = "dev@marc-hein.de"
     static let website = "https://marc-hein.de/"
     static let versionString = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
     static let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
@@ -62,7 +65,7 @@ struct MensaplanApp {
     
     
     // MARK:- NFC Data
-    static let demo: Bool = true
+    static let demo: Bool = false
     static let APP_ID: Int = 0x5F8415
     static let FILE_ID: UInt8  = 1
     
@@ -86,6 +89,15 @@ struct MensaplanSegue {
     static let manualShowDetail = "manualShowDetail"
     static let showSettings = "settingsSegue"
     
+}
+
+//MARK:- MensaplanIAP
+struct MensaplanIAP {
+    static let smallTip = "de.marc_hein.mensaplan.tip.sm"
+    static let mediumTip = "de.marc_hein.mensaplan.tip.md"
+    static let largeTip = "de.marc_hein.mensaplan.tip.lg"
+
+    static let allTips = [MensaplanIAP.smallTip, MensaplanIAP.mediumTip, MensaplanIAP.largeTip]
 }
 
 class Opening {

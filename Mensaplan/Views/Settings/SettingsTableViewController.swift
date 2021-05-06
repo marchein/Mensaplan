@@ -15,6 +15,7 @@ class SettingsTableViewController: UITableViewController, UIAdaptivePresentation
     @IBOutlet weak var refreshOnStartToggle: UISwitch!
     @IBOutlet weak var priceSelector: UIView!
     @IBOutlet weak var selectedMensaName: UILabel!
+    @IBOutlet weak var selectedTabName: UILabel!
     @IBOutlet weak var mensaNameCell: UITableViewCell!
     @IBOutlet weak var pricePicker: UISegmentedControl!
     @IBOutlet weak var appVersionCell: UITableViewCell!
@@ -40,6 +41,7 @@ class SettingsTableViewController: UITableViewController, UIAdaptivePresentation
     
     override func viewDidAppear(_ animated: Bool) {
         self.updateCurrentMensa()
+        self.updateCurrentTab()
     }
     
     func setupView() {
@@ -53,11 +55,16 @@ class SettingsTableViewController: UITableViewController, UIAdaptivePresentation
             self.pricePicker.selectedSegmentIndex = MensaplanApp.priceValues.firstIndex(of: selectedPrice)!
             self.appVersionCell.detailTextLabel?.text = "\(MensaplanApp.versionString) (\(MensaplanApp.buildNumber))"
             self.updateCurrentMensa()
+            self.updateCurrentTab()
         }
     }
     
     func updateCurrentMensa() {
         self.mensaNameCell.detailTextLabel?.text = MensaplanApp.standorteValues[MensaplanApp.standorteKeys.firstIndex(of: MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa) ?? MensaplanApp.standorteKeys[0]) ?? 0]
+    }
+    
+    func updateCurrentTab() {
+        self.selectedTabName.text = MensaplanApp.tabValues[MensaplanApp.tabValues.firstIndex(of: MensaplanApp.sharedDefaults.string(forKey: LocalKeys.defaultTab) ?? MensaplanApp.tabValues[0]) ?? 0]
     }
     
     func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {

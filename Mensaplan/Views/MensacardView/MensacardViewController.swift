@@ -26,12 +26,16 @@ class MensacardViewController: UITableViewController {
         if MensaplanApp.demo {
             setupDemoData()
         }
-
+        
         styleMensacard()
         setupMensacard()
         setupChart()
-        
-        print(mensaDB.getEntries())
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupMensacard()
+        setupChart()
     }
     
     func setupDemoData() {
@@ -58,60 +62,70 @@ class MensacardViewController: UITableViewController {
         let data: [HistoryItem] = mensaDB.getEntries()
         
         if data.count > 0 {
-            currentBalanceLabel.text = data.count > 0 ? data[0].getFormattedBalance() : "0,00 €"
+            currentBalanceLabel.text = data[0].getFormattedBalance()
+        } else {
+            currentBalanceLabel.text = "Noch nicht eingelesen..."
         }
     }
     
     func setupChart() {
         var dataEntries: [ChartDataEntry] = []
         var mensaEntries = mensaDB.getEntries()
-        mensaEntries.reverse()
-        var lower = 0
-        var upper = mensaEntries.count
-        if mensaEntries.count > 20 {
-            lower = mensaEntries.count - 20
-            upper = mensaEntries.count
+        
+        historyChart.clear()
+        historyChart.noDataText = "Es wurden bisher keine Daten eingelesen..."
+        
+        if mensaEntries.count > 0 {
+            mensaEntries.reverse()
+            var lower = 0
+            var upper = mensaEntries.count
+            if mensaEntries.count > 20 {
+                lower = mensaEntries.count - 20
+                upper = mensaEntries.count
+            }
+            
+            for i in lower..<upper {
+                let dataEntry = ChartDataEntry(x: Double(i), y: mensaEntries[i].balance)
+                dataEntries.append(dataEntry)
+            }
+            
+            setChartData(dataEntries)
+            
+            
+            historyChart.tintColor = .systemBlue
+            
+            let yAxis = historyChart.leftAxis
+            yAxis.labelPosition = .outsideChart
+            let valFormatter = NumberFormatter()
+            valFormatter.numberStyle = .currency
+            valFormatter.maximumFractionDigits = 2
+            valFormatter.currencySymbol = "€"
+            
+            historyChart.leftAxis.valueFormatter = DefaultAxisValueFormatter(formatter: valFormatter)
+            historyChart.rightAxis.enabled = false
+            
+            let xAxis = historyChart.xAxis
+            xAxis.labelPosition = .bottom
+            xAxis.setLabelCount(mensaEntries.count, force: true)
+            historyChart.isUserInteractionEnabled = false
+            
+            xAxis.setLabelCount(4, force: true)
         }
-        
-        print(lower,upper)
-        for i in lower..<upper {
-            let dataEntry = ChartDataEntry(x: Double(i), y: mensaEntries[i].balance)
-            dataEntries.append(dataEntry)
-        }
-        
-        setChartData(dataEntries)
-
-        
-        historyChart.tintColor = .systemBlue
-        
-        let yAxis = historyChart.leftAxis
-        yAxis.labelPosition = .outsideChart
-        let valFormatter = NumberFormatter()
-        valFormatter.numberStyle = .currency
-        valFormatter.maximumFractionDigits = 2
-        valFormatter.currencySymbol = "€"
-        
-        historyChart.leftAxis.valueFormatter = DefaultAxisValueFormatter(formatter: valFormatter)
-        historyChart.rightAxis.enabled = false
-        
-        let xAxis = historyChart.xAxis
-        xAxis.labelPosition = .bottom
-        xAxis.setLabelCount(mensaEntries.count, force: true)
-        historyChart.isUserInteractionEnabled = false
-        
-        xAxis.setLabelCount(4, force: true)
     }
     
     func setChartData(_ dataEntries: [ChartDataEntry]) {
         let lineChartDataSet = LineChartDataSet(entries: dataEntries, label: "Guthaben")
         
         lineChartDataSet.mode = .cubicBezier
-        lineChartDataSet.drawCirclesEnabled = false
         
         lineChartDataSet.setColor(.systemBlue)
         lineChartDataSet.fillColor = .systemBlue
         lineChartDataSet.fillAlpha = 0.1
         lineChartDataSet.drawFilledEnabled = true
+        
+        lineChartDataSet.drawCircleHoleEnabled = false
+        lineChartDataSet.circleRadius = 3
+        lineChartDataSet.setCircleColor(.systemBlue)
         
         let lineChartData = LineChartData(dataSet: lineChartDataSet)
         lineChartData.setDrawValues(false)

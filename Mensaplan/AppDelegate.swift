@@ -125,7 +125,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     }
     
     func setDefaultTab(tabVC: UITabBarController) {
-        let selection = 1 // guthaben
+        let selection = MensaplanApp.tabValues.firstIndex(of: MensaplanApp.sharedDefaults.string(forKey: LocalKeys.defaultTab) ?? MensaplanApp.tabValues[0]) ?? 0
         tabVC.selectedIndex = selection
 
     }

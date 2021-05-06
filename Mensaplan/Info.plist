@@ -28,8 +28,8 @@
 	<string>NFC tag to read NDEF messages into the application</string>
 	<key>NSUserActivityTypes</key>
 	<array>
-		<string>de.hochschule-trier.mensaplan.showTomorrow</string>
-		<string>de.hochschule-trier.mensaplan.showToday</string>
+		<string>de.marc-hein.mensaplan.showTomorrow</string>
+		<string>de.marc-hein.mensaplan.showToday</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
