@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		5B06EFA22382CC5C0020FF0E /* MensaDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06EFA12382CC5C0020FF0E /* MensaDatabase.swift */; };
 		5B06EFA42382CC6C0020FF0E /* HistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06EFA32382CC6C0020FF0E /* HistoryItem.swift */; };
-		5B06EFA62382CCA10020FF0E /* MainTableViewController+NFC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06EFA52382CCA10020FF0E /* MainTableViewController+NFC.swift */; };
+		5B06EFA62382CCA10020FF0E /* MensacardViewController+NFC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06EFA52382CCA10020FF0E /* MensacardViewController+NFC.swift */; };
 		5B06EFA82382CF000020FF0E /* Double+Rounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06EFA72382CF000020FF0E /* Double+Rounding.swift */; };
 		5B06EFAA2382CF170020FF0E /* Data+HexEnconding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06EFA92382CF170020FF0E /* Data+HexEnconding.swift */; };
 		5B06EFAD2382EE640020FF0E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B06EFAF2382EE640020FF0E /* Localizable.strings */; };
@@ -18,13 +18,9 @@
 		5B09BB4123705A37004E1981 /* Bundle+Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09BB3B23705A37004E1981 /* Bundle+Icon.swift */; };
 		5B09BB4323705A37004E1981 /* SKProduct+LocalizedPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09BB3D23705A37004E1981 /* SKProduct+LocalizedPrice.swift */; };
 		5B09BB4423705A37004E1981 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09BB3E23705A37004E1981 /* Date+Helpers.swift */; };
-		5B09BB4723705A59004E1981 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09BB4623705A59004E1981 /* BorderedButton.swift */; };
 		5B0AE9C123887786005C22A7 /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0AE9C023887786005C22A7 /* ImageViewCell.swift */; };
-		5B0F4B282407FF32007E934F /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B277274235D033500E3894B /* Data.swift */; };
-		5B0F4B292407FF36007E934F /* WatchMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA2CCB22405503900CF6954 /* WatchMessage.swift */; };
-		5B0F4B2A2407FF38007E934F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEA0A34235DCA55003E3616 /* Model.swift */; };
-		5B0F4B2C2407FF5C007E934F /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09BB3E23705A37004E1981 /* Date+Helpers.swift */; };
-		5B0F4B2D2407FF74007E934F /* UserDefaults+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09BB3A23705A37004E1981 /* UserDefaults+Helper.swift */; };
+		5B0B1AE52643154D0081E4A2 /* MensacardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0B1AE42643154D0081E4A2 /* MensacardViewController.swift */; };
+		5B0B1AE7264321740081E4A2 /* UIColor+LigherDarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0B1AE6264321740081E4A2 /* UIColor+LigherDarker.swift */; };
 		5B18702F235A403E00EF54DF /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B18702E235A403E00EF54DF /* MainTableViewController.swift */; };
 		5B187034235A40E200EF54DF /* MainTableViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B187033235A40E200EF54DF /* MainTableViewController+TableView.swift */; };
 		5B1C9D1425321F8600F75E3C /* HeinHelpers in Frameworks */ = {isa = PBXBuildFile; productRef = 5B1C9D1325321F8600F75E3C /* HeinHelpers */; };
@@ -37,28 +33,23 @@
 		5B458AE9235A3D7D0027CAE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B458AE7235A3D7D0027CAE1 /* Main.storyboard */; };
 		5B458AEB235A3D7E0027CAE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B458AEA235A3D7E0027CAE1 /* Assets.xcassets */; };
 		5B458AEE235A3D7E0027CAE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B458AEC235A3D7E0027CAE1 /* LaunchScreen.storyboard */; };
-		5B5ADD812407FD3E00F22C44 /* Watchapp Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5B5ADD802407FD3E00F22C44 /* Watchapp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		5B5ADD8E2407FD3E00F22C44 /* Watchapp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5B5ADD742407FD3B00F22C44 /* Watchapp.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		5B5ADDA22407FD7C00F22C44 /* MealInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5ADD972407FD7B00F22C44 /* MealInterfaceController.swift */; };
-		5B5ADDA32407FD7C00F22C44 /* MainInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5ADD982407FD7B00F22C44 /* MainInterfaceController.swift */; };
-		5B5ADDA52407FD7C00F22C44 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5ADD9B2407FD7B00F22C44 /* ExtensionDelegate.swift */; };
-		5B5ADDA62407FD7C00F22C44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5ADD9C2407FD7C00F22C44 /* Assets.xcassets */; };
-		5B5ADDA72407FD7C00F22C44 /* InformationRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5ADD9E2407FD7C00F22C44 /* InformationRowController.swift */; };
-		5B5ADDA82407FD7C00F22C44 /* MealRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5ADD9F2407FD7C00F22C44 /* MealRowController.swift */; };
-		5B5ADDA92407FD7C00F22C44 /* CounterRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5ADDA02407FD7C00F22C44 /* CounterRowController.swift */; };
-		5B5ADDAA2407FD7C00F22C44 /* StoffRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5ADDA12407FD7C00F22C44 /* StoffRowController.swift */; };
-		5B5ADDB22407FD8E00F22C44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5ADDAF2407FD8E00F22C44 /* Assets.xcassets */; };
-		5B5ADDB82407FDF700F22C44 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B5ADDB72407FDF700F22C44 /* Interface.storyboard */; };
 		5B5C8EBC235E5E7700C29E62 /* SettingsTableViewController+SendSupportMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5C8EBB235E5E7700C29E62 /* SettingsTableViewController+SendSupportMail.swift */; };
 		5B5C8EBE235E5EDF00C29E62 /* UIViewController+SafariActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5C8EBD235E5EDF00C29E62 /* UIViewController+SafariActions.swift */; };
 		5B5C8EC3235F2DA500C29E62 /* UIImageView+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5C8EC2235F2DA500C29E62 /* UIImageView+Download.swift */; };
 		5B629D18238A846400E39C8D /* UIStackView+removeAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B629D17238A846400E39C8D /* UIStackView+removeAll.swift */; };
-		5BA2CCB32405503900CF6954 /* WatchMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA2CCB22405503900CF6954 /* WatchMessage.swift */; };
+		5BB26D762642DE8700A18476 /* Mensacard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BB26D752642DE8700A18476 /* Mensacard.storyboard */; };
+		5BB26D782642E5BA00A18476 /* OpeningTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB26D772642E5BA00A18476 /* OpeningTableViewCell.swift */; };
+		5BB26D7A2642EA0F00A18476 /* MensacardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB26D792642EA0F00A18476 /* MensacardTableViewController.swift */; };
+		5BB26D7E2642F3EF00A18476 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 5BB26D7D2642F3EF00A18476 /* Charts */; };
+		5BB26D802642F54F00A18476 /* MensacardHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB26D7F2642F54F00A18476 /* MensacardHistoryTableViewController.swift */; };
+		5BB26D832642F63400A18476 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB26D822642F63400A18476 /* HistoryTableViewCell.swift */; };
+		5BB26D8626430E2800A18476 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 5BB26D8526430E2800A18476 /* Toast */; };
+		5BB26D8926430E6B00A18476 /* SwiftyXMLParser in Frameworks */ = {isa = PBXBuildFile; productRef = 5BB26D8826430E6B00A18476 /* SwiftyXMLParser */; };
+		5BB26D8C26430E9100A18476 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 5BB26D8B26430E9100A18476 /* SDWebImage */; };
 		5BBEA09524033759005790E9 /* DayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBEA09424033759005790E9 /* DayTableViewCell.swift */; };
 		5BC2298D23FCA22300C71FC4 /* MensaContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC2298C23FCA22300C71FC4 /* MensaContainer.swift */; };
 		5BC7628B237C4F260062CDD3 /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B27727B235D102A00E3894B /* MealTableViewCell.swift */; };
 		5BC7628D237C4F910062CDD3 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BC7628C237C4F910062CDD3 /* Settings.storyboard */; };
-		5BC76291237C65950062CDD3 /* TopAlignedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC76290237C65950062CDD3 /* TopAlignedLabel.swift */; };
 		5BC76293237C67E40062CDD3 /* MealTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC76292237C67E40062CDD3 /* MealTableViewController.swift */; };
 		5BE3438A24DAB89900A6524B /* SettingsMensaLocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE3438924DAB89900A6524B /* SettingsMensaLocationTableViewController.swift */; };
 		5BE3438E24DADB8600A6524B /* MainTableViewController+NSToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE3438D24DADB8600A6524B /* MainTableViewController+NSToolbar.swift */; };
@@ -66,27 +57,7 @@
 		5BEA0A33235DC0D0003E3616 /* SettingsTableViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEA0A32235DC0D0003E3616 /* SettingsTableViewController+TableView.swift */; };
 		5BEA0A35235DCA55003E3616 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEA0A34235DCA55003E3616 /* Model.swift */; };
 		5BEA0A38235E09AE003E3616 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BEA0A37235E09AE003E3616 /* Intents.framework */; };
-		85ADB9EEE116D303B9F40446 /* Pods_Mensaplan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C7CD9B491C1B7CCAF2535C /* Pods_Mensaplan.framework */; };
-		DF10847CD8033634C6A4B3FD /* Pods_Mensaplan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BF820DC24059B70002945F0 /* Pods_Mensaplan.framework */; };
-		F8481CAC784AD8B5051FAFF1 /* Pods_Watchapp_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759064C86D7A9F7C687AD7B4 /* Pods_Watchapp_Extension.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		5B5ADD822407FD3E00F22C44 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5B458AD6235A3D7D0027CAE1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5B5ADD7F2407FD3E00F22C44;
-			remoteInfo = "Watchapp Extension";
-		};
-		5B5ADD8C2407FD3E00F22C44 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5B458AD6235A3D7D0027CAE1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5B5ADD732407FD3B00F22C44;
-			remoteInfo = Watchapp;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		5B20E15B24042B11001066B4 /* Embed Watch Content */ = {
@@ -95,29 +66,16 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				5B5ADD8E2407FD3E00F22C44 /* Watchapp.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5B5ADD912407FD3E00F22C44 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				5B5ADD812407FD3E00F22C44 /* Watchapp Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4F77E1A23D2A853A7D7BF893 /* Pods-Mensaplan TV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mensaplan TV.debug.xcconfig"; path = "Target Support Files/Pods-Mensaplan TV/Pods-Mensaplan TV.debug.xcconfig"; sourceTree = "<group>"; };
 		5B06EFA12382CC5C0020FF0E /* MensaDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensaDatabase.swift; sourceTree = "<group>"; };
 		5B06EFA32382CC6C0020FF0E /* HistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItem.swift; sourceTree = "<group>"; };
-		5B06EFA52382CCA10020FF0E /* MainTableViewController+NFC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainTableViewController+NFC.swift"; sourceTree = "<group>"; };
+		5B06EFA52382CCA10020FF0E /* MensacardViewController+NFC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MensacardViewController+NFC.swift"; sourceTree = "<group>"; };
 		5B06EFA72382CF000020FF0E /* Double+Rounding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Rounding.swift"; sourceTree = "<group>"; };
 		5B06EFA92382CF170020FF0E /* Data+HexEnconding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+HexEnconding.swift"; sourceTree = "<group>"; };
 		5B06EFAE2382EE640020FF0E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -126,8 +84,9 @@
 		5B09BB3B23705A37004E1981 /* Bundle+Icon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Icon.swift"; sourceTree = "<group>"; };
 		5B09BB3D23705A37004E1981 /* SKProduct+LocalizedPrice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKProduct+LocalizedPrice.swift"; sourceTree = "<group>"; };
 		5B09BB3E23705A37004E1981 /* Date+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Helpers.swift"; sourceTree = "<group>"; };
-		5B09BB4623705A59004E1981 /* BorderedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
 		5B0AE9C023887786005C22A7 /* ImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
+		5B0B1AE42643154D0081E4A2 /* MensacardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensacardViewController.swift; sourceTree = "<group>"; };
+		5B0B1AE6264321740081E4A2 /* UIColor+LigherDarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+LigherDarker.swift"; sourceTree = "<group>"; };
 		5B18702E235A403E00EF54DF /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		5B187033235A40E200EF54DF /* MainTableViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainTableViewController+TableView.swift"; sourceTree = "<group>"; };
 		5B277274235D033500E3894B /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
@@ -142,31 +101,18 @@
 		5B458AE1235A3D7D0027CAE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B458AEA235A3D7E0027CAE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B458AEF235A3D7E0027CAE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5B5ADD742407FD3B00F22C44 /* Watchapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watchapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5B5ADD802407FD3E00F22C44 /* Watchapp Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Watchapp Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5B5ADD972407FD7B00F22C44 /* MealInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealInterfaceController.swift; sourceTree = "<group>"; };
-		5B5ADD982407FD7B00F22C44 /* MainInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInterfaceController.swift; sourceTree = "<group>"; };
-		5B5ADD992407FD7B00F22C44 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5B5ADD9A2407FD7B00F22C44 /* Watchapp Extension.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "Watchapp Extension.entitlements"; sourceTree = "<group>"; };
-		5B5ADD9B2407FD7B00F22C44 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		5B5ADD9C2407FD7C00F22C44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5B5ADD9E2407FD7C00F22C44 /* InformationRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationRowController.swift; sourceTree = "<group>"; };
-		5B5ADD9F2407FD7C00F22C44 /* MealRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealRowController.swift; sourceTree = "<group>"; };
-		5B5ADDA02407FD7C00F22C44 /* CounterRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterRowController.swift; sourceTree = "<group>"; };
-		5B5ADDA12407FD7C00F22C44 /* StoffRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoffRowController.swift; sourceTree = "<group>"; };
-		5B5ADDAB2407FD8E00F22C44 /* Watchapp.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Watchapp.entitlements; sourceTree = "<group>"; };
-		5B5ADDAF2407FD8E00F22C44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5B5ADDB02407FD8E00F22C44 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5B5ADDB72407FDF700F22C44 /* Interface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
 		5B5C8EBB235E5E7700C29E62 /* SettingsTableViewController+SendSupportMail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsTableViewController+SendSupportMail.swift"; sourceTree = "<group>"; };
 		5B5C8EBD235E5EDF00C29E62 /* UIViewController+SafariActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SafariActions.swift"; sourceTree = "<group>"; };
 		5B5C8EC2235F2DA500C29E62 /* UIImageView+Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Download.swift"; sourceTree = "<group>"; };
 		5B629D17238A846400E39C8D /* UIStackView+removeAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+removeAll.swift"; sourceTree = "<group>"; };
-		5BA2CCB22405503900CF6954 /* WatchMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchMessage.swift; sourceTree = "<group>"; };
+		5BB26D752642DE8700A18476 /* Mensacard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mensacard.storyboard; sourceTree = "<group>"; };
+		5BB26D772642E5BA00A18476 /* OpeningTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpeningTableViewCell.swift; sourceTree = "<group>"; };
+		5BB26D792642EA0F00A18476 /* MensacardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensacardTableViewController.swift; sourceTree = "<group>"; };
+		5BB26D7F2642F54F00A18476 /* MensacardHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensacardHistoryTableViewController.swift; sourceTree = "<group>"; };
+		5BB26D822642F63400A18476 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		5BBEA09424033759005790E9 /* DayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTableViewCell.swift; sourceTree = "<group>"; };
 		5BC2298C23FCA22300C71FC4 /* MensaContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensaContainer.swift; sourceTree = "<group>"; };
 		5BC7628C237C4F910062CDD3 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
-		5BC76290237C65950062CDD3 /* TopAlignedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAlignedLabel.swift; sourceTree = "<group>"; };
 		5BC76292237C67E40062CDD3 /* MealTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableViewController.swift; sourceTree = "<group>"; };
 		5BE3438924DAB89900A6524B /* SettingsMensaLocationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMensaLocationTableViewController.swift; sourceTree = "<group>"; };
 		5BE3438D24DADB8600A6524B /* MainTableViewController+NSToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainTableViewController+NSToolbar.swift"; sourceTree = "<group>"; };
@@ -175,20 +121,10 @@
 		5BEA0A34235DCA55003E3616 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		5BEA0A36235E0990003E3616 /* Mensaplan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mensaplan.entitlements; sourceTree = "<group>"; };
 		5BEA0A37235E09AE003E3616 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
-		5BF820DC24059B70002945F0 /* Pods_Mensaplan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Mensaplan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BF9892824042B9C000E0ED3 /* SwiftyXMLParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyXMLParser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5BF9892B24042BAB000E0ED3 /* Pods_Mensaplan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Mensaplan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BF9892C24042BAB000E0ED3 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BF9892D24042BAB000E0ED3 /* SwiftyXMLParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyXMLParser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BF9892E24042BAB000E0ED3 /* Toast_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Toast_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		728E44357E786E633B0A46F0 /* Pods-Mensaplan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mensaplan.release.xcconfig"; path = "Target Support Files/Pods-Mensaplan/Pods-Mensaplan.release.xcconfig"; sourceTree = "<group>"; };
-		759064C86D7A9F7C687AD7B4 /* Pods_Watchapp_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Watchapp_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8775A4F28EE1DB8423314597 /* Pods-Watchapp Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watchapp Extension.release.xcconfig"; path = "Target Support Files/Pods-Watchapp Extension/Pods-Watchapp Extension.release.xcconfig"; sourceTree = "<group>"; };
-		B812F5F8059DADE15B29FBA1 /* Pods_Mensaplan_TV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mensaplan_TV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C9C7CD9B491C1B7CCAF2535C /* Pods_Mensaplan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mensaplan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CDEF82407B12875AC2C1E7A9 /* Pods-Mensaplan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mensaplan.debug.xcconfig"; path = "Target Support Files/Pods-Mensaplan/Pods-Mensaplan.debug.xcconfig"; sourceTree = "<group>"; };
-		EA8A8D0081A324820D0DC511 /* Pods-Mensaplan TV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mensaplan TV.release.xcconfig"; path = "Target Support Files/Pods-Mensaplan TV/Pods-Mensaplan TV.release.xcconfig"; sourceTree = "<group>"; };
-		F8909D12C83F3919AAAD2686 /* Pods-Watchapp Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watchapp Extension.debug.xcconfig"; path = "Target Support Files/Pods-Watchapp Extension/Pods-Watchapp Extension.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,25 +132,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BB26D8626430E2800A18476 /* Toast in Frameworks */,
+				5BB26D7E2642F3EF00A18476 /* Charts in Frameworks */,
+				5BB26D8C26430E9100A18476 /* SDWebImage in Frameworks */,
 				5BEA0A38235E09AE003E3616 /* Intents.framework in Frameworks */,
-				85ADB9EEE116D303B9F40446 /* Pods_Mensaplan.framework in Frameworks */,
+				5BB26D8926430E6B00A18476 /* SwiftyXMLParser in Frameworks */,
 				5B1C9D1425321F8600F75E3C /* HeinHelpers in Frameworks */,
-				DF10847CD8033634C6A4B3FD /* Pods_Mensaplan.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5B5ADD7D2407FD3E00F22C44 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F8481CAC784AD8B5051FAFF1 /* Pods_Watchapp_Extension.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F584CEE121DED46684EFEDCB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,15 +147,11 @@
 		3CC711BAEDFFBD9CFA2C533F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5BF820DC24059B70002945F0 /* Pods_Mensaplan.framework */,
 				5BF9892C24042BAB000E0ED3 /* SDWebImage.framework */,
 				5BF9892D24042BAB000E0ED3 /* SwiftyXMLParser.framework */,
 				5BF9892E24042BAB000E0ED3 /* Toast_Swift.framework */,
 				5BF9892824042B9C000E0ED3 /* SwiftyXMLParser.framework */,
 				5BEA0A37235E09AE003E3616 /* Intents.framework */,
-				C9C7CD9B491C1B7CCAF2535C /* Pods_Mensaplan.framework */,
-				759064C86D7A9F7C687AD7B4 /* Pods_Watchapp_Extension.framework */,
-				B812F5F8059DADE15B29FBA1 /* Pods_Mensaplan_TV.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -240,20 +159,13 @@
 		5B09BB3623705A03004E1981 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				5BB26D772642E5BA00A18476 /* OpeningTableViewCell.swift */,
 				5B27727B235D102A00E3894B /* MealTableViewCell.swift */,
 				5B0AE9C023887786005C22A7 /* ImageViewCell.swift */,
 				5BBEA09424033759005790E9 /* DayTableViewCell.swift */,
+				5BB26D822642F63400A18476 /* HistoryTableViewCell.swift */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		5B09BB4523705A47004E1981 /* Custom Views */ = {
-			isa = PBXGroup;
-			children = (
-				5B09BB4623705A59004E1981 /* BorderedButton.swift */,
-				5BC76290237C65950062CDD3 /* TopAlignedLabel.swift */,
-			);
-			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 		5B187030235A40AC00EF54DF /* Views */ = {
@@ -262,6 +174,7 @@
 				5B187032235A40CC00EF54DF /* Main */,
 				5B277276235D0B0100E3894B /* DetailView */,
 				5B5C8EC1235F2B2C00C29E62 /* MealView */,
+				5BB26D7B2642EA1600A18476 /* MensacardView */,
 				5BEA0A2F235DC0A0003E3616 /* Settings */,
 			);
 			path = Views;
@@ -273,6 +186,7 @@
 				5B458AE7235A3D7D0027CAE1 /* Main.storyboard */,
 				5BC7628C237C4F910062CDD3 /* Settings.storyboard */,
 				5B458AEC235A3D7E0027CAE1 /* LaunchScreen.storyboard */,
+				5BB26D752642DE8700A18476 /* Mensacard.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -282,7 +196,6 @@
 			children = (
 				5B18702E235A403E00EF54DF /* MainTableViewController.swift */,
 				5B187033235A40E200EF54DF /* MainTableViewController+TableView.swift */,
-				5B06EFA52382CCA10020FF0E /* MainTableViewController+NFC.swift */,
 				5BE3438D24DADB8600A6524B /* MainTableViewController+NSToolbar.swift */,
 			);
 			path = Main;
@@ -301,10 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				5B458AE0235A3D7D0027CAE1 /* Mensaplan */,
-				5B5ADD752407FD3B00F22C44 /* Watchapp */,
-				5B5ADD842407FD3E00F22C44 /* Watchapp Extension */,
 				5B458ADF235A3D7D0027CAE1 /* Products */,
-				845D45492358EE53AC8ABB18 /* Pods */,
 				3CC711BAEDFFBD9CFA2C533F /* Frameworks */,
 				5BC2298B23FC9F2E00C71FC4 /* Recovered References */,
 			);
@@ -314,8 +224,6 @@
 			isa = PBXGroup;
 			children = (
 				5B458ADE235A3D7D0027CAE1 /* Mensaplan.app */,
-				5B5ADD742407FD3B00F22C44 /* Watchapp.app */,
-				5B5ADD802407FD3E00F22C44 /* Watchapp Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -323,7 +231,6 @@
 		5B458AE0235A3D7D0027CAE1 /* Mensaplan */ = {
 			isa = PBXGroup;
 			children = (
-				5B09BB4523705A47004E1981 /* Custom Views */,
 				5B09BB3623705A03004E1981 /* Cells */,
 				5B187030235A40AC00EF54DF /* Views */,
 				5B187031235A40B700EF54DF /* Storyboards */,
@@ -337,50 +244,6 @@
 				5B2AEB352407050D00C64437 /* Settings-Watch.bundle */,
 			);
 			path = Mensaplan;
-			sourceTree = "<group>";
-		};
-		5B5ADD752407FD3B00F22C44 /* Watchapp */ = {
-			isa = PBXGroup;
-			children = (
-				5B5ADDB72407FDF700F22C44 /* Interface.storyboard */,
-				5B5ADDAF2407FD8E00F22C44 /* Assets.xcassets */,
-				5B5ADDB02407FD8E00F22C44 /* Info.plist */,
-				5B5ADDAB2407FD8E00F22C44 /* Watchapp.entitlements */,
-			);
-			path = Watchapp;
-			sourceTree = "<group>";
-		};
-		5B5ADD842407FD3E00F22C44 /* Watchapp Extension */ = {
-			isa = PBXGroup;
-			children = (
-				5B5ADD962407FD7B00F22C44 /* Interfaces */,
-				5B5ADD9D2407FD7C00F22C44 /* Rows */,
-				5B5ADD9B2407FD7B00F22C44 /* ExtensionDelegate.swift */,
-				5B5ADD9C2407FD7C00F22C44 /* Assets.xcassets */,
-				5B5ADD992407FD7B00F22C44 /* Info.plist */,
-				5B5ADD9A2407FD7B00F22C44 /* Watchapp Extension.entitlements */,
-			);
-			path = "Watchapp Extension";
-			sourceTree = "<group>";
-		};
-		5B5ADD962407FD7B00F22C44 /* Interfaces */ = {
-			isa = PBXGroup;
-			children = (
-				5B5ADD982407FD7B00F22C44 /* MainInterfaceController.swift */,
-				5B5ADD972407FD7B00F22C44 /* MealInterfaceController.swift */,
-			);
-			path = Interfaces;
-			sourceTree = "<group>";
-		};
-		5B5ADD9D2407FD7C00F22C44 /* Rows */ = {
-			isa = PBXGroup;
-			children = (
-				5B5ADD9E2407FD7C00F22C44 /* InformationRowController.swift */,
-				5B5ADD9F2407FD7C00F22C44 /* MealRowController.swift */,
-				5B5ADDA02407FD7C00F22C44 /* CounterRowController.swift */,
-				5B5ADDA12407FD7C00F22C44 /* StoffRowController.swift */,
-			);
-			path = Rows;
 			sourceTree = "<group>";
 		};
 		5B5C8EC1235F2B2C00C29E62 /* MealView */ = {
@@ -404,6 +267,7 @@
 				5B06EFA72382CF000020FF0E /* Double+Rounding.swift */,
 				5B06EFA92382CF170020FF0E /* Data+HexEnconding.swift */,
 				5B629D17238A846400E39C8D /* UIStackView+removeAll.swift */,
+				5B0B1AE6264321740081E4A2 /* UIColor+LigherDarker.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -417,15 +281,32 @@
 				5B06EFA12382CC5C0020FF0E /* MensaDatabase.swift */,
 				5B06EFA32382CC6C0020FF0E /* HistoryItem.swift */,
 				5BEA0A34235DCA55003E3616 /* Model.swift */,
-				5BA2CCB22405503900CF6954 /* WatchMessage.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		5BB26D7B2642EA1600A18476 /* MensacardView */ = {
+			isa = PBXGroup;
+			children = (
+				5BB26D812642F61E00A18476 /* History */,
+				5BB26D792642EA0F00A18476 /* MensacardTableViewController.swift */,
+				5B0B1AE42643154D0081E4A2 /* MensacardViewController.swift */,
+				5B06EFA52382CCA10020FF0E /* MensacardViewController+NFC.swift */,
+			);
+			path = MensacardView;
+			sourceTree = "<group>";
+		};
+		5BB26D812642F61E00A18476 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				5BB26D7F2642F54F00A18476 /* MensacardHistoryTableViewController.swift */,
+			);
+			path = History;
 			sourceTree = "<group>";
 		};
 		5BC2298B23FC9F2E00C71FC4 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				5BF9892B24042BAB000E0ED3 /* Pods_Mensaplan.framework */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -449,19 +330,6 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		845D45492358EE53AC8ABB18 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F8909D12C83F3919AAAD2686 /* Pods-Watchapp Extension.debug.xcconfig */,
-				8775A4F28EE1DB8423314597 /* Pods-Watchapp Extension.release.xcconfig */,
-				4F77E1A23D2A853A7D7BF893 /* Pods-Mensaplan TV.debug.xcconfig */,
-				EA8A8D0081A324820D0DC511 /* Pods-Mensaplan TV.release.xcconfig */,
-				CDEF82407B12875AC2C1E7A9 /* Pods-Mensaplan.debug.xcconfig */,
-				728E44357E786E633B0A46F0 /* Pods-Mensaplan.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -469,62 +337,26 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B458AFD235A3D7E0027CAE1 /* Build configuration list for PBXNativeTarget "Mensaplan" */;
 			buildPhases = (
-				B2E681AAC9222B03DD7792D8 /* [CP] Check Pods Manifest.lock */,
 				5B458ADA235A3D7D0027CAE1 /* Sources */,
 				5B458ADB235A3D7D0027CAE1 /* Frameworks */,
 				5B458ADC235A3D7D0027CAE1 /* Resources */,
 				5B20E15B24042B11001066B4 /* Embed Watch Content */,
-				6136B3D231684D0D25E0992D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				5B5ADD8D2407FD3E00F22C44 /* PBXTargetDependency */,
 			);
 			name = Mensaplan;
 			packageProductDependencies = (
 				5B1C9D1325321F8600F75E3C /* HeinHelpers */,
+				5BB26D7D2642F3EF00A18476 /* Charts */,
+				5BB26D8526430E2800A18476 /* Toast */,
+				5BB26D8826430E6B00A18476 /* SwiftyXMLParser */,
+				5BB26D8B26430E9100A18476 /* SDWebImage */,
 			);
 			productName = Mensaplan;
 			productReference = 5B458ADE235A3D7D0027CAE1 /* Mensaplan.app */;
 			productType = "com.apple.product-type.application";
-		};
-		5B5ADD732407FD3B00F22C44 /* Watchapp */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5B5ADD952407FD3E00F22C44 /* Build configuration list for PBXNativeTarget "Watchapp" */;
-			buildPhases = (
-				5B5ADD722407FD3B00F22C44 /* Resources */,
-				5B5ADD912407FD3E00F22C44 /* Embed App Extensions */,
-				F584CEE121DED46684EFEDCB /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5B5ADD832407FD3E00F22C44 /* PBXTargetDependency */,
-			);
-			name = Watchapp;
-			productName = Watchapp;
-			productReference = 5B5ADD742407FD3B00F22C44 /* Watchapp.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		5B5ADD7F2407FD3E00F22C44 /* Watchapp Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5B5ADD942407FD3E00F22C44 /* Build configuration list for PBXNativeTarget "Watchapp Extension" */;
-			buildPhases = (
-				7FB5081A1DBCD7FCA04527C1 /* [CP] Check Pods Manifest.lock */,
-				5B5ADD7C2407FD3E00F22C44 /* Sources */,
-				5B5ADD7D2407FD3E00F22C44 /* Frameworks */,
-				5B5ADD7E2407FD3E00F22C44 /* Resources */,
-				7CFB45419B3CED73EEFD71FA /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Watchapp Extension";
-			productName = "Watchapp Extension";
-			productReference = 5B5ADD802407FD3E00F22C44 /* Watchapp Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -539,13 +371,6 @@
 					5B458ADD235A3D7D0027CAE1 = {
 						CreatedOnToolsVersion = 11.1;
 					};
-					5B5ADD732407FD3B00F22C44 = {
-						CreatedOnToolsVersion = 11.3.1;
-					};
-					5B5ADD7F2407FD3E00F22C44 = {
-						CreatedOnToolsVersion = 11.3.1;
-						LastSwiftMigration = 1130;
-					};
 				};
 			};
 			buildConfigurationList = 5B458AD9235A3D7D0027CAE1 /* Build configuration list for PBXProject "Mensaplan" */;
@@ -559,14 +384,16 @@
 			mainGroup = 5B458AD5235A3D7D0027CAE1;
 			packageReferences = (
 				5B1C9D1225321F8600F75E3C /* XCRemoteSwiftPackageReference "HeinHelpers" */,
+				5BB26D7C2642F3EF00A18476 /* XCRemoteSwiftPackageReference "Charts" */,
+				5BB26D8426430E2700A18476 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				5BB26D8726430E6B00A18476 /* XCRemoteSwiftPackageReference "SwiftyXMLParser" */,
+				5BB26D8A26430E9100A18476 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 5B458ADF235A3D7D0027CAE1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				5B458ADD235A3D7D0027CAE1 /* Mensaplan */,
-				5B5ADD732407FD3B00F22C44 /* Watchapp */,
-				5B5ADD7F2407FD3E00F22C44 /* Watchapp Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -576,6 +403,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BB26D762642DE8700A18476 /* Mensacard.storyboard in Resources */,
 				5B06EFAD2382EE640020FF0E /* Localizable.strings in Resources */,
 				5B458AEE235A3D7E0027CAE1 /* LaunchScreen.storyboard in Resources */,
 				5B2AEB362407050D00C64437 /* Settings-Watch.bundle in Resources */,
@@ -585,105 +413,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5B5ADD722407FD3B00F22C44 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5B5ADDB22407FD8E00F22C44 /* Assets.xcassets in Resources */,
-				5B5ADDB82407FDF700F22C44 /* Interface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5B5ADD7E2407FD3E00F22C44 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5B5ADDA62407FD7C00F22C44 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		6136B3D231684D0D25E0992D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Mensaplan/Pods-Mensaplan-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Mensaplan/Pods-Mensaplan-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mensaplan/Pods-Mensaplan-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7CFB45419B3CED73EEFD71FA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Watchapp Extension/Pods-Watchapp Extension-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Watchapp Extension/Pods-Watchapp Extension-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Watchapp Extension/Pods-Watchapp Extension-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7FB5081A1DBCD7FCA04527C1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Watchapp Extension-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B2E681AAC9222B03DD7792D8 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Mensaplan-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5B458ADA235A3D7D0027CAE1 /* Sources */ = {
@@ -696,26 +426,29 @@
 				5B09BB4123705A37004E1981 /* Bundle+Icon.swift in Sources */,
 				5BE3438E24DADB8600A6524B /* MainTableViewController+NSToolbar.swift in Sources */,
 				5B06EFA22382CC5C0020FF0E /* MensaDatabase.swift in Sources */,
-				5B09BB4723705A59004E1981 /* BorderedButton.swift in Sources */,
 				5BBEA09524033759005790E9 /* DayTableViewCell.swift in Sources */,
 				5BEA0A33235DC0D0003E3616 /* SettingsTableViewController+TableView.swift in Sources */,
+				5BB26D7A2642EA0F00A18476 /* MensacardTableViewController.swift in Sources */,
+				5BB26D832642F63400A18476 /* HistoryTableViewCell.swift in Sources */,
+				5BB26D782642E5BA00A18476 /* OpeningTableViewCell.swift in Sources */,
 				5B5C8EBC235E5E7700C29E62 /* SettingsTableViewController+SendSupportMail.swift in Sources */,
+				5B0B1AE7264321740081E4A2 /* UIColor+LigherDarker.swift in Sources */,
 				5B06EFA42382CC6C0020FF0E /* HistoryItem.swift in Sources */,
 				5BC7628B237C4F260062CDD3 /* MealTableViewCell.swift in Sources */,
 				5B5C8EBE235E5EDF00C29E62 /* UIViewController+SafariActions.swift in Sources */,
-				5BA2CCB32405503900CF6954 /* WatchMessage.swift in Sources */,
 				5B0AE9C123887786005C22A7 /* ImageViewCell.swift in Sources */,
 				5B06EFA82382CF000020FF0E /* Double+Rounding.swift in Sources */,
 				5B277278235D0B1900E3894B /* DetailTableViewController.swift in Sources */,
 				5BEA0A35235DCA55003E3616 /* Model.swift in Sources */,
-				5B06EFA62382CCA10020FF0E /* MainTableViewController+NFC.swift in Sources */,
+				5B06EFA62382CCA10020FF0E /* MensacardViewController+NFC.swift in Sources */,
 				5B629D18238A846400E39C8D /* UIStackView+removeAll.swift in Sources */,
 				5BEA0A31235DC0BA003E3616 /* SettingsTableViewController.swift in Sources */,
-				5BC76291237C65950062CDD3 /* TopAlignedLabel.swift in Sources */,
 				5BC76293237C67E40062CDD3 /* MealTableViewController.swift in Sources */,
 				5B06EFAA2382CF170020FF0E /* Data+HexEnconding.swift in Sources */,
 				5B09BB4023705A37004E1981 /* UserDefaults+Helper.swift in Sources */,
+				5B0B1AE52643154D0081E4A2 /* MensacardViewController.swift in Sources */,
 				5BC2298D23FCA22300C71FC4 /* MensaContainer.swift in Sources */,
+				5BB26D802642F54F00A18476 /* MensacardHistoryTableViewController.swift in Sources */,
 				5B09BB3F23705A37004E1981 /* UIView+Effects.swift in Sources */,
 				5B342F012406E1D300718C95 /* MensaXML.swift in Sources */,
 				5B458AE2235A3D7D0027CAE1 /* AppDelegate.swift in Sources */,
@@ -727,40 +460,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5B5ADD7C2407FD3E00F22C44 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5B5ADDA32407FD7C00F22C44 /* MainInterfaceController.swift in Sources */,
-				5B0F4B2C2407FF5C007E934F /* Date+Helpers.swift in Sources */,
-				5B0F4B292407FF36007E934F /* WatchMessage.swift in Sources */,
-				5B5ADDA22407FD7C00F22C44 /* MealInterfaceController.swift in Sources */,
-				5B5ADDA52407FD7C00F22C44 /* ExtensionDelegate.swift in Sources */,
-				5B5ADDA72407FD7C00F22C44 /* InformationRowController.swift in Sources */,
-				5B0F4B2D2407FF74007E934F /* UserDefaults+Helper.swift in Sources */,
-				5B5ADDAA2407FD7C00F22C44 /* StoffRowController.swift in Sources */,
-				5B5ADDA82407FD7C00F22C44 /* MealRowController.swift in Sources */,
-				5B0F4B2A2407FF38007E934F /* Model.swift in Sources */,
-				5B0F4B282407FF32007E934F /* Data.swift in Sources */,
-				5B5ADDA92407FD7C00F22C44 /* CounterRowController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		5B5ADD832407FD3E00F22C44 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5B5ADD7F2407FD3E00F22C44 /* Watchapp Extension */;
-			targetProxy = 5B5ADD822407FD3E00F22C44 /* PBXContainerItemProxy */;
-		};
-		5B5ADD8D2407FD3E00F22C44 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			platformFilter = ios;
-			target = 5B5ADD732407FD3B00F22C44 /* Watchapp */;
-			targetProxy = 5B5ADD8C2407FD3E00F22C44 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5B06EFAF2382EE640020FF0E /* Localizable.strings */ = {
@@ -910,24 +610,22 @@
 		};
 		5B458AFE235A3D7E0027CAE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CDEF82407B12875AC2C1E7A9 /* Pods-Mensaplan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Mensaplan/Mensaplan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = NO;
 				DEVELOPMENT_TEAM = YYRB8F627L;
 				INFOPLIST_FILE = Mensaplan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.hochschule-trier.mensa";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -940,24 +638,22 @@
 		};
 		5B458AFF235A3D7E0027CAE1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 728E44357E786E633B0A46F0 /* Pods-Mensaplan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Mensaplan/Mensaplan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = NO;
 				DEVELOPMENT_TEAM = YYRB8F627L;
 				INFOPLIST_FILE = Mensaplan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.hochschule-trier.mensa";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -965,105 +661,6 @@
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		5B5ADD8F2407FD3E00F22C44 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YYRB8F627L;
-				IBSC_MODULE = Watchapp_Extension;
-				INFOPLIST_FILE = Watchapp/Info.plist;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "de.hochschule-trier.mensa.watchkitapp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.0;
-			};
-			name = Debug;
-		};
-		5B5ADD902407FD3E00F22C44 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YYRB8F627L;
-				IBSC_MODULE = Watchapp_Extension;
-				INFOPLIST_FILE = Watchapp/Info.plist;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "de.hochschule-trier.mensa.watchkitapp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.0;
-			};
-			name = Release;
-		};
-		5B5ADD922407FD3E00F22C44 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F8909D12C83F3919AAAD2686 /* Pods-Watchapp Extension.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YYRB8F627L;
-				INFOPLIST_FILE = "Watchapp Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "de.hochschule-trier.mensa.watchkitapp.watchkitextension";
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.0;
-			};
-			name = Debug;
-		};
-		5B5ADD932407FD3E00F22C44 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8775A4F28EE1DB8423314597 /* Pods-Watchapp Extension.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YYRB8F627L;
-				INFOPLIST_FILE = "Watchapp Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "de.hochschule-trier.mensa.watchkitapp.watchkitextension";
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.0;
 			};
 			name = Release;
 		};
@@ -1088,24 +685,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5B5ADD942407FD3E00F22C44 /* Build configuration list for PBXNativeTarget "Watchapp Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5B5ADD922407FD3E00F22C44 /* Debug */,
-				5B5ADD932407FD3E00F22C44 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5B5ADD952407FD3E00F22C44 /* Build configuration list for PBXNativeTarget "Watchapp" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5B5ADD8F2407FD3E00F22C44 /* Debug */,
-				5B5ADD902407FD3E00F22C44 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -1117,6 +696,38 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		5BB26D7C2642F3EF00A18476 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
+		5BB26D8426430E2700A18476 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		5BB26D8726430E6B00A18476 /* XCRemoteSwiftPackageReference "SwiftyXMLParser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yahoojapan/SwiftyXMLParser";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.0;
+			};
+		};
+		5BB26D8A26430E9100A18476 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.11.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1124,6 +735,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5B1C9D1225321F8600F75E3C /* XCRemoteSwiftPackageReference "HeinHelpers" */;
 			productName = HeinHelpers;
+		};
+		5BB26D7D2642F3EF00A18476 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5BB26D7C2642F3EF00A18476 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+		5BB26D8526430E2800A18476 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5BB26D8426430E2700A18476 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
+		5BB26D8826430E6B00A18476 /* SwiftyXMLParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5BB26D8726430E6B00A18476 /* XCRemoteSwiftPackageReference "SwiftyXMLParser" */;
+			productName = SwiftyXMLParser;
+		};
+		5BB26D8B26430E9100A18476 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5BB26D8A26430E9100A18476 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

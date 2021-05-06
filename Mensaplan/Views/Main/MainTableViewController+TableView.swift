@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import CoreNFC
 import HeinHelpers
 
 extension MainTableViewController {
@@ -16,11 +15,7 @@ extension MainTableViewController {
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        if #available(iOS 13.0, *), MensaplanApp.canScan {
-            return 3
-        } else {
-            return 2
-        }
+        return 2
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {      
@@ -33,10 +28,8 @@ extension MainTableViewController {
                 }
             }
             return 1
-        } else if #available(iOS 13.0, *), MensaplanApp.canScan, section == 1 {
-            return 3
         } else {
-            return 2
+            return 1
         }
     }
     
@@ -45,7 +38,7 @@ extension MainTableViewController {
         if indexPath.section == 0 {
             if let mensaContainer = self.mensaContainer, let mensaData = mensaContainer.mensaData {
                 var dayData: LocationDay?
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: "newDayCell", for: indexPath) as? DayTableViewCell else { return UITableViewCell()}
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "dayCell", for: indexPath) as? DayTableViewCell else { return UITableViewCell()}
                 cell.titleLabel.numberOfLines = 0
                 cell.reasonLabel.numberOfLines = 0
                 cell.dateLabel.numberOfLines = 0
@@ -71,11 +64,7 @@ extension MainTableViewController {
                         cell.dateLabel.isEnabled = false
                         cell.accessoryType = .none
                         if noMealsForDay {
-                            if #available(iOS 13.0, *) {
-                                cell.titleLabel.textColor = .secondaryLabel
-                            } else {
-                                cell.titleLabel.textColor = UIColor(red: 60.0, green: 60.0, blue: 67.0, alpha: 0.6)
-                            }
+                            cell.titleLabel.textColor = .secondaryLabel
 
                             cell.titleLabel.text = HeinHelpers.dateSuffix(date: dateOfCell, string: HeinHelpers.getDayName(by: dateOfCell))
                             
@@ -83,12 +72,8 @@ extension MainTableViewController {
                             cell.reasonLabel.isHidden = false
                         }
                         if dayDataResult.closed {
-                            if #available(iOS 13.0, *) {
-                                cell.titleLabel.textColor = .secondaryLabel
-                            } else {
-                                cell.titleLabel.textColor = UIColor(red: 60.0, green: 60.0, blue: 67.0, alpha: 0.6)
-                            }
-
+                            cell.titleLabel.textColor = .secondaryLabel
+                        
                             if let locationPostition = MensaplanApp.standorteKeys.firstIndex(of: selectedLocation), mensaData.allDaysClosed(location: locationPostition) {
                                 cell.titleLabel.text = "Geschlossen"
                                 cell.dateLabel.isHidden = true
@@ -106,11 +91,7 @@ extension MainTableViewController {
                         cell.dateLabel.isEnabled = true
                         cell.accessoryType = .disclosureIndicator
                         cell.dateLabel.isHidden = false
-                        if #available(iOS 13.0, *) {
-                            cell.titleLabel.textColor = .label
-                        } else {
-                            cell.titleLabel.textColor = .black
-                        }
+                        cell.titleLabel.textColor = .label
                     }
                     return cell
                 }  else {
@@ -123,49 +104,14 @@ extension MainTableViewController {
                 cell.textLabel?.text = "Es sind keine Daten vorhanden."
                 return cell
             }
-        } else if #available(iOS 13.0, *), MensaplanApp.canScan, indexPath.section == 1 {
-            if indexPath.row < (tableView.numberOfRows(inSection: 1) - 1), let mensaData = self.mensaContainer {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath)
-                let data: [HistoryItem] = mensaData.db.getEntries()
-                if data.count == 0 {
-                    cell.textLabel?.isEnabled = false
-                    cell.detailTextLabel?.isEnabled = false
-                    cell.textLabel?.textColor = .secondaryLabel
-                } else {
-                    cell.textLabel?.textColor = .label
-
-                }
-                if indexPath.row == 0 {
-                    cell.textLabel?.text = "Guthaben"
-                    cell.detailTextLabel?.text = data.count > 0 ? String(format: "%.2f €", data[0].balance) : "0,00 €"
-                } else if indexPath.row == 1 {
-                    cell.textLabel?.text = "Letzte Transaktion"
-                    cell.detailTextLabel?.text =  data.count > 0 ? String(format: "%.2f €", data[0].lastTransaction) : "0,00 €"
-                }
-                return cell
-            } else {
-                return tableView.dequeueReusableCell(withIdentifier: "scanCell", for: indexPath)
-            }
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "openingCell", for: indexPath)
-            cell.textLabel?.numberOfLines = 0
-            let isSetup = MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.isSetup)
-            if isSetup {
-                let selectedMensa = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa)
-                let index = MensaplanApp.standorteKeys.firstIndex(of: selectedMensa!)!
-                if indexPath.row == 0 {
-                    cell.textLabel?.text = "Im Semester"
-                    cell.detailTextLabel?.text = MensaplanApp.standorteOpenings[index].semester
-                } else {
-                    cell.textLabel?.text = "In den Semesterferien"
-                    cell.detailTextLabel?.text = MensaplanApp.standorteOpenings[index].semesterFerien
-                }
-            }
+            let cell = tableView.dequeueReusableCell(withIdentifier: "openingCell", for: indexPath) as! OpeningTableViewCell
+            cell.titleLabel?.text = "Öffnungszeiten anzeigen"
+            cell.detailTextLabel?.numberOfLines = 0
+            cell.detailTextLabel?.text = "Zeigt die Öffnungszeiten auf der Studiwerk-Website an"
             return cell
         }
     }
-    
-    
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
@@ -176,8 +122,6 @@ extension MainTableViewController {
                 return MensaplanApp.standorteValues[index]
             }
             return nil
-        } else if #available(iOS 13.0, *), MensaplanApp.canScan, section == 1 {
-            return "Guthaben"
         } else {
             return "Öffnungszeiten"
         }
@@ -193,21 +137,16 @@ extension MainTableViewController {
                 #endif
             }
             return "Keine Aktualisierung vorgenommen"
-        } else if #available(iOS 13.0, *), MensaplanApp.canScan, section == 1 {
-            if let mensaData = self.mensaContainer {
-                let data: [HistoryItem] = mensaData.db.getEntries()
-                if data.count > 0 {
-                    return "Einlesedatum: \(data[0].date) Uhr"
-                }
-            }
-            return "Guthaben wurde noch nicht eingelesen"
         }
         return nil
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath), ((cell as? OpeningTableViewCell) != nil) {
+            openSafariViewControllerWith(url: MensaplanApp.OPENINGS_URL)
+        }
+
         #if targetEnvironment(macCatalyst)
-        //[tableView performSelector:@selector(resignFirstResponder) withObject:nil afterDelay:0.1];
         tableView.perform(#selector(UIResponder.resignFirstResponder), with: nil, afterDelay: 0.01)
         #endif
     }

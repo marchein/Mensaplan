@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import Toast_Swift
+import Toast
 import CoreNFC
-import WatchSync
 import HeinHelpers
 
 class MainTableViewController: UITableViewController {
@@ -17,7 +16,6 @@ class MainTableViewController: UITableViewController {
     @IBOutlet weak var settingsButton: UIBarButtonItem!
     
     var mensaContainer: MensaContainer?
-    var subscriptionToken: SubscriptionToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,27 +44,13 @@ class MainTableViewController: UITableViewController {
             print("MainTableViewController.swift - setupApp() - INITIAL SETUP DONE")
             refreshAction(self)
         } else {
-            print("MainTableViewController.swift - setupApp() - load local copy")
+             print("MainTableViewController.swift - setupApp() - load local copy")
             if let localCopyOfMensaplanData = MensaplanApp.sharedDefaults.data(forKey: LocalKeys.mensaplanJSONData), let mensaContainer = self.mensaContainer {
                 mensaContainer.loadJSONintoUI(mensaPlanData: localCopyOfMensaplanData, local: true)
             }
         }
         
-        if #available(iOS 13.0,*)  {
-            self.settingsButton.image = UIImage(systemName: "gear")
-        }
-        subscriptionToken = WatchSync.shared.subscribeToMessages(ofType: WatchMessage.self) { watchMessage in
-            print(String(describing: watchMessage.lastUpdate), String(describing: watchMessage.selectedMensa), String(describing: watchMessage.selectedPrice), String(describing: watchMessage.jsonData))
-        }
-        
-        if MensaplanApp.demo, let mensaData = self.mensaContainer {
-            mensaData.db.insertRecord(
-                balance: 19.56,
-                lastTransaction: 2.85,
-                date: Date.getCurrentDate(),
-                cardID: "1234567890"
-            )
-        }
+        self.settingsButton.image = UIImage(systemName: "gear")
         
         #if targetEnvironment(macCatalyst)
         self.navigationController?.navigationBar.isHidden = true
@@ -98,11 +82,11 @@ class MainTableViewController: UITableViewController {
         let selectedLocation = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa)!
         for location in selectedDay.day {
             if location.title == selectedLocation {
+                let when = dayValue == .TODAY ? " heute " : dayValue == .TOMORROW ? " morgen ": " "
+
                 if location.closed {
-                    let when = dayValue == .TODAY ? " heute " : dayValue == .TOMORROW ? " morgen ": " "
                     HeinHelpers.showMessage(title: "Mensa\(when)geschlossen", message: location.closedReason ?? "Bitte die Aushänge beachten", on: self)
                 } else {
-                    let when = dayValue == .TODAY ? "Heute" : dayValue == .TOMORROW ? "Morgen": " "
                     if dayValue == .TODAY && !selectedDay.day[0].isToday() || dayValue == .TOMORROW && !selectedDay.day[0].isTomorrow() {
                         HeinHelpers.showMessage(title: "Geschlossen", message: "\(when) werden keine Gerichte in der Mensa angeboten", on: self)
                     } else {
@@ -133,8 +117,8 @@ class MainTableViewController: UITableViewController {
             }
         } else if segue.identifier == MensaplanSegue.manualShowDetail {
             if let destination = segue.destination as? UINavigationController,
-                let detailTableVC = destination.topViewController as? DetailTableViewController,
-                let mensaData = self.mensaContainer {
+               let detailTableVC = destination.topViewController as? DetailTableViewController,
+               let mensaData = self.mensaContainer {
                 detailTableVC.mensaPlanDay = mensaData.tempMensaData
             }
         }
@@ -160,9 +144,7 @@ class MainTableViewController: UITableViewController {
             self.tableView.reloadData()
         }
         
-        #if !targetEnvironment(macCatalyst)
-        sendMessageToWatch()
-        #endif
+        
         //decide if changes have been made
         showEmptyView()
     }
@@ -172,18 +154,4 @@ class MainTableViewController: UITableViewController {
             splitNavVC.performSegue(withIdentifier: MensaplanSegue.emptyDetail, sender: self)
         }
     }
-    
-    #if !targetEnvironment(macCatalyst)
-    func sendMessageToWatch() {
-        //print("Sending message to watch")
-        let selectedPrice = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedPrice)
-        let selectedMensa = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa)
-        let lastUpdate = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.lastUpdate)
-        let jsonData = MensaplanApp.sharedDefaults.data(forKey: LocalKeys.mensaplanJSONData)
-        
-        let newWatchMessage = WatchMessage(selectedPrice: selectedPrice, selectedMensa: selectedMensa, lastUpdate: lastUpdate, jsonData: jsonData)
-        
-        WatchSync.shared.sendMessage(newWatchMessage, completion: nil)
-    }
-    #endif
 }
