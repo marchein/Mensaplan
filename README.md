@@ -10,10 +10,8 @@ This app allows you to see the current menu of the canteen of the University Tri
 
 
 # System Requirements
-- iPhone/iPad: iOS 11 or newer
+- iPhone/iPad: iOS 13 or newer
 - Mac: macOS 10.15 Catalina or newer
-- Apple Watch: watchOS 5.0 or newer
-- Apple TV: tvOS 13 or newer
 
 
 # Contributing
