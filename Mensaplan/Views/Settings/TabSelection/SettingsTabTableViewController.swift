@@ -10,18 +10,6 @@ import UIKit
 import HeinHelpers
 
 class SettingsTabTableViewController: UITableViewController {
-    
-    var mainVC: MainTableViewController? {
-        get {
-            guard let splitVC = UIApplication.shared.windows.first!.rootViewController as? UISplitViewController,
-                let navVC = splitVC.children.first as? UINavigationController,
-                let mainVC = navVC.children.first as? MainTableViewController else {
-                    return nil
-            }
-            return mainVC
-        }
-    }
-    
     var selectedTab: String? {
         get {
             return MensaplanApp.sharedDefaults.string(forKey: LocalKeys.defaultTab)
@@ -38,7 +26,7 @@ class SettingsTabTableViewController: UITableViewController {
                     cell.accessoryType = .none
                 }
             }
-            self.mainVC?.refreshAction(self)
+            MensaplanApp.getMainVC()?.refreshAction(self)
             indexPaths.append(IndexPath(row: selectedTabIndex, section: 0))
             
             self.tableView.reloadRows(at: indexPaths, with: .automatic)

@@ -131,7 +131,7 @@ extension MensacardViewController: NFCTagReaderSessionDelegate {
                                         session.invalidate()
                                         
                                         DispatchQueue.main.async {
-                                            self.setupMensacard()
+                                            self.setMensacardData()
                                             self.setupChart()
                                         }
                                     }

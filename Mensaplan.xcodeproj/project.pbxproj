@@ -33,6 +33,7 @@
 		5B458AE9235A3D7D0027CAE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B458AE7235A3D7D0027CAE1 /* Main.storyboard */; };
 		5B458AEB235A3D7E0027CAE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B458AEA235A3D7E0027CAE1 /* Assets.xcassets */; };
 		5B458AEE235A3D7E0027CAE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B458AEC235A3D7E0027CAE1 /* LaunchScreen.storyboard */; };
+		5B492103264528EA0088239C /* Settings+TipJar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B492102264528EA0088239C /* Settings+TipJar.storyboard */; };
 		5B5C8EBC235E5E7700C29E62 /* SettingsTableViewController+SendSupportMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5C8EBB235E5E7700C29E62 /* SettingsTableViewController+SendSupportMail.swift */; };
 		5B5C8EBE235E5EDF00C29E62 /* UIViewController+SafariActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5C8EBD235E5EDF00C29E62 /* UIViewController+SafariActions.swift */; };
 		5B5C8EC3235F2DA500C29E62 /* UIImageView+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5C8EC2235F2DA500C29E62 /* UIImageView+Download.swift */; };
@@ -42,11 +43,10 @@
 		5BA5CF6D26446DBB00AC939C /* TipJar+Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA5CF6A26446DBB00AC939C /* TipJar+Transaction.swift */; };
 		5BA5CF6F26446E0C00AC939C /* TipTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA5CF6E26446E0C00AC939C /* TipTableViewCell.swift */; };
 		5BA5CF7326446E1700AC939C /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA5CF7126446E1700AC939C /* BorderedButton.swift */; };
-		5BA5CF7426446E1700AC939C /* TopAlignedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA5CF7226446E1700AC939C /* TopAlignedLabel.swift */; };
 		5BA5CF7726447F9A00AC939C /* SettingsTabTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA5CF7626447F9A00AC939C /* SettingsTabTableViewController.swift */; };
+		5BAE17572645928500180F40 /* SettingsTableViewController+Developer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAE17562645928500180F40 /* SettingsTableViewController+Developer.swift */; };
 		5BB26D762642DE8700A18476 /* Mensacard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BB26D752642DE8700A18476 /* Mensacard.storyboard */; };
 		5BB26D782642E5BA00A18476 /* OpeningTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB26D772642E5BA00A18476 /* OpeningTableViewCell.swift */; };
-		5BB26D7A2642EA0F00A18476 /* MensacardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB26D792642EA0F00A18476 /* MensacardTableViewController.swift */; };
 		5BB26D7E2642F3EF00A18476 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 5BB26D7D2642F3EF00A18476 /* Charts */; };
 		5BB26D802642F54F00A18476 /* MensacardHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB26D7F2642F54F00A18476 /* MensacardHistoryTableViewController.swift */; };
 		5BB26D832642F63400A18476 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB26D822642F63400A18476 /* HistoryTableViewCell.swift */; };
@@ -108,6 +108,7 @@
 		5B458AE1235A3D7D0027CAE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B458AEA235A3D7E0027CAE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B458AEF235A3D7E0027CAE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B492102264528EA0088239C /* Settings+TipJar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Settings+TipJar.storyboard"; sourceTree = "<group>"; };
 		5B5C8EBB235E5E7700C29E62 /* SettingsTableViewController+SendSupportMail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsTableViewController+SendSupportMail.swift"; sourceTree = "<group>"; };
 		5B5C8EBD235E5EDF00C29E62 /* UIViewController+SafariActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SafariActions.swift"; sourceTree = "<group>"; };
 		5B5C8EC2235F2DA500C29E62 /* UIImageView+Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Download.swift"; sourceTree = "<group>"; };
@@ -117,11 +118,10 @@
 		5BA5CF6A26446DBB00AC939C /* TipJar+Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TipJar+Transaction.swift"; path = "Mensaplan/Views/Settings/TipJar_/TipJar+Transaction.swift"; sourceTree = SOURCE_ROOT; };
 		5BA5CF6E26446E0C00AC939C /* TipTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TipTableViewCell.swift; path = "../../../../../../Downloads/Mensaplan-89632e2916124c504023f3233311f806eb3cca79/Mensaplan/Cells/TipTableViewCell.swift"; sourceTree = "<group>"; };
 		5BA5CF7126446E1700AC939C /* BorderedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
-		5BA5CF7226446E1700AC939C /* TopAlignedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopAlignedLabel.swift; sourceTree = "<group>"; };
 		5BA5CF7626447F9A00AC939C /* SettingsTabTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabTableViewController.swift; sourceTree = "<group>"; };
+		5BAE17562645928500180F40 /* SettingsTableViewController+Developer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsTableViewController+Developer.swift"; sourceTree = "<group>"; };
 		5BB26D752642DE8700A18476 /* Mensacard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mensacard.storyboard; sourceTree = "<group>"; };
 		5BB26D772642E5BA00A18476 /* OpeningTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpeningTableViewCell.swift; sourceTree = "<group>"; };
-		5BB26D792642EA0F00A18476 /* MensacardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensacardTableViewController.swift; sourceTree = "<group>"; };
 		5BB26D7F2642F54F00A18476 /* MensacardHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensacardHistoryTableViewController.swift; sourceTree = "<group>"; };
 		5BB26D822642F63400A18476 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		5BBEA09424033759005790E9 /* DayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTableViewCell.swift; sourceTree = "<group>"; };
@@ -198,8 +198,8 @@
 		5B187031235A40B700EF54DF /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				5B492101264528D00088239C /* Settings */,
 				5B458AE7235A3D7D0027CAE1 /* Main.storyboard */,
-				5BC7628C237C4F910062CDD3 /* Settings.storyboard */,
 				5B458AEC235A3D7E0027CAE1 /* LaunchScreen.storyboard */,
 				5BB26D752642DE8700A18476 /* Mensacard.storyboard */,
 			);
@@ -262,6 +262,15 @@
 			path = Mensaplan;
 			sourceTree = "<group>";
 		};
+		5B492101264528D00088239C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				5BC7628C237C4F910062CDD3 /* Settings.storyboard */,
+				5B492102264528EA0088239C /* Settings+TipJar.storyboard */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
 		5B5C8EC1235F2B2C00C29E62 /* MealView */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,7 +324,6 @@
 			isa = PBXGroup;
 			children = (
 				5BA5CF7126446E1700AC939C /* BorderedButton.swift */,
-				5BA5CF7226446E1700AC939C /* TopAlignedLabel.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -332,7 +340,6 @@
 			isa = PBXGroup;
 			children = (
 				5BB26D812642F61E00A18476 /* History */,
-				5BB26D792642EA0F00A18476 /* MensacardTableViewController.swift */,
 				5B0B1AE42643154D0081E4A2 /* MensacardViewController.swift */,
 				5B06EFA52382CCA10020FF0E /* MensacardViewController+NFC.swift */,
 			);
@@ -371,6 +378,7 @@
 				5BEA0A30235DC0BA003E3616 /* SettingsTableViewController.swift */,
 				5BEA0A32235DC0D0003E3616 /* SettingsTableViewController+TableView.swift */,
 				5B5C8EBB235E5E7700C29E62 /* SettingsTableViewController+SendSupportMail.swift */,
+				5BAE17562645928500180F40 /* SettingsTableViewController+Developer.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -455,6 +463,7 @@
 				5B458AEB235A3D7E0027CAE1 /* Assets.xcassets in Resources */,
 				5B458AE9235A3D7D0027CAE1 /* Main.storyboard in Resources */,
 				5BC7628D237C4F910062CDD3 /* Settings.storyboard in Resources */,
+				5B492103264528EA0088239C /* Settings+TipJar.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,10 +482,8 @@
 				5B06EFA22382CC5C0020FF0E /* MensaDatabase.swift in Sources */,
 				5BBEA09524033759005790E9 /* DayTableViewCell.swift in Sources */,
 				5BEA0A33235DC0D0003E3616 /* SettingsTableViewController+TableView.swift in Sources */,
-				5BB26D7A2642EA0F00A18476 /* MensacardTableViewController.swift in Sources */,
 				5BA5CF7726447F9A00AC939C /* SettingsTabTableViewController.swift in Sources */,
 				5BB26D832642F63400A18476 /* HistoryTableViewCell.swift in Sources */,
-				5BA5CF7426446E1700AC939C /* TopAlignedLabel.swift in Sources */,
 				5BB26D782642E5BA00A18476 /* OpeningTableViewCell.swift in Sources */,
 				5BA5CF6C26446DBB00AC939C /* TipJar+TableView.swift in Sources */,
 				5B5C8EBC235E5E7700C29E62 /* SettingsTableViewController+SendSupportMail.swift in Sources */,
@@ -485,6 +492,7 @@
 				5BC7628B237C4F260062CDD3 /* MealTableViewCell.swift in Sources */,
 				5BA5CF6B26446DBB00AC939C /* TipJarTableViewController.swift in Sources */,
 				5B5C8EBE235E5EDF00C29E62 /* UIViewController+SafariActions.swift in Sources */,
+				5BAE17572645928500180F40 /* SettingsTableViewController+Developer.swift in Sources */,
 				5B0AE9C123887786005C22A7 /* ImageViewCell.swift in Sources */,
 				5B06EFA82382CF000020FF0E /* Double+Rounding.swift in Sources */,
 				5BA5CF7326446E1700AC939C /* BorderedButton.swift in Sources */,

@@ -12,59 +12,74 @@ import Toast
 
 class MensacardViewController: UITableViewController {
     
-    
+    @IBOutlet weak var mensacardCell: UITableViewCell!
     @IBOutlet weak var mensacardView: UIView!
     @IBOutlet weak var currentBalanceLabel: UILabel!
     @IBOutlet weak var historyChart: LineChartView!
+    @IBOutlet weak var showHistoryCell: UITableViewCell!
     
     let mensaDB = MensaDatabase()
     let hapticsGenerator = UINotificationFeedbackGenerator()
+    let gradientLayer = CAGradientLayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if MensaplanApp.demo {
-            setupDemoData()
-        }
-        
         styleMensacard()
-        setupMensacard()
+        setMensacardData()
         setupChart()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        setupMensacard()
+        setMensacardData()
         setupChart()
     }
     
-    func setupDemoData() {
-        if mensaDB.getEntries().count == 0 {
-            mensaDB.insertRecord(
-                balance: 19.56,
-                lastTransaction: 2.85,
-                date: Date.getCurrentDate(),
-                cardID: "1234567890"
-            )
+    func styleMensacard(currentBalance: Double? = -1) {
+        mensacardCell.layer.borderWidth = 1
+        mensacardCell.layer.borderColor = UIColor.label.cgColor
+        let startColor = UIColor.white
+        let endColor = getColorByEuro(euro: currentBalance ?? -1)
+        
+        gradientLayer.frame = mensacardView.bounds
+        gradientLayer.locations = [0.25, 1.5]
+        mensacardView.clipsToBounds = true
+        mensacardView.layer.insertSublayer(gradientLayer, at: 0)
+        
+        DispatchQueue.main.async() {
+            self.gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
         }
     }
     
-    func styleMensacard() {
-        let gradient = CAGradientLayer()
-        gradient.frame = mensacardView.bounds
-        gradient.colors = [UIColor.white.cgColor, UIColor(red: 143/255, green: 214/255, blue: 189/255, alpha: 1.0).cgColor]
-        
-        mensacardView.clipsToBounds = true
-        mensacardView.layer.insertSublayer(gradient, at: 0)
+    func getColorByEuro(euro: Double) -> UIColor {
+        switch euro {
+        case _ where euro >= 10:
+            return .systemGreen
+        case _ where euro >= 5:
+            return .systemYellow
+        case _ where euro >= 3:
+            return .systemOrange
+        case _ where euro >= 0:
+            return .red
+        default:
+            return .lightGray
+        }
     }
     
-    func setupMensacard() {
+    func setMensacardData() {
         let data: [HistoryItem] = mensaDB.getEntries()
         
         if data.count > 0 {
             currentBalanceLabel.text = data[0].getFormattedBalance()
         } else {
             currentBalanceLabel.text = "Noch nicht eingelesen..."
+        }
+        
+        if let firstEntry = data.first {
+            styleMensacard(currentBalance: firstEntry.balance)
+        } else {
+            styleMensacard()
         }
     }
     
@@ -74,6 +89,7 @@ class MensacardViewController: UITableViewController {
         
         historyChart.clear()
         historyChart.noDataText = "Es wurden bisher keine Daten eingelesen..."
+        historyChart.noDataTextColor = .secondaryLabel
         
         if mensaEntries.count > 0 {
             mensaEntries.reverse()
@@ -110,6 +126,11 @@ class MensacardViewController: UITableViewController {
             historyChart.isUserInteractionEnabled = false
             
             xAxis.setLabelCount(4, force: true)
+            showHistoryCell.textLabel?.textColor = .label
+            showHistoryCell.selectionStyle = .default
+        } else {
+            showHistoryCell.textLabel?.textColor = .secondaryLabel
+            showHistoryCell.selectionStyle = .none
         }
     }
     
@@ -147,12 +168,36 @@ class MensacardViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 2, indexPath.row == 1 {
-            performSegue(withIdentifier: "showHistorySegue", sender: self)
+            if mensaDB.getEntries().count > 0 {
+                performSegue(withIdentifier: "showHistorySegue", sender: self)
+            } else {
+                self.historyChart.makeToast("Es wurden bisher noch keine Daten in den Verlauf eingefügt... Scanne Deine Mensakarte über den Button \"Einlesen\".", duration: 3.0, position: .center)
+            }
         }
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        styleMensacard()
+        gradientLayer.frame = mensacardView.bounds
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        tableView.reloadData()
+        setMensacardData()
+    }
+    
+    @IBAction func longPress(_ sender: Any) {
+        if let gestureReconizer = sender as? UILongPressGestureRecognizer {
+            gestureReconizer.minimumPressDuration = 3.0
+            print(MensaplanApp.devMode)
+            if !MensaplanApp.devMode {
+                if gestureReconizer.state != UIGestureRecognizer.State.ended {
+                    historyChart.makeToast("Development mode is about to be enabled...", duration: 1.0, position: .center)
+                } else {
+                    MensaplanApp.devMode = true
+                    historyChart.makeToast("Enabled development mode!", duration: 1.0, position: .center)
+                }
+            }
+        }
     }
 }

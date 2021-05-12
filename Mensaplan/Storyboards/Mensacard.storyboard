@@ -17,10 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <sections>
-                            <tableViewSection id="A7b-al-v1H">
+                            <tableViewSection headerTitle=" " id="A7b-al-v1H">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="9eq-cL-iXM">
-                                        <rect key="frame" x="20" y="18" width="374" height="200"/>
+                                        <rect key="frame" x="20" y="49.5" width="374" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9eq-cL-iXM" id="t3p-7k-b9d">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="200"/>
@@ -44,26 +44,34 @@
                                                     </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="DPi-ah-qpo">
-                                                    <rect key="frame" x="28" y="122" width="318" height="59"/>
+                                                    <rect key="frame" x="28" y="120" width="318" height="61"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guthaben" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOB-FC-Fqa">
-                                                            <rect key="frame" x="0.0" y="0.0" width="132.5" height="25.5"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guthaben" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOB-FC-Fqa">
+                                                            <rect key="frame" x="0.0" y="0.0" width="318" height="26.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XX.XX€" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecB-DG-Peh">
-                                                            <rect key="frame" x="0.0" y="33.5" width="86" height="25.5"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XX.XX€" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecB-DG-Peh">
+                                                            <rect key="frame" x="0.0" y="34.5" width="318" height="26.5"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="JOB-FC-Fqa" firstAttribute="top" secondItem="DPi-ah-qpo" secondAttribute="top" id="6K3-TO-XeA"/>
+                                                        <constraint firstItem="JOB-FC-Fqa" firstAttribute="leading" secondItem="DPi-ah-qpo" secondAttribute="leading" id="AIR-aT-5By"/>
+                                                        <constraint firstAttribute="bottom" secondItem="ecB-DG-Peh" secondAttribute="bottom" id="IcE-yT-Elc"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ecB-DG-Peh" secondAttribute="trailing" id="T3a-1c-Oj2"/>
+                                                        <constraint firstAttribute="trailing" secondItem="JOB-FC-Fqa" secondAttribute="trailing" id="YyW-1n-uHF"/>
+                                                        <constraint firstItem="ecB-DG-Peh" firstAttribute="leading" secondItem="DPi-ah-qpo" secondAttribute="leading" id="nkk-2Y-GdM"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="DPi-ah-qpo" secondAttribute="trailing" constant="8" id="1ja-RW-VcF"/>
-                                                <constraint firstItem="DPi-ah-qpo" firstAttribute="top" relation="greaterThanOrEqual" secondItem="mEr-Bv-i0d" secondAttribute="bottom" constant="64" id="5uH-3h-HTx"/>
+                                                <constraint firstItem="DPi-ah-qpo" firstAttribute="top" relation="greaterThanOrEqual" secondItem="mEr-Bv-i0d" secondAttribute="bottom" constant="24" id="5uH-3h-HTx"/>
                                                 <constraint firstAttribute="trailing" secondItem="mEr-Bv-i0d" secondAttribute="trailing" constant="8" id="6Gz-Lg-Xi8"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="DPi-ah-qpo" secondAttribute="bottom" constant="8" id="QVg-ch-mSh"/>
                                                 <constraint firstItem="DPi-ah-qpo" firstAttribute="leading" secondItem="t3p-7k-b9d" secondAttribute="leadingMargin" constant="8" id="TXw-5j-l9t"/>
@@ -74,6 +82,7 @@
                                         <gestureRecognizers/>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="sfF-nH-dhu" appends="YES" id="vaz-w7-XUa"/>
+                                            <outletCollection property="gestureRecognizers" destination="pkF-Kv-oTS" appends="YES" id="Cfs-Dm-qZQ"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -81,7 +90,7 @@
                             <tableViewSection id="9n9-ZT-sXE">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="43.5" id="TGg-vD-yBh">
-                                        <rect key="frame" x="20" y="254" width="374" height="43.5"/>
+                                        <rect key="frame" x="20" y="285.5" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TGg-vD-yBh" id="TkZ-8g-p5Q">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
@@ -90,7 +99,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24L-OM-H1P">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
                                                     <color key="backgroundColor" systemColor="systemBlueColor"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" title="Einlesen">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -113,7 +122,7 @@
                             <tableViewSection headerTitle="Verlauf" id="EmC-xh-twy">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="250" id="zYJ-Fy-Gzn">
-                                        <rect key="frame" x="20" y="347.5" width="374" height="250"/>
+                                        <rect key="frame" x="20" y="379" width="374" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zYJ-Fy-Gzn" id="vue-GR-LO5">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="250"/>
@@ -122,6 +131,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HXY-qM-kM7" customClass="LineChartView" customModule="Charts">
                                                     <rect key="frame" x="20" y="11" width="334" height="228"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <gestureRecognizers/>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -133,16 +143,16 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="hd7-80-rPo" style="IBUITableViewCellStyleDefault" id="qar-ts-20j">
-                                        <rect key="frame" x="20" y="597.5" width="374" height="43.5"/>
+                                        <rect key="frame" x="20" y="629" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qar-ts-20j" id="xuh-U1-jeH" customClass="LineChartView" customModule="Charts">
                                             <rect key="frame" x="0.0" y="0.0" width="344.5" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Gesamten Verlauf anzeigen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hd7-80-rPo">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Gesamten Verlauf anzeigen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" id="hd7-80-rPo">
                                                     <rect key="frame" x="20" y="0.0" width="316.5" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -161,7 +171,9 @@
                     <connections>
                         <outlet property="currentBalanceLabel" destination="ecB-DG-Peh" id="xq6-0T-JII"/>
                         <outlet property="historyChart" destination="HXY-qM-kM7" id="B9b-1l-qnq"/>
+                        <outlet property="mensacardCell" destination="9eq-cL-iXM" id="FOt-ET-vwL"/>
                         <outlet property="mensacardView" destination="t3p-7k-b9d" id="FB2-Y0-IBO"/>
+                        <outlet property="showHistoryCell" destination="qar-ts-20j" id="BFV-oI-HGK"/>
                         <segue destination="Kba-v5-UL2" kind="show" identifier="showHistorySegue" id="Qgx-QB-qOc"/>
                     </connections>
                 </tableViewController>
@@ -171,6 +183,11 @@
                         <action selector="mensacardTapped:" destination="oog-Yb-r9C" id="WQd-ow-u5M"/>
                     </connections>
                 </tapGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="pkF-Kv-oTS">
+                    <connections>
+                        <action selector="longPress:" destination="oog-Yb-r9C" id="zBi-Wd-KLU"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-367" y="5"/>
         </scene>

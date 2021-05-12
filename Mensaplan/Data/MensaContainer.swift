@@ -11,14 +11,12 @@ import UIKit
 class MensaContainer {
     var db = MensaDatabase()
     var navigationController: UINavigationController?
-    var mainVC: MainTableViewController?
     var mensaXML: MensaXML?
     var mensaData: Mensaplan?
     var tempMensaData: MensaplanDay?
     
     init(mainVC: MainTableViewController) {
-        self.mainVC = mainVC
-        self.navigationController = mainVC.parent as? UINavigationController
+        self.navigationController = MensaplanApp.getMainVC()?.parent as? UINavigationController
         if MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.refreshOnStart) {
             loadMensaData()
         }
@@ -43,7 +41,7 @@ class MensaContainer {
         
         DispatchQueue.main.async {
             print("MensaData.swift - loadJSONintoUI() - Successfully used \(local ? "local" : "remote") JSON in UI")
-            if let mainVC = self.mainVC {
+            if let mainVC = MensaplanApp.getMainVC() {
                 mainVC.showEmptyView()
                 self.navigationController?.view.hideToastActivity()
                 mainVC.refreshControl?.endRefreshing()

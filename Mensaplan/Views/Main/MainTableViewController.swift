@@ -53,6 +53,10 @@ class MainTableViewController: UITableViewController {
         
         self.settingsButton.image = UIImage(systemName: "gear")
         
+        if MensaplanApp.appCanScan() {
+            self.navigationItem.leftBarButtonItem = nil
+        }
+        
         #if targetEnvironment(macCatalyst)
         self.navigationController?.navigationBar.isHidden = true
         #endif
@@ -136,6 +140,10 @@ class MainTableViewController: UITableViewController {
         if let mensaContainer = self.mensaContainer {
             mensaContainer.loadMensaData()
         }
+    }
+    
+    @IBAction func settingsAction(_ sender: Any) {
+        openSettings()
     }
     
     @IBAction func unwindFromSegue(segue: UIStoryboardSegue) {

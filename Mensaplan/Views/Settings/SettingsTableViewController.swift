@@ -27,6 +27,8 @@ class SettingsTableViewController: UITableViewController, UIAdaptivePresentation
     @IBOutlet weak var closeButton: UIBarButtonItem!
     
     var selectedMensa : String!
+    //MARK: - Dev Mode
+    @IBOutlet weak var disableDevModeCell: UITableViewCell!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +42,11 @@ class SettingsTableViewController: UITableViewController, UIAdaptivePresentation
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
         self.updateCurrentMensa()
+        #if !targetEnvironment(macCatalyst)
         self.updateCurrentTab()
+        #endif
     }
     
     func setupView() {
@@ -53,9 +58,14 @@ class SettingsTableViewController: UITableViewController, UIAdaptivePresentation
                 return
             }
             self.pricePicker.selectedSegmentIndex = MensaplanApp.priceValues.firstIndex(of: selectedPrice)!
-            self.appVersionCell.detailTextLabel?.text = "\(MensaplanApp.versionString) (\(MensaplanApp.buildNumber))"
+            appVersionCell.detailTextLabel?.text = "\(MensaplanApp.versionString) (\(MensaplanApp.buildNumber))"
             self.updateCurrentMensa()
+            #if !targetEnvironment(macCatalyst)
             self.updateCurrentTab()
+            #endif
+        }
+        if MensaplanApp.appCanScan() {
+            self.navigationItem.rightBarButtonItem = nil
         }
     }
     
@@ -63,12 +73,14 @@ class SettingsTableViewController: UITableViewController, UIAdaptivePresentation
         self.mensaNameCell.detailTextLabel?.text = MensaplanApp.standorteValues[MensaplanApp.standorteKeys.firstIndex(of: MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa) ?? MensaplanApp.standorteKeys[0]) ?? 0]
     }
     
+    #if !targetEnvironment(macCatalyst)
     func updateCurrentTab() {
         self.selectedTabName.text = MensaplanApp.tabValues[MensaplanApp.tabValues.firstIndex(of: MensaplanApp.sharedDefaults.string(forKey: LocalKeys.defaultTab) ?? MensaplanApp.tabValues[0]) ?? 0]
     }
+    #endif
     
     func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
-        if let navVC = UIApplication.shared.windows.first!.rootViewController as? UINavigationController, let mainVC = navVC.viewControllers[0] as? MainTableViewController {
+        if let mainVC = MensaplanApp.getMainVC() {
             mainVC.refreshAction(presentationController)
         }
     }

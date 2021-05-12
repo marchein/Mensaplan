@@ -6,7 +6,7 @@
 //  Copyright © 2019 Marc Hein. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CoreNFC
 
 //MARK:- Local Keys
@@ -26,7 +26,7 @@ struct LocalKeys {
 struct Shortcuts {
     static let showToday = "de.marc-hein.mensaplan.showToday"
     static let showTomorrow = "de.marc-hein.mensaplan.showTomorrow"
-    
+    static let showMensamobil = "de.marc-hein.mensaplan.showMensamobil"
 }
 
 //MARK:- DayValue
@@ -47,6 +47,7 @@ struct MensaplanApp {
     static let STUDIWERK_URL = "https://www.studiwerk.de";
     static let API = "https://www.studiwerk.de/export/speiseplan.xml"
     static let OPENINGS_URL = "https://www.studiwerk.de/cms/standorte_und_oeffnungszeiten-1001.html"
+    static let MENSAMOBIL_URL = "https://www.mensamobil.de"
     static let NOODLE_COUNTER = "CASA BLANCA"
     static let MAIN_DISH_MINIMAL_PRICE: Double = 1.15
     
@@ -63,9 +64,9 @@ struct MensaplanApp {
     
     static let imageCache = NSCache<AnyObject, AnyObject>()
     
-    
+
     // MARK:- NFC Data
-    static let demo: Bool = false
+    static var devMode = false
     static let APP_ID: Int = 0x5F8415
     static let FILE_ID: UInt8  = 1
     
@@ -78,7 +79,17 @@ struct MensaplanApp {
     #endif
     
     static func appCanScan() -> Bool {
-        return NFCTagReaderSession.readingAvailable || MensaplanApp.demo
+        return NFCTagReaderSession.readingAvailable || MensaplanApp.devMode
+    }
+    
+    static func getMainVC() -> MainTableViewController? {
+        if let tabVC = UIApplication.shared.windows.first!.rootViewController as? UITabBarController,
+           let splitVC = tabVC.viewControllers?.first as? UISplitViewController,
+           let navVC = splitVC.children.first as? UINavigationController,
+           let mainVC = navVC.children.first as? MainTableViewController {
+            return mainVC
+        }
+        return nil
     }
 }
 
@@ -88,7 +99,6 @@ struct MensaplanSegue {
     static let showDetail = "showDetail"
     static let manualShowDetail = "manualShowDetail"
     static let showSettings = "settingsSegue"
-    
 }
 
 //MARK:- MensaplanIAP

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ahc-5S-GHm">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tip Jar-->
+        <scene sceneID="xeC-yF-Y4h">
+            <objects>
+                <tableViewController title="Tip Jar" id="Ahc-5S-GHm" customClass="TipJarTableViewController" customModule="Mensaplan" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="a1O-z1-KAe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="introCell" textLabel="3Zn-9n-IFl" detailTextLabel="qYd-Pr-sEu" style="IBUITableViewCellStyleSubtitle" id="YHf-C9-MxY" customClass="TipTableViewCell" customModule="Mensaplan" customModuleProvider="target">
+                                <rect key="frame" x="16" y="49" width="343" height="51.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YHf-C9-MxY" id="Lji-Va-J4k">
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="51.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="INTRO_TITLE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3Zn-9n-IFl">
+                                            <rect key="frame" x="16" y="7.6666666666666643" width="89" height="17"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="INTRO_DESCRIPTION" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qYd-Pr-sEu">
+                                            <rect key="frame" x="16" y="27.000000000000004" width="132.33333333333334" height="15.666666666666666"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="tipCell" id="Wcr-l2-Zed" customClass="TipTableViewCell" customModule="Mensaplan" customModuleProvider="target">
+                                <rect key="frame" x="16" y="100.66666793823242" width="343" height="57.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wcr-l2-Zed" id="kdK-7R-fRU">
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="57.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qyz-U7-QCh">
+                                            <rect key="frame" x="16" y="11" width="311" height="35.666666666666664"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="yYT-3p-ApE">
+                                                    <rect key="frame" x="0.0" y="0.33333333333333215" width="203" height="35.333333333333343"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tip_name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4b-89-Ydv">
+                                                            <rect key="frame" x="0.0" y="0.0" width="63" height="17"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tip_desc" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHV-Cs-Ll6">
+                                                            <rect key="frame" x="0.0" y="21" width="203" height="14.333333333333336"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                            <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="VHV-Cs-Ll6" secondAttribute="trailing" id="jcp-he-m2u"/>
+                                                    </constraints>
+                                                </stackView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Ra1-g7-ufM" customClass="BorderedButton" customModule="Mensaplan" customModuleProvider="target">
+                                                    <rect key="frame" x="211" y="2.3333333333333357" width="100" height="31"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="Sq6-23-g0l"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                    <state key="normal" title="tip_price"/>
+                                                    <connections>
+                                                        <action selector="tipButtonAction:" destination="Ahc-5S-GHm" eventType="touchUpInside" id="iel-Fc-Sd2"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="qyz-U7-QCh" firstAttribute="leading" secondItem="kdK-7R-fRU" secondAttribute="leadingMargin" id="1Nz-UN-W9T"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="qyz-U7-QCh" secondAttribute="bottom" id="HM5-Va-lgb"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="qyz-U7-QCh" secondAttribute="trailing" id="J2i-cj-UHC"/>
+                                        <constraint firstItem="qyz-U7-QCh" firstAttribute="top" secondItem="kdK-7R-fRU" secondAttribute="topMargin" id="JIj-3a-3i1"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="purchaseButton" destination="Ra1-g7-ufM" id="yLM-oa-Uzm"/>
+                                    <outlet property="tipDesc" destination="VHV-Cs-Ll6" id="clT-Ke-SA3"/>
+                                    <outlet property="tipTitle" destination="n4b-89-Ydv" id="6e5-qb-g6s"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="Ahc-5S-GHm" id="opf-XA-7Tz"/>
+                            <outlet property="delegate" destination="Ahc-5S-GHm" id="z0A-Lt-6uw"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Spendenglas" id="zyj-xh-tdH"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bvH-Mw-Wt4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1790" y="777"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

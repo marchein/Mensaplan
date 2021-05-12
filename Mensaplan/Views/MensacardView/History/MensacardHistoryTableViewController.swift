@@ -17,8 +17,7 @@ class MensacardHistoryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        //self.clearsSelectionOnViewWillAppear = false
+
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         historyStore = db.getEntries()
@@ -61,8 +60,12 @@ class MensacardHistoryTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
             
             if let mensacardVC = navigationController?.children.first as? MensacardViewController {
-                mensacardVC.setupMensacard()
+                mensacardVC.setMensacardData()
                 mensacardVC.setupChart()
+            }
+            
+            if historyStore.count == 0 {
+                navigationController?.popToRootViewController(animated: true)
             }
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view

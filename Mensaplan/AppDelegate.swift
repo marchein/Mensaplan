@@ -49,24 +49,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
                                                                     userInfo: nil
         )
         
-        application.shortcutItems = [showTodayShortcut, showTomorrowShortcut]
+        let showMensamobilShortcut = UIMutableApplicationShortcutItem(type: Shortcuts.showMensamobil,
+                                                                    localizedTitle: "Mensamobil anzeigen",
+                                                                    localizedSubtitle: nil,
+                                                                    icon: UIApplicationShortcutIcon(type: .date),
+                                                                    userInfo: nil
+        )
+        
+        application.shortcutItems = [showTodayShortcut, showTomorrowShortcut, showMensamobilShortcut]
         
         return true
     }
     
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
-        if let splitVC = self.window?.rootViewController as? UISplitViewController, let splitNavVC = splitVC.viewControllers[0] as? UINavigationController, let mainVC = splitNavVC.viewControllers[0] as? MainTableViewController {
+        if let mainVC = MensaplanApp.getMainVC() {
             if shortcutItem.type == Shortcuts.showToday {
                 mainVC.showDay(dayValue: DayValue.TODAY)
             } else if shortcutItem.type == Shortcuts.showTomorrow {
                 mainVC.showDay(dayValue: DayValue.TOMORROW)
+            } else if shortcutItem.type == Shortcuts.showMensamobil {
+                mainVC.openSafariViewControllerWith(url: MensaplanApp.MENSAMOBIL_URL)
             }
         }
         completionHandler(true)
     }
     
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
-        if let splitVC = self.window?.rootViewController as? UISplitViewController, let splitNavVC = splitVC.viewControllers[0] as? UINavigationController, let mainVC = splitNavVC.viewControllers[0] as? MainTableViewController {
+        if let mainVC = MensaplanApp.getMainVC() {
             if userActivity.activityType == Shortcuts.showToday {
                 mainVC.showDay(dayValue: DayValue.TODAY)
             } else if userActivity.activityType == Shortcuts.showTomorrow {
@@ -88,7 +97,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
-        if let viewController = self.window?.rootViewController as? UINavigationController, let mainVC = viewController.viewControllers[0] as? MainTableViewController {
+        if let mainVC = MensaplanApp.getMainVC() {
             mainVC.tableView.reloadData()
         }
     }
@@ -127,7 +136,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     func setDefaultTab(tabVC: UITabBarController) {
         let selection = MensaplanApp.tabValues.firstIndex(of: MensaplanApp.sharedDefaults.string(forKey: LocalKeys.defaultTab) ?? MensaplanApp.tabValues[0]) ?? 0
         tabVC.selectedIndex = selection
-
+        
     }
 }
 
@@ -166,20 +175,15 @@ extension AppDelegate: NSTouchBarDelegate {
     }
     
     @objc func refresh() {
-        let mainVC = getMainVC()
-        mainVC.refreshAction(self)
+        if let mainVC = MensaplanApp.getMainVC() {
+            mainVC.refreshAction(self)
+        }
     }
     
     @objc func showSettings() {
-        let mainVC = getMainVC()
-        mainVC.openSettings()
-    }
-    
-    func getMainVC() -> MainTableViewController {
-        if let splitVC = self.window?.rootViewController as? UISplitViewController, let splitNavVC = splitVC.viewControllers[0] as? UINavigationController, let mainVC = splitNavVC.viewControllers[0] as? MainTableViewController {
-            return mainVC
+        if let mainVC = MensaplanApp.getMainVC() {
+            mainVC.openSettings()
         }
-        return MainTableViewController()
     }
     
     override func buildMenu(with builder: UIMenuBuilder) {

@@ -12,8 +12,6 @@ import StoreKit
 
 extension SettingsTableViewController {
     // MARK: - Table view data source
-
-    
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         if section == 0 {
             #if targetEnvironment(macCatalyst)
@@ -23,6 +21,14 @@ extension SettingsTableViewController {
             #endif
         }
         return nil
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        if MensaplanApp.devMode {
+            return 4
+        } else {
+            return 3
+        }
     }
 
     
@@ -44,7 +50,18 @@ extension SettingsTableViewController {
             openSafariViewControllerWith(url: MensaplanApp.website)
             break
         default:
+            if indexPath.section == 3 {
+                handeDevAction(indexPath)
+            }
             break
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if !MensaplanApp.appCanScan() ,indexPath.section == 1, indexPath.row == 1 {
+            return 0.0
+        }
+            
+        return tableView.rowHeight
     }
 }
