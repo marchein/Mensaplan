@@ -134,7 +134,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     }
     
     func setDefaultTab(tabVC: UITabBarController) {
-        let selection = MensaplanApp.tabValues.firstIndex(of: MensaplanApp.sharedDefaults.string(forKey: LocalKeys.defaultTab) ?? MensaplanApp.tabValues[0]) ?? 0
+        let selection = MensaplanApp.tabValues.firstIndex(of: MensaplanApp.userDefaults.string(forKey: LocalKeys.defaultTab) ?? MensaplanApp.tabValues[0]) ?? 0
         tabVC.selectedIndex = selection
         
     }
@@ -144,7 +144,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
 let SettingsButtonTouchBarIdentifier = NSTouchBarItem.Identifier("settingsButton")
 let RefreshButtonTouchBarIdentifier = NSTouchBarItem.Identifier("refreshButton")
-
 
 extension AppDelegate: NSTouchBarDelegate {
     override func makeTouchBar() -> NSTouchBar? {

@@ -23,6 +23,9 @@ class MainTableViewController: UITableViewController {
         self.mensaContainer = MensaContainer(mainVC: self)
         self.refreshControl?.addTarget(self, action: #selector(refreshAction), for: UIControl.Event.valueChanged)
         
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(sender:)))
+        tableView.addGestureRecognizer(longPress)
+        
         self.setupApp()
         
     }
@@ -33,27 +36,27 @@ class MainTableViewController: UITableViewController {
     }
     
     func setupApp() {
-        let isSetup  = MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.isSetup)
+        let isSetup  = MensaplanApp.userDefaults.bool(forKey: LocalKeys.isSetup)
         
         if !isSetup {
-            MensaplanApp.sharedDefaults.set(true, forKey: LocalKeys.refreshOnStart)
-            MensaplanApp.sharedDefaults.set(false, forKey: LocalKeys.showSideDish)
-            MensaplanApp.sharedDefaults.set("standort-1", forKey: LocalKeys.selectedMensa)
-            MensaplanApp.sharedDefaults.set("Mensaplan", forKey: LocalKeys.defaultTab)
-            MensaplanApp.sharedDefaults.set("student", forKey: LocalKeys.selectedPrice)
-            MensaplanApp.sharedDefaults.set(true, forKey: LocalKeys.isSetup)
+            MensaplanApp.userDefaults.set(true, forKey: LocalKeys.refreshOnStart)
+            MensaplanApp.userDefaults.set(false, forKey: LocalKeys.showSideDish)
+            MensaplanApp.userDefaults.set("standort-1", forKey: LocalKeys.selectedMensa)
+            MensaplanApp.userDefaults.set("Mensaplan", forKey: LocalKeys.defaultTab)
+            MensaplanApp.userDefaults.set("student", forKey: LocalKeys.selectedPrice)
+            MensaplanApp.userDefaults.set(true, forKey: LocalKeys.isSetup)
             print("MainTableViewController.swift - setupApp() - INITIAL SETUP DONE")
             refreshAction(self)
         } else {
              print("MainTableViewController.swift - setupApp() - load local copy")
-            if let localCopyOfMensaplanData = MensaplanApp.sharedDefaults.data(forKey: LocalKeys.mensaplanJSONData), let mensaContainer = self.mensaContainer {
+            if let localCopyOfMensaplanData = MensaplanApp.userDefaults.data(forKey: LocalKeys.mensaplanJSONData), let mensaContainer = self.mensaContainer {
                 mensaContainer.loadJSONintoUI(mensaPlanData: localCopyOfMensaplanData, local: true)
             }
         }
         
         self.settingsButton.image = UIImage(systemName: "gear")
         
-        if MensaplanApp.appCanScan() {
+        if MensaplanApp.canScan {
             self.navigationItem.leftBarButtonItem = nil
         }
         
@@ -84,7 +87,7 @@ class MainTableViewController: UITableViewController {
             }
         }
         let selectedDay = mensaData.plan[dayIndex]
-        let selectedLocation = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa)!
+        let selectedLocation = MensaplanApp.userDefaults.string(forKey: LocalKeys.selectedMensa)!
         for location in selectedDay.day {
             if location.title == selectedLocation {
                 let when = dayValue == .TODAY ? " heute " : dayValue == .TOMORROW ? " morgen ": " "
@@ -109,7 +112,7 @@ class MainTableViewController: UITableViewController {
         if segue.identifier == MensaplanSegue.showDetail {
             if let indexPath = self.tableView.indexPathForSelectedRow, let mensaContainer = self.mensaContainer, let mensaData = mensaContainer.mensaData {
                 let selectedDay = mensaData.plan[indexPath.row]
-                let selectedLocation = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa)!
+                let selectedLocation = MensaplanApp.userDefaults.string(forKey: LocalKeys.selectedMensa)!
                 for location in selectedDay.day {
                     if location.title == selectedLocation {
                         let vc = (segue.destination as! UINavigationController).topViewController as! DetailTableViewController
@@ -126,6 +129,17 @@ class MainTableViewController: UITableViewController {
                let mensaData = self.mensaContainer {
                 detailTableVC.mensaPlanDay = mensaData.tempMensaData
             }
+        }
+    }
+    
+    @objc private func handleLongPress(sender: UILongPressGestureRecognizer) {
+        sender.minimumPressDuration = 3.0
+        let touchPoint = sender.location(in: tableView)
+        if let indexPath = tableView.indexPathForRow(at: touchPoint), indexPath.section == 2, !MensaplanApp.devMode, sender.state != .ended {
+            tableView.makeToast("Development mode is about to be enabled...", duration: 1.0, position: .center)
+        } else {
+            MensaplanApp.devMode = true
+            tableView.makeToast("Enabled development mode!", duration: 1.0, position: .top)
         }
     }
     
@@ -147,7 +161,7 @@ class MainTableViewController: UITableViewController {
     }
     
     @IBAction func unwindFromSegue(segue: UIStoryboardSegue) {
-        if let mensaContainer = self.mensaContainer, mensaContainer.mensaXML?.showSideDish != MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.showSideDish) {
+        if let mensaContainer = self.mensaContainer, mensaContainer.mensaXML?.showSideDish != MensaplanApp.userDefaults.bool(forKey: LocalKeys.showSideDish) {
             refreshAction(self)
         } else {
             self.tableView.reloadData()

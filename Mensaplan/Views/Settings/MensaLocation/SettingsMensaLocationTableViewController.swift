@@ -12,11 +12,11 @@ import HeinHelpers
 class SettingsMensaLocationTableViewController: UITableViewController {
     var selectedLocation: String? {
         get {
-            return MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa)
+            return MensaplanApp.userDefaults.string(forKey: LocalKeys.selectedMensa)
         }
         
         set {
-            MensaplanApp.sharedDefaults.set(newValue, forKey: LocalKeys.selectedMensa)
+            MensaplanApp.userDefaults.set(newValue, forKey: LocalKeys.selectedMensa)
             var indexPaths: [IndexPath] = []
             for i in 0..<self.tableView(self.tableView, numberOfRowsInSection: tableView.numberOfSections) {
                 if i != selectedLocationIndex {

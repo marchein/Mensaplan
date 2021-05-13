@@ -22,17 +22,18 @@ class MensaDatabase {
         let fileurl = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent(MensaDatabase.DB_FILE)
         
         if(sqlite3_open(fileurl.path, &db) != SQLITE_OK) {
-            print("error opening database "+fileurl.path)
+            print("error opening database " + fileurl.path)
         }
+        
         for query in MensaDatabase.CREATE_DB_STATEMENTS {
             if(sqlite3_exec(db, query, nil,nil,nil) != SQLITE_OK) {
-                print("error creating table: "+String(cString: sqlite3_errmsg(db)!))
+                print("error creating table: " + String(cString: sqlite3_errmsg(db)!))
             }
         }
     }
     
-    func insertRecord(balance:Double, lastTransaction:Double, date:String, cardID: String) {
-        var stmt:OpaquePointer?
+    func insertRecord(balance: Double, lastTransaction: Double, date: String, cardID: String) {
+        var stmt: OpaquePointer?
         if sqlite3_prepare(self.db, "INSERT INTO history(balance, lastTransaction, scanDate, cardID) VALUES (?,?,?,?)", -1, &stmt, nil) == SQLITE_OK {
             sqlite3_bind_double(stmt, 1, balance)
             sqlite3_bind_double(stmt, 2, lastTransaction)
@@ -46,7 +47,7 @@ class MensaDatabase {
     }
     
     func deleteRecord(id:Int) {
-        var stmt:OpaquePointer?
+        var stmt: OpaquePointer?
         if sqlite3_prepare(self.db, "DELETE FROM history WHERE id = ?", -1, &stmt, nil) == SQLITE_OK {
             sqlite3_bind_int(stmt, 1, Int32(id))
             if sqlite3_step(stmt) == SQLITE_DONE {
@@ -55,9 +56,18 @@ class MensaDatabase {
         }
     }
     
+    func clearHistory() {
+        var stmt: OpaquePointer?
+        if sqlite3_prepare(self.db, "DELETE FROM history", -1, &stmt, nil) == SQLITE_OK {
+            if sqlite3_step(stmt) == SQLITE_DONE {
+                sqlite3_finalize(stmt)
+            }
+        }
+    }
+    
     func getEntries() -> [HistoryItem] {
         var historyStore: [HistoryItem] = []
-        var stmt:OpaquePointer?
+        var stmt: OpaquePointer?
         if sqlite3_prepare(db, "SELECT id, balance, lastTransaction, scanDate, cardID FROM history ORDER BY id DESC", -1, &stmt, nil) == SQLITE_OK {
             while sqlite3_step(stmt) == SQLITE_ROW {
                 historyStore.append(HistoryItem(

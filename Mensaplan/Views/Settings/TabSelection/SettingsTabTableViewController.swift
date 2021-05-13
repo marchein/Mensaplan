@@ -12,11 +12,11 @@ import HeinHelpers
 class SettingsTabTableViewController: UITableViewController {
     var selectedTab: String? {
         get {
-            return MensaplanApp.sharedDefaults.string(forKey: LocalKeys.defaultTab)
+            return MensaplanApp.userDefaults.string(forKey: LocalKeys.defaultTab)
         }
         
         set {
-            MensaplanApp.sharedDefaults.set(newValue, forKey: LocalKeys.defaultTab)
+            MensaplanApp.userDefaults.set(newValue, forKey: LocalKeys.defaultTab)
             var indexPaths: [IndexPath] = []
             for i in 0..<self.tableView(self.tableView, numberOfRowsInSection: tableView.numberOfSections) {
                 if i != selectedTabIndex {

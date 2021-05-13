@@ -66,7 +66,7 @@ extension TipJarTableViewController: SKProductsRequestDelegate, SKPaymentTransac
             switch transaction.transactionState {
             case SKPaymentTransactionState.purchased:
                 self.navigationController?.view.hideToastActivity()
-                MensaplanApp.sharedDefaults.set(true, forKey: LocalKeys.hasTipped)
+                MensaplanApp.userDefaults.set(true, forKey: LocalKeys.hasTipped)
                 SKPaymentQueue.default().finishTransaction(transaction)
                 transactionInProgress = false
                 impact.impactOccurred()

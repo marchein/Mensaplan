@@ -46,7 +46,7 @@ extension DetailTableViewController {
                 }
             }
 
-            let selectedPrice = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedPrice)
+            let selectedPrice = MensaplanApp.userDefaults.string(forKey: LocalKeys.selectedPrice)
             if selectedPrice == "student" {
                 cell.mealPriceLabel.text = meal.getFormattedPrice(price: meal.priceStudent)
             } else if selectedPrice == "worker" {

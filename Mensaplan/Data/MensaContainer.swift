@@ -17,7 +17,7 @@ class MensaContainer {
     
     init(mainVC: MainTableViewController) {
         self.navigationController = MensaplanApp.getMainVC()?.parent as? UINavigationController
-        if MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.refreshOnStart) {
+        if MensaplanApp.userDefaults.bool(forKey: LocalKeys.refreshOnStart) {
             loadMensaData()
         }
     }
@@ -29,9 +29,9 @@ class MensaContainer {
     func loadMensaData() {
         mensaXML = MensaXML(url: URL(string: MensaplanApp.API)!)
         mensaXML?.loadXML(onDone: { (mensaPlanData: Data) in
-            MensaplanApp.sharedDefaults.set(mensaPlanData, forKey: LocalKeys.mensaplanJSONData)
+            MensaplanApp.userDefaults.set(mensaPlanData, forKey: LocalKeys.mensaplanJSONData)
             self.loadJSONintoUI(mensaPlanData: mensaPlanData, local: false)
-            MensaplanApp.sharedDefaults.set(Date.getCurrentDate(), forKey: LocalKeys.lastUpdate)
+            MensaplanApp.userDefaults.set(Date.getCurrentDate(), forKey: LocalKeys.lastUpdate)
         })
     }
 

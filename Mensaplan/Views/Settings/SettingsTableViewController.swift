@@ -50,11 +50,11 @@ class SettingsTableViewController: UITableViewController, UIAdaptivePresentation
     }
     
     func setupView() {
-        let isSetup  = MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.isSetup)
+        let isSetup  = MensaplanApp.userDefaults.bool(forKey: LocalKeys.isSetup)
         if isSetup {
-            self.refreshOnStartToggle.isOn = MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.refreshOnStart)
-            self.showSideDishToggle.isOn = MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.showSideDish)
-            guard let selectedPrice = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedPrice) else {
+            self.refreshOnStartToggle.isOn = MensaplanApp.userDefaults.bool(forKey: LocalKeys.refreshOnStart)
+            self.showSideDishToggle.isOn = MensaplanApp.userDefaults.bool(forKey: LocalKeys.showSideDish)
+            guard let selectedPrice = MensaplanApp.userDefaults.string(forKey: LocalKeys.selectedPrice) else {
                 return
             }
             self.pricePicker.selectedSegmentIndex = MensaplanApp.priceValues.firstIndex(of: selectedPrice)!
@@ -64,18 +64,19 @@ class SettingsTableViewController: UITableViewController, UIAdaptivePresentation
             self.updateCurrentTab()
             #endif
         }
-        if MensaplanApp.appCanScan() {
+        
+        if MensaplanApp.canScan {
             self.navigationItem.rightBarButtonItem = nil
         }
     }
     
     func updateCurrentMensa() {
-        self.mensaNameCell.detailTextLabel?.text = MensaplanApp.standorteValues[MensaplanApp.standorteKeys.firstIndex(of: MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa) ?? MensaplanApp.standorteKeys[0]) ?? 0]
+        self.mensaNameCell.detailTextLabel?.text = MensaplanApp.standorteValues[MensaplanApp.standorteKeys.firstIndex(of: MensaplanApp.userDefaults.string(forKey: LocalKeys.selectedMensa) ?? MensaplanApp.standorteKeys[0]) ?? 0]
     }
     
     #if !targetEnvironment(macCatalyst)
     func updateCurrentTab() {
-        self.selectedTabName.text = MensaplanApp.tabValues[MensaplanApp.tabValues.firstIndex(of: MensaplanApp.sharedDefaults.string(forKey: LocalKeys.defaultTab) ?? MensaplanApp.tabValues[0]) ?? 0]
+        self.selectedTabName.text = MensaplanApp.tabValues[MensaplanApp.tabValues.firstIndex(of: MensaplanApp.userDefaults.string(forKey: LocalKeys.defaultTab) ?? MensaplanApp.tabValues[0]) ?? 0]
     }
     #endif
     
@@ -86,14 +87,14 @@ class SettingsTableViewController: UITableViewController, UIAdaptivePresentation
     }
     
     @IBAction func setRefreshOnStart(_ sender: Any) {
-        MensaplanApp.sharedDefaults.set(refreshOnStartToggle.isOn, forKey: LocalKeys.refreshOnStart)
+        MensaplanApp.userDefaults.set(refreshOnStartToggle.isOn, forKey: LocalKeys.refreshOnStart)
         #if targetEnvironment(macCatalyst)
         HeinHelpers.showMessage(title: "Aktualisieren beim Öffnen", message: refreshOnStartToggle.isOn ? "Die Daten werden nun beim Start automatisch aktualisiert" : "Die Daten werden nun beim Start nicht mehr automatisch aktualisiert", on: self)
         #endif
     }
     
     @IBAction func setShowSideDish(_ sender: Any) {
-        MensaplanApp.sharedDefaults.set(showSideDishToggle.isOn, forKey: LocalKeys.showSideDish)
+        MensaplanApp.userDefaults.set(showSideDishToggle.isOn, forKey: LocalKeys.showSideDish)
         #if targetEnvironment(macCatalyst)
         HeinHelpers.showMessage(title: "Beilagen anzeigen", message: showSideDishToggle.isOn ? "Die Beilagen werden nun angezeigt" : "Die Beilagen werden nun nicht mehr angezeigt", on: self)
         #endif
@@ -102,7 +103,7 @@ class SettingsTableViewController: UITableViewController, UIAdaptivePresentation
     @IBAction func priceSelection(_ sender: Any) {
         let selectedIndex = pricePicker.selectedSegmentIndex
         let priceValue = MensaplanApp.priceValues[selectedIndex]
-        MensaplanApp.sharedDefaults.set(priceValue, forKey: LocalKeys.selectedPrice)
+        MensaplanApp.userDefaults.set(priceValue, forKey: LocalKeys.selectedPrice)
     }
     
     @IBAction func doneAction(_ sender: Any) {

@@ -82,7 +82,7 @@ class MensaXML {
                                     }
                                 }
                             }
-                            showSideDish = MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.showSideDish)
+                            showSideDish = MensaplanApp.userDefaults.bool(forKey: LocalKeys.showSideDish)
                             if showSideDish || counterPlan["label"] as! String == MensaplanApp.NOODLE_COUNTER || mealPriceStudent >= MensaplanApp.MAIN_DISH_MINIMAL_PRICE {
                                 var mealResult = [String: Any]()
                                 mealResult["title"] = meal["titel"].text;

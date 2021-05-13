@@ -60,13 +60,14 @@ struct MensaplanApp {
     
     static let askForReviewAt = 5
     
-    static let sharedDefaults = UserDefaults(suiteName: MensaplanApp.groupIdentifier)!
+    static let userDefaults = UserDefaults.standard
     
     static let imageCache = NSCache<AnyObject, AnyObject>()
     
 
     // MARK:- NFC Data
     static var devMode = false
+    static var demo = true
     static let APP_ID: Int = 0x5F8415
     static let FILE_ID: UInt8  = 1
     
@@ -75,12 +76,8 @@ struct MensaplanApp {
     #elseif targetEnvironment(simulator)
     static let canScan = MensaplanApp.demo
     #else
-    static let canScan = appCanScan()
+    static let canScan = NFCTagReaderSession.readingAvailable
     #endif
-    
-    static func appCanScan() -> Bool {
-        return NFCTagReaderSession.readingAvailable || MensaplanApp.devMode
-    }
     
     static func getMainVC() -> MainTableViewController? {
         if let tabVC = UIApplication.shared.windows.first!.rootViewController as? UITabBarController,

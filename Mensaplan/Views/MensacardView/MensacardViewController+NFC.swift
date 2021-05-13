@@ -11,9 +11,8 @@ import CoreNFC
 import UIKit
 import Toast
 
-@available(iOS 13.0, *)
-extension MensacardViewController: NFCTagReaderSessionDelegate {
 
+extension MensacardViewController: NFCTagReaderSessionDelegate {
     @IBAction func scanButtonTapped(_ sender: Any) {
         guard NFCTagReaderSession.readingAvailable else {
             hapticsGenerator.notificationOccurred(.error)

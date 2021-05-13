@@ -39,10 +39,10 @@ class HistoryItem {
         return formatter.date(from: self.date)
     }
     
-    func getDateString(short: Bool = false) -> String {
+    func getDateString(short: Bool = false, veryShort: Bool = false) -> String {
         if let date = self.getDate() {
             let formatter = DateFormatter()
-            formatter.dateFormat = short ? "dd.MM.yyyy" : "dd.MM.yyyy - HH:mm"
+            formatter.dateFormat = short ? veryShort ? "dd.MM." : "dd.MM.yyyy" : "dd.MM.yyyy - HH:mm"
             return formatter.string(from: date)
         }
         return "Kein Datum hinterlegt"

@@ -18,6 +18,7 @@ class MensacardViewController: UITableViewController {
     @IBOutlet weak var historyChart: LineChartView!
     @IBOutlet weak var showHistoryCell: UITableViewCell!
     
+    /// Get access to the database which stores mensacard entries
     let mensaDB = MensaDatabase()
     let hapticsGenerator = UINotificationFeedbackGenerator()
     let gradientLayer = CAGradientLayer()
@@ -40,7 +41,7 @@ class MensacardViewController: UITableViewController {
         mensacardCell.layer.borderWidth = 1
         mensacardCell.layer.borderColor = UIColor.label.cgColor
         let startColor = UIColor.white
-        let endColor = getColorByEuro(euro: currentBalance ?? -1)
+        let endColor = getColorByEuro(euroValue: currentBalance ?? -1)
         
         gradientLayer.frame = mensacardView.bounds
         gradientLayer.locations = [0.25, 1.5]
@@ -52,15 +53,24 @@ class MensacardViewController: UITableViewController {
         }
     }
     
-    func getColorByEuro(euro: Double) -> UIColor {
-        switch euro {
-        case _ where euro >= 10:
+    /// This function returns a corresponding color for a given `euroValue`.
+    ///
+    /// ```
+    /// getColorByEuro(euroValue: 7.44) // UIColor.systenYellow
+    /// ```
+    ///
+    /// - Warning: If `euroValue` is not given or negative UIColor.lightGray is returned
+    /// - Parameter euroValue: The value which should be represented by a color
+    /// - Returns: A color corresponding to `euroValue`.
+    func getColorByEuro(euroValue: Double) -> UIColor {
+        switch euroValue {
+        case _ where euroValue >= 10:
             return .systemGreen
-        case _ where euro >= 5:
+        case _ where euroValue >= 5:
             return .systemYellow
-        case _ where euro >= 3:
+        case _ where euroValue >= 3:
             return .systemOrange
-        case _ where euro >= 0:
+        case _ where euroValue >= 0:
             return .red
         default:
             return .lightGray
@@ -84,48 +94,77 @@ class MensacardViewController: UITableViewController {
     }
     
     func setupChart() {
-        var dataEntries: [ChartDataEntry] = []
-        var mensaEntries = mensaDB.getEntries()
-        
         historyChart.clear()
         historyChart.noDataText = "Es wurden bisher keine Daten eingelesen..."
         historyChart.noDataTextColor = .secondaryLabel
+        historyChart.legend.enabled = false
         
+        var mensaEntries = mensaDB.getEntries()
         if mensaEntries.count > 0 {
             mensaEntries.reverse()
             var lower = 0
             var upper = mensaEntries.count
-            if mensaEntries.count > 20 {
-                lower = mensaEntries.count - 20
+            let NUMBER_OF_ENTRIES_IN_CHART = 6
+            if mensaEntries.count > NUMBER_OF_ENTRIES_IN_CHART {
+                lower = mensaEntries.count - NUMBER_OF_ENTRIES_IN_CHART
                 upper = mensaEntries.count
             }
             
+            var lastNMensaEntries = [HistoryItem]()
             for i in lower..<upper {
-                let dataEntry = ChartDataEntry(x: Double(i), y: mensaEntries[i].balance)
-                dataEntries.append(dataEntry)
+                lastNMensaEntries.append(mensaEntries[i])
             }
             
-            setChartData(dataEntries)
-            
+            // Thanks to https://stackoverflow.com/questions/41720445/ios-charts-3-0-align-x-labels-dates-with-plots
+            // (objects is defined as an array of struct with date and value)
+
+            // Define the reference time interval
+            var referenceTimeInterval: TimeInterval = 0
+            if let minTimeInterval = (lastNMensaEntries.map { $0.getDate()?.timeIntervalSince1970 ?? 0 }).min() {
+                referenceTimeInterval = minTimeInterval
+            }
+
+            // Define chart xValues formatter
+            let template = "dd.MM."
+            let format = DateFormatter.dateFormat(fromTemplate: template, options: 0, locale: NSLocale.current)
+            let formatter = DateFormatter()
+            formatter.dateFormat = format
+
+            let xValuesNumberFormatter = ChartXAxisFormatter(referenceTimeInterval: referenceTimeInterval, dateFormatter: formatter)
+
+            // Define chart entries
+            var entries = [ChartDataEntry]()
+            for object in lastNMensaEntries {
+                let timeInterval = object.getDate()?.timeIntervalSince1970 ?? 0
+                let xValue = (timeInterval - referenceTimeInterval) / (3600 * 24)
+
+                let yValue = object.balance
+                let entry = ChartDataEntry(x: xValue, y: yValue)
+                entries.append(entry)
+            }
+
+            // Pass these entries and the formatter to the Chart ...
+            setChartData(entries)
             
             historyChart.tintColor = .systemBlue
             
             let yAxis = historyChart.leftAxis
             yAxis.labelPosition = .outsideChart
-            let valFormatter = NumberFormatter()
-            valFormatter.numberStyle = .currency
-            valFormatter.maximumFractionDigits = 2
-            valFormatter.currencySymbol = "€"
+            let numberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = .currency
+            numberFormatter.maximumFractionDigits = 2
+            numberFormatter.currencySymbol = "€"
             
-            historyChart.leftAxis.valueFormatter = DefaultAxisValueFormatter(formatter: valFormatter)
+            historyChart.leftAxis.valueFormatter = DefaultAxisValueFormatter(formatter: numberFormatter)
             historyChart.rightAxis.enabled = false
             
             let xAxis = historyChart.xAxis
             xAxis.labelPosition = .bottom
-            xAxis.setLabelCount(mensaEntries.count, force: true)
+//            xAxis.avoidFirstLastClippingEnabled = true
+            xAxis.valueFormatter = xValuesNumberFormatter
+            
             historyChart.isUserInteractionEnabled = false
             
-            xAxis.setLabelCount(4, force: true)
             showHistoryCell.textLabel?.textColor = .label
             showHistoryCell.selectionStyle = .default
         } else {
@@ -136,9 +175,7 @@ class MensacardViewController: UITableViewController {
     
     func setChartData(_ dataEntries: [ChartDataEntry]) {
         let lineChartDataSet = LineChartDataSet(entries: dataEntries, label: "Guthaben")
-        
-        lineChartDataSet.mode = .cubicBezier
-        
+                
         lineChartDataSet.setColor(.systemBlue)
         lineChartDataSet.fillColor = .systemBlue
         lineChartDataSet.fillAlpha = 0.1
@@ -151,7 +188,6 @@ class MensacardViewController: UITableViewController {
         let lineChartData = LineChartData(dataSet: lineChartDataSet)
         lineChartData.setDrawValues(false)
         historyChart.data = lineChartData
-        
     }
     
     @IBAction func mensacardTapped(_ sender: Any) {
@@ -184,20 +220,5 @@ class MensacardViewController: UITableViewController {
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         tableView.reloadData()
         setMensacardData()
-    }
-    
-    @IBAction func longPress(_ sender: Any) {
-        if let gestureReconizer = sender as? UILongPressGestureRecognizer {
-            gestureReconizer.minimumPressDuration = 3.0
-            print(MensaplanApp.devMode)
-            if !MensaplanApp.devMode {
-                if gestureReconizer.state != UIGestureRecognizer.State.ended {
-                    historyChart.makeToast("Development mode is about to be enabled...", duration: 1.0, position: .center)
-                } else {
-                    MensaplanApp.devMode = true
-                    historyChart.makeToast("Enabled development mode!", duration: 1.0, position: .center)
-                }
-            }
-        }
     }
 }

@@ -21,7 +21,7 @@ extension MainTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {      
         if section == 0 {
             if let mensaContainer = self.mensaContainer, let mensaData = mensaContainer.mensaData {
-                if let selectedLocation = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa), let locationPostition = MensaplanApp.standorteKeys.firstIndex(of: selectedLocation), mensaData.allDaysClosed(location: locationPostition) {
+                if let selectedLocation = MensaplanApp.userDefaults.string(forKey: LocalKeys.selectedMensa), let locationPostition = MensaplanApp.standorteKeys.firstIndex(of: selectedLocation), mensaData.allDaysClosed(location: locationPostition) {
                     return 1
                 } else {
                     return mensaData.plan.count
@@ -46,7 +46,7 @@ extension MainTableViewController {
     
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         if section == 0 {
-            if let lastUpdate = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.lastUpdate), let dateObj = getDate(from: lastUpdate)  {
+            if let lastUpdate = MensaplanApp.userDefaults.string(forKey: LocalKeys.lastUpdate), let dateObj = getDate(from: lastUpdate)  {
                 #if targetEnvironment(macCatalyst)
                 return "Letzte Aktualisierung: \(Date.getCurrentDate(short: true, date: dateObj)) Uhr"
                 #else
@@ -166,7 +166,7 @@ extension MainTableViewController {
             cell.reasonLabel.numberOfLines = 0
             cell.dateLabel.numberOfLines = 0
             let selectedDay = mensaData.plan[indexPath.row]
-            let selectedLocation = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa)!
+            let selectedLocation = MensaplanApp.userDefaults.string(forKey: LocalKeys.selectedMensa)!
             for location in selectedDay.day {
                 if location.title == selectedLocation {
                     dayData = location
@@ -185,9 +185,9 @@ extension MainTableViewController {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
-            let isSetup = MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.isSetup)
+            let isSetup = MensaplanApp.userDefaults.bool(forKey: LocalKeys.isSetup)
             if isSetup {
-                let selectedMensa = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedMensa)
+                let selectedMensa = MensaplanApp.userDefaults.string(forKey: LocalKeys.selectedMensa)
                 let index = MensaplanApp.standorteKeys.firstIndex(of: selectedMensa!)!
                 return MensaplanApp.standorteValues[index]
             }

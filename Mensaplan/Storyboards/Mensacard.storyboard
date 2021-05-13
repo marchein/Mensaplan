@@ -46,7 +46,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="DPi-ah-qpo">
                                                     <rect key="frame" x="28" y="120" width="318" height="61"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guthaben" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOB-FC-Fqa">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guthaben" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOB-FC-Fqa">
                                                             <rect key="frame" x="0.0" y="0.0" width="318" height="26.5"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -82,7 +82,6 @@
                                         <gestureRecognizers/>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="sfF-nH-dhu" appends="YES" id="vaz-w7-XUa"/>
-                                            <outletCollection property="gestureRecognizers" destination="pkF-Kv-oTS" appends="YES" id="Cfs-Dm-qZQ"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -183,11 +182,6 @@
                         <action selector="mensacardTapped:" destination="oog-Yb-r9C" id="WQd-ow-u5M"/>
                     </connections>
                 </tapGestureRecognizer>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="pkF-Kv-oTS">
-                    <connections>
-                        <action selector="longPress:" destination="oog-Yb-r9C" id="zBi-Wd-KLU"/>
-                    </connections>
-                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-367" y="5"/>
         </scene>
