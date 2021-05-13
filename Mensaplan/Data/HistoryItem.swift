@@ -15,11 +15,44 @@ class HistoryItem {
     var date : String
     var cardID : String
     
-    init(id:Int, balance:Double, lastTransaction:Double, date:String, cardID:String) {
+    private var currencyFormatter: NumberFormatter {
+        get {
+            let valFormatter = NumberFormatter()
+            valFormatter.numberStyle = .currency
+            valFormatter.maximumFractionDigits = 2
+            valFormatter.currencySymbol = "€"
+            return valFormatter
+        }
+    }
+    
+    init(id:Int, balance:Double, lastTransaction: Double, date:String, cardID:String) {
         self.id = id
         self.balance = balance
         self.lastTransaction = lastTransaction
         self.date = date
         self.cardID = cardID
+    }
+    
+    func getDate() -> Date? {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy - HH:mm"
+        return formatter.date(from: self.date)
+    }
+    
+    func getDateString(short: Bool = false, veryShort: Bool = false) -> String {
+        if let date = self.getDate() {
+            let formatter = DateFormatter()
+            formatter.dateFormat = short ? veryShort ? "dd.MM." : "dd.MM.yyyy" : "dd.MM.yyyy - HH:mm"
+            return formatter.string(from: date)
+        }
+        return "Kein Datum hinterlegt"
+    }
+    
+    func getFormattedBalance() -> String {
+        return currencyFormatter.string(from: NSNumber(value: balance))!
+    }
+    
+    func getFormattedLastTransaction() -> String {
+        return currencyFormatter.string(from: NSNumber(value: lastTransaction))!
     }
 }

@@ -4,7 +4,6 @@
 <dict>
 	<key>com.apple.developer.nfc.readersession.formats</key>
 	<array>
-		<string>NDEF</string>
 		<string>TAG</string>
 	</array>
 	<key>com.apple.developer.siri</key>
@@ -12,9 +11,7 @@
 	<key>com.apple.security.app-sandbox</key>
 	<true/>
 	<key>com.apple.security.application-groups</key>
-	<array>
-		<string>group.de.hochschule-trier.mensa.Data</string>
-	</array>
+	<array/>
 	<key>com.apple.security.network.client</key>
 	<true/>
 </dict>

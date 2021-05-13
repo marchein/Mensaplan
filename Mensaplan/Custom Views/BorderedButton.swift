@@ -9,45 +9,41 @@
 import Foundation
 import UIKit
 
-@IBDesignable class BorderedButton: UIButton {
+class BorderedButton: UIButton {
     
-    @IBInspectable var borderColor: UIColor? {
-        didSet {
-            if let bColor = borderColor {
-                self.layer.borderColor = bColor.cgColor
-            }
-        }
+    let borderColor = UIColor.systemBlue
+    let borderWidth: CGFloat = 1.0
+    let cornerRadius: CGFloat = 5.0
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupView()
     }
     
-    @IBInspectable var borderWidth: CGFloat = 0 {
-        didSet {
-            self.layer.borderWidth = borderWidth
-        }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
     }
-    
-    @IBInspectable var cornerRadius: CGFloat = 0 {
-        didSet {
-            self.layer.cornerRadius = cornerRadius
-        }
+
+    private func setupView() {
+        self.layer.borderColor = borderColor.cgColor
+        self.layer.borderWidth = borderWidth
+        self.layer.cornerRadius = cornerRadius
     }
-    
+        
     override var isHighlighted: Bool {
         didSet {
-            guard let currentBorderColor = borderColor else {
-                return
-            }
-            
-            let fadedColor = currentBorderColor.withAlphaComponent(0.2).cgColor
+            let fadedColor = borderColor.withAlphaComponent(0.2).cgColor
             
             if isHighlighted {
                 layer.borderColor = fadedColor
             } else {
                 
-                self.layer.borderColor = currentBorderColor.cgColor
+                self.layer.borderColor = borderColor.cgColor
                 
                 let animation = CABasicAnimation(keyPath: "borderColor")
                 animation.fromValue = fadedColor
-                animation.toValue = currentBorderColor.cgColor
+                animation.toValue = borderColor.cgColor
                 animation.duration = 0.4
                 self.layer.add(animation, forKey: "")
             }

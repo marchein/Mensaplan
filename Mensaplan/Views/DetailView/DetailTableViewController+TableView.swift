@@ -46,7 +46,7 @@ extension DetailTableViewController {
                 }
             }
 
-            let selectedPrice = MensaplanApp.sharedDefaults.string(forKey: LocalKeys.selectedPrice)
+            let selectedPrice = MensaplanApp.userDefaults.string(forKey: LocalKeys.selectedPrice)
             if selectedPrice == "student" {
                 cell.mealPriceLabel.text = meal.getFormattedPrice(price: meal.priceStudent)
             } else if selectedPrice == "worker" {
@@ -76,11 +76,7 @@ extension DetailTableViewController {
                 if addedIcons < MAX_ICONS {
                     let imageView = UIImageView(image: getIcon(for: zusatzstoff))
                     imageView.image = imageView.image?.withRenderingMode(.alwaysTemplate)
-                    if #available(iOS 13.0, *) {
-                        imageView.tintColor = UIColor.label
-                    } else {
-                        imageView.tintColor = UIColor.black
-                    }
+                    imageView.tintColor = UIColor.label
                     imageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
                     imageView.widthAnchor.constraint(equalToConstant: 24).isActive = true
                     cell.infoStackView.addArrangedSubview(imageView)

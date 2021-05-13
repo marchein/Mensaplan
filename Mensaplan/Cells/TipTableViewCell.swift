@@ -1,12 +1,11 @@
 //
 //  TipTableViewCell.swift
-//  myTodo
+//  Mensaplan
 //
-//  Created by Marc Hein on 20.11.18.
-//  Copyright © 2018 Marc Hein Webdesign. All rights reserved.
+//  Created by Marc Hein on 12.05.21.
+//  Copyright © 2021 Marc Hein. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class TipTableViewCell: UITableViewCell {

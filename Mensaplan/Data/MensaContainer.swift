@@ -11,15 +11,13 @@ import UIKit
 class MensaContainer {
     var db = MensaDatabase()
     var navigationController: UINavigationController?
-    var mainVC: MainTableViewController?
     var mensaXML: MensaXML?
     var mensaData: Mensaplan?
     var tempMensaData: MensaplanDay?
     
     init(mainVC: MainTableViewController) {
-        self.mainVC = mainVC
-        self.navigationController = mainVC.parent as? UINavigationController
-        if MensaplanApp.sharedDefaults.bool(forKey: LocalKeys.refreshOnStart) {
+        self.navigationController = MensaplanApp.getMainVC()?.parent as? UINavigationController
+        if MensaplanApp.userDefaults.bool(forKey: LocalKeys.refreshOnStart) {
             loadMensaData()
         }
     }
@@ -31,9 +29,9 @@ class MensaContainer {
     func loadMensaData() {
         mensaXML = MensaXML(url: URL(string: MensaplanApp.API)!)
         mensaXML?.loadXML(onDone: { (mensaPlanData: Data) in
-            MensaplanApp.sharedDefaults.set(mensaPlanData, forKey: LocalKeys.mensaplanJSONData)
+            MensaplanApp.userDefaults.set(mensaPlanData, forKey: LocalKeys.mensaplanJSONData)
             self.loadJSONintoUI(mensaPlanData: mensaPlanData, local: false)
-            MensaplanApp.sharedDefaults.set(Date.getCurrentDate(), forKey: LocalKeys.lastUpdate)
+            MensaplanApp.userDefaults.set(Date.getCurrentDate(), forKey: LocalKeys.lastUpdate)
         })
     }
 
@@ -43,14 +41,11 @@ class MensaContainer {
         
         DispatchQueue.main.async {
             print("MensaData.swift - loadJSONintoUI() - Successfully used \(local ? "local" : "remote") JSON in UI")
-            if let mainVC = self.mainVC {
+            if let mainVC = MensaplanApp.getMainVC() {
                 mainVC.showEmptyView()
                 self.navigationController?.view.hideToastActivity()
                 mainVC.refreshControl?.endRefreshing()
                 mainVC.tableView.reloadData()
-                #if !targetEnvironment(macCatalyst)
-                mainVC.sendMessageToWatch()
-                #endif
             }
         }
     }

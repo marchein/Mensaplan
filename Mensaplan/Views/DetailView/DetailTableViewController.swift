@@ -56,10 +56,8 @@ class DetailTableViewController: UITableViewController {
         activity.title = "Mensaplan für \(activityType == Shortcuts.showTomorrow ? "heute" : "morgen") anzeigen"
         activity.userInfo = ["speech" : "show plan for \(activityType == Shortcuts.showTomorrow ? "today" : "tomorrow")"]
         activity.isEligibleForSearch = true
-        if #available(iOS 12.0, *) {
-            activity.isEligibleForPrediction = true
-            activity.persistentIdentifier = NSUserActivityPersistentIdentifier(activityType)
-        }
+        activity.isEligibleForPrediction = true
+        activity.persistentIdentifier = NSUserActivityPersistentIdentifier(activityType)
         view.userActivity = activity
         activity.becomeCurrent()
     }
